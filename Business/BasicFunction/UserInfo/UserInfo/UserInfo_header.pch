@@ -1,0 +1,46 @@
+//
+//  UserInfo_header.pch
+//  UserInfo
+//
+//  Created by ssssssss on 2019/12/23.
+//
+
+#ifndef UserInfo_header_pch
+#define UserInfo_header_pch
+
+//LibModel
+#import <LibProjModel/HttpApiUserController.h>
+#import <LibProjModel/HttpApiSupport.h>
+#import <LibProjModel/KLCAppConfig.h>
+#import <LibProjModel/ApiUserInfoModel.h>
+ 
+ 
+//LibProjBase
+#import <LibProjBase/LibProjBase.h>
+ #import <LibProjBase/LibProjBase.h>
+#import <LibProjView/EmptyView.h>
+
+#import "BRPickerView.h"//选择器
+
+#import <LibProjView/SkyDriveTool.h>
+//libtool
+#import <LibTools/LibTools.h>
+  
+//pod
+ 
+#import <SDWebImage/SDWebImage.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <MJRefresh/MJRefresh.h>
+
+
+#import <LibProjModel/HttpApiUserController.h>
+#import <LibProjModel/HttpApiPublicLive.h>
+#import <LibProjModel/KLCAppConfig.h>
+#import <LibProjModel/HttpApiUserController.h>
+
+#import <Masonry/Masonry.h>
+
+#import "JXCategoryView.h"
+
+#define MineBlackTextColor  kRGB_COLOR(@"#333333")
+#endif /* UserInfo_header_pch */

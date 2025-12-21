@@ -1,0 +1,94 @@
+//此代码由 http://code.siwaha.com/ 生成，服务器修改后可重新生成
+#import <Foundation/Foundation.h>
+
+#import <TXImKit/TXImKit.h>
+#import "VoicePkVOModel.h"
+#import "ApiUsersVoiceAssistanModel.h"
+#import "PkGiftSenderModel.h"
+NS_ASSUME_NONNULL_BEGIN
+
+
+
+/**
+多人语音PK相关
+ */
+@interface IMRcvVoicePK: NSObject<IMReceiver>
+
+
+-(NSString*)getMsgType;
+
+-(void) onMsg:(NSString*)subType content:(NSDictionary*)content;
+
+-(void) onOtherMsg:(NSDictionary*)content;
+
+
+/**
+ 通知双方主播PK匹配成功，准备进入PK开始倒计时
+ @param thisPkVO null
+ */
+-(void) tellAuthorMatched:(VoicePkVOModel* )thisPkVO ;
+
+
+/**
+ 主播提前退出PK 两边都发
+ @param thisAssistans null
+ @param optUid 发起强退方的ID
+ @param pkType 所退出的PK类型
+ */
+-(void) quitPK:(NSMutableArray<ApiUsersVoiceAssistanModel*>* )thisAssistans optUid:(int64_t)optUid pkType:(int)pkType ;
+
+
+/**
+ 中途加入PK人员变动 开关麦 或者 送礼活力值变更  两边都要发
+ @param thisPkVO null
+ @param optUid 麦位上的涉及方ID 或者火力值更新时的送礼方ID
+ @param optType 操作类型  1上麦 2下麦 3开麦 4关麦 5火力值更新 6被踢下麦 7锁麦 8表情包
+ */
+-(void) updatePK:(VoicePkVOModel* )thisPkVO optUid:(int64_t)optUid optType:(int)optType ;
+
+
+/**
+ PK进入倒计时前踢出未参与的用户
+ @param pkType null
+ */
+-(void) kickedBeforeOpen:(int)pkType ;
+
+
+/**
+ 倒计时结束后开始PK
+ @param thisPkVO null
+ */
+-(void) startPK:(VoicePkVOModel* )thisPkVO ;
+
+
+/**
+ 开始倒计时 预备进入PK (只向主播发) 
+ @param thisPkVO null
+ */
+-(void) OpenPKSuccess:(VoicePkVOModel* )thisPkVO ;
+
+
+/**
+ PK结果 惩罚或平局
+ @param thisPkVO null
+ */
+-(void) beforefinishPK:(VoicePkVOModel* )thisPkVO ;
+
+
+/**
+ 主播PK匹配超时
+ @param pktype null
+ */
+-(void) matchPkTimeOut:(int)pktype ;
+
+
+/**
+ pk更新礼物
+ @param thisSenders null
+ @param otherSenders null
+ */
+-(void) sendGiftPk:(NSMutableArray<PkGiftSenderModel*>* )thisSenders otherSenders:(NSMutableArray<PkGiftSenderModel*>* )otherSenders ;
+
+@end
+
+NS_ASSUME_NONNULL_END

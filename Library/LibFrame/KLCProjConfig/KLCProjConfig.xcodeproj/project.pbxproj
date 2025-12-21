@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		602040512865A30D00A720E2 /* XTBeautyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602040502865A30D00A720E2 /* XTBeautyKit.framework */; };
+		60C23C522846F9500073F089 /* TXImKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C23C512846F9500073F089 /* TXImKit.framework */; };
+		635E674B257B26BF0002A637 /* PushBusinessHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E6749257B26BF0002A637 /* PushBusinessHandle.m */; };
+		635E674C257B26BF0002A637 /* PushBusinessHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = 635E674A257B26BF0002A637 /* PushBusinessHandle.h */; };
+		675B3EF024FD10170058637A /* RouteBaseObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 675B3EEE24FD10170058637A /* RouteBaseObj.m */; };
+		675B3EF124FD10170058637A /* RouteBaseObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 675B3EEF24FD10170058637A /* RouteBaseObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6782250F25109B1E00EC37B4 /* XTRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6782250B25109B1E00EC37B4 /* XTRtcKit.framework */; };
+		6782251125109B1E00EC37B4 /* XTMediaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6782250C25109B1E00EC37B4 /* XTMediaKit.framework */; };
+		8BB51667DEB1A94825D1C9F7 /* Pods_KLCProjConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC76887D5CAD192CBE64D05B /* Pods_KLCProjConfig.framework */; };
+		DBCCA02026524B6E002F18F8 /* BusinessBaseObj.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCCA01E26524B6E002F18F8 /* BusinessBaseObj.m */; };
+		DBCCA02126524B6E002F18F8 /* BusinessBaseObj.h in Headers */ = {isa = PBXBuildFile; fileRef = DBCCA01F26524B6E002F18F8 /* BusinessBaseObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E284B7BD24EE12E20026B3EE /* KLCProjConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E284B7BB24EE12E20026B3EE /* KLCProjConfig.h */; };
+		E284B7D324EE16380026B3EE /* LibProjModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E284B7D224EE16380026B3EE /* LibProjModel.framework */; };
+		E284B80C24EE1C390026B3EE /* LibProjBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E284B80B24EE1C390026B3EE /* LibProjBase.framework */; };
+		E284B82424EE4B5C0026B3EE /* CloudConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E284B82224EE4B5C0026B3EE /* CloudConfig.m */; };
+		E284B82524EE4B5C0026B3EE /* CloudConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E284B82324EE4B5C0026B3EE /* CloudConfig.h */; };
+		E284B83524EE4F8C0026B3EE /* SocketHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = E284B83124EE4F8C0026B3EE /* SocketHandle.h */; };
+		E284B83624EE4F8C0026B3EE /* SocketHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = E284B83224EE4F8C0026B3EE /* SocketHandle.m */; };
+		E284B83724EE4F8C0026B3EE /* SocketConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E284B83324EE4F8C0026B3EE /* SocketConfig.h */; };
+		E284B83824EE4F8C0026B3EE /* SocketConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E284B83424EE4F8C0026B3EE /* SocketConfig.m */; };
+		E284B83B24EE513F0026B3EE /* LiveLibConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E284B83924EE513F0026B3EE /* LiveLibConfig.h */; };
+		E284B83C24EE513F0026B3EE /* LiveLibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E284B83A24EE513F0026B3EE /* LiveLibConfig.m */; };
+		E284B83F24EE52E20026B3EE /* ProjPublicMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = E284B83D24EE52E20026B3EE /* ProjPublicMethod.h */; };
+		E284B84024EE52E20026B3EE /* ProjPublicMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = E284B83E24EE52E20026B3EE /* ProjPublicMethod.m */; };
+		E2D153E424EFBAE400AE984A /* ProjBaseConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D153E224EFBAE400AE984A /* ProjBaseConfig.m */; };
+		E2D153E524EFBAE400AE984A /* ProjBaseConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E2D153E324EFBAE400AE984A /* ProjBaseConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2D153E724EFBB4B00AE984A /* LibProjView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D153E624EFBB4B00AE984A /* LibProjView.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		602040502865A30D00A720E2 /* XTBeautyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XTBeautyKit.framework; path = ../../../framework/XTBeautyKit.framework; sourceTree = "<group>"; };
+		60C23C512846F9500073F089 /* TXImKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TXImKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		635E6749257B26BF0002A637 /* PushBusinessHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushBusinessHandle.m; sourceTree = "<group>"; };
+		635E674A257B26BF0002A637 /* PushBusinessHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushBusinessHandle.h; sourceTree = "<group>"; };
+		675B3EEE24FD10170058637A /* RouteBaseObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteBaseObj.m; sourceTree = "<group>"; };
+		675B3EEF24FD10170058637A /* RouteBaseObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteBaseObj.h; sourceTree = "<group>"; };
+		6782250B25109B1E00EC37B4 /* XTRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XTRtcKit.framework; path = ../../../framework/XTRtcKit.framework; sourceTree = "<group>"; };
+		6782250C25109B1E00EC37B4 /* XTMediaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XTMediaKit.framework; path = ../../../framework/XTMediaKit.framework; sourceTree = "<group>"; };
+		A20E99ABF8E670ED1C76FC00 /* Pods-KLCProjConfig.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLCProjConfig.release.xcconfig"; path = "../../../rechao/klcMPVA/Pods/Target Support Files/Pods-KLCProjConfig/Pods-KLCProjConfig.release.xcconfig"; sourceTree = "<group>"; };
+		CC76887D5CAD192CBE64D05B /* Pods_KLCProjConfig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KLCProjConfig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D97B8135F33B283DB81F18EC /* Pods-KLCProjConfig.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLCProjConfig.debug.xcconfig"; path = "../../../rechao/klcMPVA/Pods/Target Support Files/Pods-KLCProjConfig/Pods-KLCProjConfig.debug.xcconfig"; sourceTree = "<group>"; };
+		DBCCA01E26524B6E002F18F8 /* BusinessBaseObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessBaseObj.m; sourceTree = "<group>"; };
+		DBCCA01F26524B6E002F18F8 /* BusinessBaseObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessBaseObj.h; sourceTree = "<group>"; };
+		E284B7B824EE12E20026B3EE /* KLCProjConfig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KLCProjConfig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E284B7BB24EE12E20026B3EE /* KLCProjConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLCProjConfig.h; sourceTree = "<group>"; };
+		E284B7BC24EE12E20026B3EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E284B7D224EE16380026B3EE /* LibProjModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E284B7D624EE16510026B3EE /* IMSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IMSocket.framework; path = ../../../framework/IMSocket.framework; sourceTree = "<group>"; };
+		E284B80B24EE1C390026B3EE /* LibProjBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E284B82224EE4B5C0026B3EE /* CloudConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudConfig.m; sourceTree = "<group>"; };
+		E284B82324EE4B5C0026B3EE /* CloudConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudConfig.h; sourceTree = "<group>"; };
+		E284B83124EE4F8C0026B3EE /* SocketHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketHandle.h; sourceTree = "<group>"; };
+		E284B83224EE4F8C0026B3EE /* SocketHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketHandle.m; sourceTree = "<group>"; };
+		E284B83324EE4F8C0026B3EE /* SocketConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketConfig.h; sourceTree = "<group>"; };
+		E284B83424EE4F8C0026B3EE /* SocketConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketConfig.m; sourceTree = "<group>"; };
+		E284B83924EE513F0026B3EE /* LiveLibConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveLibConfig.h; sourceTree = "<group>"; };
+		E284B83A24EE513F0026B3EE /* LiveLibConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveLibConfig.m; sourceTree = "<group>"; };
+		E284B83D24EE52E20026B3EE /* ProjPublicMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjPublicMethod.h; sourceTree = "<group>"; };
+		E284B83E24EE52E20026B3EE /* ProjPublicMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjPublicMethod.m; sourceTree = "<group>"; };
+		E2D153E224EFBAE400AE984A /* ProjBaseConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjBaseConfig.m; sourceTree = "<group>"; };
+		E2D153E324EFBAE400AE984A /* ProjBaseConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjBaseConfig.h; sourceTree = "<group>"; };
+		E2D153E624EFBB4B00AE984A /* LibProjView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E284B7B524EE12E20026B3EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E284B80C24EE1C390026B3EE /* LibProjBase.framework in Frameworks */,
+				6782250F25109B1E00EC37B4 /* XTRtcKit.framework in Frameworks */,
+				60C23C522846F9500073F089 /* TXImKit.framework in Frameworks */,
+				E284B7D324EE16380026B3EE /* LibProjModel.framework in Frameworks */,
+				6782251125109B1E00EC37B4 /* XTMediaKit.framework in Frameworks */,
+				E2D153E724EFBB4B00AE984A /* LibProjView.framework in Frameworks */,
+				8BB51667DEB1A94825D1C9F7 /* Pods_KLCProjConfig.framework in Frameworks */,
+				602040512865A30D00A720E2 /* XTBeautyKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		635E6748257B26560002A637 /* 三方配置 */ = {
+			isa = PBXGroup;
+			children = (
+				E284B83924EE513F0026B3EE /* LiveLibConfig.h */,
+				E284B83A24EE513F0026B3EE /* LiveLibConfig.m */,
+				E284B83324EE4F8C0026B3EE /* SocketConfig.h */,
+				E284B83424EE4F8C0026B3EE /* SocketConfig.m */,
+				E284B83124EE4F8C0026B3EE /* SocketHandle.h */,
+				E284B83224EE4F8C0026B3EE /* SocketHandle.m */,
+				E284B82324EE4B5C0026B3EE /* CloudConfig.h */,
+				E284B82224EE4B5C0026B3EE /* CloudConfig.m */,
+			);
+			path = "三方配置";
+			sourceTree = "<group>";
+		};
+		675B3EED24FD10170058637A /* 路由注册 */ = {
+			isa = PBXGroup;
+			children = (
+				675B3EEF24FD10170058637A /* RouteBaseObj.h */,
+				675B3EEE24FD10170058637A /* RouteBaseObj.m */,
+			);
+			path = "路由注册";
+			sourceTree = "<group>";
+		};
+		992A8A9692ACD9A52994382D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D97B8135F33B283DB81F18EC /* Pods-KLCProjConfig.debug.xcconfig */,
+				A20E99ABF8E670ED1C76FC00 /* Pods-KLCProjConfig.release.xcconfig */,
+			);
+			name = Pods;
+			path = "../../../Project/======临时文件/bfMpAudio旧/Pods";
+			sourceTree = "<group>";
+		};
+		E284B7AE24EE12E20026B3EE = {
+			isa = PBXGroup;
+			children = (
+				E284B7BA24EE12E20026B3EE /* KLCProjConfig */,
+				E284B7B924EE12E20026B3EE /* Products */,
+				E284B7D124EE16380026B3EE /* Frameworks */,
+				992A8A9692ACD9A52994382D /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		E284B7B924EE12E20026B3EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E284B7B824EE12E20026B3EE /* KLCProjConfig.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E284B7BA24EE12E20026B3EE /* KLCProjConfig */ = {
+			isa = PBXGroup;
+			children = (
+				635E6748257B26560002A637 /* 三方配置 */,
+				675B3EED24FD10170058637A /* 路由注册 */,
+				E284B7D924EE165A0026B3EE /* 系统配置 */,
+				E284B7BB24EE12E20026B3EE /* KLCProjConfig.h */,
+				E284B7BC24EE12E20026B3EE /* Info.plist */,
+			);
+			path = KLCProjConfig;
+			sourceTree = "<group>";
+		};
+		E284B7D124EE16380026B3EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				602040502865A30D00A720E2 /* XTBeautyKit.framework */,
+				60C23C512846F9500073F089 /* TXImKit.framework */,
+				6782250C25109B1E00EC37B4 /* XTMediaKit.framework */,
+				6782250B25109B1E00EC37B4 /* XTRtcKit.framework */,
+				E2D153E624EFBB4B00AE984A /* LibProjView.framework */,
+				E284B80B24EE1C390026B3EE /* LibProjBase.framework */,
+				E284B7D624EE16510026B3EE /* IMSocket.framework */,
+				E284B7D224EE16380026B3EE /* LibProjModel.framework */,
+				CC76887D5CAD192CBE64D05B /* Pods_KLCProjConfig.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E284B7D924EE165A0026B3EE /* 系统配置 */ = {
+			isa = PBXGroup;
+			children = (
+				DBCCA01F26524B6E002F18F8 /* BusinessBaseObj.h */,
+				DBCCA01E26524B6E002F18F8 /* BusinessBaseObj.m */,
+				E2D153E324EFBAE400AE984A /* ProjBaseConfig.h */,
+				E2D153E224EFBAE400AE984A /* ProjBaseConfig.m */,
+				E284B83D24EE52E20026B3EE /* ProjPublicMethod.h */,
+				E284B83E24EE52E20026B3EE /* ProjPublicMethod.m */,
+				635E674A257B26BF0002A637 /* PushBusinessHandle.h */,
+				635E6749257B26BF0002A637 /* PushBusinessHandle.m */,
+			);
+			path = "系统配置";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E284B7B324EE12E20026B3EE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBCCA02126524B6E002F18F8 /* BusinessBaseObj.h in Headers */,
+				675B3EF124FD10170058637A /* RouteBaseObj.h in Headers */,
+				E2D153E524EFBAE400AE984A /* ProjBaseConfig.h in Headers */,
+				E284B83B24EE513F0026B3EE /* LiveLibConfig.h in Headers */,
+				E284B83524EE4F8C0026B3EE /* SocketHandle.h in Headers */,
+				E284B83724EE4F8C0026B3EE /* SocketConfig.h in Headers */,
+				635E674C257B26BF0002A637 /* PushBusinessHandle.h in Headers */,
+				E284B82524EE4B5C0026B3EE /* CloudConfig.h in Headers */,
+				E284B83F24EE52E20026B3EE /* ProjPublicMethod.h in Headers */,
+				E284B7BD24EE12E20026B3EE /* KLCProjConfig.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E284B7B724EE12E20026B3EE /* KLCProjConfig */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E284B7C024EE12E20026B3EE /* Build configuration list for PBXNativeTarget "KLCProjConfig" */;
+			buildPhases = (
+				145C8435A29CF5A27F03582C /* [CP] Check Pods Manifest.lock */,
+				E284B7B324EE12E20026B3EE /* Headers */,
+				E284B7B424EE12E20026B3EE /* Sources */,
+				E284B7B524EE12E20026B3EE /* Frameworks */,
+				E284B7B624EE12E20026B3EE /* Resources */,
+				2658A1BA474498C462AE71A6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KLCProjConfig;
+			productName = KLCProjConfig;
+			productReference = E284B7B824EE12E20026B3EE /* KLCProjConfig.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E284B7AF24EE12E20026B3EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = KLC;
+				TargetAttributes = {
+					E284B7B724EE12E20026B3EE = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = E284B7B224EE12E20026B3EE /* Build configuration list for PBXProject "KLCProjConfig" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E284B7AE24EE12E20026B3EE;
+			productRefGroup = E284B7B924EE12E20026B3EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E284B7B724EE12E20026B3EE /* KLCProjConfig */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E284B7B624EE12E20026B3EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		145C8435A29CF5A27F03582C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KLCProjConfig-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2658A1BA474498C462AE71A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KLCProjConfig/Pods-KLCProjConfig-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KLCProjConfig/Pods-KLCProjConfig-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KLCProjConfig/Pods-KLCProjConfig-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E284B7B424EE12E20026B3EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635E674B257B26BF0002A637 /* PushBusinessHandle.m in Sources */,
+				E284B84024EE52E20026B3EE /* ProjPublicMethod.m in Sources */,
+				DBCCA02026524B6E002F18F8 /* BusinessBaseObj.m in Sources */,
+				E284B83824EE4F8C0026B3EE /* SocketConfig.m in Sources */,
+				E284B83624EE4F8C0026B3EE /* SocketHandle.m in Sources */,
+				E284B82424EE4B5C0026B3EE /* CloudConfig.m in Sources */,
+				E284B83C24EE513F0026B3EE /* LiveLibConfig.m in Sources */,
+				675B3EF024FD10170058637A /* RouteBaseObj.m in Sources */,
+				E2D153E424EFBAE400AE984A /* ProjBaseConfig.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E284B7BE24EE12E20026B3EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E284B7BF24EE12E20026B3EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E284B7C124EE12E20026B3EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D97B8135F33B283DB81F18EC /* Pods-KLCProjConfig.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"\"${SRCROOT}/../../../framework/XTMediaKit.framework/Headers\"",
+					"\"${SRCROOT}/../../../framework/XTRtcKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = KLCProjConfig/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.KLCProjConfig;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E284B7C224EE12E20026B3EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A20E99ABF8E670ED1C76FC00 /* Pods-KLCProjConfig.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"\"${SRCROOT}/../../../framework/XTMediaKit.framework/Headers\"",
+					"\"${SRCROOT}/../../../framework/XTRtcKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = KLCProjConfig/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.KLCProjConfig;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E284B7B224EE12E20026B3EE /* Build configuration list for PBXProject "KLCProjConfig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E284B7BE24EE12E20026B3EE /* Debug */,
+				E284B7BF24EE12E20026B3EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E284B7C024EE12E20026B3EE /* Build configuration list for PBXNativeTarget "KLCProjConfig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E284B7C124EE12E20026B3EE /* Debug */,
+				E284B7C224EE12E20026B3EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E284B7AF24EE12E20026B3EE /* Project object */;
+}

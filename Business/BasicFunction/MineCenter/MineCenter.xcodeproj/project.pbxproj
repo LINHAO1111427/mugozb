@@ -1,0 +1,1389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60C23C3B2846F8FE0073F089 /* TXImKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C23C3A2846F8FE0073F089 /* TXImKit.framework */; };
+		636938A324E4EA8B0051575B /* AccountCancelVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 636938A124E4EA8B0051575B /* AccountCancelVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		636938A424E4EA8B0051575B /* AccountCancelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 636938A224E4EA8B0051575B /* AccountCancelVC.m */; };
+		637F258024E66AA600BEDB70 /* TipsArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 637F256C24E66AA600BEDB70 /* TipsArrow.m */; };
+		637F258324E66AA600BEDB70 /* MyCenterAuthenStateView.h in Headers */ = {isa = PBXBuildFile; fileRef = 637F256F24E66AA600BEDB70 /* MyCenterAuthenStateView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		637F258424E66AA600BEDB70 /* TodayTaskCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 637F257024E66AA600BEDB70 /* TodayTaskCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		637F258624E66AA600BEDB70 /* UserLevelView.h in Headers */ = {isa = PBXBuildFile; fileRef = 637F257224E66AA600BEDB70 /* UserLevelView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		637F258824E66AA600BEDB70 /* HostLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 637F257424E66AA600BEDB70 /* HostLevelView.m */; };
+		637F258A24E66AA600BEDB70 /* TipsArrow.h in Headers */ = {isa = PBXBuildFile; fileRef = 637F257624E66AA600BEDB70 /* TipsArrow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		637F258B24E66AA600BEDB70 /* TodayTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 637F257724E66AA600BEDB70 /* TodayTaskCell.m */; };
+		637F258C24E66AA600BEDB70 /* MyCenterAuthenStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 637F257824E66AA600BEDB70 /* MyCenterAuthenStateView.m */; };
+		637F259024E66AA600BEDB70 /* UserLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 637F257C24E66AA600BEDB70 /* UserLevelView.m */; };
+		637F259324E66AA600BEDB70 /* HostLevelView.h in Headers */ = {isa = PBXBuildFile; fileRef = 637F257F24E66AA600BEDB70 /* HostLevelView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		637F259724E66C3500BEDB70 /* AccountVerifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 637F259524E66C3500BEDB70 /* AccountVerifyVC.m */; };
+		637F259824E66C3500BEDB70 /* AccountVerifyVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 637F259624E66C3500BEDB70 /* AccountVerifyVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		637F259C24E66C7700BEDB70 /* ContactUsVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 637F259A24E66C7700BEDB70 /* ContactUsVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		637F259D24E66C7700BEDB70 /* ContactUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 637F259B24E66C7700BEDB70 /* ContactUsVC.m */; };
+		637F25A424E678E100BEDB70 /* MineCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637F25A224E678E100BEDB70 /* MineCenterViewController.m */; };
+		637F25A524E678E100BEDB70 /* MineCenterViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 637F25A324E678E100BEDB70 /* MineCenterViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		637F25AA24E678ED00BEDB70 /* YouthProtectModeVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 637F25A624E678ED00BEDB70 /* YouthProtectModeVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		637F25AB24E678ED00BEDB70 /* YouthProtectPwdVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 637F25A724E678ED00BEDB70 /* YouthProtectPwdVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		637F25AC24E678ED00BEDB70 /* YouthProtectModeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 637F25A824E678ED00BEDB70 /* YouthProtectModeVC.m */; };
+		637F25AD24E678ED00BEDB70 /* YouthProtectPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 637F25A924E678ED00BEDB70 /* YouthProtectPwdVC.m */; };
+		821985E723AE052400EEEB52 /* LibProjBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824E359023AE017C007E353E /* LibProjBase.framework */; };
+		824E357E23AB1CAA007E353E /* LibProjView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824E357D23AB1CAA007E353E /* LibProjView.framework */; };
+		824E359323AE0211007E353E /* LibProjModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8282E43023A9B26200B581DD /* LibProjModel.framework */; };
+		8282E41A23A90A7100B581DD /* MineCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8282E41823A90A7100B581DD /* MineCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8282E43523A9B8A900B581DD /* LibTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8282E43423A9B8A900B581DD /* LibTools.framework */; };
+		84282854277D65E900FFE1AD /* MyInviteBottomView.h in Headers */ = {isa = PBXBuildFile; fileRef = 84282852277D65E900FFE1AD /* MyInviteBottomView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84282855277D65E900FFE1AD /* MyInviteBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84282853277D65E900FFE1AD /* MyInviteBottomView.m */; };
+		84B22E162760D0C500308551 /* ShowWithdrawView.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B22E142760D0C500308551 /* ShowWithdrawView.h */; };
+		84B22E172760D0C500308551 /* ShowWithdrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B22E152760D0C500308551 /* ShowWithdrawView.m */; };
+		84B22E1A2760D0DF00308551 /* ShowExchangeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B22E182760D0DF00308551 /* ShowExchangeView.h */; };
+		84B22E1B2760D0DF00308551 /* ShowExchangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B22E192760D0DF00308551 /* ShowExchangeView.m */; };
+		84B22E1E2760DEB600308551 /* WtihdarwSelectedBtn.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B22E1C2760DEB600308551 /* WtihdarwSelectedBtn.h */; };
+		84B22E1F2760DEB600308551 /* WtihdarwSelectedBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B22E1D2760DEB600308551 /* WtihdarwSelectedBtn.m */; };
+		9E21ED7625873E6E004384EA /* myTaskCenterVc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E21ED7425873E6D004384EA /* myTaskCenterVc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E21ED7725873E6E004384EA /* myTaskCenterVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E21ED7525873E6D004384EA /* myTaskCenterVc.m */; };
+		9E21ED7B258740CA004384EA /* userTaskCenterVc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E21ED79258740CA004384EA /* userTaskCenterVc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E21ED7C258740CA004384EA /* userTaskCenterVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E21ED7A258740CA004384EA /* userTaskCenterVc.m */; };
+		9E21ED7F258740E0004384EA /* anchorTaskCenterVc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E21ED7D258740E0004384EA /* anchorTaskCenterVc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E21ED80258740E0004384EA /* anchorTaskCenterVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E21ED7E258740E0004384EA /* anchorTaskCenterVc.m */; };
+		9E4EBF682588BD7100A4BB8D /* guardPrivilegeVc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E4EBF662588BD7100A4BB8D /* guardPrivilegeVc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E4EBF692588BD7100A4BB8D /* guardPrivilegeVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4EBF672588BD7100A4BB8D /* guardPrivilegeVc.m */; };
+		9E4EBF7A2589B10B00A4BB8D /* guardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4EBF782589B10B00A4BB8D /* guardTableViewCell.m */; };
+		9E4EBF7B2589B10B00A4BB8D /* guardTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E4EBF792589B10B00A4BB8D /* guardTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E5263A32477616000AAABDF /* AnchorCenterViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E5263A12477616000AAABDF /* AnchorCenterViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E5263A42477616000AAABDF /* AnchorCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5263A22477616000AAABDF /* AnchorCenterViewController.m */; };
+		9E5263AC24776B4700AAABDF /* MyAccountViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E5263AA24776B4700AAABDF /* MyAccountViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E5263AD24776B4700AAABDF /* MyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5263AB24776B4700AAABDF /* MyAccountViewController.m */; };
+		9E5263B024777FD000AAABDF /* paySelectedBtn.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E5263AE24777FD000AAABDF /* paySelectedBtn.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E5263B124777FD000AAABDF /* paySelectedBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5263AF24777FD000AAABDF /* paySelectedBtn.m */; };
+		9E6066212581B80E004454A2 /* MyInvteIncomeRankVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E6066162581B80E004454A2 /* MyInvteIncomeRankVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E6066232581B80E004454A2 /* MyInvteIncomeRankVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6066182581B80E004454A2 /* MyInvteIncomeRankVC.m */; };
+		9E6066242581B80E004454A2 /* PictureSharingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E60661A2581B80E004454A2 /* PictureSharingVC.m */; };
+		9E6066252581B80E004454A2 /* PictureSharingVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E60661B2581B80E004454A2 /* PictureSharingVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E6066262581B80E004454A2 /* CommissWithdrawVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E60661E2581B80E004454A2 /* CommissWithdrawVc.m */; };
+		9E6066272581B80E004454A2 /* CommissWithdrawVc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E60661F2581B80E004454A2 /* CommissWithdrawVc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E60662A2581B8A8004454A2 /* InviteUserRollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E6066282581B8A8004454A2 /* InviteUserRollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E60662B2581B8A8004454A2 /* InviteUserRollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6066292581B8A8004454A2 /* InviteUserRollView.m */; };
+		9E60662E2581BCF2004454A2 /* InviteRollTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E60662C2581BCF2004454A2 /* InviteRollTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E60662F2581BCF2004454A2 /* InviteRollTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E60662D2581BCF2004454A2 /* InviteRollTableView.m */; };
+		9E60663C2581F031004454A2 /* InviteRecordVc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E60663A2581F031004454A2 /* InviteRecordVc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E60663D2581F031004454A2 /* InviteRecordVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E60663B2581F031004454A2 /* InviteRecordVc.m */; };
+		9E6066402581F2C7004454A2 /* InviteRecordTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E60663E2581F2C7004454A2 /* InviteRecordTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E6066412581F2C7004454A2 /* InviteRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E60663F2581F2C7004454A2 /* InviteRecordTableViewCell.m */; };
+		9E606F0E258201AA004454A2 /* MyInviteIncomeRankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E606F0C258201AA004454A2 /* MyInviteIncomeRankCell.m */; };
+		9E606F0F258201AA004454A2 /* MyInviteIncomeRankCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E606F0D258201AA004454A2 /* MyInviteIncomeRankCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E606F3A258322E2004454A2 /* KlcCardCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E606F36258322E1004454A2 /* KlcCardCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E606F3B258322E2004454A2 /* KLCConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E606F37258322E1004454A2 /* KLCConstant.m */; };
+		9E606F3C258322E2004454A2 /* KlcCardCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E606F38258322E1004454A2 /* KlcCardCollectionViewFlowLayout.m */; };
+		9E606F3D258322E2004454A2 /* KLCConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E606F39258322E1004454A2 /* KLCConstant.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E606F4025832491004454A2 /* InvitePictureCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E606F3E25832491004454A2 /* InvitePictureCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E606F4125832491004454A2 /* InvitePictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E606F3F25832491004454A2 /* InvitePictureCollectionViewCell.m */; };
+		9E6F08C124F5FE940015C53D /* PrivilegeSettingVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E6F08BF24F5FE940015C53D /* PrivilegeSettingVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E6F08C224F5FE940015C53D /* PrivilegeSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F08C024F5FE940015C53D /* PrivilegeSettingVC.m */; };
+		9E6F08C524F604E30015C53D /* PrivilegeSettingTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E6F08C324F604E30015C53D /* PrivilegeSettingTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E6F08C624F604E30015C53D /* PrivilegeSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F08C424F604E30015C53D /* PrivilegeSettingTableViewCell.m */; };
+		9E8E9CA22476A4D500EF194D /* MyPrivilegeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E8E9CA02476A4D500EF194D /* MyPrivilegeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E8E9CA32476A4D500EF194D /* MyPrivilegeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8E9CA12476A4D500EF194D /* MyPrivilegeViewController.m */; };
+		9E8E9CA72476AEE200EF194D /* MyTimeActivityListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E8E9CA52476AEE200EF194D /* MyTimeActivityListViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E8E9CA82476AEE200EF194D /* MyTimeActivityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8E9CA62476AEE200EF194D /* MyTimeActivityListViewController.m */; };
+		9E8E9CAF2476AF5900EF194D /* MineTimeAxisTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E8E9CAD2476AF5900EF194D /* MineTimeAxisTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E8E9CB02476AF5900EF194D /* MineTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8E9CAE2476AF5900EF194D /* MineTimeAxisTableViewCell.m */; };
+		9EA1FA1124EE945300C7860E /* MineSettingVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EA1FA0824EE945300C7860E /* MineSettingVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EA1FA1324EE945300C7860E /* MineSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA1FA0A24EE945300C7860E /* MineSettingVC.m */; };
+		9EA1FA1424EE945300C7860E /* MineSettingItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA1FA0C24EE945300C7860E /* MineSettingItemCell.m */; };
+		9EA1FA1524EE945300C7860E /* MineCenterItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA1FA0D24EE945300C7860E /* MineCenterItemCell.m */; };
+		9EA1FA1624EE945300C7860E /* MineCenterItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EA1FA0E24EE945300C7860E /* MineCenterItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EA1FA1724EE945300C7860E /* MineSettingItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EA1FA0F24EE945300C7860E /* MineSettingItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EA1FA4E24EF600F00C7860E /* ModifyOrBindPhoneVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EA1FA4C24EF600F00C7860E /* ModifyOrBindPhoneVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EA1FA4F24EF600F00C7860E /* ModifyOrBindPhoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA1FA4D24EF600F00C7860E /* ModifyOrBindPhoneVC.m */; };
+		9EB1F228257F1BD5004791A1 /* AnchorAuthorityStatusTipView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EB1F226257F1BD5004791A1 /* AnchorAuthorityStatusTipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EB1F229257F1BD5004791A1 /* AnchorAuthorityStatusTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1F227257F1BD5004791A1 /* AnchorAuthorityStatusTipView.m */; };
+		9ECFC949251F1F9500803DFC /* AnchorStateSelectedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ECFC947251F1F9500803DFC /* AnchorStateSelectedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9ECFC94A251F1F9500803DFC /* AnchorStateSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECFC948251F1F9500803DFC /* AnchorStateSelectedView.m */; };
+		9EDB28D02587896B00A4F34F /* userTaskRewardToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDB28CE2587896B00A4F34F /* userTaskRewardToastView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EDB28D12587896B00A4F34F /* userTaskRewardToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB28CF2587896B00A4F34F /* userTaskRewardToastView.m */; };
+		9EDB28D525885B3E00A4F34F /* myGuardCenterVc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDB28D325885B3E00A4F34F /* myGuardCenterVc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EDB28D625885B3E00A4F34F /* myGuardCenterVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB28D425885B3E00A4F34F /* myGuardCenterVc.m */; };
+		9EDB28DE25885C8900A4F34F /* guardListVc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDB28DC25885C8900A4F34F /* guardListVc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EDB28DF25885C8900A4F34F /* guardListVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB28DD25885C8900A4F34F /* guardListVc.m */; };
+		D46007CD6CCFAC48AC62483F /* Pods_MineCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0694CA63FAF778789F80A04 /* Pods_MineCenter.framework */; };
+		DB6B2EF126E21140003D335B /* PrivacyAndSafeVC.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6B2EEF26E21140003D335B /* PrivacyAndSafeVC.h */; };
+		DB6B2EF226E21140003D335B /* PrivacyAndSafeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B2EF026E21140003D335B /* PrivacyAndSafeVC.m */; };
+		DB6B2EF526E21676003D335B /* PrivacyAndSafeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6B2EF326E21676003D335B /* PrivacyAndSafeCell.h */; };
+		DB6B2EF626E21676003D335B /* PrivacyAndSafeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B2EF426E21676003D335B /* PrivacyAndSafeCell.m */; };
+		DB7A6B5D2636B63B0068A331 /* MineLikeInfoListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7A6B5B2636B63B0068A331 /* MineLikeInfoListVC.m */; };
+		DB7A6B5E2636B63B0068A331 /* MineLikeInfoListVC.h in Headers */ = {isa = PBXBuildFile; fileRef = DB7A6B5C2636B63B0068A331 /* MineLikeInfoListVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB7A6B6E2636BD170068A331 /* MineLikeShortVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7A6B6C2636BD170068A331 /* MineLikeShortVideoVC.m */; };
+		DB7A6B6F2636BD170068A331 /* MineLikeShortVideoVC.h in Headers */ = {isa = PBXBuildFile; fileRef = DB7A6B6D2636BD170068A331 /* MineLikeShortVideoVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB95E16126B3892600F31E57 /* MineCenterRoute.h in Headers */ = {isa = PBXBuildFile; fileRef = DB95E15F26B3892600F31E57 /* MineCenterRoute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB95E16226B3892600F31E57 /* MineCenterRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95E16026B3892600F31E57 /* MineCenterRoute.m */; };
+		DBC1891A25FC4E380058CB00 /* MyInviteCodeVC.h in Headers */ = {isa = PBXBuildFile; fileRef = DBC1891725FC4E380058CB00 /* MyInviteCodeVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBC1891B25FC4E380058CB00 /* MyInviteCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC1891825FC4E380058CB00 /* MyInviteCodeVC.m */; };
+		DBC1891C25FC4E380058CB00 /* MyInviteCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC1891925FC4E380058CB00 /* MyInviteCodeVC.xib */; };
+		DBC1891F25FC5C250058CB00 /* MyInviteCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC1891925FC4E380058CB00 /* MyInviteCodeVC.xib */; };
+		E2712DAC24F3C3FC00F817BC /* OnlineMarketViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E2712DAA24F3C3FC00F817BC /* OnlineMarketViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2712DAD24F3C3FC00F817BC /* OnlineMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2712DAB24F3C3FC00F817BC /* OnlineMarketViewController.m */; };
+		E27E25E724F8ABD0005E80F5 /* PrivilegeLevelVC.h in Headers */ = {isa = PBXBuildFile; fileRef = E27E25E524F8ABD0005E80F5 /* PrivilegeLevelVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E27E25E824F8ABD0005E80F5 /* PrivilegeLevelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E25E624F8ABD0005E80F5 /* PrivilegeLevelVC.m */; };
+		E284B85224EE5DDD0026B3EE /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E284B85024EE5DDD0026B3EE /* AboutUsViewController.m */; };
+		E284B85324EE5DDD0026B3EE /* AboutUsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E284B85124EE5DDD0026B3EE /* AboutUsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2B62C4324C88C5200E1DD3F /* MineCenter_header.pch in Headers */ = {isa = PBXBuildFile; fileRef = E2B62C4224C88C5200E1DD3F /* MineCenter_header.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2F7F90B24F513D300958AB4 /* MessageSettingVC.h in Headers */ = {isa = PBXBuildFile; fileRef = E2F7F90924F513D300958AB4 /* MessageSettingVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2F7F90C24F513D300958AB4 /* MessageSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F7F90A24F513D300958AB4 /* MessageSettingVC.m */; };
+		F676CAA524347A9000C098BA /* MineCenterRes.h in Headers */ = {isa = PBXBuildFile; fileRef = F676CAA324347A9000C098BA /* MineCenterRes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F676CAA624347A9000C098BA /* MineCenterRes.m in Sources */ = {isa = PBXBuildFile; fileRef = F676CAA424347A9000C098BA /* MineCenterRes.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2471BB524BC643100D73406 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8282E40C23A90A7100B581DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F676CA3E243470CD00C098BA;
+			remoteInfo = MXDMineCenterB;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D7B33FE92495A556247A356 /* Pods-MineCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MineCenter.debug.xcconfig"; path = "../../../../mugozb/Project/rechao/klcMPVA/Pods/Target Support Files/Pods-MineCenter/Pods-MineCenter.debug.xcconfig"; sourceTree = "<group>"; };
+		60C23C3A2846F8FE0073F089 /* TXImKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TXImKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		636938A124E4EA8B0051575B /* AccountCancelVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountCancelVC.h; sourceTree = "<group>"; };
+		636938A224E4EA8B0051575B /* AccountCancelVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountCancelVC.m; sourceTree = "<group>"; };
+		637F256C24E66AA600BEDB70 /* TipsArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsArrow.m; sourceTree = "<group>"; };
+		637F256F24E66AA600BEDB70 /* MyCenterAuthenStateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCenterAuthenStateView.h; sourceTree = "<group>"; };
+		637F257024E66AA600BEDB70 /* TodayTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayTaskCell.h; sourceTree = "<group>"; };
+		637F257224E66AA600BEDB70 /* UserLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLevelView.h; sourceTree = "<group>"; };
+		637F257424E66AA600BEDB70 /* HostLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostLevelView.m; sourceTree = "<group>"; };
+		637F257624E66AA600BEDB70 /* TipsArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsArrow.h; sourceTree = "<group>"; };
+		637F257724E66AA600BEDB70 /* TodayTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayTaskCell.m; sourceTree = "<group>"; };
+		637F257824E66AA600BEDB70 /* MyCenterAuthenStateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCenterAuthenStateView.m; sourceTree = "<group>"; };
+		637F257C24E66AA600BEDB70 /* UserLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLevelView.m; sourceTree = "<group>"; };
+		637F257F24E66AA600BEDB70 /* HostLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostLevelView.h; sourceTree = "<group>"; };
+		637F259524E66C3500BEDB70 /* AccountVerifyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountVerifyVC.m; sourceTree = "<group>"; };
+		637F259624E66C3500BEDB70 /* AccountVerifyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountVerifyVC.h; sourceTree = "<group>"; };
+		637F259A24E66C7700BEDB70 /* ContactUsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactUsVC.h; sourceTree = "<group>"; };
+		637F259B24E66C7700BEDB70 /* ContactUsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactUsVC.m; sourceTree = "<group>"; };
+		637F25A224E678E100BEDB70 /* MineCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCenterViewController.m; sourceTree = "<group>"; };
+		637F25A324E678E100BEDB70 /* MineCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCenterViewController.h; sourceTree = "<group>"; };
+		637F25A624E678ED00BEDB70 /* YouthProtectModeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouthProtectModeVC.h; path = "青少年模式/YouthProtectModeVC.h"; sourceTree = "<group>"; };
+		637F25A724E678ED00BEDB70 /* YouthProtectPwdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouthProtectPwdVC.h; path = "青少年模式/YouthProtectPwdVC.h"; sourceTree = "<group>"; };
+		637F25A824E678ED00BEDB70 /* YouthProtectModeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouthProtectModeVC.m; path = "青少年模式/YouthProtectModeVC.m"; sourceTree = "<group>"; };
+		637F25A924E678ED00BEDB70 /* YouthProtectPwdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouthProtectPwdVC.m; path = "青少年模式/YouthProtectPwdVC.m"; sourceTree = "<group>"; };
+		824E357D23AB1CAA007E353E /* LibProjView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		824E359023AE017C007E353E /* LibProjBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8282E41523A90A7100B581DD /* MineCenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MineCenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8282E41823A90A7100B581DD /* MineCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCenter.h; sourceTree = "<group>"; };
+		8282E41923A90A7100B581DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8282E43023A9B26200B581DD /* LibProjModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8282E43423A9B8A900B581DD /* LibTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84282852277D65E900FFE1AD /* MyInviteBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInviteBottomView.h; sourceTree = "<group>"; };
+		84282853277D65E900FFE1AD /* MyInviteBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInviteBottomView.m; sourceTree = "<group>"; };
+		84B22E142760D0C500308551 /* ShowWithdrawView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowWithdrawView.h; sourceTree = "<group>"; };
+		84B22E152760D0C500308551 /* ShowWithdrawView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowWithdrawView.m; sourceTree = "<group>"; };
+		84B22E182760D0DF00308551 /* ShowExchangeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowExchangeView.h; sourceTree = "<group>"; };
+		84B22E192760D0DF00308551 /* ShowExchangeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowExchangeView.m; sourceTree = "<group>"; };
+		84B22E1C2760DEB600308551 /* WtihdarwSelectedBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WtihdarwSelectedBtn.h; sourceTree = "<group>"; };
+		84B22E1D2760DEB600308551 /* WtihdarwSelectedBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WtihdarwSelectedBtn.m; sourceTree = "<group>"; };
+		9E21ED7425873E6D004384EA /* myTaskCenterVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myTaskCenterVc.h; sourceTree = "<group>"; };
+		9E21ED7525873E6D004384EA /* myTaskCenterVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myTaskCenterVc.m; sourceTree = "<group>"; };
+		9E21ED79258740CA004384EA /* userTaskCenterVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userTaskCenterVc.h; sourceTree = "<group>"; };
+		9E21ED7A258740CA004384EA /* userTaskCenterVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = userTaskCenterVc.m; sourceTree = "<group>"; };
+		9E21ED7D258740E0004384EA /* anchorTaskCenterVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = anchorTaskCenterVc.h; sourceTree = "<group>"; };
+		9E21ED7E258740E0004384EA /* anchorTaskCenterVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = anchorTaskCenterVc.m; sourceTree = "<group>"; };
+		9E4EBF662588BD7100A4BB8D /* guardPrivilegeVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = guardPrivilegeVc.h; sourceTree = "<group>"; };
+		9E4EBF672588BD7100A4BB8D /* guardPrivilegeVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = guardPrivilegeVc.m; sourceTree = "<group>"; };
+		9E4EBF782589B10B00A4BB8D /* guardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = guardTableViewCell.m; sourceTree = "<group>"; };
+		9E4EBF792589B10B00A4BB8D /* guardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guardTableViewCell.h; sourceTree = "<group>"; };
+		9E5263A12477616000AAABDF /* AnchorCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnchorCenterViewController.h; sourceTree = "<group>"; };
+		9E5263A22477616000AAABDF /* AnchorCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnchorCenterViewController.m; sourceTree = "<group>"; };
+		9E5263AA24776B4700AAABDF /* MyAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAccountViewController.h; sourceTree = "<group>"; };
+		9E5263AB24776B4700AAABDF /* MyAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAccountViewController.m; sourceTree = "<group>"; };
+		9E5263AE24777FD000AAABDF /* paySelectedBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = paySelectedBtn.h; sourceTree = "<group>"; };
+		9E5263AF24777FD000AAABDF /* paySelectedBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = paySelectedBtn.m; sourceTree = "<group>"; };
+		9E6066162581B80E004454A2 /* MyInvteIncomeRankVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInvteIncomeRankVC.h; sourceTree = "<group>"; };
+		9E6066182581B80E004454A2 /* MyInvteIncomeRankVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInvteIncomeRankVC.m; sourceTree = "<group>"; };
+		9E60661A2581B80E004454A2 /* PictureSharingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureSharingVC.m; sourceTree = "<group>"; };
+		9E60661B2581B80E004454A2 /* PictureSharingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureSharingVC.h; sourceTree = "<group>"; };
+		9E60661E2581B80E004454A2 /* CommissWithdrawVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommissWithdrawVc.m; sourceTree = "<group>"; };
+		9E60661F2581B80E004454A2 /* CommissWithdrawVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommissWithdrawVc.h; sourceTree = "<group>"; };
+		9E6066282581B8A8004454A2 /* InviteUserRollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteUserRollView.h; sourceTree = "<group>"; };
+		9E6066292581B8A8004454A2 /* InviteUserRollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteUserRollView.m; sourceTree = "<group>"; };
+		9E60662C2581BCF2004454A2 /* InviteRollTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteRollTableView.h; sourceTree = "<group>"; };
+		9E60662D2581BCF2004454A2 /* InviteRollTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteRollTableView.m; sourceTree = "<group>"; };
+		9E60663A2581F031004454A2 /* InviteRecordVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteRecordVc.h; sourceTree = "<group>"; };
+		9E60663B2581F031004454A2 /* InviteRecordVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteRecordVc.m; sourceTree = "<group>"; };
+		9E60663E2581F2C7004454A2 /* InviteRecordTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteRecordTableViewCell.h; sourceTree = "<group>"; };
+		9E60663F2581F2C7004454A2 /* InviteRecordTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteRecordTableViewCell.m; sourceTree = "<group>"; };
+		9E606F0C258201AA004454A2 /* MyInviteIncomeRankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInviteIncomeRankCell.m; sourceTree = "<group>"; };
+		9E606F0D258201AA004454A2 /* MyInviteIncomeRankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInviteIncomeRankCell.h; sourceTree = "<group>"; };
+		9E606F36258322E1004454A2 /* KlcCardCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KlcCardCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		9E606F37258322E1004454A2 /* KLCConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCConstant.m; sourceTree = "<group>"; };
+		9E606F38258322E1004454A2 /* KlcCardCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KlcCardCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		9E606F39258322E1004454A2 /* KLCConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCConstant.h; sourceTree = "<group>"; };
+		9E606F3E25832491004454A2 /* InvitePictureCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvitePictureCollectionViewCell.h; sourceTree = "<group>"; };
+		9E606F3F25832491004454A2 /* InvitePictureCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvitePictureCollectionViewCell.m; sourceTree = "<group>"; };
+		9E6F08BF24F5FE940015C53D /* PrivilegeSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivilegeSettingVC.h; sourceTree = "<group>"; };
+		9E6F08C024F5FE940015C53D /* PrivilegeSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivilegeSettingVC.m; sourceTree = "<group>"; };
+		9E6F08C324F604E30015C53D /* PrivilegeSettingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivilegeSettingTableViewCell.h; sourceTree = "<group>"; };
+		9E6F08C424F604E30015C53D /* PrivilegeSettingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivilegeSettingTableViewCell.m; sourceTree = "<group>"; };
+		9E8E9CA02476A4D500EF194D /* MyPrivilegeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPrivilegeViewController.h; sourceTree = "<group>"; };
+		9E8E9CA12476A4D500EF194D /* MyPrivilegeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPrivilegeViewController.m; sourceTree = "<group>"; };
+		9E8E9CA52476AEE200EF194D /* MyTimeActivityListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTimeActivityListViewController.h; sourceTree = "<group>"; };
+		9E8E9CA62476AEE200EF194D /* MyTimeActivityListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTimeActivityListViewController.m; sourceTree = "<group>"; };
+		9E8E9CAD2476AF5900EF194D /* MineTimeAxisTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTimeAxisTableViewCell.h; sourceTree = "<group>"; };
+		9E8E9CAE2476AF5900EF194D /* MineTimeAxisTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTimeAxisTableViewCell.m; sourceTree = "<group>"; };
+		9EA1FA0824EE945300C7860E /* MineSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineSettingVC.h; sourceTree = "<group>"; };
+		9EA1FA0A24EE945300C7860E /* MineSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineSettingVC.m; sourceTree = "<group>"; };
+		9EA1FA0C24EE945300C7860E /* MineSettingItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineSettingItemCell.m; sourceTree = "<group>"; };
+		9EA1FA0D24EE945300C7860E /* MineCenterItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCenterItemCell.m; sourceTree = "<group>"; };
+		9EA1FA0E24EE945300C7860E /* MineCenterItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCenterItemCell.h; sourceTree = "<group>"; };
+		9EA1FA0F24EE945300C7860E /* MineSettingItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineSettingItemCell.h; sourceTree = "<group>"; };
+		9EA1FA4C24EF600F00C7860E /* ModifyOrBindPhoneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyOrBindPhoneVC.h; sourceTree = "<group>"; };
+		9EA1FA4D24EF600F00C7860E /* ModifyOrBindPhoneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyOrBindPhoneVC.m; sourceTree = "<group>"; };
+		9EB1F226257F1BD5004791A1 /* AnchorAuthorityStatusTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnchorAuthorityStatusTipView.h; sourceTree = "<group>"; };
+		9EB1F227257F1BD5004791A1 /* AnchorAuthorityStatusTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnchorAuthorityStatusTipView.m; sourceTree = "<group>"; };
+		9ECFC947251F1F9500803DFC /* AnchorStateSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorStateSelectedView.h; sourceTree = "<group>"; };
+		9ECFC948251F1F9500803DFC /* AnchorStateSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnchorStateSelectedView.m; sourceTree = "<group>"; };
+		9EDB28CE2587896B00A4F34F /* userTaskRewardToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userTaskRewardToastView.h; sourceTree = "<group>"; };
+		9EDB28CF2587896B00A4F34F /* userTaskRewardToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = userTaskRewardToastView.m; sourceTree = "<group>"; };
+		9EDB28D325885B3E00A4F34F /* myGuardCenterVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myGuardCenterVc.h; sourceTree = "<group>"; };
+		9EDB28D425885B3E00A4F34F /* myGuardCenterVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myGuardCenterVc.m; sourceTree = "<group>"; };
+		9EDB28DC25885C8900A4F34F /* guardListVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = guardListVc.h; sourceTree = "<group>"; };
+		9EDB28DD25885C8900A4F34F /* guardListVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = guardListVc.m; sourceTree = "<group>"; };
+		C0694CA63FAF778789F80A04 /* Pods_MineCenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MineCenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB6B2EEF26E21140003D335B /* PrivacyAndSafeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyAndSafeVC.h; sourceTree = "<group>"; };
+		DB6B2EF026E21140003D335B /* PrivacyAndSafeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyAndSafeVC.m; sourceTree = "<group>"; };
+		DB6B2EF326E21676003D335B /* PrivacyAndSafeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyAndSafeCell.h; sourceTree = "<group>"; };
+		DB6B2EF426E21676003D335B /* PrivacyAndSafeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyAndSafeCell.m; sourceTree = "<group>"; };
+		DB7A6B5B2636B63B0068A331 /* MineLikeInfoListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineLikeInfoListVC.m; sourceTree = "<group>"; };
+		DB7A6B5C2636B63B0068A331 /* MineLikeInfoListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineLikeInfoListVC.h; sourceTree = "<group>"; };
+		DB7A6B6C2636BD170068A331 /* MineLikeShortVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineLikeShortVideoVC.m; sourceTree = "<group>"; };
+		DB7A6B6D2636BD170068A331 /* MineLikeShortVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineLikeShortVideoVC.h; sourceTree = "<group>"; };
+		DB95E15F26B3892600F31E57 /* MineCenterRoute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCenterRoute.h; sourceTree = "<group>"; };
+		DB95E16026B3892600F31E57 /* MineCenterRoute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCenterRoute.m; sourceTree = "<group>"; };
+		DBC1891725FC4E380058CB00 /* MyInviteCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInviteCodeVC.h; sourceTree = "<group>"; };
+		DBC1891825FC4E380058CB00 /* MyInviteCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInviteCodeVC.m; sourceTree = "<group>"; };
+		DBC1891925FC4E380058CB00 /* MyInviteCodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInviteCodeVC.xib; sourceTree = "<group>"; };
+		E2712DAA24F3C3FC00F817BC /* OnlineMarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMarketViewController.h; sourceTree = "<group>"; };
+		E2712DAB24F3C3FC00F817BC /* OnlineMarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMarketViewController.m; sourceTree = "<group>"; };
+		E27E25E524F8ABD0005E80F5 /* PrivilegeLevelVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivilegeLevelVC.h; sourceTree = "<group>"; };
+		E27E25E624F8ABD0005E80F5 /* PrivilegeLevelVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivilegeLevelVC.m; sourceTree = "<group>"; };
+		E284B85024EE5DDD0026B3EE /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		E284B85124EE5DDD0026B3EE /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		E2B62C4224C88C5200E1DD3F /* MineCenter_header.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCenter_header.pch; sourceTree = "<group>"; };
+		E2E4CCE524C0247400C5B10C /* IMSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IMSocket.framework; path = ../../../../framework/IMSocket.framework; sourceTree = "<group>"; };
+		E2F7F90924F513D300958AB4 /* MessageSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSettingVC.h; sourceTree = "<group>"; };
+		E2F7F90A24F513D300958AB4 /* MessageSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSettingVC.m; sourceTree = "<group>"; };
+		E81C733010CDE859FA945F0D /* Pods-MineCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MineCenter.release.xcconfig"; path = "../../../../mugozb/Project/rechao/klcMPVA/Pods/Target Support Files/Pods-MineCenter/Pods-MineCenter.release.xcconfig"; sourceTree = "<group>"; };
+		F676CA3F243470CD00C098BA /* MineCenterB.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MineCenterB.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		F676CA41243470CD00C098BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F676CAA324347A9000C098BA /* MineCenterRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCenterRes.h; sourceTree = "<group>"; };
+		F676CAA424347A9000C098BA /* MineCenterRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCenterRes.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8282E41223A90A7100B581DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8282E43523A9B8A900B581DD /* LibTools.framework in Frameworks */,
+				821985E723AE052400EEEB52 /* LibProjBase.framework in Frameworks */,
+				824E359323AE0211007E353E /* LibProjModel.framework in Frameworks */,
+				824E357E23AB1CAA007E353E /* LibProjView.framework in Frameworks */,
+				D46007CD6CCFAC48AC62483F /* Pods_MineCenter.framework in Frameworks */,
+				60C23C3B2846F8FE0073F089 /* TXImKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676CA3C243470CD00C098BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		636938AA24E5352D0051575B /* 青少年模式 */ = {
+			isa = PBXGroup;
+			children = (
+				637F25A624E678ED00BEDB70 /* YouthProtectModeVC.h */,
+				637F25A824E678ED00BEDB70 /* YouthProtectModeVC.m */,
+				637F25A724E678ED00BEDB70 /* YouthProtectPwdVC.h */,
+				637F25A924E678ED00BEDB70 /* YouthProtectPwdVC.m */,
+			);
+			name = "青少年模式";
+			sourceTree = "<group>";
+		};
+		637F256A24E6691D00BEDB70 /* 账户注销 */ = {
+			isa = PBXGroup;
+			children = (
+				636938A124E4EA8B0051575B /* AccountCancelVC.h */,
+				636938A224E4EA8B0051575B /* AccountCancelVC.m */,
+			);
+			path = "账户注销";
+			sourceTree = "<group>";
+		};
+		637F256B24E66AA600BEDB70 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9ECFC947251F1F9500803DFC /* AnchorStateSelectedView.h */,
+				9ECFC948251F1F9500803DFC /* AnchorStateSelectedView.m */,
+				637F257F24E66AA600BEDB70 /* HostLevelView.h */,
+				637F257424E66AA600BEDB70 /* HostLevelView.m */,
+				637F256F24E66AA600BEDB70 /* MyCenterAuthenStateView.h */,
+				637F257824E66AA600BEDB70 /* MyCenterAuthenStateView.m */,
+				637F257624E66AA600BEDB70 /* TipsArrow.h */,
+				637F256C24E66AA600BEDB70 /* TipsArrow.m */,
+				637F257024E66AA600BEDB70 /* TodayTaskCell.h */,
+				637F257724E66AA600BEDB70 /* TodayTaskCell.m */,
+				637F257224E66AA600BEDB70 /* UserLevelView.h */,
+				637F257C24E66AA600BEDB70 /* UserLevelView.m */,
+			);
+			name = view;
+			path = "MineCenter/个人中心/view";
+			sourceTree = SOURCE_ROOT;
+		};
+		637F259424E66C3500BEDB70 /* 账户验证 */ = {
+			isa = PBXGroup;
+			children = (
+				637F259524E66C3500BEDB70 /* AccountVerifyVC.m */,
+				637F259624E66C3500BEDB70 /* AccountVerifyVC.h */,
+			);
+			path = "账户验证";
+			sourceTree = "<group>";
+		};
+		637F259924E66C5100BEDB70 /* 联系客服 */ = {
+			isa = PBXGroup;
+			children = (
+				637F259A24E66C7700BEDB70 /* ContactUsVC.h */,
+				637F259B24E66C7700BEDB70 /* ContactUsVC.m */,
+			);
+			path = "联系客服";
+			sourceTree = "<group>";
+		};
+		79A25E8141F2B8D3266E9473 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D7B33FE92495A556247A356 /* Pods-MineCenter.debug.xcconfig */,
+				E81C733010CDE859FA945F0D /* Pods-MineCenter.release.xcconfig */,
+			);
+			name = Pods;
+			path = "../../../../MXPorj/---测试版本/mxaudio/Pods";
+			sourceTree = "<group>";
+		};
+		8282E40B23A90A7100B581DD = {
+			isa = PBXGroup;
+			children = (
+				8282E41723A90A7100B581DD /* MineCenter */,
+				F676CA40243470CD00C098BA /* MineCenterB */,
+				8282E41623A90A7100B581DD /* Products */,
+				8282E42F23A9B26200B581DD /* Frameworks */,
+				79A25E8141F2B8D3266E9473 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		8282E41623A90A7100B581DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8282E41523A90A7100B581DD /* MineCenter.framework */,
+				F676CA3F243470CD00C098BA /* MineCenterB.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8282E41723A90A7100B581DD /* MineCenter */ = {
+			isa = PBXGroup;
+			children = (
+				DB95E15E26B3890500F31E57 /* Route */,
+				DB7A6B582636B5D00068A331 /* 我喜欢 */,
+				E27E25E424F8ABA5005E80F5 /* 等级特权 */,
+				E2712DA924F3C3FC00F817BC /* 在线商城 */,
+				8282E42023A90AE400B581DD /* 个人中心 */,
+				8282E42223A90AE400B581DD /* 设置 */,
+				8282E41923A90A7100B581DD /* Info.plist */,
+				E2B62C4224C88C5200E1DD3F /* MineCenter_header.pch */,
+				8282E41823A90A7100B581DD /* MineCenter.h */,
+				F676CAA324347A9000C098BA /* MineCenterRes.h */,
+				F676CAA424347A9000C098BA /* MineCenterRes.m */,
+			);
+			path = MineCenter;
+			sourceTree = "<group>";
+		};
+		8282E42023A90AE400B581DD /* 个人中心 */ = {
+			isa = PBXGroup;
+			children = (
+				637F25A324E678E100BEDB70 /* MineCenterViewController.h */,
+				637F25A224E678E100BEDB70 /* MineCenterViewController.m */,
+				637F256B24E66AA600BEDB70 /* view */,
+				9EDB28D225885A8300A4F34F /* 守护中心 */,
+				9E6066142581B80E004454A2 /* 邀请用户 */,
+				636938AA24E5352D0051575B /* 青少年模式 */,
+				9E5263B62477BFF900AAABDF /* 任务中心 */,
+				9E5263A924776B2500AAABDF /* 我的账户 */,
+				9E5263A02477613D00AAABDF /* 主播中心 */,
+				9E8E9CA42476AEC500EF194D /* 时间轴 */,
+				9E8E9C9F2476A46D00EF194D /* 我的特权 */,
+			);
+			path = "个人中心";
+			sourceTree = "<group>";
+		};
+		8282E42223A90AE400B581DD /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				DB6B2EEA26E21061003D335B /* 隐私与安全 */,
+				9EA1FA0824EE945300C7860E /* MineSettingVC.h */,
+				9EA1FA0A24EE945300C7860E /* MineSettingVC.m */,
+				9EA1FA0B24EE945300C7860E /* View */,
+				E2F7F90824F513D300958AB4 /* 消息设置 */,
+				E284B84424EE5D940026B3EE /* 关于我们 */,
+				637F259924E66C5100BEDB70 /* 联系客服 */,
+				637F259424E66C3500BEDB70 /* 账户验证 */,
+				637F256A24E6691D00BEDB70 /* 账户注销 */,
+				9EA1FA4B24EF5F9D00C7860E /* 修改与绑定手机 */,
+			);
+			path = "设置";
+			sourceTree = "<group>";
+		};
+		8282E42F23A9B26200B581DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60C23C3A2846F8FE0073F089 /* TXImKit.framework */,
+				E2E4CCE524C0247400C5B10C /* IMSocket.framework */,
+				824E359023AE017C007E353E /* LibProjBase.framework */,
+				824E357D23AB1CAA007E353E /* LibProjView.framework */,
+				8282E43423A9B8A900B581DD /* LibTools.framework */,
+				8282E43023A9B26200B581DD /* LibProjModel.framework */,
+				C0694CA63FAF778789F80A04 /* Pods_MineCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84282851277D65C800FFE1AD /* rank */ = {
+			isa = PBXGroup;
+			children = (
+				9E606F0D258201AA004454A2 /* MyInviteIncomeRankCell.h */,
+				9E606F0C258201AA004454A2 /* MyInviteIncomeRankCell.m */,
+				9E6066162581B80E004454A2 /* MyInvteIncomeRankVC.h */,
+				9E6066182581B80E004454A2 /* MyInvteIncomeRankVC.m */,
+				84282852277D65E900FFE1AD /* MyInviteBottomView.h */,
+				84282853277D65E900FFE1AD /* MyInviteBottomView.m */,
+			);
+			path = rank;
+			sourceTree = "<group>";
+		};
+		84B22E132760D00100308551 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84B22E1C2760DEB600308551 /* WtihdarwSelectedBtn.h */,
+				84B22E1D2760DEB600308551 /* WtihdarwSelectedBtn.m */,
+				84B22E142760D0C500308551 /* ShowWithdrawView.h */,
+				84B22E152760D0C500308551 /* ShowWithdrawView.m */,
+				84B22E182760D0DF00308551 /* ShowExchangeView.h */,
+				84B22E192760D0DF00308551 /* ShowExchangeView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		9E21ED78258740B2004384EA /* table */ = {
+			isa = PBXGroup;
+			children = (
+				9E21ED79258740CA004384EA /* userTaskCenterVc.h */,
+				9E21ED7A258740CA004384EA /* userTaskCenterVc.m */,
+				9E21ED7D258740E0004384EA /* anchorTaskCenterVc.h */,
+				9E21ED7E258740E0004384EA /* anchorTaskCenterVc.m */,
+				9EDB28CE2587896B00A4F34F /* userTaskRewardToastView.h */,
+				9EDB28CF2587896B00A4F34F /* userTaskRewardToastView.m */,
+			);
+			path = table;
+			sourceTree = "<group>";
+		};
+		9E5263A02477613D00AAABDF /* 主播中心 */ = {
+			isa = PBXGroup;
+			children = (
+				9E5263A12477616000AAABDF /* AnchorCenterViewController.h */,
+				9E5263A22477616000AAABDF /* AnchorCenterViewController.m */,
+				9EB1F225257F17D0004791A1 /* view */,
+			);
+			path = "主播中心";
+			sourceTree = "<group>";
+		};
+		9E5263A924776B2500AAABDF /* 我的账户 */ = {
+			isa = PBXGroup;
+			children = (
+				9E5263AA24776B4700AAABDF /* MyAccountViewController.h */,
+				9E5263AB24776B4700AAABDF /* MyAccountViewController.m */,
+				9E5263AE24777FD000AAABDF /* paySelectedBtn.h */,
+				9E5263AF24777FD000AAABDF /* paySelectedBtn.m */,
+			);
+			path = "我的账户";
+			sourceTree = "<group>";
+		};
+		9E5263B62477BFF900AAABDF /* 任务中心 */ = {
+			isa = PBXGroup;
+			children = (
+				9E21ED7425873E6D004384EA /* myTaskCenterVc.h */,
+				9E21ED7525873E6D004384EA /* myTaskCenterVc.m */,
+				9E21ED78258740B2004384EA /* table */,
+			);
+			path = "任务中心";
+			sourceTree = "<group>";
+		};
+		9E6066142581B80E004454A2 /* 邀请用户 */ = {
+			isa = PBXGroup;
+			children = (
+				84282851277D65C800FFE1AD /* rank */,
+				9E60661D2581B80E004454A2 /* 佣金 */,
+				9E6066192581B80E004454A2 /* 图片分享 */,
+				9E60663A2581F031004454A2 /* InviteRecordVc.h */,
+				9E60663B2581F031004454A2 /* InviteRecordVc.m */,
+				DBC1891725FC4E380058CB00 /* MyInviteCodeVC.h */,
+				DBC1891825FC4E380058CB00 /* MyInviteCodeVC.m */,
+				DBC1891925FC4E380058CB00 /* MyInviteCodeVC.xib */,
+				9E60661C2581B80E004454A2 /* View */,
+			);
+			path = "邀请用户";
+			sourceTree = "<group>";
+		};
+		9E6066192581B80E004454A2 /* 图片分享 */ = {
+			isa = PBXGroup;
+			children = (
+				9E60661B2581B80E004454A2 /* PictureSharingVC.h */,
+				9E60661A2581B80E004454A2 /* PictureSharingVC.m */,
+				9E606F35258322E1004454A2 /* layout */,
+			);
+			path = "图片分享";
+			sourceTree = "<group>";
+		};
+		9E60661C2581B80E004454A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9E6066282581B8A8004454A2 /* InviteUserRollView.h */,
+				9E6066292581B8A8004454A2 /* InviteUserRollView.m */,
+				9E60662C2581BCF2004454A2 /* InviteRollTableView.h */,
+				9E60662D2581BCF2004454A2 /* InviteRollTableView.m */,
+				9E60663E2581F2C7004454A2 /* InviteRecordTableViewCell.h */,
+				9E60663F2581F2C7004454A2 /* InviteRecordTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9E60661D2581B80E004454A2 /* 佣金 */ = {
+			isa = PBXGroup;
+			children = (
+				84B22E132760D00100308551 /* view */,
+				9E60661F2581B80E004454A2 /* CommissWithdrawVc.h */,
+				9E60661E2581B80E004454A2 /* CommissWithdrawVc.m */,
+			);
+			path = "佣金";
+			sourceTree = "<group>";
+		};
+		9E606F35258322E1004454A2 /* layout */ = {
+			isa = PBXGroup;
+			children = (
+				9E606F36258322E1004454A2 /* KlcCardCollectionViewFlowLayout.h */,
+				9E606F38258322E1004454A2 /* KlcCardCollectionViewFlowLayout.m */,
+				9E606F39258322E1004454A2 /* KLCConstant.h */,
+				9E606F37258322E1004454A2 /* KLCConstant.m */,
+				9E606F3E25832491004454A2 /* InvitePictureCollectionViewCell.h */,
+				9E606F3F25832491004454A2 /* InvitePictureCollectionViewCell.m */,
+			);
+			path = layout;
+			sourceTree = "<group>";
+		};
+		9E6F08BE24F5FE940015C53D /* 特权设置 */ = {
+			isa = PBXGroup;
+			children = (
+				9E6F08BF24F5FE940015C53D /* PrivilegeSettingVC.h */,
+				9E6F08C024F5FE940015C53D /* PrivilegeSettingVC.m */,
+				9E6F08C324F604E30015C53D /* PrivilegeSettingTableViewCell.h */,
+				9E6F08C424F604E30015C53D /* PrivilegeSettingTableViewCell.m */,
+			);
+			path = "特权设置";
+			sourceTree = "<group>";
+		};
+		9E8E9C9F2476A46D00EF194D /* 我的特权 */ = {
+			isa = PBXGroup;
+			children = (
+				9E8E9CA02476A4D500EF194D /* MyPrivilegeViewController.h */,
+				9E8E9CA12476A4D500EF194D /* MyPrivilegeViewController.m */,
+				9E6F08BE24F5FE940015C53D /* 特权设置 */,
+			);
+			path = "我的特权";
+			sourceTree = "<group>";
+		};
+		9E8E9CA42476AEC500EF194D /* 时间轴 */ = {
+			isa = PBXGroup;
+			children = (
+				9E8E9CA52476AEE200EF194D /* MyTimeActivityListViewController.h */,
+				9E8E9CA62476AEE200EF194D /* MyTimeActivityListViewController.m */,
+				9E8E9CAD2476AF5900EF194D /* MineTimeAxisTableViewCell.h */,
+				9E8E9CAE2476AF5900EF194D /* MineTimeAxisTableViewCell.m */,
+			);
+			path = "时间轴";
+			sourceTree = "<group>";
+		};
+		9EA1FA0B24EE945300C7860E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9EA1FA0E24EE945300C7860E /* MineCenterItemCell.h */,
+				9EA1FA0D24EE945300C7860E /* MineCenterItemCell.m */,
+				9EA1FA0F24EE945300C7860E /* MineSettingItemCell.h */,
+				9EA1FA0C24EE945300C7860E /* MineSettingItemCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9EA1FA4B24EF5F9D00C7860E /* 修改与绑定手机 */ = {
+			isa = PBXGroup;
+			children = (
+				9EA1FA4C24EF600F00C7860E /* ModifyOrBindPhoneVC.h */,
+				9EA1FA4D24EF600F00C7860E /* ModifyOrBindPhoneVC.m */,
+			);
+			path = "修改与绑定手机";
+			sourceTree = "<group>";
+		};
+		9EB1F225257F17D0004791A1 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9EB1F226257F1BD5004791A1 /* AnchorAuthorityStatusTipView.h */,
+				9EB1F227257F1BD5004791A1 /* AnchorAuthorityStatusTipView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		9EDB28D225885A8300A4F34F /* 守护中心 */ = {
+			isa = PBXGroup;
+			children = (
+				9EDB28D325885B3E00A4F34F /* myGuardCenterVc.h */,
+				9EDB28D425885B3E00A4F34F /* myGuardCenterVc.m */,
+				9E4EBF662588BD7100A4BB8D /* guardPrivilegeVc.h */,
+				9E4EBF672588BD7100A4BB8D /* guardPrivilegeVc.m */,
+				9EDB28D725885BBB00A4F34F /* table */,
+			);
+			path = "守护中心";
+			sourceTree = "<group>";
+		};
+		9EDB28D725885BBB00A4F34F /* table */ = {
+			isa = PBXGroup;
+			children = (
+				9EDB28DC25885C8900A4F34F /* guardListVc.h */,
+				9EDB28DD25885C8900A4F34F /* guardListVc.m */,
+				9E4EBF792589B10B00A4BB8D /* guardTableViewCell.h */,
+				9E4EBF782589B10B00A4BB8D /* guardTableViewCell.m */,
+			);
+			path = table;
+			sourceTree = "<group>";
+		};
+		DB6B2EEA26E21061003D335B /* 隐私与安全 */ = {
+			isa = PBXGroup;
+			children = (
+				DB6B2EEF26E21140003D335B /* PrivacyAndSafeVC.h */,
+				DB6B2EF026E21140003D335B /* PrivacyAndSafeVC.m */,
+				DB6B2EF326E21676003D335B /* PrivacyAndSafeCell.h */,
+				DB6B2EF426E21676003D335B /* PrivacyAndSafeCell.m */,
+			);
+			path = "隐私与安全";
+			sourceTree = "<group>";
+		};
+		DB7A6B582636B5D00068A331 /* 我喜欢 */ = {
+			isa = PBXGroup;
+			children = (
+				DB7A6B6B2636BD090068A331 /* subVC */,
+				DB7A6B5C2636B63B0068A331 /* MineLikeInfoListVC.h */,
+				DB7A6B5B2636B63B0068A331 /* MineLikeInfoListVC.m */,
+			);
+			path = "我喜欢";
+			sourceTree = "<group>";
+		};
+		DB7A6B6B2636BD090068A331 /* subVC */ = {
+			isa = PBXGroup;
+			children = (
+				DB7A6B6D2636BD170068A331 /* MineLikeShortVideoVC.h */,
+				DB7A6B6C2636BD170068A331 /* MineLikeShortVideoVC.m */,
+			);
+			path = subVC;
+			sourceTree = "<group>";
+		};
+		DB95E15E26B3890500F31E57 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				DB95E15F26B3892600F31E57 /* MineCenterRoute.h */,
+				DB95E16026B3892600F31E57 /* MineCenterRoute.m */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		E2712DA924F3C3FC00F817BC /* 在线商城 */ = {
+			isa = PBXGroup;
+			children = (
+				E2712DAA24F3C3FC00F817BC /* OnlineMarketViewController.h */,
+				E2712DAB24F3C3FC00F817BC /* OnlineMarketViewController.m */,
+			);
+			path = "在线商城";
+			sourceTree = "<group>";
+		};
+		E27E25E424F8ABA5005E80F5 /* 等级特权 */ = {
+			isa = PBXGroup;
+			children = (
+				E27E25E524F8ABD0005E80F5 /* PrivilegeLevelVC.h */,
+				E27E25E624F8ABD0005E80F5 /* PrivilegeLevelVC.m */,
+			);
+			path = "等级特权";
+			sourceTree = "<group>";
+		};
+		E284B84424EE5D940026B3EE /* 关于我们 */ = {
+			isa = PBXGroup;
+			children = (
+				E284B85124EE5DDD0026B3EE /* AboutUsViewController.h */,
+				E284B85024EE5DDD0026B3EE /* AboutUsViewController.m */,
+			);
+			path = "关于我们";
+			sourceTree = "<group>";
+		};
+		E2F7F90824F513D300958AB4 /* 消息设置 */ = {
+			isa = PBXGroup;
+			children = (
+				E2F7F90924F513D300958AB4 /* MessageSettingVC.h */,
+				E2F7F90A24F513D300958AB4 /* MessageSettingVC.m */,
+			);
+			path = "消息设置";
+			sourceTree = "<group>";
+		};
+		F676CA40243470CD00C098BA /* MineCenterB */ = {
+			isa = PBXGroup;
+			children = (
+				F676CA41243470CD00C098BA /* Info.plist */,
+			);
+			path = MineCenterB;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8282E41023A90A7100B581DD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84282854277D65E900FFE1AD /* MyInviteBottomView.h in Headers */,
+				84B22E1E2760DEB600308551 /* WtihdarwSelectedBtn.h in Headers */,
+				DB95E16126B3892600F31E57 /* MineCenterRoute.h in Headers */,
+				9E606F3D258322E2004454A2 /* KLCConstant.h in Headers */,
+				9E21ED7B258740CA004384EA /* userTaskCenterVc.h in Headers */,
+				9E21ED7F258740E0004384EA /* anchorTaskCenterVc.h in Headers */,
+				9E606F4025832491004454A2 /* InvitePictureCollectionViewCell.h in Headers */,
+				637F258624E66AA600BEDB70 /* UserLevelView.h in Headers */,
+				E284B85324EE5DDD0026B3EE /* AboutUsViewController.h in Headers */,
+				9E6F08C524F604E30015C53D /* PrivilegeSettingTableViewCell.h in Headers */,
+				DB7A6B5E2636B63B0068A331 /* MineLikeInfoListVC.h in Headers */,
+				9E6066252581B80E004454A2 /* PictureSharingVC.h in Headers */,
+				9E60662E2581BCF2004454A2 /* InviteRollTableView.h in Headers */,
+				9E606F3A258322E2004454A2 /* KlcCardCollectionViewFlowLayout.h in Headers */,
+				9E4EBF7B2589B10B00A4BB8D /* guardTableViewCell.h in Headers */,
+				9E60663C2581F031004454A2 /* InviteRecordVc.h in Headers */,
+				9EDB28DE25885C8900A4F34F /* guardListVc.h in Headers */,
+				9E60662A2581B8A8004454A2 /* InviteUserRollView.h in Headers */,
+				637F259C24E66C7700BEDB70 /* ContactUsVC.h in Headers */,
+				637F259324E66AA600BEDB70 /* HostLevelView.h in Headers */,
+				DB7A6B6F2636BD170068A331 /* MineLikeShortVideoVC.h in Headers */,
+				636938A324E4EA8B0051575B /* AccountCancelVC.h in Headers */,
+				637F259824E66C3500BEDB70 /* AccountVerifyVC.h in Headers */,
+				84B22E1A2760D0DF00308551 /* ShowExchangeView.h in Headers */,
+				9ECFC949251F1F9500803DFC /* AnchorStateSelectedView.h in Headers */,
+				9E6066402581F2C7004454A2 /* InviteRecordTableViewCell.h in Headers */,
+				9EA1FA1724EE945300C7860E /* MineSettingItemCell.h in Headers */,
+				637F25AB24E678ED00BEDB70 /* YouthProtectPwdVC.h in Headers */,
+				637F258324E66AA600BEDB70 /* MyCenterAuthenStateView.h in Headers */,
+				9EA1FA1624EE945300C7860E /* MineCenterItemCell.h in Headers */,
+				9E6066272581B80E004454A2 /* CommissWithdrawVc.h in Headers */,
+				9EDB28D02587896B00A4F34F /* userTaskRewardToastView.h in Headers */,
+				84B22E162760D0C500308551 /* ShowWithdrawView.h in Headers */,
+				9E606F0F258201AA004454A2 /* MyInviteIncomeRankCell.h in Headers */,
+				637F258A24E66AA600BEDB70 /* TipsArrow.h in Headers */,
+				637F258424E66AA600BEDB70 /* TodayTaskCell.h in Headers */,
+				DB6B2EF126E21140003D335B /* PrivacyAndSafeVC.h in Headers */,
+				9EB1F228257F1BD5004791A1 /* AnchorAuthorityStatusTipView.h in Headers */,
+				DBC1891A25FC4E380058CB00 /* MyInviteCodeVC.h in Headers */,
+				9E4EBF682588BD7100A4BB8D /* guardPrivilegeVc.h in Headers */,
+				9EDB28D525885B3E00A4F34F /* myGuardCenterVc.h in Headers */,
+				9E21ED7625873E6E004384EA /* myTaskCenterVc.h in Headers */,
+				DB6B2EF526E21676003D335B /* PrivacyAndSafeCell.h in Headers */,
+				9E6066212581B80E004454A2 /* MyInvteIncomeRankVC.h in Headers */,
+				E27E25E724F8ABD0005E80F5 /* PrivilegeLevelVC.h in Headers */,
+				9E6F08C124F5FE940015C53D /* PrivilegeSettingVC.h in Headers */,
+				637F25AA24E678ED00BEDB70 /* YouthProtectModeVC.h in Headers */,
+				E2F7F90B24F513D300958AB4 /* MessageSettingVC.h in Headers */,
+				E2712DAC24F3C3FC00F817BC /* OnlineMarketViewController.h in Headers */,
+				9EA1FA4E24EF600F00C7860E /* ModifyOrBindPhoneVC.h in Headers */,
+				9EA1FA1124EE945300C7860E /* MineSettingVC.h in Headers */,
+				637F25A524E678E100BEDB70 /* MineCenterViewController.h in Headers */,
+				9E8E9CAF2476AF5900EF194D /* MineTimeAxisTableViewCell.h in Headers */,
+				9E5263B024777FD000AAABDF /* paySelectedBtn.h in Headers */,
+				F676CAA524347A9000C098BA /* MineCenterRes.h in Headers */,
+				E2B62C4324C88C5200E1DD3F /* MineCenter_header.pch in Headers */,
+				9E5263A32477616000AAABDF /* AnchorCenterViewController.h in Headers */,
+				9E5263AC24776B4700AAABDF /* MyAccountViewController.h in Headers */,
+				9E8E9CA72476AEE200EF194D /* MyTimeActivityListViewController.h in Headers */,
+				9E8E9CA22476A4D500EF194D /* MyPrivilegeViewController.h in Headers */,
+				8282E41A23A90A7100B581DD /* MineCenter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8282E41423A90A7100B581DD /* MineCenter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8282E41D23A90A7100B581DD /* Build configuration list for PBXNativeTarget "MineCenter" */;
+			buildPhases = (
+				CEC5D5639953317B18702464 /* [CP] Check Pods Manifest.lock */,
+				8282E41023A90A7100B581DD /* Headers */,
+				8282E41123A90A7100B581DD /* Sources */,
+				8282E41223A90A7100B581DD /* Frameworks */,
+				8282E41323A90A7100B581DD /* Resources */,
+				E2744BEA24371FEE00881780 /* ShellScript */,
+				7413CCBB8C9916585F61E722 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2471BB624BC643100D73406 /* PBXTargetDependency */,
+			);
+			name = MineCenter;
+			productName = MXDMineCenter;
+			productReference = 8282E41523A90A7100B581DD /* MineCenter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F676CA3E243470CD00C098BA /* MineCenterB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F676CA44243470CD00C098BA /* Build configuration list for PBXNativeTarget "MineCenterB" */;
+			buildPhases = (
+				F676CA3B243470CD00C098BA /* Sources */,
+				F676CA3C243470CD00C098BA /* Frameworks */,
+				F676CA3D243470CD00C098BA /* Resources */,
+				E2744BEB2437206900881780 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MineCenterB;
+			productName = MXDMineCenterB;
+			productReference = F676CA3F243470CD00C098BA /* MineCenterB.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8282E40C23A90A7100B581DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = KLC;
+				TargetAttributes = {
+					8282E41423A90A7100B581DD = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					F676CA3E243470CD00C098BA = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = 8282E40F23A90A7100B581DD /* Build configuration list for PBXProject "MineCenter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8282E40B23A90A7100B581DD;
+			productRefGroup = 8282E41623A90A7100B581DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8282E41423A90A7100B581DD /* MineCenter */,
+				F676CA3E243470CD00C098BA /* MineCenterB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8282E41323A90A7100B581DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC1891C25FC4E380058CB00 /* MyInviteCodeVC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676CA3D243470CD00C098BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC1891F25FC5C250058CB00 /* MyInviteCodeVC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7413CCBB8C9916585F61E722 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MineCenter/Pods-MineCenter-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MineCenter/Pods-MineCenter-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MineCenter/Pods-MineCenter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEC5D5639953317B18702464 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MineCenter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2744BEA24371FEE00881780 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		E2744BEB2437206900881780 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8282E41123A90A7100B581DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E4EBF692588BD7100A4BB8D /* guardPrivilegeVc.m in Sources */,
+				9E4EBF7A2589B10B00A4BB8D /* guardTableViewCell.m in Sources */,
+				9E606F3B258322E2004454A2 /* KLCConstant.m in Sources */,
+				636938A424E4EA8B0051575B /* AccountCancelVC.m in Sources */,
+				84282855277D65E900FFE1AD /* MyInviteBottomView.m in Sources */,
+				9EB1F229257F1BD5004791A1 /* AnchorAuthorityStatusTipView.m in Sources */,
+				9E6066242581B80E004454A2 /* PictureSharingVC.m in Sources */,
+				9E5263A42477616000AAABDF /* AnchorCenterViewController.m in Sources */,
+				DB6B2EF626E21676003D335B /* PrivacyAndSafeCell.m in Sources */,
+				F676CAA624347A9000C098BA /* MineCenterRes.m in Sources */,
+				84B22E1F2760DEB600308551 /* WtihdarwSelectedBtn.m in Sources */,
+				9E8E9CA82476AEE200EF194D /* MyTimeActivityListViewController.m in Sources */,
+				E284B85224EE5DDD0026B3EE /* AboutUsViewController.m in Sources */,
+				9E606F0E258201AA004454A2 /* MyInviteIncomeRankCell.m in Sources */,
+				9EA1FA4F24EF600F00C7860E /* ModifyOrBindPhoneVC.m in Sources */,
+				DB95E16226B3892600F31E57 /* MineCenterRoute.m in Sources */,
+				9EDB28DF25885C8900A4F34F /* guardListVc.m in Sources */,
+				637F25A424E678E100BEDB70 /* MineCenterViewController.m in Sources */,
+				9E6F08C624F604E30015C53D /* PrivilegeSettingTableViewCell.m in Sources */,
+				9EDB28D625885B3E00A4F34F /* myGuardCenterVc.m in Sources */,
+				9E5263AD24776B4700AAABDF /* MyAccountViewController.m in Sources */,
+				9E6066412581F2C7004454A2 /* InviteRecordTableViewCell.m in Sources */,
+				9E8E9CA32476A4D500EF194D /* MyPrivilegeViewController.m in Sources */,
+				637F258C24E66AA600BEDB70 /* MyCenterAuthenStateView.m in Sources */,
+				84B22E1B2760D0DF00308551 /* ShowExchangeView.m in Sources */,
+				637F25AC24E678ED00BEDB70 /* YouthProtectModeVC.m in Sources */,
+				9E606F4125832491004454A2 /* InvitePictureCollectionViewCell.m in Sources */,
+				637F258024E66AA600BEDB70 /* TipsArrow.m in Sources */,
+				DB7A6B5D2636B63B0068A331 /* MineLikeInfoListVC.m in Sources */,
+				9E6066262581B80E004454A2 /* CommissWithdrawVc.m in Sources */,
+				637F258824E66AA600BEDB70 /* HostLevelView.m in Sources */,
+				9EA1FA1424EE945300C7860E /* MineSettingItemCell.m in Sources */,
+				9E5263B124777FD000AAABDF /* paySelectedBtn.m in Sources */,
+				9E60663D2581F031004454A2 /* InviteRecordVc.m in Sources */,
+				637F259724E66C3500BEDB70 /* AccountVerifyVC.m in Sources */,
+				E27E25E824F8ABD0005E80F5 /* PrivilegeLevelVC.m in Sources */,
+				9EA1FA1524EE945300C7860E /* MineCenterItemCell.m in Sources */,
+				84B22E172760D0C500308551 /* ShowWithdrawView.m in Sources */,
+				637F259D24E66C7700BEDB70 /* ContactUsVC.m in Sources */,
+				9EA1FA1324EE945300C7860E /* MineSettingVC.m in Sources */,
+				9E21ED7725873E6E004384EA /* myTaskCenterVc.m in Sources */,
+				9ECFC94A251F1F9500803DFC /* AnchorStateSelectedView.m in Sources */,
+				DB6B2EF226E21140003D335B /* PrivacyAndSafeVC.m in Sources */,
+				9EDB28D12587896B00A4F34F /* userTaskRewardToastView.m in Sources */,
+				9E21ED80258740E0004384EA /* anchorTaskCenterVc.m in Sources */,
+				9E6F08C224F5FE940015C53D /* PrivilegeSettingVC.m in Sources */,
+				9E6066232581B80E004454A2 /* MyInvteIncomeRankVC.m in Sources */,
+				9E60662F2581BCF2004454A2 /* InviteRollTableView.m in Sources */,
+				637F259024E66AA600BEDB70 /* UserLevelView.m in Sources */,
+				E2F7F90C24F513D300958AB4 /* MessageSettingVC.m in Sources */,
+				637F258B24E66AA600BEDB70 /* TodayTaskCell.m in Sources */,
+				9E8E9CB02476AF5900EF194D /* MineTimeAxisTableViewCell.m in Sources */,
+				637F25AD24E678ED00BEDB70 /* YouthProtectPwdVC.m in Sources */,
+				9E21ED7C258740CA004384EA /* userTaskCenterVc.m in Sources */,
+				9E60662B2581B8A8004454A2 /* InviteUserRollView.m in Sources */,
+				DBC1891B25FC4E380058CB00 /* MyInviteCodeVC.m in Sources */,
+				E2712DAD24F3C3FC00F817BC /* OnlineMarketViewController.m in Sources */,
+				9E606F3C258322E2004454A2 /* KlcCardCollectionViewFlowLayout.m in Sources */,
+				DB7A6B6E2636BD170068A331 /* MineLikeShortVideoVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676CA3B243470CD00C098BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2471BB624BC643100D73406 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F676CA3E243470CD00C098BA /* MineCenterB */;
+			targetProxy = E2471BB524BC643100D73406 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8282E41B23A90A7100B581DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8282E41C23A90A7100B581DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8282E41E23A90A7100B581DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D7B33FE92495A556247A356 /* Pods-MineCenter.debug.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MineCenter/MineCenter_header.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BRPickerView/BRPickerView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CYLTabBarController/CYLTabBarController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JLRoutes/JLRoutes.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView/JXCategoryView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RTRootNavigationController/RTRootNavigationController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JPush\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_sharesdk\"",
+					"\"${SRCROOT}/../../../framework/XTMediaKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/MineCenter/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MineCenter/1v1设置/1v1通话设置/我的声音",
+				);
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.MineCenter;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8282E41F23A90A7100B581DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E81C733010CDE859FA945F0D /* Pods-MineCenter.release.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MineCenter/MineCenter_header.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BRPickerView/BRPickerView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CYLTabBarController/CYLTabBarController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JLRoutes/JLRoutes.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView/JXCategoryView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RTRootNavigationController/RTRootNavigationController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JPush\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_sharesdk\"",
+					"\"${SRCROOT}/../../../framework/XTMediaKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/MineCenter/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MineCenter/1v1设置/1v1通话设置/我的声音",
+				);
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.MineCenter;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F676CA42243470CD00C098BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = NGXJT9M3FH;
+				INFOPLIST_FILE = MineCenterB/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klc.MineCenterB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		F676CA43243470CD00C098BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = NGXJT9M3FH;
+				INFOPLIST_FILE = MineCenterB/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klc.MineCenterB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8282E40F23A90A7100B581DD /* Build configuration list for PBXProject "MineCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8282E41B23A90A7100B581DD /* Debug */,
+				8282E41C23A90A7100B581DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8282E41D23A90A7100B581DD /* Build configuration list for PBXNativeTarget "MineCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8282E41E23A90A7100B581DD /* Debug */,
+				8282E41F23A90A7100B581DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F676CA44243470CD00C098BA /* Build configuration list for PBXNativeTarget "MineCenterB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F676CA42243470CD00C098BA /* Debug */,
+				F676CA43243470CD00C098BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8282E40C23A90A7100B581DD /* Project object */;
+}

@@ -1,0 +1,62 @@
+//
+//  shopping_header.pch
+//  Shopping
+//
+//  Created by klc on 2020/7/3.
+//  Copyright © 2020 klc. All rights reserved.
+//
+
+#ifndef shopping_header_pch
+#define shopping_header_pch
+typedef enum {
+    MyCommodityStatusAll = 0,//全部
+    MyCommodityStatusPending,//待上架
+    MyCommodityStatusOnShelf ,//已上架
+    MyCommodityStatusFreezing//冻结中
+}MyCommodityStatus;
+
+typedef enum {
+    OrderTypeForCustomer = 0,//用户端
+    OrderTypeForMerchant//商家端
+}OrderType;
+
+typedef enum {
+    HostOrderStatusAll = 0,//全部
+    HostOrderStatusWaittingForPay,//待付款
+    HostOrderStatusWaittingForDeliver ,//待发货
+    HostOrderStatusWaittingForReceive,//待收货
+    HostOrderStatusForComplete,//完成
+    HostOrderStatusForCancel//取消
+}HostOrderStatus;
+
+typedef enum {
+    QuitOrderStatusAll = 0,//无
+    QuitOrderStatusWaittingCheck,//待审核
+    QuitOrderStatusWaittingForDeliver,//待发货
+    QuitOrderStatusWaittingForReceive,//待收货
+    QuitOrderStatusRefunding   =4,//退款中
+    QuitOrderStatusForComplete,//退款完成
+    QuitOrderStatusForFail     =6,//退款失败或取消
+    QuitOrderStatusForFefuse   =7,//退款被拒绝
+}QuitOrderStatus;
+
+
+#import <LibTools/LibTools.h>
+#import <LibProjBase/LibProjBase.h>
+#import <LibProjBase/ProjConfig.h>
+#import <LibProjBase/RouteManager.h>
+#import <LibProjBase/AppRouteName.h>
+
+#import <LibProjModel/HttpApiShopGoods.h>
+
+#import <MJRefresh/MJRefresh.h>
+#import <Masonry/Masonry.h>
+
+#import <SDWebImage/SDWebImage.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+#import "JXCategoryView.h"
+ 
+ 
+
+#endif /* shopping_header_pch */

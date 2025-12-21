@@ -1,0 +1,26 @@
+//
+//  dynamic_header.pch
+//  BFDynamicCircle
+//
+//  Created by ssssssss on 2020/8/20.
+//  Copyright © 2020 KLC. All rights reserved.
+//
+
+#ifndef dynamic_header_pch
+#define dynamic_header_pch
+
+typedef enum {
+    DynamicPlayTypeSort = 0,//分类动态
+    DynamicPlayTypeTopic,//话题动态
+    DynamicPlayTypeUser,//个人动态
+    DynamicPlayTypeComment,//评论动态
+    DynamicPlayTypeSingle,//单独动态
+}DynamicPlayType;
+#import <LibProjBase/ProjConfig.h>
+#import <LibProjBase/RouteManager.h>
+#import <LibProjBase/AppRouteName.h>
+#import <LibTools/LibTools.h>
+#import <SDWebImage/SDWebImage.h>
+ 
+
+#endif /* dynamic_header_pch */

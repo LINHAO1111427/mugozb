@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		E267FB9F24A97C9700B4FBC9 /* XTAggregate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E267FBA224A97C9700B4FBC9 /* Build configuration list for PBXAggregateTarget "XTAggregate" */;
+			buildPhases = (
+				E267FBA324A97CAE00B4FBC9 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = XTAggregate;
+			productName = AVAggregate;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		4135913B3F4E2A99926843FD /* Pods_XTMediaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D255CB9E58BFD94DBC9B29 /* Pods_XTMediaKit.framework */; };
+		60A6D095284461A60096A199 /* AlyCloudObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 60A6D08F284461A60096A199 /* AlyCloudObj.h */; };
+		60A6D096284461A60096A199 /* AliyunOSSiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A6D091284461A60096A199 /* AliyunOSSiOS.framework */; };
+		60A6D098284461A60096A199 /* AlyCloudObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A6D093284461A60096A199 /* AlyCloudObj.m */; };
+		60A6D09A284462FD0096A199 /* LibProjModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A6D099284462FD0096A199 /* LibProjModel.framework */; };
+		60A6D0A2284464B80096A199 /* AVHttpSessionObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A6D09E284464B80096A199 /* AVHttpSessionObj.m */; };
+		60A6D0A3284464B80096A199 /* AVIphoneInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 60A6D09F284464B80096A199 /* AVIphoneInfo.h */; };
+		60A6D0A4284464B80096A199 /* AVHttpSessionObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 60A6D0A0284464B80096A199 /* AVHttpSessionObj.h */; };
+		60A6D0A5284464B80096A199 /* AVIphoneInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A6D0A1284464B80096A199 /* AVIphoneInfo.m */; };
+		6384D8872536CF5000AB9F81 /* XTAudioTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6384D8852536CF5000AB9F81 /* XTAudioTool.h */; };
+		6384D8882536CF5000AB9F81 /* XTAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6384D8862536CF5000AB9F81 /* XTAudioTool.m */; };
+		84535E45278C05B600B15D17 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84535E44278C05A900B15D17 /* libresolv.9.tbd */; };
+		84E11EE627C37A8A00891C06 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D97642685E29D00347FD2 /* CoreTelephony.framework */; };
+		84E11EE827C37A9600891C06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E11EE727C37A9600891C06 /* Foundation.framework */; };
+		DB5D97652685E29D00347FD2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D97642685E29D00347FD2 /* CoreTelephony.framework */; };
+		DB5D97672685E2AB00347FD2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D97662685E2AB00347FD2 /* SystemConfiguration.framework */; };
+		DB5D97692685E2C100347FD2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D97682685E2B200347FD2 /* libc++.tbd */; };
+		E26A517E24CED44400A495AD /* XTUploadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E26A517724CED44400A495AD /* XTUploadFile.m */; };
+		E26A517F24CED44400A495AD /* XTUploadFile.h in Headers */ = {isa = PBXBuildFile; fileRef = E26A517824CED44400A495AD /* XTUploadFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E26A518924CED61E00A495AD /* XTMediaConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E26A518824CED61E00A495AD /* XTMediaConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E28BDF6724A21B0B004CB929 /* XTMediaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E28BDF6524A21B0B004CB929 /* XTMediaKit.h */; };
+		E28BDF8124A21BB7004CB929 /* XTCameraTool.h in Headers */ = {isa = PBXBuildFile; fileRef = E28BDF7524A21BB7004CB929 /* XTCameraTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E28BDF8224A21BB7004CB929 /* VideoConversionCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = E28BDF7624A21BB7004CB929 /* VideoConversionCoding.h */; };
+		E28BDF8324A21BB7004CB929 /* VideoConversionCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E28BDF7724A21BB7004CB929 /* VideoConversionCoding.m */; };
+		E28BDF8424A21BB7004CB929 /* XTCameraTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E28BDF7824A21BB7004CB929 /* XTCameraTool.m */; };
+		E2B87CD3250BB0E2008B8B20 /* XTMediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B87CD1250BB0E2008B8B20 /* XTMediaManager.m */; };
+		E2B87CD4250BB0E2008B8B20 /* XTMediaManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E2B87CD2250BB0E2008B8B20 /* XTMediaManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		60A6D08F284461A60096A199 /* AlyCloudObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlyCloudObj.h; sourceTree = "<group>"; };
+		60A6D091284461A60096A199 /* AliyunOSSiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunOSSiOS.framework; sourceTree = "<group>"; };
+		60A6D093284461A60096A199 /* AlyCloudObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlyCloudObj.m; sourceTree = "<group>"; };
+		60A6D099284462FD0096A199 /* LibProjModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60A6D09E284464B80096A199 /* AVHttpSessionObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVHttpSessionObj.m; sourceTree = "<group>"; };
+		60A6D09F284464B80096A199 /* AVIphoneInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVIphoneInfo.h; sourceTree = "<group>"; };
+		60A6D0A0284464B80096A199 /* AVHttpSessionObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVHttpSessionObj.h; sourceTree = "<group>"; };
+		60A6D0A1284464B80096A199 /* AVIphoneInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVIphoneInfo.m; sourceTree = "<group>"; };
+		6384D8852536CF5000AB9F81 /* XTAudioTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTAudioTool.h; sourceTree = "<group>"; };
+		6384D8862536CF5000AB9F81 /* XTAudioTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTAudioTool.m; sourceTree = "<group>"; };
+		84535E42278C057D00B15D17 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		84535E44278C05A900B15D17 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		84E11EE727C37A9600891C06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AF42C29D644AC40E9829390E /* Pods-XTMediaKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTMediaKit.release.xcconfig"; path = "../../../../Project/rechao/klcMPVA/Pods/Target Support Files/Pods-XTMediaKit/Pods-XTMediaKit.release.xcconfig"; sourceTree = "<group>"; };
+		DB5D97642685E29D00347FD2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		DB5D97662685E2AB00347FD2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DB5D97682685E2B200347FD2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		DFEC2DA3972DDA57C66CCE1A /* Pods-XTMediaKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTMediaKit.debug.xcconfig"; path = "../../../../Project/rechao/klcMPVA/Pods/Target Support Files/Pods-XTMediaKit/Pods-XTMediaKit.debug.xcconfig"; sourceTree = "<group>"; };
+		E26A517724CED44400A495AD /* XTUploadFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTUploadFile.m; sourceTree = "<group>"; };
+		E26A517824CED44400A495AD /* XTUploadFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTUploadFile.h; sourceTree = "<group>"; };
+		E26A518824CED61E00A495AD /* XTMediaConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTMediaConfig.h; sourceTree = "<group>"; };
+		E28BDF6224A21B0B004CB929 /* XTMediaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XTMediaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E28BDF6524A21B0B004CB929 /* XTMediaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTMediaKit.h; sourceTree = "<group>"; };
+		E28BDF6624A21B0B004CB929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28BDF7524A21BB7004CB929 /* XTCameraTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTCameraTool.h; sourceTree = "<group>"; };
+		E28BDF7624A21BB7004CB929 /* VideoConversionCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoConversionCoding.h; sourceTree = "<group>"; };
+		E28BDF7724A21BB7004CB929 /* VideoConversionCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoConversionCoding.m; sourceTree = "<group>"; };
+		E28BDF7824A21BB7004CB929 /* XTCameraTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTCameraTool.m; sourceTree = "<group>"; };
+		E2B87CD1250BB0E2008B8B20 /* XTMediaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTMediaManager.m; sourceTree = "<group>"; };
+		E2B87CD2250BB0E2008B8B20 /* XTMediaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTMediaManager.h; sourceTree = "<group>"; };
+		E5D255CB9E58BFD94DBC9B29 /* Pods_XTMediaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTMediaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E28BDF5F24A21B0B004CB929 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB5D97672685E2AB00347FD2 /* SystemConfiguration.framework in Frameworks */,
+				DB5D97652685E29D00347FD2 /* CoreTelephony.framework in Frameworks */,
+				84E11EE627C37A8A00891C06 /* CoreTelephony.framework in Frameworks */,
+				84535E45278C05B600B15D17 /* libresolv.9.tbd in Frameworks */,
+				84E11EE827C37A9600891C06 /* Foundation.framework in Frameworks */,
+				60A6D096284461A60096A199 /* AliyunOSSiOS.framework in Frameworks */,
+				DB5D97692685E2C100347FD2 /* libc++.tbd in Frameworks */,
+				4135913B3F4E2A99926843FD /* Pods_XTMediaKit.framework in Frameworks */,
+				60A6D09A284462FD0096A199 /* LibProjModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AA873505AD44D154F619683 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60A6D099284462FD0096A199 /* LibProjModel.framework */,
+				84E11EE727C37A9600891C06 /* Foundation.framework */,
+				84535E44278C05A900B15D17 /* libresolv.9.tbd */,
+				84535E42278C057D00B15D17 /* libresolv.tbd */,
+				DB5D97682685E2B200347FD2 /* libc++.tbd */,
+				DB5D97662685E2AB00347FD2 /* SystemConfiguration.framework */,
+				DB5D97642685E29D00347FD2 /* CoreTelephony.framework */,
+				E5D255CB9E58BFD94DBC9B29 /* Pods_XTMediaKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		60A6D08D284461A60096A199 /* 阿里云 */ = {
+			isa = PBXGroup;
+			children = (
+				60A6D08F284461A60096A199 /* AlyCloudObj.h */,
+				60A6D093284461A60096A199 /* AlyCloudObj.m */,
+				60A6D090284461A60096A199 /* ALFramework */,
+			);
+			path = "阿里云";
+			sourceTree = "<group>";
+		};
+		60A6D090284461A60096A199 /* ALFramework */ = {
+			isa = PBXGroup;
+			children = (
+				60A6D091284461A60096A199 /* AliyunOSSiOS.framework */,
+			);
+			path = ALFramework;
+			sourceTree = "<group>";
+		};
+		60A6D09D284464B80096A199 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				60A6D0A0284464B80096A199 /* AVHttpSessionObj.h */,
+				60A6D09E284464B80096A199 /* AVHttpSessionObj.m */,
+				60A6D09F284464B80096A199 /* AVIphoneInfo.h */,
+				60A6D0A1284464B80096A199 /* AVIphoneInfo.m */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		D512717FE3121D81D9CAB0E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFEC2DA3972DDA57C66CCE1A /* Pods-XTMediaKit.debug.xcconfig */,
+				AF42C29D644AC40E9829390E /* Pods-XTMediaKit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E26A517624CED44400A495AD /* 文件上传 */ = {
+			isa = PBXGroup;
+			children = (
+				60A6D09D284464B80096A199 /* api */,
+				E26A517824CED44400A495AD /* XTUploadFile.h */,
+				E26A517724CED44400A495AD /* XTUploadFile.m */,
+			);
+			path = "文件上传";
+			sourceTree = "<group>";
+		};
+		E28BDF5824A21B0B004CB929 = {
+			isa = PBXGroup;
+			children = (
+				E28BDF6424A21B0B004CB929 /* XTMediaKit */,
+				E28BDF6324A21B0B004CB929 /* Products */,
+				D512717FE3121D81D9CAB0E2 /* Pods */,
+				5AA873505AD44D154F619683 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E28BDF6324A21B0B004CB929 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E28BDF6224A21B0B004CB929 /* XTMediaKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E28BDF6424A21B0B004CB929 /* XTMediaKit */ = {
+			isa = PBXGroup;
+			children = (
+				E28BDF6524A21B0B004CB929 /* XTMediaKit.h */,
+				E26A518824CED61E00A495AD /* XTMediaConfig.h */,
+				E2B87CD2250BB0E2008B8B20 /* XTMediaManager.h */,
+				E2B87CD1250BB0E2008B8B20 /* XTMediaManager.m */,
+				60A6D08D284461A60096A199 /* 阿里云 */,
+				E28BDF7424A21BB7004CB929 /* 视频录制 */,
+				E26A517624CED44400A495AD /* 文件上传 */,
+				E28BDF6624A21B0B004CB929 /* Info.plist */,
+			);
+			path = XTMediaKit;
+			sourceTree = "<group>";
+		};
+		E28BDF7424A21BB7004CB929 /* 视频录制 */ = {
+			isa = PBXGroup;
+			children = (
+				E28BDF7524A21BB7004CB929 /* XTCameraTool.h */,
+				E28BDF7824A21BB7004CB929 /* XTCameraTool.m */,
+				E28BDF7624A21BB7004CB929 /* VideoConversionCoding.h */,
+				E28BDF7724A21BB7004CB929 /* VideoConversionCoding.m */,
+				6384D8852536CF5000AB9F81 /* XTAudioTool.h */,
+				6384D8862536CF5000AB9F81 /* XTAudioTool.m */,
+			);
+			path = "视频录制";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E28BDF5D24A21B0B004CB929 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60A6D0A4284464B80096A199 /* AVHttpSessionObj.h in Headers */,
+				E2B87CD4250BB0E2008B8B20 /* XTMediaManager.h in Headers */,
+				E26A517F24CED44400A495AD /* XTUploadFile.h in Headers */,
+				60A6D0A3284464B80096A199 /* AVIphoneInfo.h in Headers */,
+				E26A518924CED61E00A495AD /* XTMediaConfig.h in Headers */,
+				6384D8872536CF5000AB9F81 /* XTAudioTool.h in Headers */,
+				E28BDF8124A21BB7004CB929 /* XTCameraTool.h in Headers */,
+				E28BDF6724A21B0B004CB929 /* XTMediaKit.h in Headers */,
+				E28BDF8224A21BB7004CB929 /* VideoConversionCoding.h in Headers */,
+				60A6D095284461A60096A199 /* AlyCloudObj.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E28BDF6124A21B0B004CB929 /* XTMediaKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E28BDF6A24A21B0B004CB929 /* Build configuration list for PBXNativeTarget "XTMediaKit" */;
+			buildPhases = (
+				F549045EE9080B70BCCC3E50 /* [CP] Check Pods Manifest.lock */,
+				E28BDF5D24A21B0B004CB929 /* Headers */,
+				E28BDF5E24A21B0B004CB929 /* Sources */,
+				E28BDF5F24A21B0B004CB929 /* Frameworks */,
+				E28BDF6024A21B0B004CB929 /* Resources */,
+				E28BDF6F24A21B96004CB929 /* ShellScript */,
+				2396D3962FA4FED066F68268 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XTMediaKit;
+			productName = AVMediaKit;
+			productReference = E28BDF6224A21B0B004CB929 /* XTMediaKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E28BDF5924A21B0B004CB929 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "萌鑫达";
+				TargetAttributes = {
+					E267FB9F24A97C9700B4FBC9 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					E28BDF6124A21B0B004CB929 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = E28BDF5C24A21B0B004CB929 /* Build configuration list for PBXProject "XTMediaKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E28BDF5824A21B0B004CB929;
+			productRefGroup = E28BDF6324A21B0B004CB929 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E28BDF6124A21B0B004CB929 /* XTMediaKit */,
+				E267FB9F24A97C9700B4FBC9 /* XTAggregate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E28BDF6024A21B0B004CB929 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2396D3962FA4FED066F68268 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XTMediaKit/Pods-XTMediaKit-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XTMediaKit/Pods-XTMediaKit-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XTMediaKit/Pods-XTMediaKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E267FBA324A97CAE00B4FBC9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Sets the target folders and the final framework product.\n# 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME\n# 例如: FMK_NAME = \"MyFramework\"\nFMK_NAME=${PROJECT_NAME}\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"\n\nopen \"${INSTALL_DIR}\"\n\n";
+		};
+		E28BDF6F24A21B96004CB929 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"${ACTION}\" = \"build\" ]\nthen\nINSTALL_DIR=${SRCROOT}/Products/${PROJECT_NAME}.framework\n\nDEVICE_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\n\nSIMULATOR_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework\n\n# 如果真机包或模拟包不存在，则退出合并\nif [ ! -d \"${DEVICE_DIR}\" ] || [ ! -d \"${SIMULATOR_DIR}\" ]\nthen\nexit 0\nfi\n\n# 如果合并包已经存在，则替换\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\nmkdir -p \"${INSTALL_DIR}\"\n\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n\n# 使用lipo命令将其合并成一个通用framework  \n# 最后将生成的通用framework放置在工程根目录下新建的Products目录下  \nlipo -create \"${DEVICE_DIR}/${PROJECT_NAME}\" \"${SIMULATOR_DIR}/${PROJECT_NAME}\" -output \"${INSTALL_DIR}/${PROJECT_NAME}\"\n\nrm -rf \"${SRCROOT}/Products/${PROJECT_NAME}.framework/_CodeSignature\"\n\n#合并完成后打开目录\nopen \"${SRCROOT}/Products\"\n\nfi\n\n\n\n";
+		};
+		F549045EE9080B70BCCC3E50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XTMediaKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E28BDF5E24A21B0B004CB929 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60A6D0A2284464B80096A199 /* AVHttpSessionObj.m in Sources */,
+				E28BDF8324A21BB7004CB929 /* VideoConversionCoding.m in Sources */,
+				E28BDF8424A21BB7004CB929 /* XTCameraTool.m in Sources */,
+				E2B87CD3250BB0E2008B8B20 /* XTMediaManager.m in Sources */,
+				60A6D0A5284464B80096A199 /* AVIphoneInfo.m in Sources */,
+				6384D8882536CF5000AB9F81 /* XTAudioTool.m in Sources */,
+				60A6D098284461A60096A199 /* AlyCloudObj.m in Sources */,
+				E26A517E24CED44400A495AD /* XTUploadFile.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E267FBA024A97C9700B4FBC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 726657DQ8P;
+				ENABLE_BITCODE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E267FBA124A97C9700B4FBC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 726657DQ8P;
+				ENABLE_BITCODE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E28BDF6824A21B0B004CB929 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E28BDF6924A21B0B004CB929 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E28BDF6B24A21B0B004CB929 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFEC2DA3972DDA57C66CCE1A /* Pods-XTMediaKit.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XTMediaKit/加密库",
+					"$(PROJECT_DIR)/XTMediaKit/阿里云/ALFramework",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = XTMediaKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = mh_dylib;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"resolv\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xt.XTMediaKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E28BDF6C24A21B0B004CB929 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF42C29D644AC40E9829390E /* Pods-XTMediaKit.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XTMediaKit/加密库",
+					"$(PROJECT_DIR)/XTMediaKit/阿里云/ALFramework",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = XTMediaKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = mh_dylib;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"resolv\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xt.XTMediaKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E267FBA224A97C9700B4FBC9 /* Build configuration list for PBXAggregateTarget "XTAggregate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E267FBA024A97C9700B4FBC9 /* Debug */,
+				E267FBA124A97C9700B4FBC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E28BDF5C24A21B0B004CB929 /* Build configuration list for PBXProject "XTMediaKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E28BDF6824A21B0B004CB929 /* Debug */,
+				E28BDF6924A21B0B004CB929 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E28BDF6A24A21B0B004CB929 /* Build configuration list for PBXNativeTarget "XTMediaKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E28BDF6B24A21B0B004CB929 /* Debug */,
+				E28BDF6C24A21B0B004CB929 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E28BDF5924A21B0B004CB929 /* Project object */;
+}

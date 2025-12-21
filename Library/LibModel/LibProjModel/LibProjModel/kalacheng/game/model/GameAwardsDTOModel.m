@@ -1,0 +1,113 @@
+//此代码由 http://code.siwaha.com/ 生成，服务器修改后可重新生成
+
+#import <LibProjBase/HttpClient.h>
+
+#import "GameAwardsDTOModel.h"
+
+
+
+
+ @implementation GameAwardsDTOModel  
+
+
+ -(NSDictionary*)modelToJSONObject
+{
+//modelToJSONObject对象函数
+NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+
+dict[@"prizeName"]=_prizeName;
+
+dict[@"prizeType"]=@(_prizeType);
+
+dict[@"prizeNum"]=@(_prizeNum);
+
+dict[@"avatar"]=_avatar;
+
+dict[@"userName"]=_userName;
+
+dict[@"userId"]=@(_userId);
+
+
+ return dict;
+}
+
+ +(NSMutableArray*)modelToJSONArray:(NSMutableArray<GameAwardsDTOModel*>*)list
+{
+//modelToJSONObject对象数组函数
+NSMutableArray *nsList =[[NSMutableArray alloc] init];
+if(list==nil)
+{return nsList; 
+}
+for(int i=0;i<list.count;i++)
+{
+GameAwardsDTOModel* sumMdl=list[i];
+NSDictionary* subDict =[sumMdl modelToJSONObject];
+[nsList addObject:subDict];
+
+}
+return nsList;
+
+}
+
+ +(NSMutableArray<GameAwardsDTOModel*>*)getFromArr:(NSArray*)list
+{
+NSMutableArray<GameAwardsDTOModel*>* mdlArr=[[NSMutableArray alloc] init];
+if (list == nil || [list isKindOfClass:[NSNull class]]) {
+        return mdlArr;
+    }
+{
+//getFromArr对象数组转换
+for(int i=0;i<list.count;i++)
+{
+NSDictionary *subDic = list[i];
+GameAwardsDTOModel* sumMdl=[GameAwardsDTOModel getFromDict:subDic];
+[mdlArr addObject:sumMdl];
+
+}
+return mdlArr;
+
+}
+}
+
+ +(GameAwardsDTOModel*)getFromDict:(NSDictionary*)dict
+{
+GameAwardsDTOModel* model=[[GameAwardsDTOModel alloc]init];
+
+if (dict == nil || [dict isKindOfClass:[NSNull class]]) {
+        return model;
+    }
+model.prizeName=[dict[@"prizeName"] isKindOfClass:[NSNull class]]?@"":dict[@"prizeName"];
+
+model.prizeType=[dict[@"prizeType"] isKindOfClass:[NSNull class]]?0:[dict[@"prizeType"] intValue];
+
+model.prizeNum=[dict[@"prizeNum"] isKindOfClass:[NSNull class]]?0:[dict[@"prizeNum"] intValue];
+
+model.avatar=[dict[@"avatar"] isKindOfClass:[NSNull class]]?@"":dict[@"avatar"];
+
+model.userName=[dict[@"userName"] isKindOfClass:[NSNull class]]?@"":dict[@"userName"];
+
+model.userId=[dict[@"userId"] isKindOfClass:[NSNull class]]?0:[dict[@"userId"] longLongValue];
+
+
+ return model;
+}
+
+ +(void)cloneObj:(GameAwardsDTOModel*) source target:(GameAwardsDTOModel*)target
+{
+
+target.prizeName=source.prizeName;
+
+target.prizeType=source.prizeType;
+
+target.prizeNum=source.prizeNum;
+
+target.avatar=source.avatar;
+
+target.userName=source.userName;
+
+target.userId=source.userId;
+
+}
+
+@end
+

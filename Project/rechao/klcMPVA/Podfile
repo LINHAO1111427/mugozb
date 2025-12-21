@@ -1,0 +1,182 @@
+#source 'https://github.com/CocoaPods/Specs.git'
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+
+workspace 'klcMPVA.xcworkspace'
+
+platform :ios, '9.0'
+inhibit_all_warnings!
+use_frameworks!
+
+
+
+def commpod                     #宏定义几个target都要用的的pod
+  
+  pod 'AFNetworking' 
+  pod 'JLRoutes'
+  pod 'SDWebImage'
+  pod 'MJRefresh'           # 上拉刷新，下拉加载
+  pod 'Masonry'             # 代码动态布局
+ 
+  pod 'mob_sharesdk'
+  pod 'mob_sharesdk/ShareSDKPlatforms/QQ'
+  #微信
+#  pod 'mob_sharesdk/ShareSDKPlatforms/WeChat'   #（微信sdk不带支付的命令）
+  pod 'mob_sharesdk/ShareSDKPlatforms/WeChatFull'   #（微信sdk带支付的命令，和上面不带支付的不能共存，只能选择一个）
+  
+  #支付宝
+  pod 'AlipaySDK-iOS'
+  pod 'OpenSSL-for-iOS', '~> 1.0.2.d.1'
+
+  pod 'CYLTabBarController' # TabBar
+  pod 'RTRootNavigationController' # Navi
+  pod 'TZImagePickerController'
+  
+  # 图片展示 5+ 使用新版
+  pod 'MJExtension'         # JSON和模型转换
+  pod 'Bugly'
+  pod 'BRPickerView'
+  
+  pod 'JXPagingView/Pager'
+  pod 'JXCategoryView'      # 分段控制器
+  pod 'SVGAPlayer'
+  pod 'FLAnimatedImage'
+
+  pod 'SSZipArchive', '2.2.3'  #这个版本的SVGAPlayer用着不报错
+
+  pod 'Tencent-MapSDK'    # 腾讯地图SDK
+  pod 'AgoraRtcEngine_iOS', '3.7.0'
+  pod 'libOpenInstallSDK'
+
+  pod 'TXIMSDK_Plus_iOS' # 腾讯IM
+end
+
+def ali_video #阿里短视频相关
+  pod 'AlivcCommon', :path => '../../../Library/LibThird/ALVideoRecord/AlivcCommon/'
+  pod 'AlivcCore', :path => '../../../Library/LibThird/ALVideoRecord/AlivcCore/'
+  pod 'AlivcCrop', :path => '../../../Library/LibThird/ALVideoRecord/AlivcCrop/'
+  pod 'AlivcRecordBasic', :path => '../../../Library/LibThird/ALVideoRecord/AlivcRecordBasic/'
+end
+
+
+target 'klcMPVA' do
+  project 'klcMPVA'
+  ali_video
+  commpod
+end
+
+
+target 'LibTools' do
+  project '../../../Library/LibTool/LibTools/LibTools'
+  pod 'Masonry'             # 代码动态布局
+end
+
+target 'LibProjBase' do
+  project '../../../Library/LibTool/LibProjBase/LibProjBase'
+  commpod
+end
+
+target 'LibProjModel' do
+  project '../../../Library/LibModel/LibProjModel/LibProjModel'
+  commpod
+end
+
+target 'LibProjView' do
+  project '../../../Library/LibFrame/LibProjView/LibProjView'
+  commpod
+end
+
+target 'ALVideoRecord' do
+  project '../../../Library/LibThird/ALVideoRecord/ALVideoRecord'
+  commpod
+  ali_video
+end
+
+target 'ThirdPay' do
+  project '../../../Library/LibThird/ThirdPay/ThirdPay'
+  commpod
+end
+
+target 'TXImKit' do
+  project '../../../Library/LibThird/TXImKit/TXImKit'
+  commpod
+end
+
+target 'KLCProjConfig' do
+  project '../../../Library/LibFrame/KLCProjConfig/KLCProjConfig'
+  commpod
+end
+
+target 'UserInfo' do
+  project '../../../Business/BasicFunction/UserInfo/UserInfo'
+  commpod
+end
+
+target 'DynamicCircle' do
+  project '../../../Business/CoreFunction/DynamicCircle/DynamicCircle'
+  commpod
+end
+
+target 'MineCenter' do
+  project '../../../Business/BasicFunction/MineCenter/MineCenter'
+  commpod
+end
+
+target 'LiveCommon' do
+  project '../../../Library/LibFrame/LiveCommon/LiveCommon'
+  commpod
+end
+
+target 'MPCommon' do
+  project '../../../Library/LibFrame/MPCommon/MPCommon'
+  commpod
+end
+
+target 'MPVideoLive' do
+  project '../../../Business/CoreFunction/MPVideoLive/MPVideoLive'
+  commpod
+end
+
+target 'MPAudioLive' do
+  project '../../../Business/CoreFunction/MPAudioLive/MPAudioLive'
+  commpod
+end
+
+target 'Login' do
+  project '../../../Business/BasicFunction/Login/Login'
+  commpod
+end
+
+target 'Ranking' do
+  project '../../../Business/BasicFunction/Ranking/Ranking'
+  commpod
+end
+
+target 'MessageInfo' do
+  project '../../../Business/BasicFunction/MessageInfo/MessageInfo'
+  commpod
+end
+
+target 'HomePage' do
+  project '../../../Business/BasicFunction/HomePage/HomePage'
+  commpod
+end
+
+target 'ShortVideo' do
+  project '../../../Business/CoreFunction/ShortVideo/ShortVideo'
+  commpod
+end
+
+target 'XTMediaKit' do
+  project '../../../Library/LibThird/MediaCodeKit/XTMediaKit'
+  commpod
+end
+
+target 'AgoraExtension' do
+  project '../../../Library/LibThird/AgoraExtension/AgoraExtension'
+  commpod
+end
+
+target 'Shopping' do
+  project '../../../Business/CoreFunction/Shopping/Shopping'
+  commpod
+end

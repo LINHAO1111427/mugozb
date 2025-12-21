@@ -1,0 +1,28 @@
+{
+  "menu": [
+     {
+         "name": "腮红",
+                  "menuTag": 1,
+                  "selected": false,
+                  "normalThumb":"blusher_normal.png",
+                  "selectedThumb":"blusher_normal.png",
+                  "thumb":"",
+     },
+     {
+         "name": "睫毛",
+                  "menuTag": 2,
+                  "selected": false,
+                  "normalThumb":"eyelash_normal.png",
+                  "selectedThumb":"eyelash_normal.png",
+                  "thumb":"",
+     },
+     {
+         "name": "眉毛",
+                  "menuTag": 3,
+                  "selected": false,
+                  "normalThumb":"eyebrow_normal.png",
+                  "selectedThumb":"eyebrow_normal.png",
+                  "thumb":"",
+     }
+  ]
+}

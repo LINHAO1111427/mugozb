@@ -1,0 +1,708 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63C4E402259DBB5100CFD57F /* LibProjView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C4E401259DBB5100CFD57F /* LibProjView.framework */; };
+		63C4E403259DBB5100CFD57F /* LibProjView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63C4E401259DBB5100CFD57F /* LibProjView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		82618ABA23A720BF00A073EB /* ModiftPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82618AB823A720BF00A073EB /* ModiftPasswordVC.xib */; };
+		82618ABB23A720BF00A073EB /* ChangePasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82618AB923A720BF00A073EB /* ChangePasswordController.xib */; };
+		8291646823A272E00074720D /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = 8291646623A272E00074720D /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8291648923A273EA0074720D /* LibProjBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8291648823A273EA0074720D /* LibProjBase.framework */; };
+		8291649223A276780074720D /* LibTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8291649123A276780074720D /* LibTools.framework */; };
+		829164EA23A3B91A0074720D /* ModiftPasswordVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 829164DC23A3B91A0074720D /* ModiftPasswordVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		829164EB23A3B91A0074720D /* ChangePasswordController.h in Headers */ = {isa = PBXBuildFile; fileRef = 829164DD23A3B91A0074720D /* ChangePasswordController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		829164EE23A3B91A0074720D /* ModiftPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 829164E023A3B91A0074720D /* ModiftPasswordVC.m */; };
+		829164EF23A3B91A0074720D /* ChangePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 829164E123A3B91A0074720D /* ChangePasswordController.m */; };
+		82A8B95223A77471005BFF8B /* LibProjModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8291648C23A273FA0074720D /* LibProjModel.framework */; };
+		84C31F96246E80ED00E64F2E /* LanuchAdViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C31F94246E80ED00E64F2E /* LanuchAdViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84C31F97246E80ED00E64F2E /* LanuchAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C31F95246E80ED00E64F2E /* LanuchAdViewController.m */; };
+		9EE1101224545FD0009490E3 /* LoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EE1101024545FCF009490E3 /* LoginViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EE1101324545FD0009490E3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1101124545FCF009490E3 /* LoginViewController.m */; };
+		BB6DA3A91197EA8C759985F2 /* Pods_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAE1F1D4BB4799E0729B18E /* Pods_Login.framework */; };
+		DB1254CC25E687FE00E9ACB4 /* UserInterestSelectVC.h in Headers */ = {isa = PBXBuildFile; fileRef = DB1254CA25E687FE00E9ACB4 /* UserInterestSelectVC.h */; };
+		DB1254CD25E687FE00E9ACB4 /* UserInterestSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1254CB25E687FE00E9ACB4 /* UserInterestSelectVC.m */; };
+		DB5A6D7A2615CDE400DFE2B4 /* PolicyTipsView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB5A6D782615CDE400DFE2B4 /* PolicyTipsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB5A6D7B2615CDE400DFE2B4 /* PolicyTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5A6D792615CDE400DFE2B4 /* PolicyTipsView.m */; };
+		DB6E397A26B4EB12006D942D /* LoginRoute.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E397826B4EB12006D942D /* LoginRoute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB6E397B26B4EB12006D942D /* LoginRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6E397926B4EB12006D942D /* LoginRoute.m */; };
+		E212726F249B696F00D7F949 /* UserInfoFillVC.h in Headers */ = {isa = PBXBuildFile; fileRef = E2127269249B696F00D7F949 /* UserInfoFillVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2127270249B696F00D7F949 /* UsermarkSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E212726A249B696F00D7F949 /* UsermarkSelectedView.m */; };
+		E2127272249B696F00D7F949 /* UserInfoFillVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E212726C249B696F00D7F949 /* UserInfoFillVC.m */; };
+		E2127274249B696F00D7F949 /* UsermarkSelectedView.h in Headers */ = {isa = PBXBuildFile; fileRef = E212726E249B696F00D7F949 /* UsermarkSelectedView.h */; };
+		F676CA0D24343EFF00C098BA /* ModiftPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82618AB823A720BF00A073EB /* ModiftPasswordVC.xib */; };
+		F676CA0E24343EFF00C098BA /* ChangePasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82618AB923A720BF00A073EB /* ChangePasswordController.xib */; };
+		F676CA122434441200C098BA /* LoginRes.h in Headers */ = {isa = PBXBuildFile; fileRef = F676CA102434441200C098BA /* LoginRes.h */; };
+		F676CA132434441200C098BA /* LoginRes.m in Sources */ = {isa = PBXBuildFile; fileRef = F676CA112434441200C098BA /* LoginRes.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2471BA724BC62F400D73406 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8291645A23A272E00074720D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F676CA0424343EE800C098BA;
+			remoteInfo = MXLoginB;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		63C4E404259DBB5100CFD57F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				63C4E403259DBB5100CFD57F /* LibProjView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		09B426F78EE9489BA8E85B19 /* Pods-Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.debug.xcconfig"; path = "../../../../mugozb/Project/rechao/klcMPVA/Pods/Target Support Files/Pods-Login/Pods-Login.debug.xcconfig"; sourceTree = "<group>"; };
+		62648BC84D41418656619056 /* Pods-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.release.xcconfig"; path = "../../../../mugozb/Project/rechao/klcMPVA/Pods/Target Support Files/Pods-Login/Pods-Login.release.xcconfig"; sourceTree = "<group>"; };
+		63C4E401259DBB5100CFD57F /* LibProjView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82618AB823A720BF00A073EB /* ModiftPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModiftPasswordVC.xib; sourceTree = "<group>"; };
+		82618AB923A720BF00A073EB /* ChangePasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordController.xib; sourceTree = "<group>"; };
+		8291646323A272E00074720D /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8291646623A272E00074720D /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		8291646723A272E00074720D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8291648823A273EA0074720D /* LibProjBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8291648C23A273FA0074720D /* LibProjModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8291649123A276780074720D /* LibTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		829164DC23A3B91A0074720D /* ModiftPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModiftPasswordVC.h; sourceTree = "<group>"; };
+		829164DD23A3B91A0074720D /* ChangePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordController.h; sourceTree = "<group>"; };
+		829164E023A3B91A0074720D /* ModiftPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModiftPasswordVC.m; sourceTree = "<group>"; };
+		829164E123A3B91A0074720D /* ChangePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordController.m; sourceTree = "<group>"; };
+		84C31F94246E80ED00E64F2E /* LanuchAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanuchAdViewController.h; sourceTree = "<group>"; };
+		84C31F95246E80ED00E64F2E /* LanuchAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanuchAdViewController.m; sourceTree = "<group>"; };
+		8BAE1F1D4BB4799E0729B18E /* Pods_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EE1101024545FCF009490E3 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9EE1101124545FCF009490E3 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		DB1254CA25E687FE00E9ACB4 /* UserInterestSelectVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInterestSelectVC.h; sourceTree = "<group>"; };
+		DB1254CB25E687FE00E9ACB4 /* UserInterestSelectVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInterestSelectVC.m; sourceTree = "<group>"; };
+		DB5A6D782615CDE400DFE2B4 /* PolicyTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolicyTipsView.h; sourceTree = "<group>"; };
+		DB5A6D792615CDE400DFE2B4 /* PolicyTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolicyTipsView.m; sourceTree = "<group>"; };
+		DB6E397826B4EB12006D942D /* LoginRoute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginRoute.h; sourceTree = "<group>"; };
+		DB6E397926B4EB12006D942D /* LoginRoute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRoute.m; sourceTree = "<group>"; };
+		E2127269249B696F00D7F949 /* UserInfoFillVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoFillVC.h; sourceTree = "<group>"; };
+		E212726A249B696F00D7F949 /* UsermarkSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsermarkSelectedView.m; sourceTree = "<group>"; };
+		E212726C249B696F00D7F949 /* UserInfoFillVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoFillVC.m; sourceTree = "<group>"; };
+		E212726E249B696F00D7F949 /* UsermarkSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsermarkSelectedView.h; sourceTree = "<group>"; };
+		F676CA0524343EE800C098BA /* LoginB.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginB.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		F676CA0724343EE800C098BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F676CA102434441200C098BA /* LoginRes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginRes.h; sourceTree = "<group>"; };
+		F676CA112434441200C098BA /* LoginRes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRes.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8291646023A272E00074720D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8291649223A276780074720D /* LibTools.framework in Frameworks */,
+				63C4E402259DBB5100CFD57F /* LibProjView.framework in Frameworks */,
+				8291648923A273EA0074720D /* LibProjBase.framework in Frameworks */,
+				82A8B95223A77471005BFF8B /* LibProjModel.framework in Frameworks */,
+				BB6DA3A91197EA8C759985F2 /* Pods_Login.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676CA0224343EE800C098BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18548DECDA8B6A242120B765 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63C4E401259DBB5100CFD57F /* LibProjView.framework */,
+				8291649123A276780074720D /* LibTools.framework */,
+				8291648C23A273FA0074720D /* LibProjModel.framework */,
+				8291648823A273EA0074720D /* LibProjBase.framework */,
+				8BAE1F1D4BB4799E0729B18E /* Pods_Login.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A6F00EF1E53736BB8AF5B76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09B426F78EE9489BA8E85B19 /* Pods-Login.debug.xcconfig */,
+				62648BC84D41418656619056 /* Pods-Login.release.xcconfig */,
+			);
+			name = Pods;
+			path = "../../../../MXPorj/---测试版本/mxaudio/Pods";
+			sourceTree = "<group>";
+		};
+		8291645923A272E00074720D = {
+			isa = PBXGroup;
+			children = (
+				8291646523A272E00074720D /* Login */,
+				F676CA0624343EE800C098BA /* LoginB */,
+				8291646423A272E00074720D /* Products */,
+				18548DECDA8B6A242120B765 /* Frameworks */,
+				2A6F00EF1E53736BB8AF5B76 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		8291646423A272E00074720D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8291646323A272E00074720D /* Login.framework */,
+				F676CA0524343EE800C098BA /* LoginB.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8291646523A272E00074720D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DB6E397726B4EAFD006D942D /* Route */,
+				DB5A6D772615CDE400DFE2B4 /* view */,
+				E2127268249B696F00D7F949 /* 用户资料填写（登录后） */,
+				84C31F93246E80ED00E64F2E /* 启动广告 */,
+				9EE1100F24545F14009490E3 /* 新登录 */,
+				829164DB23A3B91A0074720D /* 注册忘记与绑定 */,
+				8291646623A272E00074720D /* Login.h */,
+				8291646723A272E00074720D /* Info.plist */,
+				F676CA102434441200C098BA /* LoginRes.h */,
+				F676CA112434441200C098BA /* LoginRes.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		829164DB23A3B91A0074720D /* 注册忘记与绑定 */ = {
+			isa = PBXGroup;
+			children = (
+				829164DC23A3B91A0074720D /* ModiftPasswordVC.h */,
+				829164E023A3B91A0074720D /* ModiftPasswordVC.m */,
+				82618AB823A720BF00A073EB /* ModiftPasswordVC.xib */,
+				829164DD23A3B91A0074720D /* ChangePasswordController.h */,
+				829164E123A3B91A0074720D /* ChangePasswordController.m */,
+				82618AB923A720BF00A073EB /* ChangePasswordController.xib */,
+			);
+			path = "注册忘记与绑定";
+			sourceTree = "<group>";
+		};
+		84C31F93246E80ED00E64F2E /* 启动广告 */ = {
+			isa = PBXGroup;
+			children = (
+				84C31F94246E80ED00E64F2E /* LanuchAdViewController.h */,
+				84C31F95246E80ED00E64F2E /* LanuchAdViewController.m */,
+			);
+			path = "启动广告";
+			sourceTree = "<group>";
+		};
+		9EE1100F24545F14009490E3 /* 新登录 */ = {
+			isa = PBXGroup;
+			children = (
+				9EE1101024545FCF009490E3 /* LoginViewController.h */,
+				9EE1101124545FCF009490E3 /* LoginViewController.m */,
+			);
+			path = "新登录";
+			sourceTree = "<group>";
+		};
+		DB5A6D772615CDE400DFE2B4 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				DB5A6D782615CDE400DFE2B4 /* PolicyTipsView.h */,
+				DB5A6D792615CDE400DFE2B4 /* PolicyTipsView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		DB6E397726B4EAFD006D942D /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				DB6E397826B4EB12006D942D /* LoginRoute.h */,
+				DB6E397926B4EB12006D942D /* LoginRoute.m */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		E2127268249B696F00D7F949 /* 用户资料填写（登录后） */ = {
+			isa = PBXGroup;
+			children = (
+				E2127269249B696F00D7F949 /* UserInfoFillVC.h */,
+				E212726C249B696F00D7F949 /* UserInfoFillVC.m */,
+				E212726E249B696F00D7F949 /* UsermarkSelectedView.h */,
+				E212726A249B696F00D7F949 /* UsermarkSelectedView.m */,
+				DB1254CA25E687FE00E9ACB4 /* UserInterestSelectVC.h */,
+				DB1254CB25E687FE00E9ACB4 /* UserInterestSelectVC.m */,
+			);
+			path = "用户资料填写（登录后）";
+			sourceTree = "<group>";
+		};
+		F676CA0624343EE800C098BA /* LoginB */ = {
+			isa = PBXGroup;
+			children = (
+				F676CA0724343EE800C098BA /* Info.plist */,
+			);
+			path = LoginB;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8291645E23A272E00074720D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6E397A26B4EB12006D942D /* LoginRoute.h in Headers */,
+				DB5A6D7A2615CDE400DFE2B4 /* PolicyTipsView.h in Headers */,
+				DB1254CC25E687FE00E9ACB4 /* UserInterestSelectVC.h in Headers */,
+				E212726F249B696F00D7F949 /* UserInfoFillVC.h in Headers */,
+				84C31F96246E80ED00E64F2E /* LanuchAdViewController.h in Headers */,
+				E2127274249B696F00D7F949 /* UsermarkSelectedView.h in Headers */,
+				9EE1101224545FD0009490E3 /* LoginViewController.h in Headers */,
+				829164EB23A3B91A0074720D /* ChangePasswordController.h in Headers */,
+				F676CA122434441200C098BA /* LoginRes.h in Headers */,
+				829164EA23A3B91A0074720D /* ModiftPasswordVC.h in Headers */,
+				8291646823A272E00074720D /* Login.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8291646223A272E00074720D /* Login */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8291646B23A272E00074720D /* Build configuration list for PBXNativeTarget "Login" */;
+			buildPhases = (
+				997EDF7B22E01EEF0950DA1E /* [CP] Check Pods Manifest.lock */,
+				8291645E23A272E00074720D /* Headers */,
+				8291645F23A272E00074720D /* Sources */,
+				8291646023A272E00074720D /* Frameworks */,
+				8291646123A272E00074720D /* Resources */,
+				9AA5F0F6240B7C0D6B759B20 /* [CP] Copy Pods Resources */,
+				63C4E404259DBB5100CFD57F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2471BA824BC62F400D73406 /* PBXTargetDependency */,
+			);
+			name = Login;
+			productName = MXLogin;
+			productReference = 8291646323A272E00074720D /* Login.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F676CA0424343EE800C098BA /* LoginB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F676CA0A24343EE800C098BA /* Build configuration list for PBXNativeTarget "LoginB" */;
+			buildPhases = (
+				F676CA0124343EE800C098BA /* Sources */,
+				F676CA0224343EE800C098BA /* Frameworks */,
+				F676CA0324343EE800C098BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoginB;
+			productName = MXLoginB;
+			productReference = F676CA0524343EE800C098BA /* LoginB.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8291645A23A272E00074720D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = KLC;
+				TargetAttributes = {
+					8291646223A272E00074720D = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					F676CA0424343EE800C098BA = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = 8291645D23A272E00074720D /* Build configuration list for PBXProject "Login" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8291645923A272E00074720D;
+			productRefGroup = 8291646423A272E00074720D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8291646223A272E00074720D /* Login */,
+				F676CA0424343EE800C098BA /* LoginB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8291646123A272E00074720D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82618ABA23A720BF00A073EB /* ModiftPasswordVC.xib in Resources */,
+				82618ABB23A720BF00A073EB /* ChangePasswordController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676CA0324343EE800C098BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F676CA0D24343EFF00C098BA /* ModiftPasswordVC.xib in Resources */,
+				F676CA0E24343EFF00C098BA /* ChangePasswordController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		997EDF7B22E01EEF0950DA1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Login-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AA5F0F6240B7C0D6B759B20 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Login/Pods-Login-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Login/Pods-Login-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Login/Pods-Login-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8291645F23A272E00074720D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6E397B26B4EB12006D942D /* LoginRoute.m in Sources */,
+				DB5A6D7B2615CDE400DFE2B4 /* PolicyTipsView.m in Sources */,
+				F676CA132434441200C098BA /* LoginRes.m in Sources */,
+				84C31F97246E80ED00E64F2E /* LanuchAdViewController.m in Sources */,
+				E2127272249B696F00D7F949 /* UserInfoFillVC.m in Sources */,
+				DB1254CD25E687FE00E9ACB4 /* UserInterestSelectVC.m in Sources */,
+				9EE1101324545FD0009490E3 /* LoginViewController.m in Sources */,
+				829164EE23A3B91A0074720D /* ModiftPasswordVC.m in Sources */,
+				829164EF23A3B91A0074720D /* ChangePasswordController.m in Sources */,
+				E2127270249B696F00D7F949 /* UsermarkSelectedView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676CA0124343EE800C098BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2471BA824BC62F400D73406 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F676CA0424343EE800C098BA /* LoginB */;
+			targetProxy = E2471BA724BC62F400D73406 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8291646923A272E00074720D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8291646A23A272E00074720D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8291646C23A272E00074720D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09B426F78EE9489BA8E85B19 /* Pods-Login.debug.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXCLUDED_ARCHS = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Login/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.Login;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8291646D23A272E00074720D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62648BC84D41418656619056 /* Pods-Login.release.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Login/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.Login;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F676CA0824343EE800C098BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = NGXJT9M3FH;
+				INFOPLIST_FILE = LoginB/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klc.LoginB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		F676CA0924343EE800C098BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = NGXJT9M3FH;
+				INFOPLIST_FILE = LoginB/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klc.LoginB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8291645D23A272E00074720D /* Build configuration list for PBXProject "Login" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8291646923A272E00074720D /* Debug */,
+				8291646A23A272E00074720D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8291646B23A272E00074720D /* Build configuration list for PBXNativeTarget "Login" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8291646C23A272E00074720D /* Debug */,
+				8291646D23A272E00074720D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F676CA0A24343EE800C098BA /* Build configuration list for PBXNativeTarget "LoginB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F676CA0824343EE800C098BA /* Debug */,
+				F676CA0924343EE800C098BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8291645A23A272E00074720D /* Project object */;
+}

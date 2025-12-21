@@ -1,0 +1,750 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		842068ED23A0D952003997E5 /* LibProjView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842068EC23A0D952003997E5 /* LibProjView.framework */; };
+		84349BBD23A242FE0044CEC6 /* DynamicReportItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 84349BB923A242FD0044CEC6 /* DynamicReportItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84349BBE23A242FE0044CEC6 /* DynamicReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84349BBA23A242FD0044CEC6 /* DynamicReportController.m */; };
+		84349BBF23A242FE0044CEC6 /* DynamicReportItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84349BBB23A242FD0044CEC6 /* DynamicReportItemCell.m */; };
+		84349BC023A242FE0044CEC6 /* DynamicReportController.h in Headers */ = {isa = PBXBuildFile; fileRef = 84349BBC23A242FD0044CEC6 /* DynamicReportController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		843B8102239FC53000CD3233 /* LibProjModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843B8101239FC53000CD3233 /* LibProjModel.framework */; };
+		843B8109239FC53E00CD3233 /* LibTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843B8108239FC53E00CD3233 /* LibTools.framework */; };
+		843B810C239FC54400CD3233 /* LibProjBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843B810B239FC54400CD3233 /* LibProjBase.framework */; };
+		843B813A239FC6AA00CD3233 /* DynamicCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 843B8139239FC6AA00CD3233 /* DynamicCircle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D0BABF6808B04F95CCC14AA /* Pods_DynamicCircle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 088A7649C8DA4308620A31E1 /* Pods_DynamicCircle.framework */; };
+		9E32B52F24EFBFF900781017 /* DynamicPlayListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E32B4FD24EFBFF900781017 /* DynamicPlayListViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E32B53524EFBFF900781017 /* DynamicPublishViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E32B50424EFBFF900781017 /* DynamicPublishViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E32B53624EFBFF900781017 /* DynamicInterfaceView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E32B50624EFBFF900781017 /* DynamicInterfaceView.h */; };
+		9E32B53724EFBFF900781017 /* DynamicItemPlayCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E32B50724EFBFF900781017 /* DynamicItemPlayCell.h */; };
+		9E32B53824EFBFF900781017 /* DynamicInterfaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E32B50824EFBFF900781017 /* DynamicInterfaceView.m */; };
+		9E32B53924EFBFF900781017 /* DynamicItemPlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E32B50924EFBFF900781017 /* DynamicItemPlayCell.m */; };
+		9E32B53A24EFBFF900781017 /* DynamicPlayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E32B50A24EFBFF900781017 /* DynamicPlayListViewController.m */; };
+		9E32B53C24EFBFF900781017 /* DynamicPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E32B50C24EFBFF900781017 /* DynamicPublishViewController.m */; };
+		9E32B54424EFBFF900781017 /* DynamicMainViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E32B51724EFBFF900781017 /* DynamicMainViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E32B54724EFBFF900781017 /* DynamicMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E32B51B24EFBFF900781017 /* DynamicMainViewController.m */; };
+		9E32B55324EFBFF900781017 /* dynamic_header.pch in Headers */ = {isa = PBXBuildFile; fileRef = 9E32B52D24EFBFF900781017 /* dynamic_header.pch */; };
+		DB12548B25E678BE00E9ACB4 /* DynamicTopicItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB12548925E678BD00E9ACB4 /* DynamicTopicItemCell.h */; };
+		DB12548C25E678BE00E9ACB4 /* DynamicTopicItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB12548A25E678BE00E9ACB4 /* DynamicTopicItemCell.m */; };
+		DB6E397026B4D9CF006D942D /* DynamicRoute.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E396E26B4D9CF006D942D /* DynamicRoute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB6E397126B4D9CF006D942D /* DynamicRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6E396F26B4D9CF006D942D /* DynamicRoute.m */; };
+		DB8130B225E0EA8300A5D4CC /* DynamicMainHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8130AB25E0EA8300A5D4CC /* DynamicMainHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB8130B425E0EA8300A5D4CC /* DynamicMainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8130AD25E0EA8300A5D4CC /* DynamicMainHeaderView.m */; };
+		DB8130BA25E0ECEC00A5D4CC /* DynamicTopicListVC.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8130B825E0ECEC00A5D4CC /* DynamicTopicListVC.h */; };
+		DB8130BB25E0ECEC00A5D4CC /* DynamicTopicListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8130B925E0ECEC00A5D4CC /* DynamicTopicListVC.m */; };
+		DB81319025E0F34B00A5D4CC /* DynamicCircleRes.h in Headers */ = {isa = PBXBuildFile; fileRef = DB81318E25E0F34B00A5D4CC /* DynamicCircleRes.h */; };
+		DB81319125E0F34B00A5D4CC /* DynamicCircleRes.m in Sources */ = {isa = PBXBuildFile; fileRef = DB81318F25E0F34B00A5D4CC /* DynamicCircleRes.m */; };
+		DB81321225E0F98300A5D4CC /* DynamicHomeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DB81321025E0F98300A5D4CC /* DynamicHomeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB81321325E0F98300A5D4CC /* DynamicHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB81321125E0F98300A5D4CC /* DynamicHomeViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB81318925E0F31000A5D4CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 843B80EC239FC51400CD3233 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB81318025E0F2E300A5D4CC;
+			remoteInfo = DynamicCircleB;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		088A7649C8DA4308620A31E1 /* Pods_DynamicCircle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicCircle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25EEF451A8DADA5197174C0E /* Pods-DynamicCircle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicCircle.debug.xcconfig"; path = "../../../Project/rechao/klcMPVA/Pods/Target Support Files/Pods-DynamicCircle/Pods-DynamicCircle.debug.xcconfig"; sourceTree = "<group>"; };
+		5738CF08B4741C8E03346E66 /* Pods-DynamicCircle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicCircle.release.xcconfig"; path = "../../../Project/rechao/klcMPVA/Pods/Target Support Files/Pods-DynamicCircle/Pods-DynamicCircle.release.xcconfig"; sourceTree = "<group>"; };
+		842068EC23A0D952003997E5 /* LibProjView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84349BB923A242FD0044CEC6 /* DynamicReportItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicReportItemCell.h; sourceTree = "<group>"; };
+		84349BBA23A242FD0044CEC6 /* DynamicReportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicReportController.m; sourceTree = "<group>"; };
+		84349BBB23A242FD0044CEC6 /* DynamicReportItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicReportItemCell.m; sourceTree = "<group>"; };
+		84349BBC23A242FD0044CEC6 /* DynamicReportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicReportController.h; sourceTree = "<group>"; };
+		843B80F5239FC51400CD3233 /* DynamicCircle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicCircle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		843B80F9239FC51400CD3233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843B8101239FC53000CD3233 /* LibProjModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		843B8108239FC53E00CD3233 /* LibTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		843B810B239FC54400CD3233 /* LibProjBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		843B8139239FC6AA00CD3233 /* DynamicCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCircle.h; sourceTree = "<group>"; };
+		9E32B4FD24EFBFF900781017 /* DynamicPlayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicPlayListViewController.h; sourceTree = "<group>"; };
+		9E32B50424EFBFF900781017 /* DynamicPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicPublishViewController.h; sourceTree = "<group>"; };
+		9E32B50624EFBFF900781017 /* DynamicInterfaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicInterfaceView.h; sourceTree = "<group>"; };
+		9E32B50724EFBFF900781017 /* DynamicItemPlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicItemPlayCell.h; sourceTree = "<group>"; };
+		9E32B50824EFBFF900781017 /* DynamicInterfaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicInterfaceView.m; sourceTree = "<group>"; };
+		9E32B50924EFBFF900781017 /* DynamicItemPlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicItemPlayCell.m; sourceTree = "<group>"; };
+		9E32B50A24EFBFF900781017 /* DynamicPlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicPlayListViewController.m; sourceTree = "<group>"; };
+		9E32B50C24EFBFF900781017 /* DynamicPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicPublishViewController.m; sourceTree = "<group>"; };
+		9E32B51724EFBFF900781017 /* DynamicMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicMainViewController.h; sourceTree = "<group>"; };
+		9E32B51B24EFBFF900781017 /* DynamicMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicMainViewController.m; sourceTree = "<group>"; };
+		9E32B52D24EFBFF900781017 /* dynamic_header.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dynamic_header.pch; sourceTree = "<group>"; };
+		DB12548925E678BD00E9ACB4 /* DynamicTopicItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicTopicItemCell.h; sourceTree = "<group>"; };
+		DB12548A25E678BE00E9ACB4 /* DynamicTopicItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicTopicItemCell.m; sourceTree = "<group>"; };
+		DB6E396E26B4D9CF006D942D /* DynamicRoute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicRoute.h; sourceTree = "<group>"; };
+		DB6E396F26B4D9CF006D942D /* DynamicRoute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicRoute.m; sourceTree = "<group>"; };
+		DB8130AB25E0EA8300A5D4CC /* DynamicMainHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicMainHeaderView.h; sourceTree = "<group>"; };
+		DB8130AD25E0EA8300A5D4CC /* DynamicMainHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicMainHeaderView.m; sourceTree = "<group>"; };
+		DB8130B825E0ECEC00A5D4CC /* DynamicTopicListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicTopicListVC.h; sourceTree = "<group>"; };
+		DB8130B925E0ECEC00A5D4CC /* DynamicTopicListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicTopicListVC.m; sourceTree = "<group>"; };
+		DB81318125E0F2E300A5D4CC /* DynamicCircleB.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicCircleB.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB81318325E0F2E300A5D4CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB81318E25E0F34B00A5D4CC /* DynamicCircleRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCircleRes.h; sourceTree = "<group>"; };
+		DB81318F25E0F34B00A5D4CC /* DynamicCircleRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicCircleRes.m; sourceTree = "<group>"; };
+		DB81321025E0F98300A5D4CC /* DynamicHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicHomeViewController.h; sourceTree = "<group>"; };
+		DB81321125E0F98300A5D4CC /* DynamicHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicHomeViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		843B80F2239FC51400CD3233 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843B8109239FC53E00CD3233 /* LibTools.framework in Frameworks */,
+				843B810C239FC54400CD3233 /* LibProjBase.framework in Frameworks */,
+				843B8102239FC53000CD3233 /* LibProjModel.framework in Frameworks */,
+				842068ED23A0D952003997E5 /* LibProjView.framework in Frameworks */,
+				8D0BABF6808B04F95CCC14AA /* Pods_DynamicCircle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB81317E25E0F2E300A5D4CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		060A6D614B3CE50F11907E54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25EEF451A8DADA5197174C0E /* Pods-DynamicCircle.debug.xcconfig */,
+				5738CF08B4741C8E03346E66 /* Pods-DynamicCircle.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../../../MXPorj/MXDemo/Pods;
+			sourceTree = "<group>";
+		};
+		84349BB823A242FD0044CEC6 /* report */ = {
+			isa = PBXGroup;
+			children = (
+				84349BBC23A242FD0044CEC6 /* DynamicReportController.h */,
+				84349BBA23A242FD0044CEC6 /* DynamicReportController.m */,
+				84349BBB23A242FD0044CEC6 /* DynamicReportItemCell.m */,
+				84349BB923A242FD0044CEC6 /* DynamicReportItemCell.h */,
+			);
+			path = report;
+			sourceTree = "<group>";
+		};
+		843B80EB239FC51400CD3233 = {
+			isa = PBXGroup;
+			children = (
+				843B80F7239FC51400CD3233 /* DynamicCircle */,
+				DB81318225E0F2E300A5D4CC /* DynamicCircleB */,
+				843B80F6239FC51400CD3233 /* Products */,
+				843B8100239FC53000CD3233 /* Frameworks */,
+				060A6D614B3CE50F11907E54 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		843B80F6239FC51400CD3233 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				843B80F5239FC51400CD3233 /* DynamicCircle.framework */,
+				DB81318125E0F2E300A5D4CC /* DynamicCircleB.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		843B80F7239FC51400CD3233 /* DynamicCircle */ = {
+			isa = PBXGroup;
+			children = (
+				DB6E396D26B4D9AE006D942D /* Route */,
+				DB81321025E0F98300A5D4CC /* DynamicHomeViewController.h */,
+				DB81321125E0F98300A5D4CC /* DynamicHomeViewController.m */,
+				DB81318E25E0F34B00A5D4CC /* DynamicCircleRes.h */,
+				DB81318F25E0F34B00A5D4CC /* DynamicCircleRes.m */,
+				DB8130BD25E0ECEF00A5D4CC /* topic */,
+				DB8130A225E0E8DE00A5D4CC /* publish */,
+				DB8130A125E0E8CB00A5D4CC /* dynamicList */,
+				9E32B51624EFBFF900781017 /* Main */,
+				84349BB823A242FD0044CEC6 /* report */,
+				9E32B52D24EFBFF900781017 /* dynamic_header.pch */,
+				843B8139239FC6AA00CD3233 /* DynamicCircle.h */,
+				843B80F9239FC51400CD3233 /* Info.plist */,
+			);
+			path = DynamicCircle;
+			sourceTree = "<group>";
+		};
+		843B8100239FC53000CD3233 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				842068EC23A0D952003997E5 /* LibProjView.framework */,
+				843B810B239FC54400CD3233 /* LibProjBase.framework */,
+				843B8108239FC53E00CD3233 /* LibTools.framework */,
+				843B8101239FC53000CD3233 /* LibProjModel.framework */,
+				088A7649C8DA4308620A31E1 /* Pods_DynamicCircle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E32B51624EFBFF900781017 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DB8130A825E0EA7B00A5D4CC /* SubView */,
+				9E32B51724EFBFF900781017 /* DynamicMainViewController.h */,
+				9E32B51B24EFBFF900781017 /* DynamicMainViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DB6E396D26B4D9AE006D942D /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				DB6E396E26B4D9CF006D942D /* DynamicRoute.h */,
+				DB6E396F26B4D9CF006D942D /* DynamicRoute.m */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		DB8130A125E0E8CB00A5D4CC /* dynamicList */ = {
+			isa = PBXGroup;
+			children = (
+				9E32B50624EFBFF900781017 /* DynamicInterfaceView.h */,
+				9E32B50824EFBFF900781017 /* DynamicInterfaceView.m */,
+				9E32B50724EFBFF900781017 /* DynamicItemPlayCell.h */,
+				9E32B50924EFBFF900781017 /* DynamicItemPlayCell.m */,
+				9E32B4FD24EFBFF900781017 /* DynamicPlayListViewController.h */,
+				9E32B50A24EFBFF900781017 /* DynamicPlayListViewController.m */,
+			);
+			path = dynamicList;
+			sourceTree = "<group>";
+		};
+		DB8130A225E0E8DE00A5D4CC /* publish */ = {
+			isa = PBXGroup;
+			children = (
+				9E32B50424EFBFF900781017 /* DynamicPublishViewController.h */,
+				9E32B50C24EFBFF900781017 /* DynamicPublishViewController.m */,
+			);
+			path = publish;
+			sourceTree = "<group>";
+		};
+		DB8130A825E0EA7B00A5D4CC /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				DB8130AB25E0EA8300A5D4CC /* DynamicMainHeaderView.h */,
+				DB8130AD25E0EA8300A5D4CC /* DynamicMainHeaderView.m */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		DB8130BD25E0ECEF00A5D4CC /* topic */ = {
+			isa = PBXGroup;
+			children = (
+				DB12548925E678BD00E9ACB4 /* DynamicTopicItemCell.h */,
+				DB12548A25E678BE00E9ACB4 /* DynamicTopicItemCell.m */,
+				DB8130B825E0ECEC00A5D4CC /* DynamicTopicListVC.h */,
+				DB8130B925E0ECEC00A5D4CC /* DynamicTopicListVC.m */,
+			);
+			path = topic;
+			sourceTree = "<group>";
+		};
+		DB81318225E0F2E300A5D4CC /* DynamicCircleB */ = {
+			isa = PBXGroup;
+			children = (
+				DB81318325E0F2E300A5D4CC /* Info.plist */,
+			);
+			path = DynamicCircleB;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		843B80F0239FC51400CD3233 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6E397026B4D9CF006D942D /* DynamicRoute.h in Headers */,
+				DB8130B225E0EA8300A5D4CC /* DynamicMainHeaderView.h in Headers */,
+				DB81321225E0F98300A5D4CC /* DynamicHomeViewController.h in Headers */,
+				9E32B52F24EFBFF900781017 /* DynamicPlayListViewController.h in Headers */,
+				9E32B53524EFBFF900781017 /* DynamicPublishViewController.h in Headers */,
+				9E32B54424EFBFF900781017 /* DynamicMainViewController.h in Headers */,
+				DB8130BA25E0ECEC00A5D4CC /* DynamicTopicListVC.h in Headers */,
+				84349BBD23A242FE0044CEC6 /* DynamicReportItemCell.h in Headers */,
+				DB12548B25E678BE00E9ACB4 /* DynamicTopicItemCell.h in Headers */,
+				DB81319025E0F34B00A5D4CC /* DynamicCircleRes.h in Headers */,
+				843B813A239FC6AA00CD3233 /* DynamicCircle.h in Headers */,
+				84349BC023A242FE0044CEC6 /* DynamicReportController.h in Headers */,
+				9E32B53724EFBFF900781017 /* DynamicItemPlayCell.h in Headers */,
+				9E32B55324EFBFF900781017 /* dynamic_header.pch in Headers */,
+				9E32B53624EFBFF900781017 /* DynamicInterfaceView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		843B80F4239FC51400CD3233 /* DynamicCircle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 843B80FD239FC51400CD3233 /* Build configuration list for PBXNativeTarget "DynamicCircle" */;
+			buildPhases = (
+				8F900D246C965F1B095A08C0 /* [CP] Check Pods Manifest.lock */,
+				843B80F0239FC51400CD3233 /* Headers */,
+				843B80F1239FC51400CD3233 /* Sources */,
+				843B80F2239FC51400CD3233 /* Frameworks */,
+				843B80F3239FC51400CD3233 /* Resources */,
+				677BB4C0D4E3FC56A7A1BD33 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB81318A25E0F31000A5D4CC /* PBXTargetDependency */,
+			);
+			name = DynamicCircle;
+			productName = DynamicCircle;
+			productReference = 843B80F5239FC51400CD3233 /* DynamicCircle.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DB81318025E0F2E300A5D4CC /* DynamicCircleB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB81318425E0F2E300A5D4CC /* Build configuration list for PBXNativeTarget "DynamicCircleB" */;
+			buildPhases = (
+				DB81317D25E0F2E300A5D4CC /* Sources */,
+				DB81317E25E0F2E300A5D4CC /* Frameworks */,
+				DB81317F25E0F2E300A5D4CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicCircleB;
+			productName = DynamicCircleB;
+			productReference = DB81318125E0F2E300A5D4CC /* DynamicCircleB.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		843B80EC239FC51400CD3233 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = KLC;
+				TargetAttributes = {
+					843B80F4239FC51400CD3233 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					DB81318025E0F2E300A5D4CC = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 843B80EF239FC51400CD3233 /* Build configuration list for PBXProject "DynamicCircle" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 843B80EB239FC51400CD3233;
+			productRefGroup = 843B80F6239FC51400CD3233 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				843B80F4239FC51400CD3233 /* DynamicCircle */,
+				DB81318025E0F2E300A5D4CC /* DynamicCircleB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		843B80F3239FC51400CD3233 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB81317F25E0F2E300A5D4CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		677BB4C0D4E3FC56A7A1BD33 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DynamicCircle/Pods-DynamicCircle-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DynamicCircle/Pods-DynamicCircle-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DynamicCircle/Pods-DynamicCircle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F900D246C965F1B095A08C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DynamicCircle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		843B80F1239FC51400CD3233 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8130BB25E0ECEC00A5D4CC /* DynamicTopicListVC.m in Sources */,
+				9E32B53C24EFBFF900781017 /* DynamicPublishViewController.m in Sources */,
+				DB81321325E0F98300A5D4CC /* DynamicHomeViewController.m in Sources */,
+				9E32B54724EFBFF900781017 /* DynamicMainViewController.m in Sources */,
+				DB6E397126B4D9CF006D942D /* DynamicRoute.m in Sources */,
+				84349BBF23A242FE0044CEC6 /* DynamicReportItemCell.m in Sources */,
+				9E32B53824EFBFF900781017 /* DynamicInterfaceView.m in Sources */,
+				DB81319125E0F34B00A5D4CC /* DynamicCircleRes.m in Sources */,
+				DB12548C25E678BE00E9ACB4 /* DynamicTopicItemCell.m in Sources */,
+				84349BBE23A242FE0044CEC6 /* DynamicReportController.m in Sources */,
+				DB8130B425E0EA8300A5D4CC /* DynamicMainHeaderView.m in Sources */,
+				9E32B53924EFBFF900781017 /* DynamicItemPlayCell.m in Sources */,
+				9E32B53A24EFBFF900781017 /* DynamicPlayListViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB81317D25E0F2E300A5D4CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB81318A25E0F31000A5D4CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB81318025E0F2E300A5D4CC /* DynamicCircleB */;
+			targetProxy = DB81318925E0F31000A5D4CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		843B80FB239FC51400CD3233 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		843B80FC239FC51400CD3233 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		843B80FE239FC51400CD3233 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25EEF451A8DADA5197174C0E /* Pods-DynamicCircle.debug.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DynamicCircle/dynamic_header.pch";
+				INFOPLIST_FILE = DynamicCircle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.DynamicCircle;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		843B80FF239FC51400CD3233 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5738CF08B4741C8E03346E66 /* Pods-DynamicCircle.release.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BRPickerView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CYLTabBarController\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HappyDNS\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JLRoutes\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXPagingView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJExtension\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Qiniu\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RTRootNavigationController\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SSZipArchive\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVGAPlayer\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController\"",
+					"\"${PODS_ROOT}/AgoraRtcEngine_iOS\"",
+					"\"${PODS_ROOT}/AlipaySDK-iOS\"",
+					"\"${PODS_ROOT}/Bugly\"",
+					"\"${PODS_ROOT}/JMessage\"",
+					"\"${PODS_ROOT}/MOBFoundation/MOBFoundation\"",
+					"\"${PODS_ROOT}/OpenSSL-for-iOS\"",
+					"\"${PODS_ROOT}/Tencent-MapSDK/sdk\"",
+					"\"${PODS_ROOT}/mob_sharesdk/ShareSDK\"",
+					"\"${PODS_ROOT}/mob_sharesdk/ShareSDK/Support/PlatformConnector\"",
+					"\"${PODS_ROOT}/mob_sharesdk/ShareSDK/Support/PlatformSDK/QQSDK\"",
+					"\"${PODS_ROOT}/mob_sharesdk/ShareSDK/Support/Required\"",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DynamicCircle/dynamic_header.pch";
+				INFOPLIST_FILE = DynamicCircle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.DynamicCircle;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB81318525E0F2E300A5D4CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NGXJT9M3FH;
+				INFOPLIST_FILE = DynamicCircleB/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klc.DynamicCircleB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		DB81318625E0F2E300A5D4CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NGXJT9M3FH;
+				INFOPLIST_FILE = DynamicCircleB/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klc.DynamicCircleB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		843B80EF239FC51400CD3233 /* Build configuration list for PBXProject "DynamicCircle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843B80FB239FC51400CD3233 /* Debug */,
+				843B80FC239FC51400CD3233 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		843B80FD239FC51400CD3233 /* Build configuration list for PBXNativeTarget "DynamicCircle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843B80FE239FC51400CD3233 /* Debug */,
+				843B80FF239FC51400CD3233 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB81318425E0F2E300A5D4CC /* Build configuration list for PBXNativeTarget "DynamicCircleB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB81318525E0F2E300A5D4CC /* Debug */,
+				DB81318625E0F2E300A5D4CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 843B80EC239FC51400CD3233 /* Project object */;
+}

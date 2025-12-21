@@ -1,0 +1,57 @@
+//
+//  PrefixHeader.pch
+//  TCDemo
+//
+//  Created by admin on 2019/8/29.
+//  Copyright © 2019 CH. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+
+#import <Masonry/Masonry.h>
+ 
+#import <AFNetworking/AFNetworking.h>
+#import <SDWebImage/SDWebImage.h>
+#import <LibTools/LibTools.h>
+#import <LibProjModel/KLCUserInfo.h>
+#import "DemoRouteRegister.h"
+#import <LibProjBase/ProjConfig.h>
+#import <LibProjModel/KLCAppConfig.h>
+#import <TXImKit/IMSocketIns.h>
+
+
+ 
+//服务器地址
+
+#define BaseUrl  @"http://zb.ym2019.cn"
+//#define BaseUrl @"http://192.168.8.8:1869"
+//#define BaseUrl @"http://192.168.8.222:1813"
+
+
+///Bugly
+#define BuglyId      @"4c5c1e6f47"
+
+
+///Bugly
+#define tencentMapKey      @"MBZBZ-QDYCO-FW6WX-S52JI-CRTQ5-IMFCG"
+
+///Mob
+#define MOBAppkey   @"30548bf48fb18"
+#define MOBAppSecret   @"e4d681d5473a32541c994b4168865baf"
+
+
+#define QQAppId   @"101890499"
+#define QQAppKey   @"145f81eab7541ab7aa9d3ee2dce64ea3"
+
+
+#define WXAppId         @"wxef87311d8cecb346"
+#define WXAppSecret     @"a60a44e18e2f313d6d89885888c8246f"
+#define UniversalLink    @"https://5nmqm.share2dlink.com/"
+
+
+#endif
+
+#endif /* PrefixHeader_pch */

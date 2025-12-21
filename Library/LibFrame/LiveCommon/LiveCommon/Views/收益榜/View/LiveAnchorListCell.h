@@ -1,0 +1,25 @@
+//
+//  LiveAnchorListCell.h
+//  LiveCommon
+//
+//  Created by klc_sl on 2020/3/23.
+//  Copyright © 2020 . All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@class RanksDtoModel;
+
+@interface LiveAnchorListCell : UITableViewCell
+
+
+@property (nonatomic, strong)RanksDtoModel *voterModel;
+
+@property (nonatomic, assign)NSInteger index;
+
+
+@end
+
+NS_ASSUME_NONNULL_END

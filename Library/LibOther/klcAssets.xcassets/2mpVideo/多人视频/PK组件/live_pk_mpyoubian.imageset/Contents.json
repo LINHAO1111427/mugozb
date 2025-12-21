@@ -1,0 +1,43 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "resizing" : {
+        "cap-insets" : {
+          "left" : 0,
+          "right" : 0
+        },
+        "center" : {
+          "mode" : "tile",
+          "width" : 0
+        },
+        "mode" : "3-part-horizontal"
+      },
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "youbian@3x.png",
+      "idiom" : "universal",
+      "resizing" : {
+        "cap-insets" : {
+          "left" : 28,
+          "right" : 21
+        },
+        "center" : {
+          "mode" : "tile",
+          "width" : 1
+        },
+        "mode" : "3-part-horizontal"
+      },
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

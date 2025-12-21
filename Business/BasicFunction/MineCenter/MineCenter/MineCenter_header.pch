@@ -1,0 +1,44 @@
+//
+//  MineCenter_header.pch
+//  MineCenter
+//
+//  Created by ssssssss on 2019/12/18.
+//
+
+#ifndef MineCenter_header_pch
+#define MineCenter_header_pch
+
+#import <LibTools/LibTools.h>
+ 
+#import <LibProjBase/LibProjBase.h>
+#import <LibProjView/EmptyView.h>
+#import <LibProjModel/ApiUserIndexRespModel.h>
+#import <LibProjModel/ApiUserInfoModel.h>
+#import <LibProjModel/HttpApiUserController.h>
+ 
+#import <LibProjView/SkyDriveTool.h>
+
+#import <MJRefresh/MJRefresh.h>
+#import <SDWebImage/SDWebImage.h>
+ 
+#import <SDWebImage/UIImageView+WebCache.h>
+
+#import "JXCategoryView.h"
+
+
+
+//#import "LibTools/BaseMacroDefinition.h"
+
+#define MineBlackTextColor  kRGB_COLOR(@"#333333")
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* MineCenter_header_pch */
+
+
+#ifndef __OPTIMIZE__
+#define NSLog(FORMAT, ...) fprintf(stderr,"[%s] line:%d %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
+#else
+# define NSLog(...)
+#endif

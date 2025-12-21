@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60ADADC127EF0BCA00A77EAB /* LibProjView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60ADADC027EF0BCA00A77EAB /* LibProjView.framework */; };
+		6349B48F253F165000A3CB3D /* LibProjModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84349C0523A2596D0044CEC6 /* LibProjModel.framework */; };
+		84349BD723A257770044CEC6 /* Ranking.h in Headers */ = {isa = PBXBuildFile; fileRef = 84349BD523A257770044CEC6 /* Ranking.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		84349C0223A259670044CEC6 /* LibTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84349C0123A259670044CEC6 /* LibTools.framework */; };
+		84349C0923A259710044CEC6 /* LibProjBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84349C0823A259710044CEC6 /* LibProjBase.framework */; };
+		9E035B6025942FBA00F4AB69 /* TotalRankMainVc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E035B5E25942FB900F4AB69 /* TotalRankMainVc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E035B6125942FBA00F4AB69 /* TotalRankMainVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E035B5F25942FB900F4AB69 /* TotalRankMainVc.m */; };
+		9E035B642594300700F4AB69 /* UserContributeRankVc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E035B622594300700F4AB69 /* UserContributeRankVc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E035B652594300700F4AB69 /* UserContributeRankVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E035B632594300700F4AB69 /* UserContributeRankVc.m */; };
+		9E035B6A2594307F00F4AB69 /* TotalIncomeRankTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E035B682594307F00F4AB69 /* TotalIncomeRankTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E035B6B2594307F00F4AB69 /* TotalIncomeRankTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E035B692594307F00F4AB69 /* TotalIncomeRankTable.m */; };
+		9E035B6E259430A100F4AB69 /* TotalContributeRankTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E035B6C259430A100F4AB69 /* TotalContributeRankTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E035B6F259430A100F4AB69 /* TotalContributeRankTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E035B6D259430A100F4AB69 /* TotalContributeRankTable.m */; };
+		9E035B72259430F000F4AB69 /* TotalConsortiaRankTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E035B70259430F000F4AB69 /* TotalConsortiaRankTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E035B73259430F000F4AB69 /* TotalConsortiaRankTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E035B71259430F000F4AB69 /* TotalConsortiaRankTable.m */; };
+		9E035B7625943B8100F4AB69 /* TotalRankHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E035B7425943B8100F4AB69 /* TotalRankHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E035B7725943B8100F4AB69 /* TotalRankHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E035B7525943B8100F4AB69 /* TotalRankHeader.m */; };
+		9E035B7A259462B300F4AB69 /* TotalUserRankCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E035B78259462B300F4AB69 /* TotalUserRankCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E035B7B259462B300F4AB69 /* TotalUserRankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E035B79259462B300F4AB69 /* TotalUserRankCell.m */; };
+		9E035B7E2594708E00F4AB69 /* TotalMyRankView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E035B7C2594708E00F4AB69 /* TotalMyRankView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E035B7F2594708E00F4AB69 /* TotalMyRankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E035B7D2594708E00F4AB69 /* TotalMyRankView.m */; };
+		9E035B82259484CD00F4AB69 /* RankTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E035B80259484CD00F4AB69 /* RankTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E035B83259484CD00F4AB69 /* RankTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E035B81259484CD00F4AB69 /* RankTable.m */; };
+		9E035B8A2595735A00F4AB69 /* RankSectionHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E035B882595735A00F4AB69 /* RankSectionHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E035B8B2595735A00F4AB69 /* RankSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E035B892595735A00F4AB69 /* RankSectionHeader.m */; };
+		9E6821602596CB08002226BA /* UserContributeRankHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E68215E2596CB08002226BA /* UserContributeRankHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E6821612596CB08002226BA /* UserContributeRankHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E68215F2596CB08002226BA /* UserContributeRankHeader.m */; };
+		9E6821642596D0F9002226BA /* UserRankTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E6821622596D0F9002226BA /* UserRankTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E6821652596D0F9002226BA /* UserRankTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6821632596D0F9002226BA /* UserRankTable.m */; };
+		B742F31AB773C1498F7C12B5 /* Pods_Ranking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F11B7E6436B7FAA9DF2265A /* Pods_Ranking.framework */; };
+		DB16808326BB8DCB0067448F /* RankingRoute.h in Headers */ = {isa = PBXBuildFile; fileRef = DB16808126BB8DCB0067448F /* RankingRoute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB16808426BB8DCB0067448F /* RankingRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = DB16808226BB8DCB0067448F /* RankingRoute.m */; };
+		DB409B0F26BAC3D900AEFD90 /* TotalFamilyRankTable.h in Headers */ = {isa = PBXBuildFile; fileRef = DB409B0D26BAC3D900AEFD90 /* TotalFamilyRankTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB409B1026BAC3D900AEFD90 /* TotalFamilyRankTable.m in Sources */ = {isa = PBXBuildFile; fileRef = DB409B0E26BAC3D900AEFD90 /* TotalFamilyRankTable.m */; };
+		DB65CA3126DF23540046B9A1 /* FamilyTotalRankCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB65CA2F26DF23540046B9A1 /* FamilyTotalRankCell.h */; };
+		DB65CA3226DF23540046B9A1 /* FamilyTotalRankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB65CA3026DF23540046B9A1 /* FamilyTotalRankCell.m */; };
+		DB66597926BD5A6400FF8CF6 /* FamilyIncomeRankVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB66597526BD5A6400FF8CF6 /* FamilyIncomeRankVC.m */; };
+		DB66597A26BD5A6400FF8CF6 /* FamilyContributeRankVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB66597626BD5A6400FF8CF6 /* FamilyContributeRankVC.m */; };
+		DB66597B26BD5A6400FF8CF6 /* FamilyContributeRankVC.h in Headers */ = {isa = PBXBuildFile; fileRef = DB66597726BD5A6400FF8CF6 /* FamilyContributeRankVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB66597C26BD5A6400FF8CF6 /* FamilyIncomeRankVC.h in Headers */ = {isa = PBXBuildFile; fileRef = DB66597826BD5A6400FF8CF6 /* FamilyIncomeRankVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB66598026BD5AAE00FF8CF6 /* FamilyInternalRankVc.h in Headers */ = {isa = PBXBuildFile; fileRef = DB66597E26BD5AAE00FF8CF6 /* FamilyInternalRankVc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB66598126BD5AAE00FF8CF6 /* FamilyInternalRankVc.m in Sources */ = {isa = PBXBuildFile; fileRef = DB66597F26BD5AAE00FF8CF6 /* FamilyInternalRankVc.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		274C767983AB40CDF26B2E56 /* Pods-Ranking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranking.release.xcconfig"; path = "../../../Desktop/mugozb/Project/rechao/klcMPVA/Pods/Target Support Files/Pods-Ranking/Pods-Ranking.release.xcconfig"; sourceTree = "<group>"; };
+		3F11B7E6436B7FAA9DF2265A /* Pods_Ranking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ranking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60ADADC027EF0BCA00A77EAB /* LibProjView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84349BD223A257770044CEC6 /* Ranking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ranking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84349BD523A257770044CEC6 /* Ranking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ranking.h; sourceTree = "<group>"; };
+		84349BD623A257770044CEC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84349C0123A259670044CEC6 /* LibTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84349C0523A2596D0044CEC6 /* LibProjModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84349C0823A259710044CEC6 /* LibProjBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E035B5E25942FB900F4AB69 /* TotalRankMainVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalRankMainVc.h; sourceTree = "<group>"; };
+		9E035B5F25942FB900F4AB69 /* TotalRankMainVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalRankMainVc.m; sourceTree = "<group>"; };
+		9E035B622594300700F4AB69 /* UserContributeRankVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserContributeRankVc.h; sourceTree = "<group>"; };
+		9E035B632594300700F4AB69 /* UserContributeRankVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserContributeRankVc.m; sourceTree = "<group>"; };
+		9E035B682594307F00F4AB69 /* TotalIncomeRankTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalIncomeRankTable.h; sourceTree = "<group>"; };
+		9E035B692594307F00F4AB69 /* TotalIncomeRankTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalIncomeRankTable.m; sourceTree = "<group>"; };
+		9E035B6C259430A100F4AB69 /* TotalContributeRankTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalContributeRankTable.h; sourceTree = "<group>"; };
+		9E035B6D259430A100F4AB69 /* TotalContributeRankTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalContributeRankTable.m; sourceTree = "<group>"; };
+		9E035B70259430F000F4AB69 /* TotalConsortiaRankTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalConsortiaRankTable.h; sourceTree = "<group>"; };
+		9E035B71259430F000F4AB69 /* TotalConsortiaRankTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalConsortiaRankTable.m; sourceTree = "<group>"; };
+		9E035B7425943B8100F4AB69 /* TotalRankHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalRankHeader.h; sourceTree = "<group>"; };
+		9E035B7525943B8100F4AB69 /* TotalRankHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalRankHeader.m; sourceTree = "<group>"; };
+		9E035B78259462B300F4AB69 /* TotalUserRankCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalUserRankCell.h; sourceTree = "<group>"; };
+		9E035B79259462B300F4AB69 /* TotalUserRankCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalUserRankCell.m; sourceTree = "<group>"; };
+		9E035B7C2594708E00F4AB69 /* TotalMyRankView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalMyRankView.h; sourceTree = "<group>"; };
+		9E035B7D2594708E00F4AB69 /* TotalMyRankView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalMyRankView.m; sourceTree = "<group>"; };
+		9E035B80259484CD00F4AB69 /* RankTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankTable.h; sourceTree = "<group>"; };
+		9E035B81259484CD00F4AB69 /* RankTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankTable.m; sourceTree = "<group>"; };
+		9E035B882595735A00F4AB69 /* RankSectionHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankSectionHeader.h; sourceTree = "<group>"; };
+		9E035B892595735A00F4AB69 /* RankSectionHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankSectionHeader.m; sourceTree = "<group>"; };
+		9E68215E2596CB08002226BA /* UserContributeRankHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserContributeRankHeader.h; sourceTree = "<group>"; };
+		9E68215F2596CB08002226BA /* UserContributeRankHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserContributeRankHeader.m; sourceTree = "<group>"; };
+		9E6821622596D0F9002226BA /* UserRankTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserRankTable.h; sourceTree = "<group>"; };
+		9E6821632596D0F9002226BA /* UserRankTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserRankTable.m; sourceTree = "<group>"; };
+		D01182EFF3E5C149FA9E16A6 /* Pods-Ranking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranking.debug.xcconfig"; path = "../../../Desktop/mugozb/Project/rechao/klcMPVA/Pods/Target Support Files/Pods-Ranking/Pods-Ranking.debug.xcconfig"; sourceTree = "<group>"; };
+		DB16808126BB8DCB0067448F /* RankingRoute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankingRoute.h; sourceTree = "<group>"; };
+		DB16808226BB8DCB0067448F /* RankingRoute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankingRoute.m; sourceTree = "<group>"; };
+		DB409B0D26BAC3D900AEFD90 /* TotalFamilyRankTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalFamilyRankTable.h; sourceTree = "<group>"; };
+		DB409B0E26BAC3D900AEFD90 /* TotalFamilyRankTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalFamilyRankTable.m; sourceTree = "<group>"; };
+		DB65CA2F26DF23540046B9A1 /* FamilyTotalRankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyTotalRankCell.h; sourceTree = "<group>"; };
+		DB65CA3026DF23540046B9A1 /* FamilyTotalRankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyTotalRankCell.m; sourceTree = "<group>"; };
+		DB66597526BD5A6400FF8CF6 /* FamilyIncomeRankVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyIncomeRankVC.m; sourceTree = "<group>"; };
+		DB66597626BD5A6400FF8CF6 /* FamilyContributeRankVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyContributeRankVC.m; sourceTree = "<group>"; };
+		DB66597726BD5A6400FF8CF6 /* FamilyContributeRankVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyContributeRankVC.h; sourceTree = "<group>"; };
+		DB66597826BD5A6400FF8CF6 /* FamilyIncomeRankVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyIncomeRankVC.h; sourceTree = "<group>"; };
+		DB66597E26BD5AAE00FF8CF6 /* FamilyInternalRankVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyInternalRankVc.h; sourceTree = "<group>"; };
+		DB66597F26BD5AAE00FF8CF6 /* FamilyInternalRankVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyInternalRankVc.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84349BCF23A257770044CEC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84349C0223A259670044CEC6 /* LibTools.framework in Frameworks */,
+				6349B48F253F165000A3CB3D /* LibProjModel.framework in Frameworks */,
+				84349C0923A259710044CEC6 /* LibProjBase.framework in Frameworks */,
+				60ADADC127EF0BCA00A77EAB /* LibProjView.framework in Frameworks */,
+				B742F31AB773C1498F7C12B5 /* Pods_Ranking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84349BC823A257770044CEC6 = {
+			isa = PBXGroup;
+			children = (
+				84349BD423A257770044CEC6 /* Ranking */,
+				84349BD323A257770044CEC6 /* Products */,
+				84349C0023A259670044CEC6 /* Frameworks */,
+				A8F7CCE4D4ACD619966C5A0D /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		84349BD323A257770044CEC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84349BD223A257770044CEC6 /* Ranking.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84349BD423A257770044CEC6 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				DB66597426BD599E00FF8CF6 /* 家族内榜 */,
+				DB16807C26BB8D530067448F /* Route */,
+				9E035B5C25942F6C00F4AB69 /* 总榜 */,
+				9E035B5D25942F6C00F4AB69 /* 个人榜 */,
+				84349BD523A257770044CEC6 /* Ranking.h */,
+				84349BD623A257770044CEC6 /* Info.plist */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
+		84349C0023A259670044CEC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60ADADC027EF0BCA00A77EAB /* LibProjView.framework */,
+				84349C0823A259710044CEC6 /* LibProjBase.framework */,
+				84349C0523A2596D0044CEC6 /* LibProjModel.framework */,
+				84349C0123A259670044CEC6 /* LibTools.framework */,
+				3F11B7E6436B7FAA9DF2265A /* Pods_Ranking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E035B5C25942F6C00F4AB69 /* 总榜 */ = {
+			isa = PBXGroup;
+			children = (
+				9E035B5E25942FB900F4AB69 /* TotalRankMainVc.h */,
+				9E035B5F25942FB900F4AB69 /* TotalRankMainVc.m */,
+				9E035B672594302300F4AB69 /* table */,
+				9E035B662594302300F4AB69 /* view */,
+			);
+			path = "总榜";
+			sourceTree = "<group>";
+		};
+		9E035B5D25942F6C00F4AB69 /* 个人榜 */ = {
+			isa = PBXGroup;
+			children = (
+				9E035B622594300700F4AB69 /* UserContributeRankVc.h */,
+				9E035B632594300700F4AB69 /* UserContributeRankVc.m */,
+				9E68215D2596CADE002226BA /* view */,
+			);
+			path = "个人榜";
+			sourceTree = "<group>";
+		};
+		9E035B662594302300F4AB69 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				DB65CA2F26DF23540046B9A1 /* FamilyTotalRankCell.h */,
+				DB65CA3026DF23540046B9A1 /* FamilyTotalRankCell.m */,
+				9E035B7425943B8100F4AB69 /* TotalRankHeader.h */,
+				9E035B7525943B8100F4AB69 /* TotalRankHeader.m */,
+				9E035B7C2594708E00F4AB69 /* TotalMyRankView.h */,
+				9E035B7D2594708E00F4AB69 /* TotalMyRankView.m */,
+				9E035B78259462B300F4AB69 /* TotalUserRankCell.h */,
+				9E035B79259462B300F4AB69 /* TotalUserRankCell.m */,
+				9E035B80259484CD00F4AB69 /* RankTable.h */,
+				9E035B81259484CD00F4AB69 /* RankTable.m */,
+				9E035B882595735A00F4AB69 /* RankSectionHeader.h */,
+				9E035B892595735A00F4AB69 /* RankSectionHeader.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		9E035B672594302300F4AB69 /* table */ = {
+			isa = PBXGroup;
+			children = (
+				DB409B0D26BAC3D900AEFD90 /* TotalFamilyRankTable.h */,
+				DB409B0E26BAC3D900AEFD90 /* TotalFamilyRankTable.m */,
+				9E035B682594307F00F4AB69 /* TotalIncomeRankTable.h */,
+				9E035B692594307F00F4AB69 /* TotalIncomeRankTable.m */,
+				9E035B70259430F000F4AB69 /* TotalConsortiaRankTable.h */,
+				9E035B71259430F000F4AB69 /* TotalConsortiaRankTable.m */,
+				9E035B6C259430A100F4AB69 /* TotalContributeRankTable.h */,
+				9E035B6D259430A100F4AB69 /* TotalContributeRankTable.m */,
+			);
+			path = table;
+			sourceTree = "<group>";
+		};
+		9E68215D2596CADE002226BA /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9E68215E2596CB08002226BA /* UserContributeRankHeader.h */,
+				9E68215F2596CB08002226BA /* UserContributeRankHeader.m */,
+				9E6821622596D0F9002226BA /* UserRankTable.h */,
+				9E6821632596D0F9002226BA /* UserRankTable.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A8F7CCE4D4ACD619966C5A0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D01182EFF3E5C149FA9E16A6 /* Pods-Ranking.debug.xcconfig */,
+				274C767983AB40CDF26B2E56 /* Pods-Ranking.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../../../../../MXPorj/MXDemo/Pods;
+			sourceTree = "<group>";
+		};
+		DB16807C26BB8D530067448F /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				DB16808126BB8DCB0067448F /* RankingRoute.h */,
+				DB16808226BB8DCB0067448F /* RankingRoute.m */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		DB66597426BD599E00FF8CF6 /* 家族内榜 */ = {
+			isa = PBXGroup;
+			children = (
+				DB66597E26BD5AAE00FF8CF6 /* FamilyInternalRankVc.h */,
+				DB66597F26BD5AAE00FF8CF6 /* FamilyInternalRankVc.m */,
+				DB66597D26BD5A8300FF8CF6 /* table */,
+			);
+			path = "家族内榜";
+			sourceTree = "<group>";
+		};
+		DB66597D26BD5A8300FF8CF6 /* table */ = {
+			isa = PBXGroup;
+			children = (
+				DB66597726BD5A6400FF8CF6 /* FamilyContributeRankVC.h */,
+				DB66597626BD5A6400FF8CF6 /* FamilyContributeRankVC.m */,
+				DB66597826BD5A6400FF8CF6 /* FamilyIncomeRankVC.h */,
+				DB66597526BD5A6400FF8CF6 /* FamilyIncomeRankVC.m */,
+			);
+			path = table;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		84349BCD23A257770044CEC6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB409B0F26BAC3D900AEFD90 /* TotalFamilyRankTable.h in Headers */,
+				9E035B82259484CD00F4AB69 /* RankTable.h in Headers */,
+				9E035B7625943B8100F4AB69 /* TotalRankHeader.h in Headers */,
+				DB66597B26BD5A6400FF8CF6 /* FamilyContributeRankVC.h in Headers */,
+				9E035B7E2594708E00F4AB69 /* TotalMyRankView.h in Headers */,
+				DB65CA3126DF23540046B9A1 /* FamilyTotalRankCell.h in Headers */,
+				9E035B72259430F000F4AB69 /* TotalConsortiaRankTable.h in Headers */,
+				9E035B7A259462B300F4AB69 /* TotalUserRankCell.h in Headers */,
+				DB66598026BD5AAE00FF8CF6 /* FamilyInternalRankVc.h in Headers */,
+				9E035B8A2595735A00F4AB69 /* RankSectionHeader.h in Headers */,
+				9E6821642596D0F9002226BA /* UserRankTable.h in Headers */,
+				DB66597C26BD5A6400FF8CF6 /* FamilyIncomeRankVC.h in Headers */,
+				9E6821602596CB08002226BA /* UserContributeRankHeader.h in Headers */,
+				DB16808326BB8DCB0067448F /* RankingRoute.h in Headers */,
+				9E035B6E259430A100F4AB69 /* TotalContributeRankTable.h in Headers */,
+				9E035B6A2594307F00F4AB69 /* TotalIncomeRankTable.h in Headers */,
+				9E035B642594300700F4AB69 /* UserContributeRankVc.h in Headers */,
+				9E035B6025942FBA00F4AB69 /* TotalRankMainVc.h in Headers */,
+				84349BD723A257770044CEC6 /* Ranking.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		84349BD123A257770044CEC6 /* Ranking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84349BDA23A257770044CEC6 /* Build configuration list for PBXNativeTarget "Ranking" */;
+			buildPhases = (
+				16EBDE69737D339880B317C2 /* [CP] Check Pods Manifest.lock */,
+				84349BCD23A257770044CEC6 /* Headers */,
+				84349BCE23A257770044CEC6 /* Sources */,
+				84349BCF23A257770044CEC6 /* Frameworks */,
+				84349BD023A257770044CEC6 /* Resources */,
+				B4DF352F9FD3C32A1C29687F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ranking;
+			productName = Ranking;
+			productReference = 84349BD223A257770044CEC6 /* Ranking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84349BC923A257770044CEC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = KLC;
+				TargetAttributes = {
+					84349BD123A257770044CEC6 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 84349BCC23A257770044CEC6 /* Build configuration list for PBXProject "Ranking" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84349BC823A257770044CEC6;
+			productRefGroup = 84349BD323A257770044CEC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84349BD123A257770044CEC6 /* Ranking */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84349BD023A257770044CEC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16EBDE69737D339880B317C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ranking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4DF352F9FD3C32A1C29687F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ranking/Pods-Ranking-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ranking/Pods-Ranking-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ranking/Pods-Ranking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84349BCE23A257770044CEC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB16808426BB8DCB0067448F /* RankingRoute.m in Sources */,
+				DB66598126BD5AAE00FF8CF6 /* FamilyInternalRankVc.m in Sources */,
+				9E035B83259484CD00F4AB69 /* RankTable.m in Sources */,
+				9E035B7725943B8100F4AB69 /* TotalRankHeader.m in Sources */,
+				9E035B7F2594708E00F4AB69 /* TotalMyRankView.m in Sources */,
+				DB409B1026BAC3D900AEFD90 /* TotalFamilyRankTable.m in Sources */,
+				DB65CA3226DF23540046B9A1 /* FamilyTotalRankCell.m in Sources */,
+				9E035B6125942FBA00F4AB69 /* TotalRankMainVc.m in Sources */,
+				9E035B6F259430A100F4AB69 /* TotalContributeRankTable.m in Sources */,
+				9E035B8B2595735A00F4AB69 /* RankSectionHeader.m in Sources */,
+				DB66597926BD5A6400FF8CF6 /* FamilyIncomeRankVC.m in Sources */,
+				9E035B7B259462B300F4AB69 /* TotalUserRankCell.m in Sources */,
+				9E6821612596CB08002226BA /* UserContributeRankHeader.m in Sources */,
+				9E6821652596D0F9002226BA /* UserRankTable.m in Sources */,
+				DB66597A26BD5A6400FF8CF6 /* FamilyContributeRankVC.m in Sources */,
+				9E035B6B2594307F00F4AB69 /* TotalIncomeRankTable.m in Sources */,
+				9E035B73259430F000F4AB69 /* TotalConsortiaRankTable.m in Sources */,
+				9E035B652594300700F4AB69 /* UserContributeRankVc.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84349BD823A257770044CEC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		84349BD923A257770044CEC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		84349BDB23A257770044CEC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D01182EFF3E5C149FA9E16A6 /* Pods-Ranking.debug.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NGXJT9M3FH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = Ranking/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.Ranking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84349BDC23A257770044CEC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 274C767983AB40CDF26B2E56 /* Pods-Ranking.release.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NGXJT9M3FH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = Ranking/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.Ranking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84349BCC23A257770044CEC6 /* Build configuration list for PBXProject "Ranking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84349BD823A257770044CEC6 /* Debug */,
+				84349BD923A257770044CEC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84349BDA23A257770044CEC6 /* Build configuration list for PBXNativeTarget "Ranking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84349BDB23A257770044CEC6 /* Debug */,
+				84349BDC23A257770044CEC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84349BC923A257770044CEC6 /* Project object */;
+}

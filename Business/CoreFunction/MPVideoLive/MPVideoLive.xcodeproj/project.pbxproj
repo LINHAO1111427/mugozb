@@ -1,0 +1,913 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12BB010226EBD9C39A86D30A /* Pods_MPVideoLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DD216361DA5189E1EB482B /* Pods_MPVideoLive.framework */; };
+		60C23C432846F91B0073F089 /* TXImKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C23C422846F91B0073F089 /* TXImKit.framework */; };
+		639D249A253183A900171E4D /* MPVideoInfoBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D2485253183A900171E4D /* MPVideoInfoBottomView.m */; };
+		639D249B253183A900171E4D /* MPVideoInfoHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D2486253183A900171E4D /* MPVideoInfoHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D249C253183A900171E4D /* MPVideoInfoBottomView.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D2487253183A900171E4D /* MPVideoInfoBottomView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D249D253183A900171E4D /* MPVideoInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D2488253183A900171E4D /* MPVideoInfoHeaderView.m */; };
+		639D249E253183A900171E4D /* MPVideoCloseInfoShowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D248B253183A900171E4D /* MPVideoCloseInfoShowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D24A0253183A900171E4D /* MPVideoCloseInfoShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D248D253183A900171E4D /* MPVideoCloseInfoShowView.m */; };
+		639D24A6253183A900171E4D /* MPVideoPreInfoView.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D2496253183A900171E4D /* MPVideoPreInfoView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D24A7253183A900171E4D /* MPVideoPreView.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D2497253183A900171E4D /* MPVideoPreView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D24A8253183A900171E4D /* MPVideoPreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D2498253183A900171E4D /* MPVideoPreView.m */; };
+		639D24A9253183A900171E4D /* MPVideoPreInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D2499253183A900171E4D /* MPVideoPreInfoView.m */; };
+		6782252025109FB200EC37B4 /* XTRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6782251F25109FB200EC37B4 /* XTRtcKit.framework */; };
+		82D3643523C5F63F00B69BCC /* MPVideoLive_header.pch in Headers */ = {isa = PBXBuildFile; fileRef = 82D3643423C5F63F00B69BCC /* MPVideoLive_header.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		842CA20B23C71B6B000887D1 /* MPVideoLiveController.h in Headers */ = {isa = PBXBuildFile; fileRef = 842CA20923C71B6B000887D1 /* MPVideoLiveController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		842CA20C23C71B6B000887D1 /* MPVideoLiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CA20A23C71B6B000887D1 /* MPVideoLiveController.m */; };
+		8440DC3E23BEF22D00D5B0C4 /* LiveCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8440DC3D23BEF22D00D5B0C4 /* LiveCommon.framework */; };
+		84715924246959970016EE51 /* MPUserOwnView.h in Headers */ = {isa = PBXBuildFile; fileRef = 84715922246959970016EE51 /* MPUserOwnView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84715925246959970016EE51 /* MPUserOwnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84715923246959970016EE51 /* MPUserOwnView.m */; };
+		847159282469677E0016EE51 /* MPUserLinkMicView.h in Headers */ = {isa = PBXBuildFile; fileRef = 847159262469677E0016EE51 /* MPUserLinkMicView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		847159292469677E0016EE51 /* MPUserLinkMicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847159272469677E0016EE51 /* MPUserLinkMicView.m */; };
+		8471592C246968BE0016EE51 /* MPAnchorConnView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8471592A246968BD0016EE51 /* MPAnchorConnView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8471592D246968BE0016EE51 /* MPAnchorConnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471592B246968BD0016EE51 /* MPAnchorConnView.m */; };
+		DB4484FD260F0E6200FE87E3 /* VideoSelectPKTimeView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4484FB260F0E6200FE87E3 /* VideoSelectPKTimeView.h */; };
+		DB4484FE260F0E6200FE87E3 /* VideoSelectPKTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4484FC260F0E6200FE87E3 /* VideoSelectPKTimeView.m */; };
+		DB6E277926DCFC9700FDBC84 /* MPOtherLinkAnchorView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E277726DCFC9700FDBC84 /* MPOtherLinkAnchorView.h */; };
+		DB6E277A26DCFC9700FDBC84 /* MPOtherLinkAnchorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6E277826DCFC9700FDBC84 /* MPOtherLinkAnchorView.m */; };
+		DB76D22B2611835800EE25D2 /* MPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB76D22A2611835800EE25D2 /* MPCommon.framework */; };
+		DB972478266DFA9500A676E4 /* AnchorHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB972476266DFA9500A676E4 /* AnchorHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB972479266DFA9500A676E4 /* AnchorHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB972477266DFA9500A676E4 /* AnchorHeaderView.m */; };
+		DBB9162E267AF4AC004E45B4 /* LiveAdverShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB91628267AF4AC004E45B4 /* LiveAdverShowView.m */; };
+		DBB9162F267AF4AC004E45B4 /* LiveAdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB91629267AF4AC004E45B4 /* LiveAdvertisingView.m */; };
+		DBB91630267AF4AC004E45B4 /* SecondAdsSelectView.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB9162A267AF4AC004E45B4 /* SecondAdsSelectView.h */; };
+		DBB91631267AF4AC004E45B4 /* LiveAdverShowView.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB9162B267AF4AC004E45B4 /* LiveAdverShowView.h */; };
+		DBB91632267AF4AC004E45B4 /* SecondAdsSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB9162C267AF4AC004E45B4 /* SecondAdsSelectView.m */; };
+		DBB91633267AF4AC004E45B4 /* LiveAdvertisingView.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB9162D267AF4AC004E45B4 /* LiveAdvertisingView.h */; };
+		E23CDAE923A4855C002CA9DA /* MPVideoLive.h in Headers */ = {isa = PBXBuildFile; fileRef = E23CDAE723A4855C002CA9DA /* MPVideoLive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23CDB0523A48617002CA9DA /* LiveMicComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = E23CDAF023A48616002CA9DA /* LiveMicComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23CDB0623A48617002CA9DA /* LiveMicComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E23CDAF123A48616002CA9DA /* LiveMicComponent.m */; };
+		E23CDB0723A48617002CA9DA /* AnchorInteractiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E23CDAF323A48616002CA9DA /* AnchorInteractiveComponent.m */; };
+		E23CDB0823A48617002CA9DA /* AnchorInteractiveComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = E23CDAF423A48616002CA9DA /* AnchorInteractiveComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23CDB0923A48617002CA9DA /* AnchorPKComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = E23CDAF623A48616002CA9DA /* AnchorPKComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23CDB0A23A48617002CA9DA /* AnchorPKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E23CDAF723A48616002CA9DA /* AnchorPKComponent.m */; };
+		E23CDB0B23A48617002CA9DA /* MagicPKView.h in Headers */ = {isa = PBXBuildFile; fileRef = E23CDAF923A48616002CA9DA /* MagicPKView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23CDB0D23A48617002CA9DA /* MagicPKView.m in Sources */ = {isa = PBXBuildFile; fileRef = E23CDAFB23A48616002CA9DA /* MagicPKView.m */; };
+		E23CDB0F23A48617002CA9DA /* LiveVideoComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = E23CDAFE23A48617002CA9DA /* LiveVideoComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23CDB1023A48617002CA9DA /* AudienceVideoComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E23CDAFF23A48617002CA9DA /* AudienceVideoComponent.m */; };
+		E23CDB1323A48617002CA9DA /* LiveVideoComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E23CDB0323A48617002CA9DA /* LiveVideoComponent.m */; };
+		E23CDB1423A48617002CA9DA /* AudienceVideoComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = E23CDB0423A48617002CA9DA /* AudienceVideoComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23CDB5723A4898A002CA9DA /* PKSelectAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = E23CDB4E23A4898A002CA9DA /* PKSelectAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23CDB5D23A4898A002CA9DA /* PKSelectAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = E23CDB5523A4898A002CA9DA /* PKSelectAlert.m */; };
+		E23CDB6323A48A19002CA9DA /* LibProjView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23CDB6223A48A19002CA9DA /* LibProjView.framework */; };
+		E23CDB6723A48A4E002CA9DA /* LibProjBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23CDB6523A48A4E002CA9DA /* LibProjBase.framework */; };
+		E23CDB6923A48A4E002CA9DA /* LibProjModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23CDB6623A48A4E002CA9DA /* LibProjModel.framework */; };
+		E23CDB7123A48BAF002CA9DA /* AnchorCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E23CDB6C23A48BAF002CA9DA /* AnchorCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23CDB7223A48BAF002CA9DA /* AnchorOnlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E23CDB6D23A48BAF002CA9DA /* AnchorOnlineView.m */; };
+		E23CDB7423A48BAF002CA9DA /* AnchorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E23CDB6F23A48BAF002CA9DA /* AnchorCell.m */; };
+		E23CDB7523A48BAF002CA9DA /* AnchorOnlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = E23CDB7023A48BAF002CA9DA /* AnchorOnlineView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F676CAAD24347C0A00C098BA /* MPVideoLiveRes.h in Headers */ = {isa = PBXBuildFile; fileRef = F676CAAB24347C0A00C098BA /* MPVideoLiveRes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F676CAAE24347C0A00C098BA /* MPVideoLiveRes.m in Sources */ = {isa = PBXBuildFile; fileRef = F676CAAC24347C0A00C098BA /* MPVideoLiveRes.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2471BAD24BC63A000D73406 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E23CDADB23A4855C002CA9DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F676CA572434716A00C098BA;
+			remoteInfo = MPVideoLiveB;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		60C23C422846F91B0073F089 /* TXImKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TXImKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		639D2485253183A900171E4D /* MPVideoInfoBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVideoInfoBottomView.m; sourceTree = "<group>"; };
+		639D2486253183A900171E4D /* MPVideoInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVideoInfoHeaderView.h; sourceTree = "<group>"; };
+		639D2487253183A900171E4D /* MPVideoInfoBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVideoInfoBottomView.h; sourceTree = "<group>"; };
+		639D2488253183A900171E4D /* MPVideoInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVideoInfoHeaderView.m; sourceTree = "<group>"; };
+		639D248B253183A900171E4D /* MPVideoCloseInfoShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVideoCloseInfoShowView.h; sourceTree = "<group>"; };
+		639D248D253183A900171E4D /* MPVideoCloseInfoShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVideoCloseInfoShowView.m; sourceTree = "<group>"; };
+		639D2496253183A900171E4D /* MPVideoPreInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVideoPreInfoView.h; sourceTree = "<group>"; };
+		639D2497253183A900171E4D /* MPVideoPreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVideoPreView.h; sourceTree = "<group>"; };
+		639D2498253183A900171E4D /* MPVideoPreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVideoPreView.m; sourceTree = "<group>"; };
+		639D2499253183A900171E4D /* MPVideoPreInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVideoPreInfoView.m; sourceTree = "<group>"; };
+		6782251F25109FB200EC37B4 /* XTRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XTRtcKit.framework; path = ../../../../framework/XTRtcKit.framework; sourceTree = "<group>"; };
+		6CEF76D42F286D347267CFCF /* Pods-MPVideoLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPVideoLive.release.xcconfig"; path = "../../../Desktop/mugozb/Project/rechao/klcMPVA/Pods/Target Support Files/Pods-MPVideoLive/Pods-MPVideoLive.release.xcconfig"; sourceTree = "<group>"; };
+		82D3643423C5F63F00B69BCC /* MPVideoLive_header.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPVideoLive_header.pch; sourceTree = "<group>"; };
+		842CA20923C71B6B000887D1 /* MPVideoLiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVideoLiveController.h; sourceTree = "<group>"; };
+		842CA20A23C71B6B000887D1 /* MPVideoLiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVideoLiveController.m; sourceTree = "<group>"; };
+		8440DC3D23BEF22D00D5B0C4 /* LiveCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LiveCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84715922246959970016EE51 /* MPUserOwnView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPUserOwnView.h; sourceTree = "<group>"; };
+		84715923246959970016EE51 /* MPUserOwnView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPUserOwnView.m; sourceTree = "<group>"; };
+		847159262469677E0016EE51 /* MPUserLinkMicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPUserLinkMicView.h; sourceTree = "<group>"; };
+		847159272469677E0016EE51 /* MPUserLinkMicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPUserLinkMicView.m; sourceTree = "<group>"; };
+		8471592A246968BD0016EE51 /* MPAnchorConnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAnchorConnView.h; sourceTree = "<group>"; };
+		8471592B246968BD0016EE51 /* MPAnchorConnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAnchorConnView.m; sourceTree = "<group>"; };
+		A571A1DB4C29344593134621 /* Pods-MPVideoLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPVideoLive.debug.xcconfig"; path = "../../../Desktop/mugozb/Project/rechao/klcMPVA/Pods/Target Support Files/Pods-MPVideoLive/Pods-MPVideoLive.debug.xcconfig"; sourceTree = "<group>"; };
+		D8DD216361DA5189E1EB482B /* Pods_MPVideoLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPVideoLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4484FB260F0E6200FE87E3 /* VideoSelectPKTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoSelectPKTimeView.h; sourceTree = "<group>"; };
+		DB4484FC260F0E6200FE87E3 /* VideoSelectPKTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoSelectPKTimeView.m; sourceTree = "<group>"; };
+		DB6E277726DCFC9700FDBC84 /* MPOtherLinkAnchorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPOtherLinkAnchorView.h; sourceTree = "<group>"; };
+		DB6E277826DCFC9700FDBC84 /* MPOtherLinkAnchorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPOtherLinkAnchorView.m; sourceTree = "<group>"; };
+		DB76D22A2611835800EE25D2 /* MPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB972476266DFA9500A676E4 /* AnchorHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorHeaderView.h; sourceTree = "<group>"; };
+		DB972477266DFA9500A676E4 /* AnchorHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnchorHeaderView.m; sourceTree = "<group>"; };
+		DBB91628267AF4AC004E45B4 /* LiveAdverShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveAdverShowView.m; sourceTree = "<group>"; };
+		DBB91629267AF4AC004E45B4 /* LiveAdvertisingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveAdvertisingView.m; sourceTree = "<group>"; };
+		DBB9162A267AF4AC004E45B4 /* SecondAdsSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondAdsSelectView.h; sourceTree = "<group>"; };
+		DBB9162B267AF4AC004E45B4 /* LiveAdverShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveAdverShowView.h; sourceTree = "<group>"; };
+		DBB9162C267AF4AC004E45B4 /* SecondAdsSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondAdsSelectView.m; sourceTree = "<group>"; };
+		DBB9162D267AF4AC004E45B4 /* LiveAdvertisingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveAdvertisingView.h; sourceTree = "<group>"; };
+		E23CDAE423A4855C002CA9DA /* MPVideoLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MPVideoLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23CDAE723A4855C002CA9DA /* MPVideoLive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPVideoLive.h; sourceTree = "<group>"; };
+		E23CDAE823A4855C002CA9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E23CDAF023A48616002CA9DA /* LiveMicComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveMicComponent.h; sourceTree = "<group>"; };
+		E23CDAF123A48616002CA9DA /* LiveMicComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveMicComponent.m; sourceTree = "<group>"; };
+		E23CDAF323A48616002CA9DA /* AnchorInteractiveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnchorInteractiveComponent.m; sourceTree = "<group>"; };
+		E23CDAF423A48616002CA9DA /* AnchorInteractiveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorInteractiveComponent.h; sourceTree = "<group>"; };
+		E23CDAF623A48616002CA9DA /* AnchorPKComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorPKComponent.h; sourceTree = "<group>"; };
+		E23CDAF723A48616002CA9DA /* AnchorPKComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnchorPKComponent.m; sourceTree = "<group>"; };
+		E23CDAF923A48616002CA9DA /* MagicPKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPKView.h; sourceTree = "<group>"; };
+		E23CDAFB23A48616002CA9DA /* MagicPKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicPKView.m; sourceTree = "<group>"; };
+		E23CDAFE23A48617002CA9DA /* LiveVideoComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveVideoComponent.h; sourceTree = "<group>"; };
+		E23CDAFF23A48617002CA9DA /* AudienceVideoComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudienceVideoComponent.m; sourceTree = "<group>"; };
+		E23CDB0323A48617002CA9DA /* LiveVideoComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveVideoComponent.m; sourceTree = "<group>"; };
+		E23CDB0423A48617002CA9DA /* AudienceVideoComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudienceVideoComponent.h; sourceTree = "<group>"; };
+		E23CDB4E23A4898A002CA9DA /* PKSelectAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKSelectAlert.h; sourceTree = "<group>"; };
+		E23CDB5523A4898A002CA9DA /* PKSelectAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKSelectAlert.m; sourceTree = "<group>"; };
+		E23CDB6223A48A19002CA9DA /* LibProjView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23CDB6523A48A4E002CA9DA /* LibProjBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23CDB6623A48A4E002CA9DA /* LibProjModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23CDB6C23A48BAF002CA9DA /* AnchorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorCell.h; sourceTree = "<group>"; };
+		E23CDB6D23A48BAF002CA9DA /* AnchorOnlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnchorOnlineView.m; sourceTree = "<group>"; };
+		E23CDB6F23A48BAF002CA9DA /* AnchorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnchorCell.m; sourceTree = "<group>"; };
+		E23CDB7023A48BAF002CA9DA /* AnchorOnlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorOnlineView.h; sourceTree = "<group>"; };
+		E2E4C63B24C0213F00C5B10C /* IMSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IMSocket.framework; path = ../../../../framework/IMSocket.framework; sourceTree = "<group>"; };
+		F676CA582434716A00C098BA /* MPVideoLiveB.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPVideoLiveB.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		F676CA5A2434716A00C098BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F676CAAB24347C0A00C098BA /* MPVideoLiveRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVideoLiveRes.h; sourceTree = "<group>"; };
+		F676CAAC24347C0A00C098BA /* MPVideoLiveRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVideoLiveRes.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E23CDAE123A4855C002CA9DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E23CDB6723A48A4E002CA9DA /* LibProjBase.framework in Frameworks */,
+				E23CDB6923A48A4E002CA9DA /* LibProjModel.framework in Frameworks */,
+				E23CDB6323A48A19002CA9DA /* LibProjView.framework in Frameworks */,
+				DB76D22B2611835800EE25D2 /* MPCommon.framework in Frameworks */,
+				8440DC3E23BEF22D00D5B0C4 /* LiveCommon.framework in Frameworks */,
+				12BB010226EBD9C39A86D30A /* Pods_MPVideoLive.framework in Frameworks */,
+				6782252025109FB200EC37B4 /* XTRtcKit.framework in Frameworks */,
+				60C23C432846F91B0073F089 /* TXImKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676CA552434716A00C098BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DF65F5FE6F383A08FAE0B20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60C23C422846F91B0073F089 /* TXImKit.framework */,
+				DB76D22A2611835800EE25D2 /* MPCommon.framework */,
+				6782251F25109FB200EC37B4 /* XTRtcKit.framework */,
+				E2E4C63B24C0213F00C5B10C /* IMSocket.framework */,
+				8440DC3D23BEF22D00D5B0C4 /* LiveCommon.framework */,
+				E23CDB6523A48A4E002CA9DA /* LibProjBase.framework */,
+				E23CDB6623A48A4E002CA9DA /* LibProjModel.framework */,
+				E23CDB6223A48A19002CA9DA /* LibProjView.framework */,
+				D8DD216361DA5189E1EB482B /* Pods_MPVideoLive.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F6DDFA2B1D5FD4F6AEEC2A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A571A1DB4C29344593134621 /* Pods-MPVideoLive.debug.xcconfig */,
+				6CEF76D42F286D347267CFCF /* Pods-MPVideoLive.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../../../../../MXPorj/MXDemo/Pods;
+			sourceTree = "<group>";
+		};
+		639D24822531839500171E4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBB91627267AF4AC004E45B4 /* adver */,
+				E23CDB6B23A48BAF002CA9DA /* 主播在线 */,
+				E23CDB4C23A4898A002CA9DA /* PKAlert */,
+				639D248A253183A900171E4D /* 关闭页面 */,
+				639D2484253183A900171E4D /* 视频直播间信息 */,
+				639D2495253183A900171E4D /* 开播view */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		639D2484253183A900171E4D /* 视频直播间信息 */ = {
+			isa = PBXGroup;
+			children = (
+				DB972476266DFA9500A676E4 /* AnchorHeaderView.h */,
+				DB972477266DFA9500A676E4 /* AnchorHeaderView.m */,
+				639D2487253183A900171E4D /* MPVideoInfoBottomView.h */,
+				639D2485253183A900171E4D /* MPVideoInfoBottomView.m */,
+				639D2486253183A900171E4D /* MPVideoInfoHeaderView.h */,
+				639D2488253183A900171E4D /* MPVideoInfoHeaderView.m */,
+			);
+			path = "视频直播间信息";
+			sourceTree = "<group>";
+		};
+		639D248A253183A900171E4D /* 关闭页面 */ = {
+			isa = PBXGroup;
+			children = (
+				639D248B253183A900171E4D /* MPVideoCloseInfoShowView.h */,
+				639D248D253183A900171E4D /* MPVideoCloseInfoShowView.m */,
+			);
+			path = "关闭页面";
+			sourceTree = "<group>";
+		};
+		639D2495253183A900171E4D /* 开播view */ = {
+			isa = PBXGroup;
+			children = (
+				639D2496253183A900171E4D /* MPVideoPreInfoView.h */,
+				639D2499253183A900171E4D /* MPVideoPreInfoView.m */,
+				639D2497253183A900171E4D /* MPVideoPreView.h */,
+				639D2498253183A900171E4D /* MPVideoPreView.m */,
+			);
+			path = "开播view";
+			sourceTree = "<group>";
+		};
+		84FF007023C9CC6900BF90C3 /* 观众播放组件 */ = {
+			isa = PBXGroup;
+			children = (
+				E23CDB0423A48617002CA9DA /* AudienceVideoComponent.h */,
+				E23CDAFF23A48617002CA9DA /* AudienceVideoComponent.m */,
+				84715922246959970016EE51 /* MPUserOwnView.h */,
+				84715923246959970016EE51 /* MPUserOwnView.m */,
+				DB6E277726DCFC9700FDBC84 /* MPOtherLinkAnchorView.h */,
+				DB6E277826DCFC9700FDBC84 /* MPOtherLinkAnchorView.m */,
+			);
+			path = "观众播放组件";
+			sourceTree = "<group>";
+		};
+		DBB91627267AF4AC004E45B4 /* adver */ = {
+			isa = PBXGroup;
+			children = (
+				DBB9162B267AF4AC004E45B4 /* LiveAdverShowView.h */,
+				DBB91628267AF4AC004E45B4 /* LiveAdverShowView.m */,
+				DBB9162D267AF4AC004E45B4 /* LiveAdvertisingView.h */,
+				DBB91629267AF4AC004E45B4 /* LiveAdvertisingView.m */,
+				DBB9162A267AF4AC004E45B4 /* SecondAdsSelectView.h */,
+				DBB9162C267AF4AC004E45B4 /* SecondAdsSelectView.m */,
+			);
+			path = adver;
+			sourceTree = "<group>";
+		};
+		E23CDADA23A4855C002CA9DA = {
+			isa = PBXGroup;
+			children = (
+				E23CDAE623A4855C002CA9DA /* MPVideoLive */,
+				F676CA592434716A00C098BA /* MPVideoLiveB */,
+				E23CDAE523A4855C002CA9DA /* Products */,
+				4F6DDFA2B1D5FD4F6AEEC2A4 /* Pods */,
+				3DF65F5FE6F383A08FAE0B20 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E23CDAE523A4855C002CA9DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E23CDAE423A4855C002CA9DA /* MPVideoLive.framework */,
+				F676CA582434716A00C098BA /* MPVideoLiveB.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E23CDAE623A4855C002CA9DA /* MPVideoLive */ = {
+			isa = PBXGroup;
+			children = (
+				639D24822531839500171E4D /* Views */,
+				F676CAAB24347C0A00C098BA /* MPVideoLiveRes.h */,
+				F676CAAC24347C0A00C098BA /* MPVideoLiveRes.m */,
+				842CA20923C71B6B000887D1 /* MPVideoLiveController.h */,
+				842CA20A23C71B6B000887D1 /* MPVideoLiveController.m */,
+				84FF007023C9CC6900BF90C3 /* 观众播放组件 */,
+				E23CDAF223A48616002CA9DA /* 互动组件 */,
+				E23CDAEF23A48616002CA9DA /* 连麦组件 */,
+				E23CDAFD23A48617002CA9DA /* 直播组件 */,
+				E23CDAF523A48616002CA9DA /* PK */,
+				E23CDAE723A4855C002CA9DA /* MPVideoLive.h */,
+				E23CDAE823A4855C002CA9DA /* Info.plist */,
+				82D3643423C5F63F00B69BCC /* MPVideoLive_header.pch */,
+			);
+			path = MPVideoLive;
+			sourceTree = "<group>";
+		};
+		E23CDAEF23A48616002CA9DA /* 连麦组件 */ = {
+			isa = PBXGroup;
+			children = (
+				E23CDAF023A48616002CA9DA /* LiveMicComponent.h */,
+				E23CDAF123A48616002CA9DA /* LiveMicComponent.m */,
+			);
+			path = "连麦组件";
+			sourceTree = "<group>";
+		};
+		E23CDAF223A48616002CA9DA /* 互动组件 */ = {
+			isa = PBXGroup;
+			children = (
+				E23CDAF423A48616002CA9DA /* AnchorInteractiveComponent.h */,
+				E23CDAF323A48616002CA9DA /* AnchorInteractiveComponent.m */,
+			);
+			path = "互动组件";
+			sourceTree = "<group>";
+		};
+		E23CDAF523A48616002CA9DA /* PK */ = {
+			isa = PBXGroup;
+			children = (
+				E23CDAF623A48616002CA9DA /* AnchorPKComponent.h */,
+				E23CDAF723A48616002CA9DA /* AnchorPKComponent.m */,
+				E23CDAF823A48616002CA9DA /* View */,
+			);
+			path = PK;
+			sourceTree = "<group>";
+		};
+		E23CDAF823A48616002CA9DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB4484FB260F0E6200FE87E3 /* VideoSelectPKTimeView.h */,
+				DB4484FC260F0E6200FE87E3 /* VideoSelectPKTimeView.m */,
+				E23CDAF923A48616002CA9DA /* MagicPKView.h */,
+				E23CDAFB23A48616002CA9DA /* MagicPKView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E23CDAFD23A48617002CA9DA /* 直播组件 */ = {
+			isa = PBXGroup;
+			children = (
+				E23CDAFE23A48617002CA9DA /* LiveVideoComponent.h */,
+				E23CDB0323A48617002CA9DA /* LiveVideoComponent.m */,
+				847159262469677E0016EE51 /* MPUserLinkMicView.h */,
+				847159272469677E0016EE51 /* MPUserLinkMicView.m */,
+				8471592A246968BD0016EE51 /* MPAnchorConnView.h */,
+				8471592B246968BD0016EE51 /* MPAnchorConnView.m */,
+			);
+			path = "直播组件";
+			sourceTree = "<group>";
+		};
+		E23CDB4C23A4898A002CA9DA /* PKAlert */ = {
+			isa = PBXGroup;
+			children = (
+				E23CDB4E23A4898A002CA9DA /* PKSelectAlert.h */,
+				E23CDB5523A4898A002CA9DA /* PKSelectAlert.m */,
+			);
+			path = PKAlert;
+			sourceTree = "<group>";
+		};
+		E23CDB6B23A48BAF002CA9DA /* 主播在线 */ = {
+			isa = PBXGroup;
+			children = (
+				E23CDB6C23A48BAF002CA9DA /* AnchorCell.h */,
+				E23CDB6F23A48BAF002CA9DA /* AnchorCell.m */,
+				E23CDB7023A48BAF002CA9DA /* AnchorOnlineView.h */,
+				E23CDB6D23A48BAF002CA9DA /* AnchorOnlineView.m */,
+			);
+			path = "主播在线";
+			sourceTree = "<group>";
+		};
+		F676CA592434716A00C098BA /* MPVideoLiveB */ = {
+			isa = PBXGroup;
+			children = (
+				F676CA5A2434716A00C098BA /* Info.plist */,
+			);
+			path = MPVideoLiveB;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E23CDADF23A4855C002CA9DA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB972478266DFA9500A676E4 /* AnchorHeaderView.h in Headers */,
+				84715924246959970016EE51 /* MPUserOwnView.h in Headers */,
+				DBB91631267AF4AC004E45B4 /* LiveAdverShowView.h in Headers */,
+				639D24A7253183A900171E4D /* MPVideoPreView.h in Headers */,
+				639D249C253183A900171E4D /* MPVideoInfoBottomView.h in Headers */,
+				8471592C246968BE0016EE51 /* MPAnchorConnView.h in Headers */,
+				639D249B253183A900171E4D /* MPVideoInfoHeaderView.h in Headers */,
+				F676CAAD24347C0A00C098BA /* MPVideoLiveRes.h in Headers */,
+				82D3643523C5F63F00B69BCC /* MPVideoLive_header.pch in Headers */,
+				847159282469677E0016EE51 /* MPUserLinkMicView.h in Headers */,
+				DB6E277926DCFC9700FDBC84 /* MPOtherLinkAnchorView.h in Headers */,
+				639D249E253183A900171E4D /* MPVideoCloseInfoShowView.h in Headers */,
+				DBB91630267AF4AC004E45B4 /* SecondAdsSelectView.h in Headers */,
+				639D24A6253183A900171E4D /* MPVideoPreInfoView.h in Headers */,
+				842CA20B23C71B6B000887D1 /* MPVideoLiveController.h in Headers */,
+				DB4484FD260F0E6200FE87E3 /* VideoSelectPKTimeView.h in Headers */,
+				E23CDB7523A48BAF002CA9DA /* AnchorOnlineView.h in Headers */,
+				E23CDB0523A48617002CA9DA /* LiveMicComponent.h in Headers */,
+				E23CDB0F23A48617002CA9DA /* LiveVideoComponent.h in Headers */,
+				DBB91633267AF4AC004E45B4 /* LiveAdvertisingView.h in Headers */,
+				E23CDB1423A48617002CA9DA /* AudienceVideoComponent.h in Headers */,
+				E23CDB0923A48617002CA9DA /* AnchorPKComponent.h in Headers */,
+				E23CDB7123A48BAF002CA9DA /* AnchorCell.h in Headers */,
+				E23CDB0B23A48617002CA9DA /* MagicPKView.h in Headers */,
+				E23CDB5723A4898A002CA9DA /* PKSelectAlert.h in Headers */,
+				E23CDB0823A48617002CA9DA /* AnchorInteractiveComponent.h in Headers */,
+				E23CDAE923A4855C002CA9DA /* MPVideoLive.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E23CDAE323A4855C002CA9DA /* MPVideoLive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E23CDAEC23A4855C002CA9DA /* Build configuration list for PBXNativeTarget "MPVideoLive" */;
+			buildPhases = (
+				7F664B7C706F9E3EC827FCB2 /* [CP] Check Pods Manifest.lock */,
+				E23CDADF23A4855C002CA9DA /* Headers */,
+				E23CDAE023A4855C002CA9DA /* Sources */,
+				E23CDAE123A4855C002CA9DA /* Frameworks */,
+				E23CDAE223A4855C002CA9DA /* Resources */,
+				BB8582B1946E9827B405F052 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2471BAE24BC63A000D73406 /* PBXTargetDependency */,
+			);
+			name = MPVideoLive;
+			productName = MPVideoLive;
+			productReference = E23CDAE423A4855C002CA9DA /* MPVideoLive.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F676CA572434716A00C098BA /* MPVideoLiveB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F676CA5D2434716A00C098BA /* Build configuration list for PBXNativeTarget "MPVideoLiveB" */;
+			buildPhases = (
+				F676CA542434716A00C098BA /* Sources */,
+				F676CA552434716A00C098BA /* Frameworks */,
+				F676CA562434716A00C098BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MPVideoLiveB;
+			productName = MPVideoLiveB;
+			productReference = F676CA582434716A00C098BA /* MPVideoLiveB.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E23CDADB23A4855C002CA9DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = KLC;
+				TargetAttributes = {
+					E23CDAE323A4855C002CA9DA = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					F676CA572434716A00C098BA = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = E23CDADE23A4855C002CA9DA /* Build configuration list for PBXProject "MPVideoLive" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E23CDADA23A4855C002CA9DA;
+			productRefGroup = E23CDAE523A4855C002CA9DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E23CDAE323A4855C002CA9DA /* MPVideoLive */,
+				F676CA572434716A00C098BA /* MPVideoLiveB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E23CDAE223A4855C002CA9DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676CA562434716A00C098BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F664B7C706F9E3EC827FCB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MPVideoLive-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB8582B1946E9827B405F052 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MPVideoLive/Pods-MPVideoLive-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MPVideoLive/Pods-MPVideoLive-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MPVideoLive/Pods-MPVideoLive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E23CDAE023A4855C002CA9DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F676CAAE24347C0A00C098BA /* MPVideoLiveRes.m in Sources */,
+				639D24A9253183A900171E4D /* MPVideoPreInfoView.m in Sources */,
+				DB6E277A26DCFC9700FDBC84 /* MPOtherLinkAnchorView.m in Sources */,
+				639D24A0253183A900171E4D /* MPVideoCloseInfoShowView.m in Sources */,
+				639D249D253183A900171E4D /* MPVideoInfoHeaderView.m in Sources */,
+				E23CDB0623A48617002CA9DA /* LiveMicComponent.m in Sources */,
+				639D249A253183A900171E4D /* MPVideoInfoBottomView.m in Sources */,
+				E23CDB7223A48BAF002CA9DA /* AnchorOnlineView.m in Sources */,
+				DBB91632267AF4AC004E45B4 /* SecondAdsSelectView.m in Sources */,
+				847159292469677E0016EE51 /* MPUserLinkMicView.m in Sources */,
+				DBB9162E267AF4AC004E45B4 /* LiveAdverShowView.m in Sources */,
+				E23CDB1323A48617002CA9DA /* LiveVideoComponent.m in Sources */,
+				8471592D246968BE0016EE51 /* MPAnchorConnView.m in Sources */,
+				DB972479266DFA9500A676E4 /* AnchorHeaderView.m in Sources */,
+				DB4484FE260F0E6200FE87E3 /* VideoSelectPKTimeView.m in Sources */,
+				E23CDB0723A48617002CA9DA /* AnchorInteractiveComponent.m in Sources */,
+				DBB9162F267AF4AC004E45B4 /* LiveAdvertisingView.m in Sources */,
+				E23CDB0D23A48617002CA9DA /* MagicPKView.m in Sources */,
+				639D24A8253183A900171E4D /* MPVideoPreView.m in Sources */,
+				84715925246959970016EE51 /* MPUserOwnView.m in Sources */,
+				E23CDB0A23A48617002CA9DA /* AnchorPKComponent.m in Sources */,
+				842CA20C23C71B6B000887D1 /* MPVideoLiveController.m in Sources */,
+				E23CDB5D23A4898A002CA9DA /* PKSelectAlert.m in Sources */,
+				E23CDB7423A48BAF002CA9DA /* AnchorCell.m in Sources */,
+				E23CDB1023A48617002CA9DA /* AudienceVideoComponent.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676CA542434716A00C098BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2471BAE24BC63A000D73406 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F676CA572434716A00C098BA /* MPVideoLiveB */;
+			targetProxy = E2471BAD24BC63A000D73406 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E23CDAEA23A4855C002CA9DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E23CDAEB23A4855C002CA9DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E23CDAED23A4855C002CA9DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A571A1DB4C29344593134621 /* Pods-MPVideoLive.debug.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MPVideoLive/MPVideoLive_header.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JLRoutes/JLRoutes.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView/JXCategoryView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf/protobuf.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SSZipArchive/SSZipArchive.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVGAPlayer/SVGAPlayer.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD/SVProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController/TZImagePickerController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JPush\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_sharesdk\"",
+					"\"${SRCROOT}/../../../framework/XTRtcKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = MPVideoLive/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.MPVideoLive;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E23CDAEE23A4855C002CA9DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CEF76D42F286D347267CFCF /* Pods-MPVideoLive.release.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MPVideoLive/MPVideoLive_header.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JLRoutes/JLRoutes.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView/JXCategoryView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf/protobuf.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SSZipArchive/SSZipArchive.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVGAPlayer/SVGAPlayer.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD/SVProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController/TZImagePickerController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JPush\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_sharesdk\"",
+					"\"${SRCROOT}/../../../framework/XTRtcKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = MPVideoLive/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.MPVideoLive;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F676CA5B2434716A00C098BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = NGXJT9M3FH;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = MPVideoLiveB/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klc.MPVideoLiveB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		F676CA5C2434716A00C098BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = NGXJT9M3FH;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = MPVideoLiveB/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klc.MPVideoLiveB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E23CDADE23A4855C002CA9DA /* Build configuration list for PBXProject "MPVideoLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E23CDAEA23A4855C002CA9DA /* Debug */,
+				E23CDAEB23A4855C002CA9DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E23CDAEC23A4855C002CA9DA /* Build configuration list for PBXNativeTarget "MPVideoLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E23CDAED23A4855C002CA9DA /* Debug */,
+				E23CDAEE23A4855C002CA9DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F676CA5D2434716A00C098BA /* Build configuration list for PBXNativeTarget "MPVideoLiveB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F676CA5B2434716A00C098BA /* Debug */,
+				F676CA5C2434716A00C098BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E23CDADB23A4855C002CA9DA /* Project object */;
+}

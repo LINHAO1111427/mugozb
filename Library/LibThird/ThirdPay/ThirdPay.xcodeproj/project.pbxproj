@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45AB36C796DEFDA8FB533D6E /* Pods_ThirdPay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6222488B7B244B0A9D22F4D3 /* Pods_ThirdPay.framework */; };
+		843832B923A3273600D0722E /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 843832A423A3273600D0722E /* Order.m */; };
+		843832CB23A3273600D0722E /* Order.h in Headers */ = {isa = PBXBuildFile; fileRef = 843832B723A3273600D0722E /* Order.h */; };
+		843832D023A3275B00D0722E /* ThirdPay.h in Headers */ = {isa = PBXBuildFile; fileRef = 843832CE23A3275B00D0722E /* ThirdPay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		843832D123A3275B00D0722E /* ThirdPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 843832CF23A3275B00D0722E /* ThirdPay.m */; };
+		E26D2A6624DCE36B001D9185 /* LibProjModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26D2A6524DCE36B001D9185 /* LibProjModel.framework */; };
+		E26D2A6A24DCE80C001D9185 /* LibTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26D2A6924DCE80C001D9185 /* LibTools.framework */; };
+		E2A397AC24EAA2C000157718 /* LibProjBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5BD01424867C25001BFF7A /* LibProjBase.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6222488B7B244B0A9D22F4D3 /* Pods_ThirdPay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThirdPay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8438329823A3272200D0722E /* ThirdPay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8438329C23A3272200D0722E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843832A423A3273600D0722E /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		843832B723A3273600D0722E /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		843832CE23A3275B00D0722E /* ThirdPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPay.h; sourceTree = "<group>"; };
+		843832CF23A3275B00D0722E /* ThirdPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPay.m; sourceTree = "<group>"; };
+		9E5BD01424867C25001BFF7A /* LibProjBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FE999F75D9A53DFA44835C8 /* Pods-ThirdPay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirdPay.release.xcconfig"; path = "../../../Project/rechao/klcMPVA/Pods/Target Support Files/Pods-ThirdPay/Pods-ThirdPay.release.xcconfig"; sourceTree = "<group>"; };
+		E26D2A6524DCE36B001D9185 /* LibProjModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E26D2A6924DCE80C001D9185 /* LibTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5CED7E53F336667E91EFC32 /* Pods-ThirdPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirdPay.debug.xcconfig"; path = "../../../Project/rechao/klcMPVA/Pods/Target Support Files/Pods-ThirdPay/Pods-ThirdPay.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8438329523A3272200D0722E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E26D2A6A24DCE80C001D9185 /* LibTools.framework in Frameworks */,
+				E2A397AC24EAA2C000157718 /* LibProjBase.framework in Frameworks */,
+				E26D2A6624DCE36B001D9185 /* LibProjModel.framework in Frameworks */,
+				45AB36C796DEFDA8FB533D6E /* Pods_ThirdPay.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8438328E23A3272200D0722E = {
+			isa = PBXGroup;
+			children = (
+				8438329A23A3272200D0722E /* ThirdPay */,
+				8438329923A3272200D0722E /* Products */,
+				87DF3C2D2D52325421D38B5C /* Pods */,
+				ADAAE0E42165D5E47AE33B25 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8438329923A3272200D0722E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8438329823A3272200D0722E /* ThirdPay.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8438329A23A3272200D0722E /* ThirdPay */ = {
+			isa = PBXGroup;
+			children = (
+				843832CE23A3275B00D0722E /* ThirdPay.h */,
+				843832CF23A3275B00D0722E /* ThirdPay.m */,
+				843832A323A3273600D0722E /* WXPayFile */,
+				8438329C23A3272200D0722E /* Info.plist */,
+			);
+			path = ThirdPay;
+			sourceTree = "<group>";
+		};
+		843832A323A3273600D0722E /* WXPayFile */ = {
+			isa = PBXGroup;
+			children = (
+				843832A423A3273600D0722E /* Order.m */,
+				843832B723A3273600D0722E /* Order.h */,
+			);
+			path = WXPayFile;
+			sourceTree = "<group>";
+		};
+		87DF3C2D2D52325421D38B5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5CED7E53F336667E91EFC32 /* Pods-ThirdPay.debug.xcconfig */,
+				9FE999F75D9A53DFA44835C8 /* Pods-ThirdPay.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../../../MXPorj/MXDemo/Pods;
+			sourceTree = "<group>";
+		};
+		ADAAE0E42165D5E47AE33B25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E26D2A6924DCE80C001D9185 /* LibTools.framework */,
+				E26D2A6524DCE36B001D9185 /* LibProjModel.framework */,
+				9E5BD01424867C25001BFF7A /* LibProjBase.framework */,
+				6222488B7B244B0A9D22F4D3 /* Pods_ThirdPay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8438329323A3272200D0722E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843832D023A3275B00D0722E /* ThirdPay.h in Headers */,
+				843832CB23A3273600D0722E /* Order.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8438329723A3272200D0722E /* ThirdPay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 843832A023A3272200D0722E /* Build configuration list for PBXNativeTarget "ThirdPay" */;
+			buildPhases = (
+				9EEF361BBD9EF916EB646ECA /* [CP] Check Pods Manifest.lock */,
+				8438329323A3272200D0722E /* Headers */,
+				8438329423A3272200D0722E /* Sources */,
+				8438329523A3272200D0722E /* Frameworks */,
+				8438329623A3272200D0722E /* Resources */,
+				A739928BB5F36E27AA32B48F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThirdPay;
+			productName = ThirdPay;
+			productReference = 8438329823A3272200D0722E /* ThirdPay.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8438328F23A3272200D0722E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = KLC;
+				TargetAttributes = {
+					8438329723A3272200D0722E = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 8438329223A3272200D0722E /* Build configuration list for PBXProject "ThirdPay" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8438328E23A3272200D0722E;
+			productRefGroup = 8438329923A3272200D0722E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8438329723A3272200D0722E /* ThirdPay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8438329623A3272200D0722E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9EEF361BBD9EF916EB646ECA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThirdPay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A739928BB5F36E27AA32B48F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThirdPay/Pods-ThirdPay-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThirdPay/Pods-ThirdPay-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThirdPay/Pods-ThirdPay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8438329423A3272200D0722E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843832B923A3273600D0722E /* Order.m in Sources */,
+				843832D123A3275B00D0722E /* ThirdPay.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8438329E23A3272200D0722E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8438329F23A3272200D0722E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		843832A123A3272200D0722E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5CED7E53F336667E91EFC32 /* Pods-ThirdPay.debug.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = ThirdPay/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThirdPay/WXPayFile",
+					"\"${PODS_ROOT}/mob_sharesdk/ShareSDK/Support/PlatformSDK/WeChatSDKFull\"",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.ThirdPay;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		843832A223A3272200D0722E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FE999F75D9A53DFA44835C8 /* Pods-ThirdPay.release.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ThirdPay/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThirdPay/WXPayFile",
+					"\"${PODS_ROOT}/mob_sharesdk/ShareSDK/Support/PlatformSDK/WeChatSDKFull\"",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.ThirdPay;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8438329223A3272200D0722E /* Build configuration list for PBXProject "ThirdPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8438329E23A3272200D0722E /* Debug */,
+				8438329F23A3272200D0722E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		843832A023A3272200D0722E /* Build configuration list for PBXNativeTarget "ThirdPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843832A123A3272200D0722E /* Debug */,
+				843832A223A3272200D0722E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8438328F23A3272200D0722E /* Project object */;
+}

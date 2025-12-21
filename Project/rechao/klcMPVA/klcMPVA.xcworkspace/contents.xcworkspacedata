@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../../../Library/LibThird/ALVideoRecord/ALVideoRecord.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Business/BasicFunction/HomePage/HomePage.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Business/BasicFunction/Login/Login.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Business/BasicFunction/MessageInfo/MessageInfo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Business/BasicFunction/MineCenter/MineCenter.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Business/BasicFunction/Ranking/Ranking.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Business/BasicFunction/UserInfo/UserInfo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Business/CoreFunction/DynamicCircle/DynamicCircle.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Business/CoreFunction/MPAudioLive/MPAudioLive.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Business/CoreFunction/MPVideoLive/MPVideoLive.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Business/CoreFunction/Shopping/Shopping.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Business/CoreFunction/ShortVideo/ShortVideo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Library/LibFrame/KLCProjConfig/KLCProjConfig.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Library/LibFrame/LibProjView/LibProjView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Library/LibFrame/LiveCommon/LiveCommon.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Library/LibFrame/MPCommon/MPCommon.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Library/LibModel/LibProjModel/LibProjModel.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Library/LibThird/AgoraExtension/AgoraExtension.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Library/LibThird/MediaCodeKit/XTMediaKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Library/LibThird/TXImKit/TXImKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Library/LibThird/ThirdPay/ThirdPay.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Library/LibTool/LibProjBase/LibProjBase.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Library/LibTool/LibTools/LibTools.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:klcMPVA.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

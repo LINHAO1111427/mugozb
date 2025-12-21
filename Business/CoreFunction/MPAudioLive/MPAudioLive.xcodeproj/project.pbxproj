@@ -1,0 +1,964 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		296E83ED61D4728C1A97AD6C /* Pods_MPAudioLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09E551A521E6ED882A1B5F3 /* Pods_MPAudioLive.framework */; };
+		60C23C3F2846F90B0073F089 /* TXImKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C23C3E2846F90B0073F089 /* TXImKit.framework */; };
+		639D24742531830A00171E4D /* MPAudioMiniView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D24682531830A00171E4D /* MPAudioMiniView.m */; };
+		639D24752531830A00171E4D /* MPAudioMiniView.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D24692531830A00171E4D /* MPAudioMiniView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D24762531830A00171E4D /* AudioLivePreView.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D246C2531830A00171E4D /* AudioLivePreView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D24772531830A00171E4D /* AudioLivePreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D246D2531830A00171E4D /* AudioLivePreView.m */; };
+		639D24782531830A00171E4D /* MPAudioInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D24702531830A00171E4D /* MPAudioInfoHeaderView.m */; };
+		639D24792531830A00171E4D /* MPAudioInfoBottomView.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D24712531830A00171E4D /* MPAudioInfoBottomView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D247A2531830A00171E4D /* MPAudioInfoHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D24722531830A00171E4D /* MPAudioInfoHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D247B2531830A00171E4D /* MPAudioInfoBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D24732531830A00171E4D /* MPAudioInfoBottomView.m */; };
+		639D255525319EC600171E4D /* MPAudioCloseInfoShowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 639D255325319EC600171E4D /* MPAudioCloseInfoShowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639D255625319EC600171E4D /* MPAudioCloseInfoShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 639D255425319EC600171E4D /* MPAudioCloseInfoShowView.m */; };
+		6782251C25109F9100EC37B4 /* XTRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6782251B25109F9100EC37B4 /* XTRtcKit.framework */; };
+		DB3C94B22669D06E009AC112 /* PresenterComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3C94B02669D06E009AC112 /* PresenterComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB3C94B32669D06E009AC112 /* PresenterComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3C94B12669D06E009AC112 /* PresenterComponent.m */; };
+		DB3D93BB26D8C75700DBABED /* AnchorAudioLinkManagerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3D93B926D8C75700DBABED /* AnchorAudioLinkManagerView.h */; };
+		DB3D93BC26D8C75700DBABED /* AnchorAudioLinkManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3D93BA26D8C75700DBABED /* AnchorAudioLinkManagerView.m */; };
+		DB3D93C026D8D3D400DBABED /* AudioOnlineListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3D93BE26D8D3D400DBABED /* AudioOnlineListView.h */; };
+		DB3D93C126D8D3D400DBABED /* AudioOnlineListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3D93BF26D8D3D400DBABED /* AudioOnlineListView.m */; };
+		DB3D93C926D8F3C500DBABED /* AudioLinkUserListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3D93C726D8F3C500DBABED /* AudioLinkUserListView.h */; };
+		DB3D93CA26D8F3C500DBABED /* AudioLinkUserListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3D93C826D8F3C500DBABED /* AudioLinkUserListView.m */; };
+		DB596C352612D2FE001A8442 /* EmojiPlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB596C332612D2FE001A8442 /* EmojiPlayView.h */; };
+		DB596C362612D2FE001A8442 /* EmojiPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB596C342612D2FE001A8442 /* EmojiPlayView.m */; };
+		DB76D2272611834F00EE25D2 /* MPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB76D2262611834F00EE25D2 /* MPCommon.framework */; };
+		DB76D324261185ED00EE25D2 /* SoundEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D309261185EC00EE25D2 /* SoundEffectView.m */; };
+		DB76D32D261185ED00EE25D2 /* SoundEffectItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D313261185ED00EE25D2 /* SoundEffectItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D32E261185ED00EE25D2 /* SoundEffectView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D314261185ED00EE25D2 /* SoundEffectView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D337261185ED00EE25D2 /* SoundEffectItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D31E261185ED00EE25D2 /* SoundEffectItemCell.m */; };
+		DB76D339261185ED00EE25D2 /* LiveChatEmojiView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D321261185ED00EE25D2 /* LiveChatEmojiView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D33B261185ED00EE25D2 /* LiveChatEmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D323261185ED00EE25D2 /* LiveChatEmojiView.m */; };
+		DB76D3522611871100EE25D2 /* InviteUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D3502611871100EE25D2 /* InviteUserView.m */; };
+		DB76D3532611871100EE25D2 /* InviteUserView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D3512611871100EE25D2 /* InviteUserView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76DE242611D6CA00EE25D2 /* ApplyLinkUserList.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76DE162611D6CA00EE25D2 /* ApplyLinkUserList.m */; };
+		DB76DE252611D6CA00EE25D2 /* ApplyLinkUserList.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76DE172611D6CA00EE25D2 /* ApplyLinkUserList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76DE272611D6CA00EE25D2 /* LiveConnectTipObj.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76DE1A2611D6CA00EE25D2 /* LiveConnectTipObj.m */; };
+		DB76DE292611D6CA00EE25D2 /* LiveConnectTipObj.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76DE1C2611D6CA00EE25D2 /* LiveConnectTipObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76DE2A2611D6CA00EE25D2 /* ApplyLinkAudienceListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76DE1E2611D6CA00EE25D2 /* ApplyLinkAudienceListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76DE2B2611D6CA00EE25D2 /* InviteAttentionAnchorList.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76DE1F2611D6CA00EE25D2 /* InviteAttentionAnchorList.m */; };
+		DB76DE2C2611D6CA00EE25D2 /* ApplyUserListCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76DE202611D6CA00EE25D2 /* ApplyUserListCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76DE2D2611D6CA00EE25D2 /* ApplyLinkAudienceListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76DE212611D6CA00EE25D2 /* ApplyLinkAudienceListView.m */; };
+		DB76DE2E2611D6CA00EE25D2 /* InviteAttentionAnchorList.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76DE222611D6CA00EE25D2 /* InviteAttentionAnchorList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76DE2F2611D6CA00EE25D2 /* ApplyUserListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76DE232611D6CA00EE25D2 /* ApplyUserListCell.m */; };
+		DB972470266DB80500A676E4 /* PresenterSeatView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB97246E266DB80500A676E4 /* PresenterSeatView.h */; };
+		DB972471266DB80500A676E4 /* PresenterSeatView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB97246F266DB80500A676E4 /* PresenterSeatView.m */; };
+		DB972474266DF1E400A676E4 /* YYLiveHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB972472266DF1E400A676E4 /* YYLiveHeaderView.h */; };
+		DB972475266DF1E400A676E4 /* YYLiveHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB972473266DF1E400A676E4 /* YYLiveHeaderView.m */; };
+		E26188372499F919007C9B12 /* AudioPkFinishView.h in Headers */ = {isa = PBXBuildFile; fileRef = E26188352499F919007C9B12 /* AudioPkFinishView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E26188382499F919007C9B12 /* AudioPkFinishView.m in Sources */ = {isa = PBXBuildFile; fileRef = E26188362499F919007C9B12 /* AudioPkFinishView.m */; };
+		E267EBF124978C1C00519EBF /* PKInfoView.h in Headers */ = {isa = PBXBuildFile; fileRef = E267EBEF24978C1C00519EBF /* PKInfoView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E267EBF224978C1C00519EBF /* PKInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E267EBF024978C1C00519EBF /* PKInfoView.m */; };
+		E26BD1D224AAE979009D20A7 /* ConnectMicComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = E26BD1C924AAE979009D20A7 /* ConnectMicComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E26BD1D324AAE979009D20A7 /* ConnectMicComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E26BD1CA24AAE979009D20A7 /* ConnectMicComponent.m */; };
+		E26BD1DE24AAEC05009D20A7 /* MPAudioObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = E26BD1DC24AAEC05009D20A7 /* MPAudioObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E26BD1DF24AAEC05009D20A7 /* MPAudioObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = E26BD1DD24AAEC05009D20A7 /* MPAudioObserver.m */; };
+		E26E8F6D248F1DD700EBD548 /* AudioMicSeatView.h in Headers */ = {isa = PBXBuildFile; fileRef = E26E8F6B248F1DD700EBD548 /* AudioMicSeatView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E26E8F6E248F1DD700EBD548 /* AudioMicSeatView.m in Sources */ = {isa = PBXBuildFile; fileRef = E26E8F6C248F1DD700EBD548 /* AudioMicSeatView.m */; };
+		E29236FE248E1CF900EEDB65 /* MPAudioLive.h in Headers */ = {isa = PBXBuildFile; fileRef = E29236FC248E1CF900EEDB65 /* MPAudioLive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E292370A248E1D4400EEDB65 /* MPAudioLiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2923708248E1D4400EEDB65 /* MPAudioLiveController.m */; };
+		E292370B248E1D4400EEDB65 /* MPAudioLiveController.h in Headers */ = {isa = PBXBuildFile; fileRef = E2923709248E1D4400EEDB65 /* MPAudioLiveController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E292373B248E1D4E00EEDB65 /* AudioMicSeatsComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E292370D248E1D4E00EEDB65 /* AudioMicSeatsComponent.m */; };
+		E292373C248E1D4E00EEDB65 /* AudioMicSeatsComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = E292370E248E1D4E00EEDB65 /* AudioMicSeatsComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2923746248E1D4E00EEDB65 /* AudioManagerComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E292371A248E1D4E00EEDB65 /* AudioManagerComponent.m */; };
+		E2923747248E1D4E00EEDB65 /* AudioManagerComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = E292371B248E1D4E00EEDB65 /* AudioManagerComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2923748248E1D4E00EEDB65 /* ChatPKComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = E292371D248E1D4E00EEDB65 /* ChatPKComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E292374A248E1D4E00EEDB65 /* ChatPKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E292371F248E1D4E00EEDB65 /* ChatPKComponent.m */; };
+		E292374D248E1D4E00EEDB65 /* RoomPkSelectView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2923723248E1D4E00EEDB65 /* RoomPkSelectView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E292374E248E1D4E00EEDB65 /* AudioPkWinView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2923724248E1D4E00EEDB65 /* AudioPkWinView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E292374F248E1D4E00EEDB65 /* AudioSelectPkView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2923725248E1D4E00EEDB65 /* AudioSelectPkView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2923751248E1D4E00EEDB65 /* PkStartView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2923727248E1D4E00EEDB65 /* PkStartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2923752248E1D4E00EEDB65 /* AudioPkMatchingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2923728248E1D4E00EEDB65 /* AudioPkMatchingView.m */; };
+		E2923753248E1D4E00EEDB65 /* AudioPkLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2923729248E1D4E00EEDB65 /* AudioPkLoadingView.m */; };
+		E2923756248E1D4E00EEDB65 /* PkRankView.m in Sources */ = {isa = PBXBuildFile; fileRef = E292372C248E1D4E00EEDB65 /* PkRankView.m */; };
+		E2923759248E1D4E00EEDB65 /* AudioPkWinView.m in Sources */ = {isa = PBXBuildFile; fileRef = E292372F248E1D4E00EEDB65 /* AudioPkWinView.m */; };
+		E292375A248E1D4E00EEDB65 /* RoomPkSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2923730248E1D4E00EEDB65 /* RoomPkSelectView.m */; };
+		E292375C248E1D4E00EEDB65 /* PkStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2923732248E1D4E00EEDB65 /* PkStartView.m */; };
+		E292375E248E1D4E00EEDB65 /* AudioSelectPkView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2923734248E1D4E00EEDB65 /* AudioSelectPkView.m */; };
+		E2923760248E1D4E00EEDB65 /* PkRankView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2923736248E1D4E00EEDB65 /* PkRankView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2923763248E1D4E00EEDB65 /* AudioPkLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = E2923739248E1D4E00EEDB65 /* AudioPkLoadingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2923764248E1D4E00EEDB65 /* AudioPkMatchingView.h in Headers */ = {isa = PBXBuildFile; fileRef = E292373A248E1D4E00EEDB65 /* AudioPkMatchingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E292376A248E1E9500EEDB65 /* LibTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2923769248E1E9500EEDB65 /* LibTools.framework */; };
+		E292376E248E1E9C00EEDB65 /* LibProjBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E292376D248E1E9C00EEDB65 /* LibProjBase.framework */; };
+		E2923771248E1F3300EEDB65 /* LibProjModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2923770248E1F3300EEDB65 /* LibProjModel.framework */; };
+		E2923774248E1F5A00EEDB65 /* LiveCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2923773248E1F5A00EEDB65 /* LiveCommon.framework */; };
+		E2923791248E3AAA00EEDB65 /* MPAudioUserCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E292378F248E3AAA00EEDB65 /* MPAudioUserCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2923792248E3AAA00EEDB65 /* MPAudioUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2923790248E3AAA00EEDB65 /* MPAudioUserCell.m */; };
+		E294573D24B83809002872CC /* PkProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E294573B24B83809002872CC /* PkProgressView.m */; };
+		E294573E24B83809002872CC /* PkProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = E294573C24B83809002872CC /* PkProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2FD1B4A2490D024005CD29B /* MicSeatManagerObj.h in Headers */ = {isa = PBXBuildFile; fileRef = E2FD1B482490D024005CD29B /* MicSeatManagerObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2FD1B4B2490D024005CD29B /* MicSeatManagerObj.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FD1B492490D024005CD29B /* MicSeatManagerObj.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		60C23C3E2846F90B0073F089 /* TXImKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TXImKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		639D24682531830A00171E4D /* MPAudioMiniView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAudioMiniView.m; sourceTree = "<group>"; };
+		639D24692531830A00171E4D /* MPAudioMiniView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioMiniView.h; sourceTree = "<group>"; };
+		639D246C2531830A00171E4D /* AudioLivePreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioLivePreView.h; sourceTree = "<group>"; };
+		639D246D2531830A00171E4D /* AudioLivePreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioLivePreView.m; sourceTree = "<group>"; };
+		639D24702531830A00171E4D /* MPAudioInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAudioInfoHeaderView.m; sourceTree = "<group>"; };
+		639D24712531830A00171E4D /* MPAudioInfoBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioInfoBottomView.h; sourceTree = "<group>"; };
+		639D24722531830A00171E4D /* MPAudioInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioInfoHeaderView.h; sourceTree = "<group>"; };
+		639D24732531830A00171E4D /* MPAudioInfoBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAudioInfoBottomView.m; sourceTree = "<group>"; };
+		639D255325319EC600171E4D /* MPAudioCloseInfoShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioCloseInfoShowView.h; sourceTree = "<group>"; };
+		639D255425319EC600171E4D /* MPAudioCloseInfoShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAudioCloseInfoShowView.m; sourceTree = "<group>"; };
+		6782251B25109F9100EC37B4 /* XTRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XTRtcKit.framework; path = ../../../../framework/XTRtcKit.framework; sourceTree = "<group>"; };
+		9F70FFCCB43F7F80EF883DCE /* Pods-MPAudioLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPAudioLive.release.xcconfig"; path = "../../../mugozb/Project/rechao/klcMPVA/Pods/Target Support Files/Pods-MPAudioLive/Pods-MPAudioLive.release.xcconfig"; sourceTree = "<group>"; };
+		A09E551A521E6ED882A1B5F3 /* Pods_MPAudioLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPAudioLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA2D5FAFE2AE27AD4E248B8D /* Pods-MPAudioLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPAudioLive.debug.xcconfig"; path = "../../../mugozb/Project/rechao/klcMPVA/Pods/Target Support Files/Pods-MPAudioLive/Pods-MPAudioLive.debug.xcconfig"; sourceTree = "<group>"; };
+		DB3C94B02669D06E009AC112 /* PresenterComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresenterComponent.h; sourceTree = "<group>"; };
+		DB3C94B12669D06E009AC112 /* PresenterComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresenterComponent.m; sourceTree = "<group>"; };
+		DB3D93B926D8C75700DBABED /* AnchorAudioLinkManagerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnchorAudioLinkManagerView.h; sourceTree = "<group>"; };
+		DB3D93BA26D8C75700DBABED /* AnchorAudioLinkManagerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnchorAudioLinkManagerView.m; sourceTree = "<group>"; };
+		DB3D93BE26D8D3D400DBABED /* AudioOnlineListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioOnlineListView.h; sourceTree = "<group>"; };
+		DB3D93BF26D8D3D400DBABED /* AudioOnlineListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioOnlineListView.m; sourceTree = "<group>"; };
+		DB3D93C726D8F3C500DBABED /* AudioLinkUserListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioLinkUserListView.h; sourceTree = "<group>"; };
+		DB3D93C826D8F3C500DBABED /* AudioLinkUserListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioLinkUserListView.m; sourceTree = "<group>"; };
+		DB596C332612D2FE001A8442 /* EmojiPlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmojiPlayView.h; sourceTree = "<group>"; };
+		DB596C342612D2FE001A8442 /* EmojiPlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmojiPlayView.m; sourceTree = "<group>"; };
+		DB76D2262611834F00EE25D2 /* MPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB76D309261185EC00EE25D2 /* SoundEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffectView.m; sourceTree = "<group>"; };
+		DB76D313261185ED00EE25D2 /* SoundEffectItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffectItemCell.h; sourceTree = "<group>"; };
+		DB76D314261185ED00EE25D2 /* SoundEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffectView.h; sourceTree = "<group>"; };
+		DB76D31E261185ED00EE25D2 /* SoundEffectItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffectItemCell.m; sourceTree = "<group>"; };
+		DB76D321261185ED00EE25D2 /* LiveChatEmojiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveChatEmojiView.h; sourceTree = "<group>"; };
+		DB76D323261185ED00EE25D2 /* LiveChatEmojiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveChatEmojiView.m; sourceTree = "<group>"; };
+		DB76D3502611871100EE25D2 /* InviteUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteUserView.m; sourceTree = "<group>"; };
+		DB76D3512611871100EE25D2 /* InviteUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteUserView.h; sourceTree = "<group>"; };
+		DB76DE162611D6CA00EE25D2 /* ApplyLinkUserList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyLinkUserList.m; sourceTree = "<group>"; };
+		DB76DE172611D6CA00EE25D2 /* ApplyLinkUserList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyLinkUserList.h; sourceTree = "<group>"; };
+		DB76DE1A2611D6CA00EE25D2 /* LiveConnectTipObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveConnectTipObj.m; sourceTree = "<group>"; };
+		DB76DE1C2611D6CA00EE25D2 /* LiveConnectTipObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveConnectTipObj.h; sourceTree = "<group>"; };
+		DB76DE1E2611D6CA00EE25D2 /* ApplyLinkAudienceListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyLinkAudienceListView.h; sourceTree = "<group>"; };
+		DB76DE1F2611D6CA00EE25D2 /* InviteAttentionAnchorList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteAttentionAnchorList.m; sourceTree = "<group>"; };
+		DB76DE202611D6CA00EE25D2 /* ApplyUserListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyUserListCell.h; sourceTree = "<group>"; };
+		DB76DE212611D6CA00EE25D2 /* ApplyLinkAudienceListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyLinkAudienceListView.m; sourceTree = "<group>"; };
+		DB76DE222611D6CA00EE25D2 /* InviteAttentionAnchorList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteAttentionAnchorList.h; sourceTree = "<group>"; };
+		DB76DE232611D6CA00EE25D2 /* ApplyUserListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyUserListCell.m; sourceTree = "<group>"; };
+		DB97246E266DB80500A676E4 /* PresenterSeatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenterSeatView.h; sourceTree = "<group>"; };
+		DB97246F266DB80500A676E4 /* PresenterSeatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresenterSeatView.m; sourceTree = "<group>"; };
+		DB972472266DF1E400A676E4 /* YYLiveHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYLiveHeaderView.h; sourceTree = "<group>"; };
+		DB972473266DF1E400A676E4 /* YYLiveHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYLiveHeaderView.m; sourceTree = "<group>"; };
+		E26188352499F919007C9B12 /* AudioPkFinishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPkFinishView.h; sourceTree = "<group>"; };
+		E26188362499F919007C9B12 /* AudioPkFinishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPkFinishView.m; sourceTree = "<group>"; };
+		E267EBEF24978C1C00519EBF /* PKInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKInfoView.h; sourceTree = "<group>"; };
+		E267EBF024978C1C00519EBF /* PKInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKInfoView.m; sourceTree = "<group>"; };
+		E26BD1C924AAE979009D20A7 /* ConnectMicComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectMicComponent.h; sourceTree = "<group>"; };
+		E26BD1CA24AAE979009D20A7 /* ConnectMicComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectMicComponent.m; sourceTree = "<group>"; };
+		E26BD1DC24AAEC05009D20A7 /* MPAudioObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAudioObserver.h; sourceTree = "<group>"; };
+		E26BD1DD24AAEC05009D20A7 /* MPAudioObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAudioObserver.m; sourceTree = "<group>"; };
+		E26E8F6B248F1DD700EBD548 /* AudioMicSeatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioMicSeatView.h; sourceTree = "<group>"; };
+		E26E8F6C248F1DD700EBD548 /* AudioMicSeatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioMicSeatView.m; sourceTree = "<group>"; };
+		E29236F9248E1CF900EEDB65 /* MPAudioLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MPAudioLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E29236FC248E1CF900EEDB65 /* MPAudioLive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAudioLive.h; sourceTree = "<group>"; };
+		E29236FD248E1CF900EEDB65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2923708248E1D4400EEDB65 /* MPAudioLiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAudioLiveController.m; sourceTree = "<group>"; };
+		E2923709248E1D4400EEDB65 /* MPAudioLiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioLiveController.h; sourceTree = "<group>"; };
+		E292370D248E1D4E00EEDB65 /* AudioMicSeatsComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioMicSeatsComponent.m; sourceTree = "<group>"; };
+		E292370E248E1D4E00EEDB65 /* AudioMicSeatsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioMicSeatsComponent.h; sourceTree = "<group>"; };
+		E292371A248E1D4E00EEDB65 /* AudioManagerComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioManagerComponent.m; sourceTree = "<group>"; };
+		E292371B248E1D4E00EEDB65 /* AudioManagerComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManagerComponent.h; sourceTree = "<group>"; };
+		E292371D248E1D4E00EEDB65 /* ChatPKComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatPKComponent.h; sourceTree = "<group>"; };
+		E292371F248E1D4E00EEDB65 /* ChatPKComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatPKComponent.m; sourceTree = "<group>"; };
+		E2923723248E1D4E00EEDB65 /* RoomPkSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomPkSelectView.h; sourceTree = "<group>"; };
+		E2923724248E1D4E00EEDB65 /* AudioPkWinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPkWinView.h; sourceTree = "<group>"; };
+		E2923725248E1D4E00EEDB65 /* AudioSelectPkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSelectPkView.h; sourceTree = "<group>"; };
+		E2923727248E1D4E00EEDB65 /* PkStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PkStartView.h; sourceTree = "<group>"; };
+		E2923728248E1D4E00EEDB65 /* AudioPkMatchingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPkMatchingView.m; sourceTree = "<group>"; };
+		E2923729248E1D4E00EEDB65 /* AudioPkLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPkLoadingView.m; sourceTree = "<group>"; };
+		E292372C248E1D4E00EEDB65 /* PkRankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PkRankView.m; sourceTree = "<group>"; };
+		E292372F248E1D4E00EEDB65 /* AudioPkWinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPkWinView.m; sourceTree = "<group>"; };
+		E2923730248E1D4E00EEDB65 /* RoomPkSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomPkSelectView.m; sourceTree = "<group>"; };
+		E2923732248E1D4E00EEDB65 /* PkStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PkStartView.m; sourceTree = "<group>"; };
+		E2923734248E1D4E00EEDB65 /* AudioSelectPkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioSelectPkView.m; sourceTree = "<group>"; };
+		E2923736248E1D4E00EEDB65 /* PkRankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PkRankView.h; sourceTree = "<group>"; };
+		E2923739248E1D4E00EEDB65 /* AudioPkLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPkLoadingView.h; sourceTree = "<group>"; };
+		E292373A248E1D4E00EEDB65 /* AudioPkMatchingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPkMatchingView.h; sourceTree = "<group>"; };
+		E2923769248E1E9500EEDB65 /* LibTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E292376D248E1E9C00EEDB65 /* LibProjBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2923770248E1F3300EEDB65 /* LibProjModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2923773248E1F5A00EEDB65 /* LiveCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LiveCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E292378F248E3AAA00EEDB65 /* MPAudioUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioUserCell.h; sourceTree = "<group>"; };
+		E2923790248E3AAA00EEDB65 /* MPAudioUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAudioUserCell.m; sourceTree = "<group>"; };
+		E294573B24B83809002872CC /* PkProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PkProgressView.m; sourceTree = "<group>"; };
+		E294573C24B83809002872CC /* PkProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PkProgressView.h; sourceTree = "<group>"; };
+		E2E4C63724C0211500C5B10C /* IMSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IMSocket.framework; path = ../../../../framework/IMSocket.framework; sourceTree = "<group>"; };
+		E2FD1B482490D024005CD29B /* MicSeatManagerObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MicSeatManagerObj.h; sourceTree = "<group>"; };
+		E2FD1B492490D024005CD29B /* MicSeatManagerObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MicSeatManagerObj.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E29236F6248E1CF900EEDB65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2923771248E1F3300EEDB65 /* LibProjModel.framework in Frameworks */,
+				E2923774248E1F5A00EEDB65 /* LiveCommon.framework in Frameworks */,
+				E292376E248E1E9C00EEDB65 /* LibProjBase.framework in Frameworks */,
+				DB76D2272611834F00EE25D2 /* MPCommon.framework in Frameworks */,
+				E292376A248E1E9500EEDB65 /* LibTools.framework in Frameworks */,
+				296E83ED61D4728C1A97AD6C /* Pods_MPAudioLive.framework in Frameworks */,
+				6782251C25109F9100EC37B4 /* XTRtcKit.framework in Frameworks */,
+				60C23C3F2846F90B0073F089 /* TXImKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		639D2466253182F700171E4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE142611D6CA00EE25D2 /* 邀请互动连麦 */,
+				DB76D31F261185ED00EE25D2 /* 表情包 */,
+				DB76D308261185EC00EE25D2 /* 音效包 */,
+				639D24F52531856E00171E4D /* 关闭页面 */,
+				639D246F2531830A00171E4D /* 语音直播间信息 */,
+				639D246B2531830A00171E4D /* 开播页面 */,
+				639D24672531830A00171E4D /* 最小化视图 */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		639D24672531830A00171E4D /* 最小化视图 */ = {
+			isa = PBXGroup;
+			children = (
+				639D24692531830A00171E4D /* MPAudioMiniView.h */,
+				639D24682531830A00171E4D /* MPAudioMiniView.m */,
+			);
+			path = "最小化视图";
+			sourceTree = "<group>";
+		};
+		639D246B2531830A00171E4D /* 开播页面 */ = {
+			isa = PBXGroup;
+			children = (
+				639D246C2531830A00171E4D /* AudioLivePreView.h */,
+				639D246D2531830A00171E4D /* AudioLivePreView.m */,
+			);
+			path = "开播页面";
+			sourceTree = "<group>";
+		};
+		639D246F2531830A00171E4D /* 语音直播间信息 */ = {
+			isa = PBXGroup;
+			children = (
+				DB972472266DF1E400A676E4 /* YYLiveHeaderView.h */,
+				DB972473266DF1E400A676E4 /* YYLiveHeaderView.m */,
+				639D24712531830A00171E4D /* MPAudioInfoBottomView.h */,
+				639D24732531830A00171E4D /* MPAudioInfoBottomView.m */,
+				639D24722531830A00171E4D /* MPAudioInfoHeaderView.h */,
+				639D24702531830A00171E4D /* MPAudioInfoHeaderView.m */,
+			);
+			path = "语音直播间信息";
+			sourceTree = "<group>";
+		};
+		639D24F52531856E00171E4D /* 关闭页面 */ = {
+			isa = PBXGroup;
+			children = (
+				639D255325319EC600171E4D /* MPAudioCloseInfoShowView.h */,
+				639D255425319EC600171E4D /* MPAudioCloseInfoShowView.m */,
+			);
+			path = "关闭页面";
+			sourceTree = "<group>";
+		};
+		64C4542D226697C041525C5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA2D5FAFE2AE27AD4E248B8D /* Pods-MPAudioLive.debug.xcconfig */,
+				9F70FFCCB43F7F80EF883DCE /* Pods-MPAudioLive.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../../../../MXPorj/MX_Voice/Pods;
+			sourceTree = "<group>";
+		};
+		DB3C94AF2669CC92009AC112 /* 主持人 */ = {
+			isa = PBXGroup;
+			children = (
+				DB97246E266DB80500A676E4 /* PresenterSeatView.h */,
+				DB97246F266DB80500A676E4 /* PresenterSeatView.m */,
+				DB3C94B02669D06E009AC112 /* PresenterComponent.h */,
+				DB3C94B12669D06E009AC112 /* PresenterComponent.m */,
+			);
+			path = "主持人";
+			sourceTree = "<group>";
+		};
+		DB3D93BD26D8D37600DBABED /* userList */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE202611D6CA00EE25D2 /* ApplyUserListCell.h */,
+				DB76DE232611D6CA00EE25D2 /* ApplyUserListCell.m */,
+				DB76DE1E2611D6CA00EE25D2 /* ApplyLinkAudienceListView.h */,
+				DB76DE212611D6CA00EE25D2 /* ApplyLinkAudienceListView.m */,
+				DB3D93BE26D8D3D400DBABED /* AudioOnlineListView.h */,
+				DB3D93BF26D8D3D400DBABED /* AudioOnlineListView.m */,
+				DB3D93C726D8F3C500DBABED /* AudioLinkUserListView.h */,
+				DB3D93C826D8F3C500DBABED /* AudioLinkUserListView.m */,
+			);
+			path = userList;
+			sourceTree = "<group>";
+		};
+		DB3D93C226D8D4D300DBABED /* 邀请主播连麦 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE222611D6CA00EE25D2 /* InviteAttentionAnchorList.h */,
+				DB76DE1F2611D6CA00EE25D2 /* InviteAttentionAnchorList.m */,
+			);
+			path = "邀请主播连麦";
+			sourceTree = "<group>";
+		};
+		DB76D308261185EC00EE25D2 /* 音效包 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D313261185ED00EE25D2 /* SoundEffectItemCell.h */,
+				DB76D31E261185ED00EE25D2 /* SoundEffectItemCell.m */,
+				DB76D314261185ED00EE25D2 /* SoundEffectView.h */,
+				DB76D309261185EC00EE25D2 /* SoundEffectView.m */,
+			);
+			path = "音效包";
+			sourceTree = "<group>";
+		};
+		DB76D31F261185ED00EE25D2 /* 表情包 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D321261185ED00EE25D2 /* LiveChatEmojiView.h */,
+				DB76D323261185ED00EE25D2 /* LiveChatEmojiView.m */,
+				DB596C332612D2FE001A8442 /* EmojiPlayView.h */,
+				DB596C342612D2FE001A8442 /* EmojiPlayView.m */,
+			);
+			path = "表情包";
+			sourceTree = "<group>";
+		};
+		DB76D34F2611871100EE25D2 /* 邀请弹窗 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D3502611871100EE25D2 /* InviteUserView.m */,
+				DB76D3512611871100EE25D2 /* InviteUserView.h */,
+			);
+			path = "邀请弹窗";
+			sourceTree = "<group>";
+		};
+		DB76DE142611D6CA00EE25D2 /* 邀请互动连麦 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D34F2611871100EE25D2 /* 邀请弹窗 */,
+				DB76DE152611D6CA00EE25D2 /* 观众 */,
+				DB76DE182611D6CA00EE25D2 /* 直播间互动提示 */,
+				DB76DE1D2611D6CA00EE25D2 /* 主播 */,
+			);
+			path = "邀请互动连麦";
+			sourceTree = "<group>";
+		};
+		DB76DE152611D6CA00EE25D2 /* 观众 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE162611D6CA00EE25D2 /* ApplyLinkUserList.m */,
+				DB76DE172611D6CA00EE25D2 /* ApplyLinkUserList.h */,
+			);
+			path = "观众";
+			sourceTree = "<group>";
+		};
+		DB76DE182611D6CA00EE25D2 /* 直播间互动提示 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE1A2611D6CA00EE25D2 /* LiveConnectTipObj.m */,
+				DB76DE1C2611D6CA00EE25D2 /* LiveConnectTipObj.h */,
+			);
+			path = "直播间互动提示";
+			sourceTree = "<group>";
+		};
+		DB76DE1D2611D6CA00EE25D2 /* 主播 */ = {
+			isa = PBXGroup;
+			children = (
+				DB3D93C226D8D4D300DBABED /* 邀请主播连麦 */,
+				DB3D93BD26D8D37600DBABED /* userList */,
+				DB3D93B926D8C75700DBABED /* AnchorAudioLinkManagerView.h */,
+				DB3D93BA26D8C75700DBABED /* AnchorAudioLinkManagerView.m */,
+			);
+			path = "主播";
+			sourceTree = "<group>";
+		};
+		E267EBF324978F1600519EBF /* PKProgress */ = {
+			isa = PBXGroup;
+			children = (
+				E2923724248E1D4E00EEDB65 /* AudioPkWinView.h */,
+				E292372F248E1D4E00EEDB65 /* AudioPkWinView.m */,
+				E267EBEF24978C1C00519EBF /* PKInfoView.h */,
+				E267EBF024978C1C00519EBF /* PKInfoView.m */,
+				E294573C24B83809002872CC /* PkProgressView.h */,
+				E294573B24B83809002872CC /* PkProgressView.m */,
+				E2923736248E1D4E00EEDB65 /* PkRankView.h */,
+				E292372C248E1D4E00EEDB65 /* PkRankView.m */,
+				E2923727248E1D4E00EEDB65 /* PkStartView.h */,
+				E2923732248E1D4E00EEDB65 /* PkStartView.m */,
+			);
+			path = PKProgress;
+			sourceTree = "<group>";
+		};
+		E26BD1C824AAE979009D20A7 /* 邀请 */ = {
+			isa = PBXGroup;
+			children = (
+				E26BD1DC24AAEC05009D20A7 /* MPAudioObserver.h */,
+				E26BD1DD24AAEC05009D20A7 /* MPAudioObserver.m */,
+			);
+			path = "邀请";
+			sourceTree = "<group>";
+		};
+		E29236EF248E1CF900EEDB65 = {
+			isa = PBXGroup;
+			children = (
+				E29236FB248E1CF900EEDB65 /* MPAudioLive */,
+				E29236FA248E1CF900EEDB65 /* Products */,
+				E2923768248E1E9500EEDB65 /* Frameworks */,
+				64C4542D226697C041525C5C /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		E29236FA248E1CF900EEDB65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E29236F9248E1CF900EEDB65 /* MPAudioLive.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E29236FB248E1CF900EEDB65 /* MPAudioLive */ = {
+			isa = PBXGroup;
+			children = (
+				DB3C94AF2669CC92009AC112 /* 主持人 */,
+				639D2466253182F700171E4D /* Views */,
+				E2FD2D6A24ADC608009C2274 /* 上下麦 */,
+				E26BD1C824AAE979009D20A7 /* 邀请 */,
+				E292370C248E1D4E00EEDB65 /* 麦位组件 */,
+				E2923719248E1D4E00EEDB65 /* 语音组件 */,
+				E292371C248E1D4E00EEDB65 /* 语音PK组件 */,
+				E29236FC248E1CF900EEDB65 /* MPAudioLive.h */,
+				E29236FD248E1CF900EEDB65 /* Info.plist */,
+				E2923709248E1D4400EEDB65 /* MPAudioLiveController.h */,
+				E2923708248E1D4400EEDB65 /* MPAudioLiveController.m */,
+			);
+			path = MPAudioLive;
+			sourceTree = "<group>";
+		};
+		E292370C248E1D4E00EEDB65 /* 麦位组件 */ = {
+			isa = PBXGroup;
+			children = (
+				E292370E248E1D4E00EEDB65 /* AudioMicSeatsComponent.h */,
+				E292370D248E1D4E00EEDB65 /* AudioMicSeatsComponent.m */,
+				E292370F248E1D4E00EEDB65 /* View */,
+			);
+			path = "麦位组件";
+			sourceTree = "<group>";
+		};
+		E292370F248E1D4E00EEDB65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E26E8F6B248F1DD700EBD548 /* AudioMicSeatView.h */,
+				E26E8F6C248F1DD700EBD548 /* AudioMicSeatView.m */,
+				E2FD1B482490D024005CD29B /* MicSeatManagerObj.h */,
+				E2FD1B492490D024005CD29B /* MicSeatManagerObj.m */,
+				E292378F248E3AAA00EEDB65 /* MPAudioUserCell.h */,
+				E2923790248E3AAA00EEDB65 /* MPAudioUserCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2923719248E1D4E00EEDB65 /* 语音组件 */ = {
+			isa = PBXGroup;
+			children = (
+				E292371B248E1D4E00EEDB65 /* AudioManagerComponent.h */,
+				E292371A248E1D4E00EEDB65 /* AudioManagerComponent.m */,
+			);
+			path = "语音组件";
+			sourceTree = "<group>";
+		};
+		E292371C248E1D4E00EEDB65 /* 语音PK组件 */ = {
+			isa = PBXGroup;
+			children = (
+				E292371D248E1D4E00EEDB65 /* ChatPKComponent.h */,
+				E292371F248E1D4E00EEDB65 /* ChatPKComponent.m */,
+				E2923720248E1D4E00EEDB65 /* View */,
+			);
+			path = "语音PK组件";
+			sourceTree = "<group>";
+		};
+		E2923720248E1D4E00EEDB65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E26188352499F919007C9B12 /* AudioPkFinishView.h */,
+				E26188362499F919007C9B12 /* AudioPkFinishView.m */,
+				E2923739248E1D4E00EEDB65 /* AudioPkLoadingView.h */,
+				E2923729248E1D4E00EEDB65 /* AudioPkLoadingView.m */,
+				E292373A248E1D4E00EEDB65 /* AudioPkMatchingView.h */,
+				E2923728248E1D4E00EEDB65 /* AudioPkMatchingView.m */,
+				E2923725248E1D4E00EEDB65 /* AudioSelectPkView.h */,
+				E2923734248E1D4E00EEDB65 /* AudioSelectPkView.m */,
+				E267EBF324978F1600519EBF /* PKProgress */,
+				E2923723248E1D4E00EEDB65 /* RoomPkSelectView.h */,
+				E2923730248E1D4E00EEDB65 /* RoomPkSelectView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2923768248E1E9500EEDB65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60C23C3E2846F90B0073F089 /* TXImKit.framework */,
+				DB76D2262611834F00EE25D2 /* MPCommon.framework */,
+				6782251B25109F9100EC37B4 /* XTRtcKit.framework */,
+				E2E4C63724C0211500C5B10C /* IMSocket.framework */,
+				E2923773248E1F5A00EEDB65 /* LiveCommon.framework */,
+				E2923770248E1F3300EEDB65 /* LibProjModel.framework */,
+				E292376D248E1E9C00EEDB65 /* LibProjBase.framework */,
+				E2923769248E1E9500EEDB65 /* LibTools.framework */,
+				A09E551A521E6ED882A1B5F3 /* Pods_MPAudioLive.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2FD2D6A24ADC608009C2274 /* 上下麦 */ = {
+			isa = PBXGroup;
+			children = (
+				E26BD1C924AAE979009D20A7 /* ConnectMicComponent.h */,
+				E26BD1CA24AAE979009D20A7 /* ConnectMicComponent.m */,
+			);
+			path = "上下麦";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E29236F4248E1CF900EEDB65 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB3C94B22669D06E009AC112 /* PresenterComponent.h in Headers */,
+				DB76D3532611871100EE25D2 /* InviteUserView.h in Headers */,
+				DB76DE292611D6CA00EE25D2 /* LiveConnectTipObj.h in Headers */,
+				DB76DE2C2611D6CA00EE25D2 /* ApplyUserListCell.h in Headers */,
+				DB76DE2E2611D6CA00EE25D2 /* InviteAttentionAnchorList.h in Headers */,
+				DB76D339261185ED00EE25D2 /* LiveChatEmojiView.h in Headers */,
+				DB76D32E261185ED00EE25D2 /* SoundEffectView.h in Headers */,
+				DB76DE2A2611D6CA00EE25D2 /* ApplyLinkAudienceListView.h in Headers */,
+				DB76D32D261185ED00EE25D2 /* SoundEffectItemCell.h in Headers */,
+				DB76DE252611D6CA00EE25D2 /* ApplyLinkUserList.h in Headers */,
+				639D255525319EC600171E4D /* MPAudioCloseInfoShowView.h in Headers */,
+				639D247A2531830A00171E4D /* MPAudioInfoHeaderView.h in Headers */,
+				639D24762531830A00171E4D /* AudioLivePreView.h in Headers */,
+				E267EBF124978C1C00519EBF /* PKInfoView.h in Headers */,
+				DB3D93C926D8F3C500DBABED /* AudioLinkUserListView.h in Headers */,
+				639D24752531830A00171E4D /* MPAudioMiniView.h in Headers */,
+				DB972474266DF1E400A676E4 /* YYLiveHeaderView.h in Headers */,
+				DB3D93BB26D8C75700DBABED /* AnchorAudioLinkManagerView.h in Headers */,
+				E2FD1B4A2490D024005CD29B /* MicSeatManagerObj.h in Headers */,
+				DB596C352612D2FE001A8442 /* EmojiPlayView.h in Headers */,
+				DB972470266DB80500A676E4 /* PresenterSeatView.h in Headers */,
+				E294573E24B83809002872CC /* PkProgressView.h in Headers */,
+				E26E8F6D248F1DD700EBD548 /* AudioMicSeatView.h in Headers */,
+				E26188372499F919007C9B12 /* AudioPkFinishView.h in Headers */,
+				639D24792531830A00171E4D /* MPAudioInfoBottomView.h in Headers */,
+				E26BD1DE24AAEC05009D20A7 /* MPAudioObserver.h in Headers */,
+				E26BD1D224AAE979009D20A7 /* ConnectMicComponent.h in Headers */,
+				E2923791248E3AAA00EEDB65 /* MPAudioUserCell.h in Headers */,
+				DB3D93C026D8D3D400DBABED /* AudioOnlineListView.h in Headers */,
+				E292370B248E1D4400EEDB65 /* MPAudioLiveController.h in Headers */,
+				E292373C248E1D4E00EEDB65 /* AudioMicSeatsComponent.h in Headers */,
+				E2923764248E1D4E00EEDB65 /* AudioPkMatchingView.h in Headers */,
+				E2923747248E1D4E00EEDB65 /* AudioManagerComponent.h in Headers */,
+				E292374F248E1D4E00EEDB65 /* AudioSelectPkView.h in Headers */,
+				E2923760248E1D4E00EEDB65 /* PkRankView.h in Headers */,
+				E2923751248E1D4E00EEDB65 /* PkStartView.h in Headers */,
+				E292374D248E1D4E00EEDB65 /* RoomPkSelectView.h in Headers */,
+				E2923763248E1D4E00EEDB65 /* AudioPkLoadingView.h in Headers */,
+				E292374E248E1D4E00EEDB65 /* AudioPkWinView.h in Headers */,
+				E2923748248E1D4E00EEDB65 /* ChatPKComponent.h in Headers */,
+				E29236FE248E1CF900EEDB65 /* MPAudioLive.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E29236F8248E1CF900EEDB65 /* MPAudioLive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2923701248E1CF900EEDB65 /* Build configuration list for PBXNativeTarget "MPAudioLive" */;
+			buildPhases = (
+				D6393E2CA899399F32A7D3FC /* [CP] Check Pods Manifest.lock */,
+				E29236F4248E1CF900EEDB65 /* Headers */,
+				E29236F5248E1CF900EEDB65 /* Sources */,
+				E29236F6248E1CF900EEDB65 /* Frameworks */,
+				E29236F7248E1CF900EEDB65 /* Resources */,
+				D185F7C4DE179487699B4EBF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MPAudioLive;
+			productName = MPAudioLive;
+			productReference = E29236F9248E1CF900EEDB65 /* MPAudioLive.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E29236F0248E1CF900EEDB65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = KLC;
+				TargetAttributes = {
+					E29236F8248E1CF900EEDB65 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = E29236F3248E1CF900EEDB65 /* Build configuration list for PBXProject "MPAudioLive" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E29236EF248E1CF900EEDB65;
+			productRefGroup = E29236FA248E1CF900EEDB65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E29236F8248E1CF900EEDB65 /* MPAudioLive */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E29236F7248E1CF900EEDB65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D185F7C4DE179487699B4EBF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MPAudioLive/Pods-MPAudioLive-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MPAudioLive/Pods-MPAudioLive-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MPAudioLive/Pods-MPAudioLive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6393E2CA899399F32A7D3FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MPAudioLive-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E29236F5248E1CF900EEDB65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E292375E248E1D4E00EEDB65 /* AudioSelectPkView.m in Sources */,
+				639D24742531830A00171E4D /* MPAudioMiniView.m in Sources */,
+				DB76D337261185ED00EE25D2 /* SoundEffectItemCell.m in Sources */,
+				DB76DE2D2611D6CA00EE25D2 /* ApplyLinkAudienceListView.m in Sources */,
+				E2FD1B4B2490D024005CD29B /* MicSeatManagerObj.m in Sources */,
+				E26BD1D324AAE979009D20A7 /* ConnectMicComponent.m in Sources */,
+				DB3D93CA26D8F3C500DBABED /* AudioLinkUserListView.m in Sources */,
+				E292375C248E1D4E00EEDB65 /* PkStartView.m in Sources */,
+				DB3D93BC26D8C75700DBABED /* AnchorAudioLinkManagerView.m in Sources */,
+				E2923746248E1D4E00EEDB65 /* AudioManagerComponent.m in Sources */,
+				E2923759248E1D4E00EEDB65 /* AudioPkWinView.m in Sources */,
+				E2923756248E1D4E00EEDB65 /* PkRankView.m in Sources */,
+				DB76DE2B2611D6CA00EE25D2 /* InviteAttentionAnchorList.m in Sources */,
+				E26BD1DF24AAEC05009D20A7 /* MPAudioObserver.m in Sources */,
+				DB76D324261185ED00EE25D2 /* SoundEffectView.m in Sources */,
+				639D24772531830A00171E4D /* AudioLivePreView.m in Sources */,
+				E292373B248E1D4E00EEDB65 /* AudioMicSeatsComponent.m in Sources */,
+				E2923752248E1D4E00EEDB65 /* AudioPkMatchingView.m in Sources */,
+				E292374A248E1D4E00EEDB65 /* ChatPKComponent.m in Sources */,
+				E26E8F6E248F1DD700EBD548 /* AudioMicSeatView.m in Sources */,
+				DB972475266DF1E400A676E4 /* YYLiveHeaderView.m in Sources */,
+				DB76DE2F2611D6CA00EE25D2 /* ApplyUserListCell.m in Sources */,
+				DB76D33B261185ED00EE25D2 /* LiveChatEmojiView.m in Sources */,
+				639D24782531830A00171E4D /* MPAudioInfoHeaderView.m in Sources */,
+				DB76D3522611871100EE25D2 /* InviteUserView.m in Sources */,
+				DB3D93C126D8D3D400DBABED /* AudioOnlineListView.m in Sources */,
+				DB76DE272611D6CA00EE25D2 /* LiveConnectTipObj.m in Sources */,
+				E267EBF224978C1C00519EBF /* PKInfoView.m in Sources */,
+				DB972471266DB80500A676E4 /* PresenterSeatView.m in Sources */,
+				E2923753248E1D4E00EEDB65 /* AudioPkLoadingView.m in Sources */,
+				639D255625319EC600171E4D /* MPAudioCloseInfoShowView.m in Sources */,
+				E2923792248E3AAA00EEDB65 /* MPAudioUserCell.m in Sources */,
+				E292375A248E1D4E00EEDB65 /* RoomPkSelectView.m in Sources */,
+				E26188382499F919007C9B12 /* AudioPkFinishView.m in Sources */,
+				E294573D24B83809002872CC /* PkProgressView.m in Sources */,
+				DB76DE242611D6CA00EE25D2 /* ApplyLinkUserList.m in Sources */,
+				E292370A248E1D4400EEDB65 /* MPAudioLiveController.m in Sources */,
+				639D247B2531830A00171E4D /* MPAudioInfoBottomView.m in Sources */,
+				DB3C94B32669D06E009AC112 /* PresenterComponent.m in Sources */,
+				DB596C362612D2FE001A8442 /* EmojiPlayView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E29236FF248E1CF900EEDB65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E2923700248E1CF900EEDB65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E2923702248E1CF900EEDB65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA2D5FAFE2AE27AD4E248B8D /* Pods-MPAudioLive.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JLRoutes/JLRoutes.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView/JXCategoryView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JPush\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_sharesdk\"",
+					"\"${SRCROOT}/../../../framework/XTRtcKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = MPAudioLive/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.MPAudioLive;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E2923703248E1CF900EEDB65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F70FFCCB43F7F80EF883DCE /* Pods-MPAudioLive.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JLRoutes/JLRoutes.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView/JXCategoryView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JPush\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_sharesdk\"",
+					"\"${SRCROOT}/../../../framework/XTRtcKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = MPAudioLive/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klc.MPAudioLive;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E29236F3248E1CF900EEDB65 /* Build configuration list for PBXProject "MPAudioLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E29236FF248E1CF900EEDB65 /* Debug */,
+				E2923700248E1CF900EEDB65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2923701248E1CF900EEDB65 /* Build configuration list for PBXNativeTarget "MPAudioLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2923702248E1CF900EEDB65 /* Debug */,
+				E2923703248E1CF900EEDB65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E29236F0248E1CF900EEDB65 /* Project object */;
+}

@@ -1,0 +1,1394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		144052B0476309EFE95A456E /* Pods_MPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12820FC7F1B83A34C6231DC4 /* Pods_MPCommon.framework */; };
+		60C23C5E2846F9780073F089 /* TXImKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C23C5D2846F9780073F089 /* TXImKit.framework */; };
+		DB0A650F261F17B100637DDA /* RedPacketCompnent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0A6504261F17B100637DDA /* RedPacketCompnent.m */; };
+		DB0A6510261F17B100637DDA /* LiveRedPacketView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0A6506261F17B100637DDA /* LiveRedPacketView.m */; };
+		DB0A6514261F17B100637DDA /* LiveRedPacketView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB0A650A261F17B100637DDA /* LiveRedPacketView.h */; };
+		DB0A6518261F17B100637DDA /* RedPacketCompnent.h in Headers */ = {isa = PBXBuildFile; fileRef = DB0A650E261F17B100637DDA /* RedPacketCompnent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D0A4261179F100EE25D2 /* MPCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D0A2261179F100EE25D2 /* MPCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D0AE26117A4800EE25D2 /* MPLiveInfoComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D0AC26117A4800EE25D2 /* MPLiveInfoComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D0AF26117A4800EE25D2 /* MPLiveInfoComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D0AD26117A4800EE25D2 /* MPLiveInfoComponent.m */; };
+		DB76D0B326117A7200EE25D2 /* LibTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB76D0B226117A7200EE25D2 /* LibTools.framework */; };
+		DB76D0B726117A7700EE25D2 /* LibProjBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB76D0B626117A7700EE25D2 /* LibProjBase.framework */; };
+		DB76D0BA26117A8200EE25D2 /* LibProjModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB76D0B926117A8200EE25D2 /* LibProjModel.framework */; };
+		DB76D0BD26117A9800EE25D2 /* LibProjView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB76D0BC26117A9800EE25D2 /* LibProjView.framework */; };
+		DB76D0C326117AF300EE25D2 /* XTRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB76D0C226117AF300EE25D2 /* XTRtcKit.framework */; };
+		DB76D10E26117D9A00EE25D2 /* CloseMPLiveComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D10C26117D9A00EE25D2 /* CloseMPLiveComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D10F26117D9A00EE25D2 /* CloseMPLiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D10D26117D9A00EE25D2 /* CloseMPLiveComponent.m */; };
+		DB76D11B26117E4600EE25D2 /* OpenMPLiveComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D11426117E4600EE25D2 /* OpenMPLiveComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D11C26117E4600EE25D2 /* OpenMPLiveComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D11526117E4600EE25D2 /* OpenMPLiveComponent.m */; };
+		DB76D11D26117E4600EE25D2 /* SelectLiveItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D11726117E4600EE25D2 /* SelectLiveItemCell.m */; };
+		DB76D11E26117E4600EE25D2 /* SelectLiveChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D11826117E4600EE25D2 /* SelectLiveChannel.m */; };
+		DB76D11F26117E4600EE25D2 /* SelectLiveItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D11926117E4600EE25D2 /* SelectLiveItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D12026117E4600EE25D2 /* SelectLiveChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D11A26117E4600EE25D2 /* SelectLiveChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D13526117EAA00EE25D2 /* LiveInfoBottomView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D12C26117EAA00EE25D2 /* LiveInfoBottomView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D13726117EAA00EE25D2 /* LiveMoreCommonView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D12F26117EAA00EE25D2 /* LiveMoreCommonView.m */; };
+		DB76D13826117EAA00EE25D2 /* LiveMoreCommonView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D13026117EAA00EE25D2 /* LiveMoreCommonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D13926117EAA00EE25D2 /* LiveInfoBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D13126117EAA00EE25D2 /* LiveInfoBottomView.m */; };
+		DB76D16226117F9300EE25D2 /* PLayFansJoinObj.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D14926117F9300EE25D2 /* PLayFansJoinObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D16326117F9300EE25D2 /* FansBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D14A26117F9300EE25D2 /* FansBannerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D16426117F9300EE25D2 /* PLayFansJoinObj.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D14B26117F9300EE25D2 /* PLayFansJoinObj.m */; };
+		DB76D16526117F9300EE25D2 /* FansBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D14C26117F9300EE25D2 /* FansBannerView.m */; };
+		DB76D16626117F9300EE25D2 /* AllUserBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D14E26117F9300EE25D2 /* AllUserBannerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D16726117F9300EE25D2 /* PlayAllUserBannerObj.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D14F26117F9300EE25D2 /* PlayAllUserBannerObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D16826117F9300EE25D2 /* PlayAllUserBannerObj.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D15026117F9300EE25D2 /* PlayAllUserBannerObj.m */; };
+		DB76D16926117F9300EE25D2 /* AllUserBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D15126117F9300EE25D2 /* AllUserBannerView.m */; };
+		DB76D16A26117F9300EE25D2 /* PLayGuardJoinObj.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D15326117F9300EE25D2 /* PLayGuardJoinObj.m */; };
+		DB76D16B26117F9300EE25D2 /* GuardBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D15426117F9300EE25D2 /* GuardBannerView.m */; };
+		DB76D16C26117F9300EE25D2 /* PLayGuardJoinObj.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D15526117F9300EE25D2 /* PLayGuardJoinObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D16D26117F9300EE25D2 /* GuardBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D15626117F9300EE25D2 /* GuardBannerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D23A261183D300EE25D2 /* FamilyRoomItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D232261183D300EE25D2 /* FamilyRoomItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D23B261183D300EE25D2 /* FamilyRoomListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D233261183D300EE25D2 /* FamilyRoomListView.m */; };
+		DB76D23C261183D300EE25D2 /* FamilyListItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D234261183D300EE25D2 /* FamilyListItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D23D261183D300EE25D2 /* FamilyRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D235261183D300EE25D2 /* FamilyRecommendView.m */; };
+		DB76D23E261183D300EE25D2 /* FamilyRoomItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D236261183D300EE25D2 /* FamilyRoomItemCell.m */; };
+		DB76D23F261183D300EE25D2 /* FamilyListItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D237261183D300EE25D2 /* FamilyListItemCell.m */; };
+		DB76D240261183D300EE25D2 /* FamilyRecommendView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D238261183D300EE25D2 /* FamilyRecommendView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D241261183D300EE25D2 /* FamilyRoomListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D239261183D300EE25D2 /* FamilyRoomListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2542611840000EE25D2 /* LiveNoticeView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D24A2611840000EE25D2 /* LiveNoticeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2552611840000EE25D2 /* LiveNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D24B2611840000EE25D2 /* LiveNoticeView.m */; };
+		DB76D2562611840000EE25D2 /* NoticeShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D24D2611840000EE25D2 /* NoticeShowView.m */; };
+		DB76D2572611840000EE25D2 /* NoticeShowView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D24E2611840000EE25D2 /* NoticeShowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2732611843B00EE25D2 /* LiveSetFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2602611843B00EE25D2 /* LiveSetFunctionView.m */; };
+		DB76D2742611843B00EE25D2 /* DisableMsgItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2622611843B00EE25D2 /* DisableMsgItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2752611843B00EE25D2 /* LiveDisableMsgListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2632611843B00EE25D2 /* LiveDisableMsgListView.m */; };
+		DB76D2762611843B00EE25D2 /* DisableMsgItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2642611843B00EE25D2 /* DisableMsgItemCell.m */; };
+		DB76D2772611843B00EE25D2 /* LiveDisableMsgListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2652611843B00EE25D2 /* LiveDisableMsgListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2782611843B00EE25D2 /* SetFunctionItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2662611843B00EE25D2 /* SetFunctionItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2792611843B00EE25D2 /* ManagerUserItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2682611843B00EE25D2 /* ManagerUserItemCell.m */; };
+		DB76D27A2611843B00EE25D2 /* LiveManagerUserListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2692611843B00EE25D2 /* LiveManagerUserListView.m */; };
+		DB76D27B2611843B00EE25D2 /* ManagerUserItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D26A2611843B00EE25D2 /* ManagerUserItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D27C2611843B00EE25D2 /* LiveManagerUserListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D26B2611843B00EE25D2 /* LiveManagerUserListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D27D2611843B00EE25D2 /* LiveSetFunctionView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D26C2611843B00EE25D2 /* LiveSetFunctionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D27E2611843B00EE25D2 /* SetFunctionItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D26D2611843B00EE25D2 /* SetFunctionItemCell.m */; };
+		DB76D27F2611843B00EE25D2 /* KickingUserItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D26F2611843B00EE25D2 /* KickingUserItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2802611843B00EE25D2 /* LiveKickingUserListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2702611843B00EE25D2 /* LiveKickingUserListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2812611843B00EE25D2 /* KickingUserItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2712611843B00EE25D2 /* KickingUserItemCell.m */; };
+		DB76D2822611843B00EE25D2 /* LiveKickingUserListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2722611843B00EE25D2 /* LiveKickingUserListView.m */; };
+		DB76D28B2611845100EE25D2 /* ChangeRoomTypeView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2872611845000EE25D2 /* ChangeRoomTypeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D28C2611845100EE25D2 /* SelectRoomTypeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2882611845000EE25D2 /* SelectRoomTypeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D28D2611845100EE25D2 /* SelectRoomTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2892611845000EE25D2 /* SelectRoomTypeCell.m */; };
+		DB76D28E2611845100EE25D2 /* ChangeRoomTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D28A2611845100EE25D2 /* ChangeRoomTypeView.m */; };
+		DB76D2972611846F00EE25D2 /* MountsBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2932611846F00EE25D2 /* MountsBannerView.m */; };
+		DB76D2982611846F00EE25D2 /* PLayMountsAnimationObj.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2942611846F00EE25D2 /* PLayMountsAnimationObj.m */; };
+		DB76D2992611846F00EE25D2 /* MountsBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2952611846F00EE25D2 /* MountsBannerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D29A2611846F00EE25D2 /* PLayMountsAnimationObj.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2962611846F00EE25D2 /* PLayMountsAnimationObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2A52611849200EE25D2 /* VipSeatListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D29F2611849200EE25D2 /* VipSeatListView.m */; };
+		DB76D2A62611849200EE25D2 /* VIPSeatUserCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2A02611849200EE25D2 /* VIPSeatUserCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2A72611849200EE25D2 /* VipSeatBuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2A12611849200EE25D2 /* VipSeatBuyView.m */; };
+		DB76D2A82611849200EE25D2 /* VipSeatListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2A22611849200EE25D2 /* VipSeatListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2A92611849200EE25D2 /* VipSeatBuyView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2A32611849200EE25D2 /* VipSeatBuyView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2AA2611849200EE25D2 /* VIPSeatUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2A42611849200EE25D2 /* VIPSeatUserCell.m */; };
+		DB76D2B1261184A600EE25D2 /* LiveExitSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2AF261184A600EE25D2 /* LiveExitSelectView.m */; };
+		DB76D2B2261184A600EE25D2 /* LiveExitSelectView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2B0261184A600EE25D2 /* LiveExitSelectView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2B8261184DD00EE25D2 /* LivePraiseAnimationLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2B6261184DD00EE25D2 /* LivePraiseAnimationLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2B9261184DD00EE25D2 /* LivePraiseAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2B7261184DD00EE25D2 /* LivePraiseAnimationLayer.m */; };
+		DB76D2DC261184F400EE25D2 /* LiveUserListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2C1261184F400EE25D2 /* LiveUserListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2DD261184F400EE25D2 /* LiveOnlineUserList.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2C3261184F400EE25D2 /* LiveOnlineUserList.m */; };
+		DB76D2DE261184F400EE25D2 /* LiveOnlineUserList.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2C4261184F400EE25D2 /* LiveOnlineUserList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2DF261184F400EE25D2 /* FansContributionList.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2C6261184F400EE25D2 /* FansContributionList.m */; };
+		DB76D2E0261184F400EE25D2 /* FansContributionList.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2C7261184F400EE25D2 /* FansContributionList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2E1261184F400EE25D2 /* UserInfoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2C9261184F400EE25D2 /* UserInfoListView.m */; };
+		DB76D2E2261184F500EE25D2 /* LiveUserListCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2CA261184F400EE25D2 /* LiveUserListCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2E3261184F500EE25D2 /* UserInfoListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2CB261184F400EE25D2 /* UserInfoListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2E4261184F500EE25D2 /* LiveUserListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2CC261184F400EE25D2 /* LiveUserListCell.m */; };
+		DB76D2E5261184F500EE25D2 /* LiveUserListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2CD261184F400EE25D2 /* LiveUserListView.m */; };
+		DB76D2F92611853200EE25D2 /* JoinFansTipView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2F72611853200EE25D2 /* JoinFansTipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D2FA2611853200EE25D2 /* JoinFansTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D2F82611853200EE25D2 /* JoinFansTipView.m */; };
+		DB76D3012611858600EE25D2 /* LiveMessageComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D2FF2611858600EE25D2 /* LiveMessageComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D3022611858600EE25D2 /* LiveMessageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D3002611858600EE25D2 /* LiveMessageComponent.m */; };
+		DB76D3422611867E00EE25D2 /* LivePayTipsView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D3402611867E00EE25D2 /* LivePayTipsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D3432611867E00EE25D2 /* LivePayTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D3412611867E00EE25D2 /* LivePayTipsView.m */; };
+		DB76D34A261186BD00EE25D2 /* LiveIMFuncView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D348261186BD00EE25D2 /* LiveIMFuncView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D34B261186BD00EE25D2 /* LiveIMFuncView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D349261186BD00EE25D2 /* LiveIMFuncView.m */; };
+		DB76D35A2611873A00EE25D2 /* AnchorWaitAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D3582611873A00EE25D2 /* AnchorWaitAlert.m */; };
+		DB76D35B2611873A00EE25D2 /* AnchorWaitAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D3592611873A00EE25D2 /* AnchorWaitAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D3892611879800EE25D2 /* PresentedGoodNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D3802611879800EE25D2 /* PresentedGoodNumber.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D38A2611879800EE25D2 /* GoodNumItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D3812611879800EE25D2 /* GoodNumItemCell.m */; };
+		DB76D38B2611879800EE25D2 /* PresentedGoodNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D3822611879800EE25D2 /* PresentedGoodNumber.m */; };
+		DB76D38C2611879800EE25D2 /* GoodNumItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D3832611879800EE25D2 /* GoodNumItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D38D2611879800EE25D2 /* PresentNumberObj.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D3852611879800EE25D2 /* PresentNumberObj.m */; };
+		DB76D38E2611879800EE25D2 /* PresentNumShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D3862611879800EE25D2 /* PresentNumShowView.m */; };
+		DB76D38F2611879800EE25D2 /* PresentNumberObj.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D3872611879800EE25D2 /* PresentNumberObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D3902611879800EE25D2 /* PresentNumShowView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D3882611879800EE25D2 /* PresentNumShowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D39A261187E100EE25D2 /* CoinInsufficientTipView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D398261187E100EE25D2 /* CoinInsufficientTipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D39B261187E100EE25D2 /* CoinInsufficientTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D399261187E100EE25D2 /* CoinInsufficientTipView.m */; };
+		DB76D3B72611912900EE25D2 /* UserMsgComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D3B52611912900EE25D2 /* UserMsgComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D3B82611912900EE25D2 /* UserMsgComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D3B62611912900EE25D2 /* UserMsgComponent.m */; };
+		DB76D3CD261193F000EE25D2 /* HandleOtherComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D3CB261193F000EE25D2 /* HandleOtherComponent.m */; };
+		DB76D3CE261193F000EE25D2 /* HandleOtherComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D3CC261193F000EE25D2 /* HandleOtherComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76D3E526119E9C00EE25D2 /* ChangeBgImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76D3E326119E9C00EE25D2 /* ChangeBgImageVC.m */; };
+		DB76D3E626119E9C00EE25D2 /* ChangeBgImageVC.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76D3E426119E9C00EE25D2 /* ChangeBgImageVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76DDBE2611D19600EE25D2 /* LiveCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB76DDBD2611D19600EE25D2 /* LiveCommon.framework */; };
+		DB76DE662612008000EE25D2 /* TrySeeCountDownView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76DE642612008000EE25D2 /* TrySeeCountDownView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76DE672612008000EE25D2 /* TrySeeCountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76DE652612008000EE25D2 /* TrySeeCountDownView.m */; };
+		DB76DE6E2612009D00EE25D2 /* LiangNumShowView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76DE6C2612009D00EE25D2 /* LiangNumShowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76DE6F2612009D00EE25D2 /* LiangNumShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76DE6D2612009D00EE25D2 /* LiangNumShowView.m */; };
+		DB76DE81261200B900EE25D2 /* GuardUserShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76DE77261200B900EE25D2 /* GuardUserShowView.m */; };
+		DB76DE82261200B900EE25D2 /* GuardUserShowView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76DE78261200B900EE25D2 /* GuardUserShowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76DE83261200B900EE25D2 /* VIPSeatsView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76DE7A261200B900EE25D2 /* VIPSeatsView.m */; };
+		DB76DE84261200B900EE25D2 /* VIPSeatsView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76DE7B261200B900EE25D2 /* VIPSeatsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB76DE85261200B900EE25D2 /* RoomAudienceFlowShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB76DE7D261200B900EE25D2 /* RoomAudienceFlowShowView.m */; };
+		DB76DE86261200B900EE25D2 /* RoomAudienceFlowShowView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB76DE7E261200B900EE25D2 /* RoomAudienceFlowShowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0585D4E47F482699B84C54D4 /* Pods-MPCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPCommon.release.xcconfig"; path = "../../../rechao/klcMPVA/Pods/Target Support Files/Pods-MPCommon/Pods-MPCommon.release.xcconfig"; sourceTree = "<group>"; };
+		12820FC7F1B83A34C6231DC4 /* Pods_MPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C01C2A081A1F15262300BA8 /* Pods-MPCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPCommon.debug.xcconfig"; path = "../../../rechao/klcMPVA/Pods/Target Support Files/Pods-MPCommon/Pods-MPCommon.debug.xcconfig"; sourceTree = "<group>"; };
+		60C23C5D2846F9780073F089 /* TXImKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TXImKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB0A6504261F17B100637DDA /* RedPacketCompnent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedPacketCompnent.m; sourceTree = "<group>"; };
+		DB0A6506261F17B100637DDA /* LiveRedPacketView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveRedPacketView.m; sourceTree = "<group>"; };
+		DB0A650A261F17B100637DDA /* LiveRedPacketView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveRedPacketView.h; sourceTree = "<group>"; };
+		DB0A650E261F17B100637DDA /* RedPacketCompnent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPacketCompnent.h; sourceTree = "<group>"; };
+		DB76D09F261179F100EE25D2 /* MPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB76D0A2261179F100EE25D2 /* MPCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCommon.h; sourceTree = "<group>"; };
+		DB76D0A3261179F100EE25D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB76D0AC26117A4800EE25D2 /* MPLiveInfoComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPLiveInfoComponent.h; sourceTree = "<group>"; };
+		DB76D0AD26117A4800EE25D2 /* MPLiveInfoComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPLiveInfoComponent.m; sourceTree = "<group>"; };
+		DB76D0B226117A7200EE25D2 /* LibTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB76D0B626117A7700EE25D2 /* LibProjBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB76D0B926117A8200EE25D2 /* LibProjModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB76D0BC26117A9800EE25D2 /* LibProjView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibProjView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB76D0BF26117AE400EE25D2 /* IMSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IMSocket.framework; path = ../../../framework/IMSocket.framework; sourceTree = "<group>"; };
+		DB76D0C226117AF300EE25D2 /* XTRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XTRtcKit.framework; path = ../../../framework/XTRtcKit.framework; sourceTree = "<group>"; };
+		DB76D10C26117D9A00EE25D2 /* CloseMPLiveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloseMPLiveComponent.h; sourceTree = "<group>"; };
+		DB76D10D26117D9A00EE25D2 /* CloseMPLiveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloseMPLiveComponent.m; sourceTree = "<group>"; };
+		DB76D11426117E4600EE25D2 /* OpenMPLiveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenMPLiveComponent.h; sourceTree = "<group>"; };
+		DB76D11526117E4600EE25D2 /* OpenMPLiveComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenMPLiveComponent.m; sourceTree = "<group>"; };
+		DB76D11726117E4600EE25D2 /* SelectLiveItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLiveItemCell.m; sourceTree = "<group>"; };
+		DB76D11826117E4600EE25D2 /* SelectLiveChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLiveChannel.m; sourceTree = "<group>"; };
+		DB76D11926117E4600EE25D2 /* SelectLiveItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLiveItemCell.h; sourceTree = "<group>"; };
+		DB76D11A26117E4600EE25D2 /* SelectLiveChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLiveChannel.h; sourceTree = "<group>"; };
+		DB76D12C26117EAA00EE25D2 /* LiveInfoBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveInfoBottomView.h; sourceTree = "<group>"; };
+		DB76D12F26117EAA00EE25D2 /* LiveMoreCommonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveMoreCommonView.m; sourceTree = "<group>"; };
+		DB76D13026117EAA00EE25D2 /* LiveMoreCommonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveMoreCommonView.h; sourceTree = "<group>"; };
+		DB76D13126117EAA00EE25D2 /* LiveInfoBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveInfoBottomView.m; sourceTree = "<group>"; };
+		DB76D14926117F9300EE25D2 /* PLayFansJoinObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLayFansJoinObj.h; sourceTree = "<group>"; };
+		DB76D14A26117F9300EE25D2 /* FansBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FansBannerView.h; sourceTree = "<group>"; };
+		DB76D14B26117F9300EE25D2 /* PLayFansJoinObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLayFansJoinObj.m; sourceTree = "<group>"; };
+		DB76D14C26117F9300EE25D2 /* FansBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FansBannerView.m; sourceTree = "<group>"; };
+		DB76D14E26117F9300EE25D2 /* AllUserBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllUserBannerView.h; sourceTree = "<group>"; };
+		DB76D14F26117F9300EE25D2 /* PlayAllUserBannerObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayAllUserBannerObj.h; sourceTree = "<group>"; };
+		DB76D15026117F9300EE25D2 /* PlayAllUserBannerObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayAllUserBannerObj.m; sourceTree = "<group>"; };
+		DB76D15126117F9300EE25D2 /* AllUserBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllUserBannerView.m; sourceTree = "<group>"; };
+		DB76D15326117F9300EE25D2 /* PLayGuardJoinObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLayGuardJoinObj.m; sourceTree = "<group>"; };
+		DB76D15426117F9300EE25D2 /* GuardBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuardBannerView.m; sourceTree = "<group>"; };
+		DB76D15526117F9300EE25D2 /* PLayGuardJoinObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLayGuardJoinObj.h; sourceTree = "<group>"; };
+		DB76D15626117F9300EE25D2 /* GuardBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuardBannerView.h; sourceTree = "<group>"; };
+		DB76D232261183D300EE25D2 /* FamilyRoomItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyRoomItemCell.h; sourceTree = "<group>"; };
+		DB76D233261183D300EE25D2 /* FamilyRoomListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyRoomListView.m; sourceTree = "<group>"; };
+		DB76D234261183D300EE25D2 /* FamilyListItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyListItemCell.h; sourceTree = "<group>"; };
+		DB76D235261183D300EE25D2 /* FamilyRecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyRecommendView.m; sourceTree = "<group>"; };
+		DB76D236261183D300EE25D2 /* FamilyRoomItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyRoomItemCell.m; sourceTree = "<group>"; };
+		DB76D237261183D300EE25D2 /* FamilyListItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyListItemCell.m; sourceTree = "<group>"; };
+		DB76D238261183D300EE25D2 /* FamilyRecommendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyRecommendView.h; sourceTree = "<group>"; };
+		DB76D239261183D300EE25D2 /* FamilyRoomListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyRoomListView.h; sourceTree = "<group>"; };
+		DB76D24A2611840000EE25D2 /* LiveNoticeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveNoticeView.h; sourceTree = "<group>"; };
+		DB76D24B2611840000EE25D2 /* LiveNoticeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveNoticeView.m; sourceTree = "<group>"; };
+		DB76D24D2611840000EE25D2 /* NoticeShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeShowView.m; sourceTree = "<group>"; };
+		DB76D24E2611840000EE25D2 /* NoticeShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeShowView.h; sourceTree = "<group>"; };
+		DB76D2602611843B00EE25D2 /* LiveSetFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveSetFunctionView.m; sourceTree = "<group>"; };
+		DB76D2622611843B00EE25D2 /* DisableMsgItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisableMsgItemCell.h; sourceTree = "<group>"; };
+		DB76D2632611843B00EE25D2 /* LiveDisableMsgListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveDisableMsgListView.m; sourceTree = "<group>"; };
+		DB76D2642611843B00EE25D2 /* DisableMsgItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisableMsgItemCell.m; sourceTree = "<group>"; };
+		DB76D2652611843B00EE25D2 /* LiveDisableMsgListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveDisableMsgListView.h; sourceTree = "<group>"; };
+		DB76D2662611843B00EE25D2 /* SetFunctionItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetFunctionItemCell.h; sourceTree = "<group>"; };
+		DB76D2682611843B00EE25D2 /* ManagerUserItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerUserItemCell.m; sourceTree = "<group>"; };
+		DB76D2692611843B00EE25D2 /* LiveManagerUserListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveManagerUserListView.m; sourceTree = "<group>"; };
+		DB76D26A2611843B00EE25D2 /* ManagerUserItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerUserItemCell.h; sourceTree = "<group>"; };
+		DB76D26B2611843B00EE25D2 /* LiveManagerUserListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveManagerUserListView.h; sourceTree = "<group>"; };
+		DB76D26C2611843B00EE25D2 /* LiveSetFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveSetFunctionView.h; sourceTree = "<group>"; };
+		DB76D26D2611843B00EE25D2 /* SetFunctionItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetFunctionItemCell.m; sourceTree = "<group>"; };
+		DB76D26F2611843B00EE25D2 /* KickingUserItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KickingUserItemCell.h; sourceTree = "<group>"; };
+		DB76D2702611843B00EE25D2 /* LiveKickingUserListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveKickingUserListView.h; sourceTree = "<group>"; };
+		DB76D2712611843B00EE25D2 /* KickingUserItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KickingUserItemCell.m; sourceTree = "<group>"; };
+		DB76D2722611843B00EE25D2 /* LiveKickingUserListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveKickingUserListView.m; sourceTree = "<group>"; };
+		DB76D2872611845000EE25D2 /* ChangeRoomTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeRoomTypeView.h; sourceTree = "<group>"; };
+		DB76D2882611845000EE25D2 /* SelectRoomTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectRoomTypeCell.h; sourceTree = "<group>"; };
+		DB76D2892611845000EE25D2 /* SelectRoomTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRoomTypeCell.m; sourceTree = "<group>"; };
+		DB76D28A2611845100EE25D2 /* ChangeRoomTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeRoomTypeView.m; sourceTree = "<group>"; };
+		DB76D2932611846F00EE25D2 /* MountsBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MountsBannerView.m; sourceTree = "<group>"; };
+		DB76D2942611846F00EE25D2 /* PLayMountsAnimationObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLayMountsAnimationObj.m; sourceTree = "<group>"; };
+		DB76D2952611846F00EE25D2 /* MountsBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MountsBannerView.h; sourceTree = "<group>"; };
+		DB76D2962611846F00EE25D2 /* PLayMountsAnimationObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLayMountsAnimationObj.h; sourceTree = "<group>"; };
+		DB76D29F2611849200EE25D2 /* VipSeatListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VipSeatListView.m; sourceTree = "<group>"; };
+		DB76D2A02611849200EE25D2 /* VIPSeatUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSeatUserCell.h; sourceTree = "<group>"; };
+		DB76D2A12611849200EE25D2 /* VipSeatBuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VipSeatBuyView.m; sourceTree = "<group>"; };
+		DB76D2A22611849200EE25D2 /* VipSeatListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipSeatListView.h; sourceTree = "<group>"; };
+		DB76D2A32611849200EE25D2 /* VipSeatBuyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipSeatBuyView.h; sourceTree = "<group>"; };
+		DB76D2A42611849200EE25D2 /* VIPSeatUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSeatUserCell.m; sourceTree = "<group>"; };
+		DB76D2AF261184A600EE25D2 /* LiveExitSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveExitSelectView.m; sourceTree = "<group>"; };
+		DB76D2B0261184A600EE25D2 /* LiveExitSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveExitSelectView.h; sourceTree = "<group>"; };
+		DB76D2B6261184DD00EE25D2 /* LivePraiseAnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePraiseAnimationLayer.h; sourceTree = "<group>"; };
+		DB76D2B7261184DD00EE25D2 /* LivePraiseAnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePraiseAnimationLayer.m; sourceTree = "<group>"; };
+		DB76D2C1261184F400EE25D2 /* LiveUserListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveUserListView.h; sourceTree = "<group>"; };
+		DB76D2C3261184F400EE25D2 /* LiveOnlineUserList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveOnlineUserList.m; sourceTree = "<group>"; };
+		DB76D2C4261184F400EE25D2 /* LiveOnlineUserList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveOnlineUserList.h; sourceTree = "<group>"; };
+		DB76D2C6261184F400EE25D2 /* FansContributionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FansContributionList.m; sourceTree = "<group>"; };
+		DB76D2C7261184F400EE25D2 /* FansContributionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FansContributionList.h; sourceTree = "<group>"; };
+		DB76D2C9261184F400EE25D2 /* UserInfoListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoListView.m; sourceTree = "<group>"; };
+		DB76D2CA261184F400EE25D2 /* LiveUserListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveUserListCell.h; sourceTree = "<group>"; };
+		DB76D2CB261184F400EE25D2 /* UserInfoListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoListView.h; sourceTree = "<group>"; };
+		DB76D2CC261184F400EE25D2 /* LiveUserListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveUserListCell.m; sourceTree = "<group>"; };
+		DB76D2CD261184F400EE25D2 /* LiveUserListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveUserListView.m; sourceTree = "<group>"; };
+		DB76D2F72611853200EE25D2 /* JoinFansTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinFansTipView.h; sourceTree = "<group>"; };
+		DB76D2F82611853200EE25D2 /* JoinFansTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinFansTipView.m; sourceTree = "<group>"; };
+		DB76D2FF2611858600EE25D2 /* LiveMessageComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveMessageComponent.h; sourceTree = "<group>"; };
+		DB76D3002611858600EE25D2 /* LiveMessageComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveMessageComponent.m; sourceTree = "<group>"; };
+		DB76D3402611867E00EE25D2 /* LivePayTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePayTipsView.h; sourceTree = "<group>"; };
+		DB76D3412611867E00EE25D2 /* LivePayTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePayTipsView.m; sourceTree = "<group>"; };
+		DB76D348261186BD00EE25D2 /* LiveIMFuncView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveIMFuncView.h; sourceTree = "<group>"; };
+		DB76D349261186BD00EE25D2 /* LiveIMFuncView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveIMFuncView.m; sourceTree = "<group>"; };
+		DB76D3582611873A00EE25D2 /* AnchorWaitAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnchorWaitAlert.m; sourceTree = "<group>"; };
+		DB76D3592611873A00EE25D2 /* AnchorWaitAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorWaitAlert.h; sourceTree = "<group>"; };
+		DB76D3802611879800EE25D2 /* PresentedGoodNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentedGoodNumber.h; sourceTree = "<group>"; };
+		DB76D3812611879800EE25D2 /* GoodNumItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodNumItemCell.m; sourceTree = "<group>"; };
+		DB76D3822611879800EE25D2 /* PresentedGoodNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentedGoodNumber.m; sourceTree = "<group>"; };
+		DB76D3832611879800EE25D2 /* GoodNumItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodNumItemCell.h; sourceTree = "<group>"; };
+		DB76D3852611879800EE25D2 /* PresentNumberObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentNumberObj.m; sourceTree = "<group>"; };
+		DB76D3862611879800EE25D2 /* PresentNumShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentNumShowView.m; sourceTree = "<group>"; };
+		DB76D3872611879800EE25D2 /* PresentNumberObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentNumberObj.h; sourceTree = "<group>"; };
+		DB76D3882611879800EE25D2 /* PresentNumShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentNumShowView.h; sourceTree = "<group>"; };
+		DB76D398261187E100EE25D2 /* CoinInsufficientTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinInsufficientTipView.h; sourceTree = "<group>"; };
+		DB76D399261187E100EE25D2 /* CoinInsufficientTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinInsufficientTipView.m; sourceTree = "<group>"; };
+		DB76D3B52611912900EE25D2 /* UserMsgComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMsgComponent.h; sourceTree = "<group>"; };
+		DB76D3B62611912900EE25D2 /* UserMsgComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMsgComponent.m; sourceTree = "<group>"; };
+		DB76D3CB261193F000EE25D2 /* HandleOtherComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleOtherComponent.m; sourceTree = "<group>"; };
+		DB76D3CC261193F000EE25D2 /* HandleOtherComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleOtherComponent.h; sourceTree = "<group>"; };
+		DB76D3E326119E9C00EE25D2 /* ChangeBgImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeBgImageVC.m; sourceTree = "<group>"; };
+		DB76D3E426119E9C00EE25D2 /* ChangeBgImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeBgImageVC.h; sourceTree = "<group>"; };
+		DB76DDBD2611D19600EE25D2 /* LiveCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LiveCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB76DE642612008000EE25D2 /* TrySeeCountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrySeeCountDownView.h; sourceTree = "<group>"; };
+		DB76DE652612008000EE25D2 /* TrySeeCountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrySeeCountDownView.m; sourceTree = "<group>"; };
+		DB76DE6C2612009D00EE25D2 /* LiangNumShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiangNumShowView.h; sourceTree = "<group>"; };
+		DB76DE6D2612009D00EE25D2 /* LiangNumShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiangNumShowView.m; sourceTree = "<group>"; };
+		DB76DE77261200B900EE25D2 /* GuardUserShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuardUserShowView.m; sourceTree = "<group>"; };
+		DB76DE78261200B900EE25D2 /* GuardUserShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuardUserShowView.h; sourceTree = "<group>"; };
+		DB76DE7A261200B900EE25D2 /* VIPSeatsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSeatsView.m; sourceTree = "<group>"; };
+		DB76DE7B261200B900EE25D2 /* VIPSeatsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSeatsView.h; sourceTree = "<group>"; };
+		DB76DE7D261200B900EE25D2 /* RoomAudienceFlowShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomAudienceFlowShowView.m; sourceTree = "<group>"; };
+		DB76DE7E261200B900EE25D2 /* RoomAudienceFlowShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomAudienceFlowShowView.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB76D09C261179F100EE25D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB76D0BA26117A8200EE25D2 /* LibProjModel.framework in Frameworks */,
+				DB76DDBE2611D19600EE25D2 /* LiveCommon.framework in Frameworks */,
+				DB76D0B726117A7700EE25D2 /* LibProjBase.framework in Frameworks */,
+				DB76D0C326117AF300EE25D2 /* XTRtcKit.framework in Frameworks */,
+				DB76D0BD26117A9800EE25D2 /* LibProjView.framework in Frameworks */,
+				DB76D0B326117A7200EE25D2 /* LibTools.framework in Frameworks */,
+				144052B0476309EFE95A456E /* Pods_MPCommon.framework in Frameworks */,
+				60C23C5E2846F9780073F089 /* TXImKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7420955A235FB3A018BCB021 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C01C2A081A1F15262300BA8 /* Pods-MPCommon.debug.xcconfig */,
+				0585D4E47F482699B84C54D4 /* Pods-MPCommon.release.xcconfig */,
+			);
+			name = Pods;
+			path = "../../../Project/一对一社交/XinYu/Pods";
+			sourceTree = "<group>";
+		};
+		DB0A6503261F17B100637DDA /* 红包组件 */ = {
+			isa = PBXGroup;
+			children = (
+				DB0A6505261F17B100637DDA /* 红包 */,
+				DB0A650E261F17B100637DDA /* RedPacketCompnent.h */,
+				DB0A6504261F17B100637DDA /* RedPacketCompnent.m */,
+			);
+			path = "红包组件";
+			sourceTree = "<group>";
+		};
+		DB0A6505261F17B100637DDA /* 红包 */ = {
+			isa = PBXGroup;
+			children = (
+				DB0A650A261F17B100637DDA /* LiveRedPacketView.h */,
+				DB0A6506261F17B100637DDA /* LiveRedPacketView.m */,
+			);
+			path = "红包";
+			sourceTree = "<group>";
+		};
+		DB76D095261179F100EE25D2 = {
+			isa = PBXGroup;
+			children = (
+				DB76D0A1261179F100EE25D2 /* MPCommon */,
+				DB76D0A0261179F100EE25D2 /* Products */,
+				DB76D0B126117A7200EE25D2 /* Frameworks */,
+				7420955A235FB3A018BCB021 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		DB76D0A0261179F100EE25D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D09F261179F100EE25D2 /* MPCommon.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB76D0A1261179F100EE25D2 /* MPCommon */ = {
+			isa = PBXGroup;
+			children = (
+				DBEA440E264E0C8F0002DB3F /* LiveVc */,
+				DB0A6503261F17B100637DDA /* 红包组件 */,
+				DB76D3CA261193F000EE25D2 /* 其他功能组件 */,
+				DB76D3B42611912900EE25D2 /* 用户消息组件 */,
+				DB76D2FE2611858600EE25D2 /* 直播间消息 */,
+				DB76D13C26117F8400EE25D2 /* View */,
+				DB76D12626117E9800EE25D2 /* Obj */,
+				DB76D11326117E4600EE25D2 /* 开播 */,
+				DB76D10B26117D9A00EE25D2 /* 关播 */,
+				DB76D0AB26117A4800EE25D2 /* 直播间信息 */,
+				DB76D0A2261179F100EE25D2 /* MPCommon.h */,
+				DB76D0A3261179F100EE25D2 /* Info.plist */,
+			);
+			path = MPCommon;
+			sourceTree = "<group>";
+		};
+		DB76D0AB26117A4800EE25D2 /* 直播间信息 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D0AC26117A4800EE25D2 /* MPLiveInfoComponent.h */,
+				DB76D0AD26117A4800EE25D2 /* MPLiveInfoComponent.m */,
+			);
+			path = "直播间信息";
+			sourceTree = "<group>";
+		};
+		DB76D0B126117A7200EE25D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60C23C5D2846F9780073F089 /* TXImKit.framework */,
+				DB76DDBD2611D19600EE25D2 /* LiveCommon.framework */,
+				DB76D0C226117AF300EE25D2 /* XTRtcKit.framework */,
+				DB76D0BF26117AE400EE25D2 /* IMSocket.framework */,
+				DB76D0BC26117A9800EE25D2 /* LibProjView.framework */,
+				DB76D0B926117A8200EE25D2 /* LibProjModel.framework */,
+				DB76D0B626117A7700EE25D2 /* LibProjBase.framework */,
+				DB76D0B226117A7200EE25D2 /* LibTools.framework */,
+				12820FC7F1B83A34C6231DC4 /* Pods_MPCommon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB76D10B26117D9A00EE25D2 /* 关播 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D10C26117D9A00EE25D2 /* CloseMPLiveComponent.h */,
+				DB76D10D26117D9A00EE25D2 /* CloseMPLiveComponent.m */,
+			);
+			path = "关播";
+			sourceTree = "<group>";
+		};
+		DB76D11326117E4600EE25D2 /* 开播 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D11426117E4600EE25D2 /* OpenMPLiveComponent.h */,
+				DB76D11526117E4600EE25D2 /* OpenMPLiveComponent.m */,
+				DB76D11626117E4600EE25D2 /* 选择开播频道 */,
+			);
+			path = "开播";
+			sourceTree = "<group>";
+		};
+		DB76D11626117E4600EE25D2 /* 选择开播频道 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D11726117E4600EE25D2 /* SelectLiveItemCell.m */,
+				DB76D11826117E4600EE25D2 /* SelectLiveChannel.m */,
+				DB76D11926117E4600EE25D2 /* SelectLiveItemCell.h */,
+				DB76D11A26117E4600EE25D2 /* SelectLiveChannel.h */,
+			);
+			path = "选择开播频道";
+			sourceTree = "<group>";
+		};
+		DB76D12626117E9800EE25D2 /* Obj */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D12B26117EAA00EE25D2 /* 直播间底部按钮 */,
+				DB76D12726117EAA00EE25D2 /* 公用Model */,
+			);
+			path = Obj;
+			sourceTree = "<group>";
+		};
+		DB76D12726117EAA00EE25D2 /* 公用Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "公用Model";
+			sourceTree = "<group>";
+		};
+		DB76D12B26117EAA00EE25D2 /* 直播间底部按钮 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D12C26117EAA00EE25D2 /* LiveInfoBottomView.h */,
+				DB76D12E26117EAA00EE25D2 /* 更多 */,
+				DB76D13126117EAA00EE25D2 /* LiveInfoBottomView.m */,
+			);
+			path = "直播间底部按钮";
+			sourceTree = "<group>";
+		};
+		DB76D12E26117EAA00EE25D2 /* 更多 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D12F26117EAA00EE25D2 /* LiveMoreCommonView.m */,
+				DB76D13026117EAA00EE25D2 /* LiveMoreCommonView.h */,
+			);
+			path = "更多";
+			sourceTree = "<group>";
+		};
+		DB76D13C26117F8400EE25D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE5F2612005C00EE25D2 /* 直播间公用 */,
+				DB76D397261187E100EE25D2 /* 金额不足提示 */,
+				DB76D37E2611879800EE25D2 /* liangNumber */,
+				DB76D3572611873A00EE25D2 /* 互动提示 */,
+				DB76D347261186BD00EE25D2 /* 极光消息 */,
+				DB76D33F2611867E00EE25D2 /* 付费提示 */,
+				DB76D2F52611853200EE25D2 /* 粉丝团 */,
+				DB76D2BF261184F400EE25D2 /* 排行榜 */,
+				DB76D2B5261184DD00EE25D2 /* 直播点亮 */,
+				DB76D2AE261184A600EE25D2 /* 关闭功能选择 */,
+				DB76D29E2611849200EE25D2 /* 贵宾席 */,
+				DB76D2922611846F00EE25D2 /* 坐骑进入 */,
+				DB76D2862611845000EE25D2 /* 房间模式 */,
+				DB76D25F2611843B00EE25D2 /* 直播间内设置 */,
+				DB76D2482611840000EE25D2 /* 房间公告 */,
+				DB76D231261183D300EE25D2 /* 家族推荐 */,
+				DB76D13D26117F9300EE25D2 /* 用户入场 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DB76D13D26117F9300EE25D2 /* 用户入场 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D14826117F9300EE25D2 /* 粉丝团进入 */,
+				DB76D14D26117F9300EE25D2 /* 所有用户进入 */,
+				DB76D15226117F9300EE25D2 /* 守护进入 */,
+			);
+			path = "用户入场";
+			sourceTree = "<group>";
+		};
+		DB76D14826117F9300EE25D2 /* 粉丝团进入 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D14A26117F9300EE25D2 /* FansBannerView.h */,
+				DB76D14C26117F9300EE25D2 /* FansBannerView.m */,
+				DB76D14926117F9300EE25D2 /* PLayFansJoinObj.h */,
+				DB76D14B26117F9300EE25D2 /* PLayFansJoinObj.m */,
+			);
+			path = "粉丝团进入";
+			sourceTree = "<group>";
+		};
+		DB76D14D26117F9300EE25D2 /* 所有用户进入 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D14E26117F9300EE25D2 /* AllUserBannerView.h */,
+				DB76D15126117F9300EE25D2 /* AllUserBannerView.m */,
+				DB76D14F26117F9300EE25D2 /* PlayAllUserBannerObj.h */,
+				DB76D15026117F9300EE25D2 /* PlayAllUserBannerObj.m */,
+			);
+			path = "所有用户进入";
+			sourceTree = "<group>";
+		};
+		DB76D15226117F9300EE25D2 /* 守护进入 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D15626117F9300EE25D2 /* GuardBannerView.h */,
+				DB76D15426117F9300EE25D2 /* GuardBannerView.m */,
+				DB76D15526117F9300EE25D2 /* PLayGuardJoinObj.h */,
+				DB76D15326117F9300EE25D2 /* PLayGuardJoinObj.m */,
+			);
+			path = "守护进入";
+			sourceTree = "<group>";
+		};
+		DB76D231261183D300EE25D2 /* 家族推荐 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D234261183D300EE25D2 /* FamilyListItemCell.h */,
+				DB76D237261183D300EE25D2 /* FamilyListItemCell.m */,
+				DB76D238261183D300EE25D2 /* FamilyRecommendView.h */,
+				DB76D235261183D300EE25D2 /* FamilyRecommendView.m */,
+				DB76D232261183D300EE25D2 /* FamilyRoomItemCell.h */,
+				DB76D236261183D300EE25D2 /* FamilyRoomItemCell.m */,
+				DB76D239261183D300EE25D2 /* FamilyRoomListView.h */,
+				DB76D233261183D300EE25D2 /* FamilyRoomListView.m */,
+			);
+			path = "家族推荐";
+			sourceTree = "<group>";
+		};
+		DB76D2482611840000EE25D2 /* 房间公告 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2492611840000EE25D2 /* 修改房间公告 */,
+				DB76D24C2611840000EE25D2 /* 玩法 */,
+			);
+			path = "房间公告";
+			sourceTree = "<group>";
+		};
+		DB76D2492611840000EE25D2 /* 修改房间公告 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D24A2611840000EE25D2 /* LiveNoticeView.h */,
+				DB76D24B2611840000EE25D2 /* LiveNoticeView.m */,
+			);
+			path = "修改房间公告";
+			sourceTree = "<group>";
+		};
+		DB76D24C2611840000EE25D2 /* 玩法 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D24D2611840000EE25D2 /* NoticeShowView.m */,
+				DB76D24E2611840000EE25D2 /* NoticeShowView.h */,
+			);
+			path = "玩法";
+			sourceTree = "<group>";
+		};
+		DB76D25F2611843B00EE25D2 /* 直播间内设置 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2672611843B00EE25D2 /* 管理员列表 */,
+				DB76D2612611843B00EE25D2 /* 禁言列表 */,
+				DB76D26E2611843B00EE25D2 /* 踢人列表 */,
+				DB76D26C2611843B00EE25D2 /* LiveSetFunctionView.h */,
+				DB76D2602611843B00EE25D2 /* LiveSetFunctionView.m */,
+				DB76D2662611843B00EE25D2 /* SetFunctionItemCell.h */,
+				DB76D26D2611843B00EE25D2 /* SetFunctionItemCell.m */,
+			);
+			path = "直播间内设置";
+			sourceTree = "<group>";
+		};
+		DB76D2612611843B00EE25D2 /* 禁言列表 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2622611843B00EE25D2 /* DisableMsgItemCell.h */,
+				DB76D2642611843B00EE25D2 /* DisableMsgItemCell.m */,
+				DB76D2652611843B00EE25D2 /* LiveDisableMsgListView.h */,
+				DB76D2632611843B00EE25D2 /* LiveDisableMsgListView.m */,
+			);
+			path = "禁言列表";
+			sourceTree = "<group>";
+		};
+		DB76D2672611843B00EE25D2 /* 管理员列表 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D26B2611843B00EE25D2 /* LiveManagerUserListView.h */,
+				DB76D2692611843B00EE25D2 /* LiveManagerUserListView.m */,
+				DB76D26A2611843B00EE25D2 /* ManagerUserItemCell.h */,
+				DB76D2682611843B00EE25D2 /* ManagerUserItemCell.m */,
+			);
+			path = "管理员列表";
+			sourceTree = "<group>";
+		};
+		DB76D26E2611843B00EE25D2 /* 踢人列表 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D26F2611843B00EE25D2 /* KickingUserItemCell.h */,
+				DB76D2712611843B00EE25D2 /* KickingUserItemCell.m */,
+				DB76D2702611843B00EE25D2 /* LiveKickingUserListView.h */,
+				DB76D2722611843B00EE25D2 /* LiveKickingUserListView.m */,
+			);
+			path = "踢人列表";
+			sourceTree = "<group>";
+		};
+		DB76D2862611845000EE25D2 /* 房间模式 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2872611845000EE25D2 /* ChangeRoomTypeView.h */,
+				DB76D2882611845000EE25D2 /* SelectRoomTypeCell.h */,
+				DB76D2892611845000EE25D2 /* SelectRoomTypeCell.m */,
+				DB76D28A2611845100EE25D2 /* ChangeRoomTypeView.m */,
+			);
+			path = "房间模式";
+			sourceTree = "<group>";
+		};
+		DB76D2922611846F00EE25D2 /* 坐骑进入 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2952611846F00EE25D2 /* MountsBannerView.h */,
+				DB76D2932611846F00EE25D2 /* MountsBannerView.m */,
+				DB76D2962611846F00EE25D2 /* PLayMountsAnimationObj.h */,
+				DB76D2942611846F00EE25D2 /* PLayMountsAnimationObj.m */,
+			);
+			path = "坐骑进入";
+			sourceTree = "<group>";
+		};
+		DB76D29E2611849200EE25D2 /* 贵宾席 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2A32611849200EE25D2 /* VipSeatBuyView.h */,
+				DB76D2A12611849200EE25D2 /* VipSeatBuyView.m */,
+				DB76D2A22611849200EE25D2 /* VipSeatListView.h */,
+				DB76D29F2611849200EE25D2 /* VipSeatListView.m */,
+				DB76D2A02611849200EE25D2 /* VIPSeatUserCell.h */,
+				DB76D2A42611849200EE25D2 /* VIPSeatUserCell.m */,
+			);
+			path = "贵宾席";
+			sourceTree = "<group>";
+		};
+		DB76D2AE261184A600EE25D2 /* 关闭功能选择 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2AF261184A600EE25D2 /* LiveExitSelectView.m */,
+				DB76D2B0261184A600EE25D2 /* LiveExitSelectView.h */,
+			);
+			path = "关闭功能选择";
+			sourceTree = "<group>";
+		};
+		DB76D2B5261184DD00EE25D2 /* 直播点亮 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2B6261184DD00EE25D2 /* LivePraiseAnimationLayer.h */,
+				DB76D2B7261184DD00EE25D2 /* LivePraiseAnimationLayer.m */,
+			);
+			path = "直播点亮";
+			sourceTree = "<group>";
+		};
+		DB76D2BF261184F400EE25D2 /* 排行榜 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2C0261184F400EE25D2 /* 贡献榜 */,
+			);
+			path = "排行榜";
+			sourceTree = "<group>";
+		};
+		DB76D2C0261184F400EE25D2 /* 贡献榜 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2C5261184F400EE25D2 /* 本场贡献榜 */,
+				DB76D2C2261184F400EE25D2 /* 在线观众席 */,
+				DB76D2C1261184F400EE25D2 /* LiveUserListView.h */,
+				DB76D2CD261184F400EE25D2 /* LiveUserListView.m */,
+				DB76D2C8261184F400EE25D2 /* View */,
+			);
+			path = "贡献榜";
+			sourceTree = "<group>";
+		};
+		DB76D2C2261184F400EE25D2 /* 在线观众席 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2C4261184F400EE25D2 /* LiveOnlineUserList.h */,
+				DB76D2C3261184F400EE25D2 /* LiveOnlineUserList.m */,
+			);
+			path = "在线观众席";
+			sourceTree = "<group>";
+		};
+		DB76D2C5261184F400EE25D2 /* 本场贡献榜 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2C7261184F400EE25D2 /* FansContributionList.h */,
+				DB76D2C6261184F400EE25D2 /* FansContributionList.m */,
+			);
+			path = "本场贡献榜";
+			sourceTree = "<group>";
+		};
+		DB76D2C8261184F400EE25D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2CA261184F400EE25D2 /* LiveUserListCell.h */,
+				DB76D2CC261184F400EE25D2 /* LiveUserListCell.m */,
+				DB76D2CB261184F400EE25D2 /* UserInfoListView.h */,
+				DB76D2C9261184F400EE25D2 /* UserInfoListView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DB76D2F52611853200EE25D2 /* 粉丝团 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2F62611853200EE25D2 /* 加入粉丝团提示窗口 */,
+			);
+			path = "粉丝团";
+			sourceTree = "<group>";
+		};
+		DB76D2F62611853200EE25D2 /* 加入粉丝团提示窗口 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2F72611853200EE25D2 /* JoinFansTipView.h */,
+				DB76D2F82611853200EE25D2 /* JoinFansTipView.m */,
+			);
+			path = "加入粉丝团提示窗口";
+			sourceTree = "<group>";
+		};
+		DB76D2FE2611858600EE25D2 /* 直播间消息 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D2FF2611858600EE25D2 /* LiveMessageComponent.h */,
+				DB76D3002611858600EE25D2 /* LiveMessageComponent.m */,
+			);
+			path = "直播间消息";
+			sourceTree = "<group>";
+		};
+		DB76D33F2611867E00EE25D2 /* 付费提示 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D3402611867E00EE25D2 /* LivePayTipsView.h */,
+				DB76D3412611867E00EE25D2 /* LivePayTipsView.m */,
+			);
+			path = "付费提示";
+			sourceTree = "<group>";
+		};
+		DB76D347261186BD00EE25D2 /* 极光消息 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D348261186BD00EE25D2 /* LiveIMFuncView.h */,
+				DB76D349261186BD00EE25D2 /* LiveIMFuncView.m */,
+			);
+			path = "极光消息";
+			sourceTree = "<group>";
+		};
+		DB76D3572611873A00EE25D2 /* 互动提示 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D3582611873A00EE25D2 /* AnchorWaitAlert.m */,
+				DB76D3592611873A00EE25D2 /* AnchorWaitAlert.h */,
+			);
+			path = "互动提示";
+			sourceTree = "<group>";
+		};
+		DB76D37E2611879800EE25D2 /* liangNumber */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D37F2611879800EE25D2 /* buyLiang */,
+				DB76D3842611879800EE25D2 /* show */,
+			);
+			path = liangNumber;
+			sourceTree = "<group>";
+		};
+		DB76D37F2611879800EE25D2 /* buyLiang */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D3832611879800EE25D2 /* GoodNumItemCell.h */,
+				DB76D3812611879800EE25D2 /* GoodNumItemCell.m */,
+				DB76D3802611879800EE25D2 /* PresentedGoodNumber.h */,
+				DB76D3822611879800EE25D2 /* PresentedGoodNumber.m */,
+			);
+			path = buyLiang;
+			sourceTree = "<group>";
+		};
+		DB76D3842611879800EE25D2 /* show */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D3872611879800EE25D2 /* PresentNumberObj.h */,
+				DB76D3852611879800EE25D2 /* PresentNumberObj.m */,
+				DB76D3882611879800EE25D2 /* PresentNumShowView.h */,
+				DB76D3862611879800EE25D2 /* PresentNumShowView.m */,
+			);
+			path = show;
+			sourceTree = "<group>";
+		};
+		DB76D397261187E100EE25D2 /* 金额不足提示 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D398261187E100EE25D2 /* CoinInsufficientTipView.h */,
+				DB76D399261187E100EE25D2 /* CoinInsufficientTipView.m */,
+			);
+			path = "金额不足提示";
+			sourceTree = "<group>";
+		};
+		DB76D3B42611912900EE25D2 /* 用户消息组件 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D3B52611912900EE25D2 /* UserMsgComponent.h */,
+				DB76D3B62611912900EE25D2 /* UserMsgComponent.m */,
+			);
+			path = "用户消息组件";
+			sourceTree = "<group>";
+		};
+		DB76D3CA261193F000EE25D2 /* 其他功能组件 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D3CB261193F000EE25D2 /* HandleOtherComponent.m */,
+				DB76D3CC261193F000EE25D2 /* HandleOtherComponent.h */,
+			);
+			path = "其他功能组件";
+			sourceTree = "<group>";
+		};
+		DB76D3E226119E9C00EE25D2 /* 更换聊天背景 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D3E326119E9C00EE25D2 /* ChangeBgImageVC.m */,
+				DB76D3E426119E9C00EE25D2 /* ChangeBgImageVC.h */,
+			);
+			path = "更换聊天背景";
+			sourceTree = "<group>";
+		};
+		DB76DE5F2612005C00EE25D2 /* 直播间公用 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE79261200B900EE25D2 /* 贵宾席 */,
+				DB76DE76261200B800EE25D2 /* 守护 */,
+				DB76DE7C261200B900EE25D2 /* 用户列表 */,
+				DB76DE6B2612009D00EE25D2 /* 靓号 */,
+				DB76DE632612008000EE25D2 /* 试看 */,
+			);
+			path = "直播间公用";
+			sourceTree = "<group>";
+		};
+		DB76DE632612008000EE25D2 /* 试看 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE642612008000EE25D2 /* TrySeeCountDownView.h */,
+				DB76DE652612008000EE25D2 /* TrySeeCountDownView.m */,
+			);
+			path = "试看";
+			sourceTree = "<group>";
+		};
+		DB76DE6B2612009D00EE25D2 /* 靓号 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE6C2612009D00EE25D2 /* LiangNumShowView.h */,
+				DB76DE6D2612009D00EE25D2 /* LiangNumShowView.m */,
+			);
+			path = "靓号";
+			sourceTree = "<group>";
+		};
+		DB76DE76261200B800EE25D2 /* 守护 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE77261200B900EE25D2 /* GuardUserShowView.m */,
+				DB76DE78261200B900EE25D2 /* GuardUserShowView.h */,
+			);
+			path = "守护";
+			sourceTree = "<group>";
+		};
+		DB76DE79261200B900EE25D2 /* 贵宾席 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE7A261200B900EE25D2 /* VIPSeatsView.m */,
+				DB76DE7B261200B900EE25D2 /* VIPSeatsView.h */,
+			);
+			path = "贵宾席";
+			sourceTree = "<group>";
+		};
+		DB76DE7C261200B900EE25D2 /* 用户列表 */ = {
+			isa = PBXGroup;
+			children = (
+				DB76DE7D261200B900EE25D2 /* RoomAudienceFlowShowView.m */,
+				DB76DE7E261200B900EE25D2 /* RoomAudienceFlowShowView.h */,
+			);
+			path = "用户列表";
+			sourceTree = "<group>";
+		};
+		DBEA440E264E0C8F0002DB3F /* LiveVc */ = {
+			isa = PBXGroup;
+			children = (
+				DB76D3E226119E9C00EE25D2 /* 更换聊天背景 */,
+			);
+			path = LiveVc;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DB76D09A261179F100EE25D2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB0A6518261F17B100637DDA /* RedPacketCompnent.h in Headers */,
+				DB76DE86261200B900EE25D2 /* RoomAudienceFlowShowView.h in Headers */,
+				DB76DE662612008000EE25D2 /* TrySeeCountDownView.h in Headers */,
+				DB76DE6E2612009D00EE25D2 /* LiangNumShowView.h in Headers */,
+				DB76DE82261200B900EE25D2 /* GuardUserShowView.h in Headers */,
+				DB76DE84261200B900EE25D2 /* VIPSeatsView.h in Headers */,
+				DB76D2A62611849200EE25D2 /* VIPSeatUserCell.h in Headers */,
+				DB76D2E3261184F500EE25D2 /* UserInfoListView.h in Headers */,
+				DB76D11B26117E4600EE25D2 /* OpenMPLiveComponent.h in Headers */,
+				DB76D240261183D300EE25D2 /* FamilyRecommendView.h in Headers */,
+				DB76D2742611843B00EE25D2 /* DisableMsgItemCell.h in Headers */,
+				DB76D12026117E4600EE25D2 /* SelectLiveChannel.h in Headers */,
+				DB76D3E626119E9C00EE25D2 /* ChangeBgImageVC.h in Headers */,
+				DB76D2802611843B00EE25D2 /* LiveKickingUserListView.h in Headers */,
+				DB76D10E26117D9A00EE25D2 /* CloseMPLiveComponent.h in Headers */,
+				DB76D13826117EAA00EE25D2 /* LiveMoreCommonView.h in Headers */,
+				DB76D2782611843B00EE25D2 /* SetFunctionItemCell.h in Headers */,
+				DB76D3012611858600EE25D2 /* LiveMessageComponent.h in Headers */,
+				DB76D34A261186BD00EE25D2 /* LiveIMFuncView.h in Headers */,
+				DB76D3CE261193F000EE25D2 /* HandleOtherComponent.h in Headers */,
+				DB76D3902611879800EE25D2 /* PresentNumShowView.h in Headers */,
+				DB0A6514261F17B100637DDA /* LiveRedPacketView.h in Headers */,
+				DB76D27F2611843B00EE25D2 /* KickingUserItemCell.h in Headers */,
+				DB76D16226117F9300EE25D2 /* PLayFansJoinObj.h in Headers */,
+				DB76D28B2611845100EE25D2 /* ChangeRoomTypeView.h in Headers */,
+				DB76D27D2611843B00EE25D2 /* LiveSetFunctionView.h in Headers */,
+				DB76D11F26117E4600EE25D2 /* SelectLiveItemCell.h in Headers */,
+				DB76D2B2261184A600EE25D2 /* LiveExitSelectView.h in Headers */,
+				DB76D2A92611849200EE25D2 /* VipSeatBuyView.h in Headers */,
+				DB76D23C261183D300EE25D2 /* FamilyListItemCell.h in Headers */,
+				DB76D28C2611845100EE25D2 /* SelectRoomTypeCell.h in Headers */,
+				DB76D29A2611846F00EE25D2 /* PLayMountsAnimationObj.h in Headers */,
+				DB76D16726117F9300EE25D2 /* PlayAllUserBannerObj.h in Headers */,
+				DB76D39A261187E100EE25D2 /* CoinInsufficientTipView.h in Headers */,
+				DB76D241261183D300EE25D2 /* FamilyRoomListView.h in Headers */,
+				DB76D16626117F9300EE25D2 /* AllUserBannerView.h in Headers */,
+				DB76D16D26117F9300EE25D2 /* GuardBannerView.h in Headers */,
+				DB76D2B8261184DD00EE25D2 /* LivePraiseAnimationLayer.h in Headers */,
+				DB76D35B2611873A00EE25D2 /* AnchorWaitAlert.h in Headers */,
+				DB76D13526117EAA00EE25D2 /* LiveInfoBottomView.h in Headers */,
+				DB76D23A261183D300EE25D2 /* FamilyRoomItemCell.h in Headers */,
+				DB76D2992611846F00EE25D2 /* MountsBannerView.h in Headers */,
+				DB76D16C26117F9300EE25D2 /* PLayGuardJoinObj.h in Headers */,
+				DB76D2542611840000EE25D2 /* LiveNoticeView.h in Headers */,
+				DB76D2A82611849200EE25D2 /* VipSeatListView.h in Headers */,
+				DB76D2572611840000EE25D2 /* NoticeShowView.h in Headers */,
+				DB76D2F92611853200EE25D2 /* JoinFansTipView.h in Headers */,
+				DB76D27B2611843B00EE25D2 /* ManagerUserItemCell.h in Headers */,
+				DB76D38F2611879800EE25D2 /* PresentNumberObj.h in Headers */,
+				DB76D38C2611879800EE25D2 /* GoodNumItemCell.h in Headers */,
+				DB76D2DE261184F400EE25D2 /* LiveOnlineUserList.h in Headers */,
+				DB76D2E0261184F400EE25D2 /* FansContributionList.h in Headers */,
+				DB76D3892611879800EE25D2 /* PresentedGoodNumber.h in Headers */,
+				DB76D3422611867E00EE25D2 /* LivePayTipsView.h in Headers */,
+				DB76D2DC261184F400EE25D2 /* LiveUserListView.h in Headers */,
+				DB76D2E2261184F500EE25D2 /* LiveUserListCell.h in Headers */,
+				DB76D27C2611843B00EE25D2 /* LiveManagerUserListView.h in Headers */,
+				DB76D0AE26117A4800EE25D2 /* MPLiveInfoComponent.h in Headers */,
+				DB76D16326117F9300EE25D2 /* FansBannerView.h in Headers */,
+				DB76D2772611843B00EE25D2 /* LiveDisableMsgListView.h in Headers */,
+				DB76D3B72611912900EE25D2 /* UserMsgComponent.h in Headers */,
+				DB76D0A4261179F100EE25D2 /* MPCommon.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		DB76D09E261179F100EE25D2 /* MPCommon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB76D0A7261179F100EE25D2 /* Build configuration list for PBXNativeTarget "MPCommon" */;
+			buildPhases = (
+				8F5DEEA0DF79A7B1AA74058B /* [CP] Check Pods Manifest.lock */,
+				DB76D09A261179F100EE25D2 /* Headers */,
+				DB76D09B261179F100EE25D2 /* Sources */,
+				DB76D09C261179F100EE25D2 /* Frameworks */,
+				DB76D09D261179F100EE25D2 /* Resources */,
+				F318DF05987F8777D06B8F3C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MPCommon;
+			productName = MPCommon;
+			productReference = DB76D09F261179F100EE25D2 /* MPCommon.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB76D096261179F100EE25D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					DB76D09E261179F100EE25D2 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = DB76D099261179F100EE25D2 /* Build configuration list for PBXProject "MPCommon" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB76D095261179F100EE25D2;
+			productRefGroup = DB76D0A0261179F100EE25D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB76D09E261179F100EE25D2 /* MPCommon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB76D09D261179F100EE25D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F5DEEA0DF79A7B1AA74058B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MPCommon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F318DF05987F8777D06B8F3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MPCommon/Pods-MPCommon-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MPCommon/Pods-MPCommon-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MPCommon/Pods-MPCommon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB76D09B261179F100EE25D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB76D16826117F9300EE25D2 /* PlayAllUserBannerObj.m in Sources */,
+				DB76D0AF26117A4800EE25D2 /* MPLiveInfoComponent.m in Sources */,
+				DB76D38A2611879800EE25D2 /* GoodNumItemCell.m in Sources */,
+				DB76D11C26117E4600EE25D2 /* OpenMPLiveComponent.m in Sources */,
+				DB76DE81261200B900EE25D2 /* GuardUserShowView.m in Sources */,
+				DB76D2B9261184DD00EE25D2 /* LivePraiseAnimationLayer.m in Sources */,
+				DB76D2FA2611853200EE25D2 /* JoinFansTipView.m in Sources */,
+				DB76D28E2611845100EE25D2 /* ChangeRoomTypeView.m in Sources */,
+				DB76D16526117F9300EE25D2 /* FansBannerView.m in Sources */,
+				DB76D2E4261184F500EE25D2 /* LiveUserListCell.m in Sources */,
+				DB76D3CD261193F000EE25D2 /* HandleOtherComponent.m in Sources */,
+				DB76D2972611846F00EE25D2 /* MountsBannerView.m in Sources */,
+				DB76D13926117EAA00EE25D2 /* LiveInfoBottomView.m in Sources */,
+				DB76DE83261200B900EE25D2 /* VIPSeatsView.m in Sources */,
+				DB76D11E26117E4600EE25D2 /* SelectLiveChannel.m in Sources */,
+				DB76D2982611846F00EE25D2 /* PLayMountsAnimationObj.m in Sources */,
+				DB76D16A26117F9300EE25D2 /* PLayGuardJoinObj.m in Sources */,
+				DB76D2B1261184A600EE25D2 /* LiveExitSelectView.m in Sources */,
+				DB76D2AA2611849200EE25D2 /* VIPSeatUserCell.m in Sources */,
+				DB76D38B2611879800EE25D2 /* PresentedGoodNumber.m in Sources */,
+				DB76D2E1261184F400EE25D2 /* UserInfoListView.m in Sources */,
+				DB76D3E526119E9C00EE25D2 /* ChangeBgImageVC.m in Sources */,
+				DB76D2752611843B00EE25D2 /* LiveDisableMsgListView.m in Sources */,
+				DB76D2552611840000EE25D2 /* LiveNoticeView.m in Sources */,
+				DB76DE85261200B900EE25D2 /* RoomAudienceFlowShowView.m in Sources */,
+				DB76D2A52611849200EE25D2 /* VipSeatListView.m in Sources */,
+				DB76D23D261183D300EE25D2 /* FamilyRecommendView.m in Sources */,
+				DB76D2A72611849200EE25D2 /* VipSeatBuyView.m in Sources */,
+				DB76D2732611843B00EE25D2 /* LiveSetFunctionView.m in Sources */,
+				DB76D16926117F9300EE25D2 /* AllUserBannerView.m in Sources */,
+				DB76D23B261183D300EE25D2 /* FamilyRoomListView.m in Sources */,
+				DB76D38D2611879800EE25D2 /* PresentNumberObj.m in Sources */,
+				DB76D35A2611873A00EE25D2 /* AnchorWaitAlert.m in Sources */,
+				DB76D16B26117F9300EE25D2 /* GuardBannerView.m in Sources */,
+				DB76D2822611843B00EE25D2 /* LiveKickingUserListView.m in Sources */,
+				DB76D34B261186BD00EE25D2 /* LiveIMFuncView.m in Sources */,
+				DB76D2DD261184F400EE25D2 /* LiveOnlineUserList.m in Sources */,
+				DB76D11D26117E4600EE25D2 /* SelectLiveItemCell.m in Sources */,
+				DB76D2812611843B00EE25D2 /* KickingUserItemCell.m in Sources */,
+				DB76D2762611843B00EE25D2 /* DisableMsgItemCell.m in Sources */,
+				DB76D13726117EAA00EE25D2 /* LiveMoreCommonView.m in Sources */,
+				DB76D38E2611879800EE25D2 /* PresentNumShowView.m in Sources */,
+				DB0A650F261F17B100637DDA /* RedPacketCompnent.m in Sources */,
+				DB76D3022611858600EE25D2 /* LiveMessageComponent.m in Sources */,
+				DB76D10F26117D9A00EE25D2 /* CloseMPLiveComponent.m in Sources */,
+				DB76D2562611840000EE25D2 /* NoticeShowView.m in Sources */,
+				DB76D2792611843B00EE25D2 /* ManagerUserItemCell.m in Sources */,
+				DB76D23F261183D300EE25D2 /* FamilyListItemCell.m in Sources */,
+				DB76D27A2611843B00EE25D2 /* LiveManagerUserListView.m in Sources */,
+				DB76DE672612008000EE25D2 /* TrySeeCountDownView.m in Sources */,
+				DB76D27E2611843B00EE25D2 /* SetFunctionItemCell.m in Sources */,
+				DB76D3432611867E00EE25D2 /* LivePayTipsView.m in Sources */,
+				DB76D3B82611912900EE25D2 /* UserMsgComponent.m in Sources */,
+				DB76D16426117F9300EE25D2 /* PLayFansJoinObj.m in Sources */,
+				DB0A6510261F17B100637DDA /* LiveRedPacketView.m in Sources */,
+				DB76DE6F2612009D00EE25D2 /* LiangNumShowView.m in Sources */,
+				DB76D2E5261184F500EE25D2 /* LiveUserListView.m in Sources */,
+				DB76D23E261183D300EE25D2 /* FamilyRoomItemCell.m in Sources */,
+				DB76D39B261187E100EE25D2 /* CoinInsufficientTipView.m in Sources */,
+				DB76D28D2611845100EE25D2 /* SelectRoomTypeCell.m in Sources */,
+				DB76D2DF261184F400EE25D2 /* FansContributionList.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DB76D0A5261179F100EE25D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DB76D0A6261179F100EE25D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DB76D0A8261179F100EE25D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C01C2A081A1F15262300BA8 /* Pods-MPCommon.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BRPickerView/BRPickerView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CYLTabBarController/CYLTabBarController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HappyDNS/HappyDNS.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JLRoutes/JLRoutes.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView/JXCategoryView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJExtension/MJExtension.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf/Protobuf.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Qiniu/Qiniu.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RTRootNavigationController/RTRootNavigationController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SSZipArchive/SSZipArchive.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVGAPlayer/SVGAPlayer.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController/TZImagePickerController.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/libOpenInstallSDK\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_sharesdk\"",
+					"\"${SRCROOT}/../../../framework/XTRtcKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = MPCommon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klcProject.MPCommon;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB76D0A9261179F100EE25D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0585D4E47F482699B84C54D4 /* Pods-MPCommon.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BRPickerView/BRPickerView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CYLTabBarController/CYLTabBarController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HappyDNS/HappyDNS.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JLRoutes/JLRoutes.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView/JXCategoryView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJExtension/MJExtension.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf/Protobuf.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Qiniu/Qiniu.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RTRootNavigationController/RTRootNavigationController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SSZipArchive/SSZipArchive.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVGAPlayer/SVGAPlayer.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController/TZImagePickerController.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/libOpenInstallSDK\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_sharesdk\"",
+					"\"${SRCROOT}/../../../framework/XTRtcKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = MPCommon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = klcProject.MPCommon;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB76D099261179F100EE25D2 /* Build configuration list for PBXProject "MPCommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB76D0A5261179F100EE25D2 /* Debug */,
+				DB76D0A6261179F100EE25D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB76D0A7261179F100EE25D2 /* Build configuration list for PBXNativeTarget "MPCommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB76D0A8261179F100EE25D2 /* Debug */,
+				DB76D0A9261179F100EE25D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB76D096261179F100EE25D2 /* Project object */;
+}

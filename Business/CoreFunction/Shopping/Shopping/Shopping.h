@@ -1,0 +1,19 @@
+//
+//  Shopping.h
+//  Shopping
+//
+//  Created by kalacheng on 2020/6/22.
+//  Copyright © 2020 klc. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+//! Project version number for Shopping.
+FOUNDATION_EXPORT double ShoppingVersionNumber;
+
+//! Project version string for Shopping.
+FOUNDATION_EXPORT const unsigned char ShoppingVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <Shopping/PublicHeader.h>
+
+

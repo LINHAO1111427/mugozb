@@ -1,0 +1,26 @@
+//
+//  MPVideoLive_header.pch
+//  MPVideoLive
+//
+//  Created by ssssssss on 2020/1/8.
+//  Copyright © 2020 Orely. All rights reserved.
+//
+
+#ifndef MPVideoLive_header_pch
+#define MPVideoLive_header_pch
+
+#define UI_Bate  [UIScreen mainScreen].bounds.size.width/360.0
+ 
+#import <LibProjBase/LibProjBase.h>
+#import <MJRefresh/MJRefresh.h>
+#import <LibTools/LibTools.h>
+ 
+
+
+#import <LibProjModel/HttpApiPublicLive.h>
+#import <LibProjModel/HttpApiHome.h>
+#import <LibProjModel/AppHomeHallDTOModel.h>
+
+#import <SDWebImage/SDWebImage.h>
+
+#endif /* MPVideoLive_header_pch */
