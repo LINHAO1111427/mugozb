@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
     XTLiveUserCurrentInteractive,
 };
 
-@interface AgoraMPVideo ()<AgoraRtcEngineDelegate>
+@interface AgoraMPVideo ()<ByteRTCEngineDelegate>
 
 @property (nonatomic, assign) int64_t anchorId; ///主播ID
 @property (nonatomic, assign) int64_t userId;  ///自己的uid
@@ -88,12 +88,12 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
 }
 
 - (void)remoteVoiceClosed:(BOOL)close{
-    [AgoraManager.rtcEngine muteAllRemoteAudioStreams:close];
+    [AgoraManager.rtcEngine muteAllRemoteAudio:close ? ByteRTCMuteStateOn : ByteRTCMuteStateOff];
     _playVideoObj.mute = close;
 }
 
 - (void)remoteVideoClosed:(BOOL)close{
-    [AgoraManager.rtcEngine muteAllRemoteVideoStreams:close];
+    [AgoraManager.rtcEngine muteAllRemoteVideo:close ? ByteRTCMuteStateOn : ByteRTCMuteStateOff];
     if (_playVideoObj) {
         _playVideoObj.videoPause = close;
     }
@@ -103,7 +103,7 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
 /// 初始化基础信息
 /// @param role 用户角色                       主播=1 // 副播=2 // 观众(默认) =3
 - (void)initMPVideoRole:(int)role {
-    self.clientRole = (role ==3?AgoraClientRoleAudience:AgoraClientRoleBroadcaster);
+    self.clientRole = (role ==3?ByteRTCUserRoleTypeSilentAudience:ByteRTCUserRoleTypeBroadcaster);
     _isAgoraBeauty = (AgoraManager.beautyCls?NO:YES);
     NSString *rtmp = [NSString stringWithFormat:@"%@/%lld",AgoraManager.pullUrl, AgoraManager.userID];
     self.pullStr = rtmp;
@@ -112,7 +112,7 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
 
 - (void)initMPVideoRole:(int)role userid:(int64_t)userid
 {
-    self.clientRole = (role ==3?AgoraClientRoleAudience:AgoraClientRoleBroadcaster);
+    self.clientRole = (role ==3?ByteRTCUserRoleTypeSilentAudience:ByteRTCUserRoleTypeBroadcaster);
     _isAgoraBeauty = (AgoraManager.beautyCls?NO:YES);
     NSString *rtmp = [NSString stringWithFormat:@"%@/%lld",AgoraManager.pullUrl, AgoraManager.userID];
     self.pullStr = rtmp;
@@ -144,15 +144,15 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
 
 - (void)initAgoraData{
     AgoraManager.rtcEngine.delegate = self;
-    [AgoraManager setVideoAgoraBase:AgoraChannelProfileLiveBroadcasting];
-    [AgoraManager.rtcEngine setClientRole:self.clientRole];
+    [AgoraManager setVideoAgoraBase:ByteRTCRoomProfileLiveBroadcasting];
+    [AgoraManager.rtcEngine setUserRole:self.clientRole];
     if (_isAgoraBeauty) {
         AgoraBeautyView *beautyV = [[AgoraBeautyView alloc] init];
         self.agoraBeauty = beautyV;
         [self AgoreSetRednessLevel:0.5 smoothnessLevel:0.5 BrightLevel:0.5];
     }else{
         _beautyObj = [[AgoraVideoSourceObj alloc] init];
-        [AgoraManager.rtcEngine setVideoSource:_beautyObj];
+        [_beautyObj startCapture];
     }
 }
 
@@ -160,19 +160,16 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
 /** 主播用-创建直播房间配置基础数据 */
 - (void)createVideo:(int64_t)roomId{
     _anchorId = _userId;
-    [AgoraManager.rtcEngine setClientRole:self.clientRole];
+    [AgoraManager.rtcEngine setUserRole:self.clientRole];
     ///主播加入房间
     {
         kWeakSelf(self);
-        [self joinRoom:roomId didJoinSuccess:^(AgoraRtcEngineKit * _Nonnull engine) {
+        [self joinRoom:roomId didJoinSuccess:^(ByteRTCEngineKit * _Nonnull engine) {
             [weakself.videoSnasshot startMonitoring:engine];
             {
                 ///主播绘制画面并且推流
                 [self refreshAnchorCompositingLayout];
-                
-                NSString *rtmp = [NSString stringWithFormat:@"%@/%lld",AgoraManager.pushUrl, AgoraManager.userID];
-                int code = [engine addPublishStreamUrl:rtmp transcodingEnabled:YES];
-               // NSLog(@"过滤文字%d"),code);
+
 //                推流接口更换
 //                [HttpSessionObj sendpushUrl:AgoraManager.pushUrl userId:AgoraManager.userID roomId:roomId successBlock:^(BOOL, NSDictionary * _Nonnull) {
 //
@@ -198,20 +195,12 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
 }
 
 - (void)connectVideo:(int64_t)roomId showV:(UIImageView *)showV srcToken:(NSString *)srcToken destToken:(NSString *)destToken{
-    
-    AgoraChannelMediaRelayConfiguration *mediaRelayConfig = [[AgoraChannelMediaRelayConfiguration alloc] init];
-    AgoraChannelMediaRelayInfo *srcRelayInfo = [[AgoraChannelMediaRelayInfo alloc] initWithToken:srcToken];
-    srcRelayInfo.channelName = [NSString stringWithFormat:@"%lld",AgoraManager.roomID];
-    srcRelayInfo.uid = 0;
-    mediaRelayConfig.sourceInfo = srcRelayInfo;
-    
-    AgoraChannelMediaRelayInfo *destRelayInfo =  [[AgoraChannelMediaRelayInfo alloc] initWithToken:destToken];
-    destRelayInfo.uid = AgoraManager.userID;///目标频道里没有的UId——用自己的uid
-    destRelayInfo.channelName = [NSString stringWithFormat:@"%lld",roomId];
-    [mediaRelayConfig setDestinationInfo:destRelayInfo forChannelName:destRelayInfo.channelName];
-    
-    int code = [AgoraManager.rtcEngine startChannelMediaRelay:mediaRelayConfig];
-    
+    (void)srcToken;
+    ForwardStreamConfiguration *destRelayInfo = [[ForwardStreamConfiguration alloc] init];
+    destRelayInfo.roomId = [NSString stringWithFormat:@"%lld", roomId];
+    destRelayInfo.token = destToken;
+    int code = [AgoraManager.rtcEngine startForwardStreamToRooms:@[destRelayInfo]];
+
     if (code == 0) {
         _subAnchorV = showV;
         _otherRoomId = roomId;
@@ -257,7 +246,7 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
     _otherUserId = 0;
     _userCurrentState = 0;
     if(_otherRoomId > 0){
-        [AgoraManager.rtcEngine stopChannelMediaRelay];
+        [AgoraManager.rtcEngine stopForwardStreamToRooms];
     }
     _subAnchorV = nil;
     _otherRoomId = 0;
@@ -269,8 +258,8 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
 /** 观众用---与主播断开连麦 */
 - (void)leaveRoomToPlay{
     self.userCurrentState = XTLiveUserCurrentNormal;
-    self.clientRole = AgoraClientRoleAudience;
-    [AgoraManager.rtcEngine setClientRole:AgoraClientRoleAudience];
+    self.clientRole = ByteRTCUserRoleTypeSilentAudience;
+    [AgoraManager.rtcEngine setUserRole:ByteRTCUserRoleTypeSilentAudience];
     AgoraManager.previewStatus = NO;
     _userCurrentState = 0;
     BOOL isPlay = [self checkPlayUrl:self.playVideoObj.anchorPullUrl];
@@ -304,9 +293,9 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
     [self agoraAnchorLeave];
     [self agoraAudienceLeave];
     
-    [AgoraManager.rtcEngine setupLocalVideo:nil];
+    [AgoraManager.rtcEngine setLocalVideoCanvas:ByteRTCStreamIndexMain withCanvas:nil];
     [self leaveRoom:0 didLeaveSuccess:nil];
-    if (self.clientRole == AgoraClientRoleBroadcaster) {
+    if (self.clientRole == ByteRTCUserRoleTypeBroadcaster) {
         AgoraManager.previewStatus = NO;
     }
     _anchorV = nil;
@@ -339,32 +328,30 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
 /** 切换摄像头 */
 - (void)switchCamera{
     if (_isAgoraBeauty) {
-        int code = [AgoraManager.rtcEngine switchCamera];
-       // NSLog(@"过滤文字code:%d"),code);
+        [AgoraManager toggleCamera];
     }else{
-        
         [self.beautyObj switchCamera:^(BOOL isFront) {
-            [AgoraManager.rtcEngine setLocalRenderMode:AgoraVideoRenderModeHidden mirrorMode:isFront?AgoraVideoMirrorModeEnabled:AgoraVideoMirrorModeDisabled];
+            ByteRTCMirrorType mirrorType = isFront ? ByteRTCMirrorTypeRender : ByteRTCMirrorTypeNone;
+            [AgoraManager.rtcEngine setLocalVideoMirrorType:mirrorType];
         }];
     }
 }
 
 - (void)addLocalSessionAndView:(UIImageView *)imageV{
-    AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
-    videoCanvas.uid = (NSUInteger)_userId;
+    ByteRTCVideoCanvas *videoCanvas = [[ByteRTCVideoCanvas alloc] init];
+    videoCanvas.uid = [NSString stringWithFormat:@"%lld", _userId];
     videoCanvas.view = imageV;
-    videoCanvas.renderMode = AgoraVideoRenderModeHidden;
-    videoCanvas.mirrorMode = AgoraVideoMirrorModeAuto;
-    [AgoraManager.rtcEngine setupLocalVideo:videoCanvas];
+    videoCanvas.renderMode = ByteRTCRenderModeHidden;
+    [AgoraManager.rtcEngine setLocalVideoCanvas:ByteRTCStreamIndexMain withCanvas:videoCanvas];
 }
 
 
-- (void)videoSessionOfUid:(NSUInteger)uid AndHostingView:(UIView *)hostingView{
-    AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
+- (void)videoSessionOfUid:(NSString *)uid AndHostingView:(UIView *)hostingView{
+    ByteRTCVideoCanvas *videoCanvas = [[ByteRTCVideoCanvas alloc] init];
     videoCanvas.uid = uid;
     videoCanvas.view = hostingView;
-    videoCanvas.renderMode = AgoraVideoRenderModeHidden;
-    [AgoraManager.rtcEngine setupRemoteVideo:videoCanvas];
+    videoCanvas.renderMode = ByteRTCRenderModeHidden;
+    [AgoraManager.rtcEngine setRemoteVideoCanvas:uid withIndex:ByteRTCStreamIndexMain withCanvas:videoCanvas];
 }
 
 
@@ -416,7 +403,7 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
     ///主播加入房间
     {
         kWeakSelf(self);
-        [self joinRoom:roomId didJoinSuccess:^(AgoraRtcEngineKit * _Nonnull engine) {
+        [self joinRoom:roomId didJoinSuccess:^(ByteRTCEngineKit * _Nonnull engine) {
             [weakself.videoSnasshot startMonitoring:engine];
             weakself.otherUserId = weakself.userId;
             [weakself.playVideoObj stopVideoPlay];
@@ -435,58 +422,89 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
     ///主播加入房间
     {
         kWeakSelf(self);
-        [self joinRoom:roomId didJoinSuccess:^(AgoraRtcEngineKit * _Nonnull engine) {
+        [self joinRoom:roomId didJoinSuccess:^(ByteRTCEngineKit * _Nonnull engine) {
             [weakself.videoSnasshot startMonitoring:engine];
             weakself.otherUserId = weakself.userId;
             [weakself.playVideoObj stopVideoPlay];
         }];
     }
     
-    [self videoSessionOfUid:_anchorId AndHostingView:imgV];
+    [self videoSessionOfUid:[NSString stringWithFormat:@"%lld", _anchorId] AndHostingView:imgV];
     
     [imgV layoutIfNeeded];
 }
 
 //基础数据
-- (void)baseAgoraLiveTranscoding:(NSArray <AgoraLiveTranscodingUser *> *)userArr{
-    AgoraLiveTranscoding *transcoding = [[AgoraLiveTranscoding alloc] init];
-    transcoding.transcodingUsers = userArr;
+- (void)baseAgoraLiveTranscoding:(NSArray <ByteRTCVideoCompositingRegion *> *)regions{
+    ByteRTCLiveTranscoding *transcoding = [[ByteRTCLiveTranscoding alloc] init];
+    ByteRTCVideoCompositingLayout *layout = [[ByteRTCVideoCompositingLayout alloc] init];
+    layout.backgroundColor = @"#000000";
+    layout.regions = regions ?: @[];
+    transcoding.layout = layout;
+    if (AgoraManager.pushUrl.length > 0) {
+        transcoding.url = [NSString stringWithFormat:@"%@/%lld", AgoraManager.pushUrl, AgoraManager.userID];
+    }
     [AgoraManager setTranscodingAgoraBase:transcoding];
-    [AgoraManager.rtcEngine setLiveTranscoding:transcoding];
 }
 
 //刷新连麦的SEI
 - (void)refreshLinkVideoCompositingLayout{
-    CGFloat UserW = 720;
-    CGFloat UserH = 1280;
-    
-    AgoraLiveTranscodingUser *anchor = [[AgoraLiveTranscodingUser alloc] init];
-    anchor.uid = (NSInteger)AgoraManager.userID;
-    if (_otherRoomId>0) {
-        anchor.rect = CGRectMake(0, UserH*0.2, UserW/2, UserH*0.4);
-    }else{
-        anchor.rect = CGRectMake(0, 0, UserW, UserH);
-    }
-    anchor.audioChannel = 0;
+    ByteRTCVideoCompositingRegion *anchor = [[ByteRTCVideoCompositingRegion alloc] init];
+    anchor.uid = [NSString stringWithFormat:@"%lld", AgoraManager.userID];
+    anchor.roomId = [NSString stringWithFormat:@"%lld", AgoraManager.roomID];
+    anchor.renderMode = ByteRTCRenderModeHidden;
+    anchor.alpha = 1.0;
     anchor.zOrder = 0;
-    
-    AgoraLiveTranscodingUser *other = [[AgoraLiveTranscodingUser alloc] init];
-    other.uid = (NSInteger)_otherUserId;
-    if (_otherRoomId>0) {
-        other.rect = CGRectMake(UserW/2, UserH*0.2, UserW/2, UserH*0.4);
-    }else{
-        other.rect = CGRectMake(UserW*0.69, UserH*0.68, UserW*0.3, UserH*0.2);
+    anchor.localUser = YES;
+    if (_otherRoomId > 0) {
+        anchor.x = 0.0;
+        anchor.y = 0.2;
+        anchor.width = 0.5;
+        anchor.height = 0.4;
+    } else {
+        anchor.x = 0.0;
+        anchor.y = 0.0;
+        anchor.width = 1.0;
+        anchor.height = 1.0;
     }
-    other.audioChannel = 0;
-    other.zOrder = 1;
-    [self baseAgoraLiveTranscoding:@[anchor,other]];
+
+    NSMutableArray<ByteRTCVideoCompositingRegion *> *regions = [NSMutableArray arrayWithObject:anchor];
+    if (_otherUserId > 0) {
+        ByteRTCVideoCompositingRegion *other = [[ByteRTCVideoCompositingRegion alloc] init];
+        other.uid = [NSString stringWithFormat:@"%lld", _otherUserId];
+        other.roomId = [NSString stringWithFormat:@"%lld", AgoraManager.roomID];
+        other.renderMode = ByteRTCRenderModeHidden;
+        other.alpha = 1.0;
+        other.zOrder = 1;
+        other.localUser = NO;
+        if (_otherRoomId > 0) {
+            other.x = 0.5;
+            other.y = 0.2;
+            other.width = 0.5;
+            other.height = 0.4;
+        } else {
+            other.x = 0.69;
+            other.y = 0.68;
+            other.width = 0.3;
+            other.height = 0.2;
+        }
+        [regions addObject:other];
+    }
+    [self baseAgoraLiveTranscoding:regions];
 }
 
 - (void)refreshAnchorCompositingLayout{
-    AgoraLiveTranscodingUser *anchor = [[AgoraLiveTranscodingUser alloc] init];
-    anchor.uid = (NSInteger)AgoraManager.userID;
-    anchor.rect = CGRectMake(0, 0, 720, 1280);
-    anchor.audioChannel = 0;
+    ByteRTCVideoCompositingRegion *anchor = [[ByteRTCVideoCompositingRegion alloc] init];
+    anchor.uid = [NSString stringWithFormat:@"%lld", AgoraManager.userID];
+    anchor.roomId = [NSString stringWithFormat:@"%lld", AgoraManager.roomID];
+    anchor.renderMode = ByteRTCRenderModeHidden;
+    anchor.alpha = 1.0;
+    anchor.zOrder = 0;
+    anchor.localUser = YES;
+    anchor.x = 0.0;
+    anchor.y = 0.0;
+    anchor.width = 1.0;
+    anchor.height = 1.0;
     [self baseAgoraLiveTranscoding:@[anchor]];
 }
 
@@ -496,11 +514,12 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
 - (void)agoraAnchorLeave{
     //    // 关闭网络监控
     [_videoSnasshot stopMonitoring];
+    [AgoraManager stopLiveTranscoding];
     if (_otherRoomId > 0) {
-        [AgoraManager.rtcEngine stopChannelMediaRelay];
+        [AgoraManager.rtcEngine stopForwardStreamToRooms];
     }
     
-    [AgoraManager.rtcEngine setupLocalVideo:nil];
+    [AgoraManager.rtcEngine setLocalVideoCanvas:ByteRTCStreamIndexMain withCanvas:nil];
     [self leaveRoom:0 didLeaveSuccess:nil];
     self.beautyObj = nil;
     AgoraManager.previewStatus = NO;
@@ -515,27 +534,26 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
     [_playVideoObj stopVideoPlay];
     _playVideoObj = nil;
     _anchorV = nil;
-    [AgoraManager.rtcEngine setupLocalVideo:nil];
+    [AgoraManager.rtcEngine setLocalVideoCanvas:ByteRTCStreamIndexMain withCanvas:nil];
     [self leaveRoom:0 didLeaveSuccess:nil];
 }
 
 
 - (void)AgoreSetRednessLevel:(CGFloat)redness smoothnessLevel:(CGFloat)smoothness BrightLevel:(CGFloat)bright{
-    AgoraBeautyOptions *options = [[AgoraBeautyOptions alloc] init];
-    options.rednessLevel = redness;
-    options.smoothnessLevel = smoothness;
-    options.lighteningLevel = bright;
-    options.lighteningContrastLevel = AgoraLighteningContrastNormal;
-    [AgoraManager.rtcEngine setBeautyEffectOptions:_isAgoraBeauty?YES:NO options:options];
+    (void)redness;
+    (void)smoothness;
+    (void)bright;
 }
 
 
-- (void)rtcEngine:(AgoraRtcEngineKit *)engine didJoinedOfUid:(NSUInteger)uid elapsed:(NSInteger)elapsed {
-    if (_anchorId == uid) {
+- (void)rtcEngine:(ByteRTCEngineKit *)engine onUserJoined:(ByteRTCUserInfo *)userInfo elapsed:(NSInteger)elapsed {
+    NSString *uid = userInfo.userId ?: @"";
+    int64_t uidValue = [uid longLongValue];
+    if (_anchorId == uidValue) {
         [self videoSessionOfUid:uid AndHostingView:_anchorV];
     }else{
         [self videoSessionOfUid:uid AndHostingView:_subAnchorV];
-        self.otherUserId = uid;
+        self.otherUserId = uidValue;
     }
     if (_anchorId == _userId && self.userCurrentState == XTLiveUserCurrentLinkMic) {
         [self refreshLinkVideoCompositingLayout];
@@ -543,28 +561,31 @@ typedef NS_ENUM(NSUInteger, XTLiveUserCurrentState) {
 }
 
 
-- (void)rtcEngine:(AgoraRtcEngineKit *)engine didOfflineOfUid:(NSUInteger)uid reason:(AgoraUserOfflineReason)reason {
-    if (_otherUserId == uid) {
+- (void)rtcEngine:(ByteRTCEngineKit *)engine onUserLeave:(NSString *)uid reason:(ByteRTCUserOfflineReason)reason {
+    int64_t uidValue = [uid longLongValue];
+    if (_otherUserId == uidValue) {
         if (self.onConnectStatusBlock) {
-            self.onConnectStatusBlock(RTCForMPVideoConnectLeaveSuccess, [NSString stringWithFormat:kLocalizationMsg(@"用户(%zi)已退出房间"),uid]);
+            self.onConnectStatusBlock(RTCForMPVideoConnectLeaveSuccess, [NSString stringWithFormat:kLocalizationMsg(@"用户(%zi)已退出房间"),uidValue]);
         }
-        self.userCurrentState == XTLiveUserCurrentNormal;
+        self.userCurrentState = XTLiveUserCurrentNormal;
         [self closeConnect];
     }
 }
 
 ///跨频道媒体流转发状态发生改变回调
-- (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine channelMediaRelayStateDidChange:(AgoraChannelMediaRelayState)state error:(AgoraChannelMediaRelayError)error{
-    if (state == AgoraChannelMediaRelayStateRunning) {
-        if (self.onConnectStatusBlock) {
-            self.onConnectStatusBlock(RTCForMPVideoConnectJoinSuccess, kLocalizationMsg(@"开始接收远端用户视频流"));
+- (void)rtcEngine:(ByteRTCEngineKit *)engine onForwardStreamStateChanged:(NSArray<ForwardStreamStateInfo *> *)infos{
+    for (ForwardStreamStateInfo *info in infos) {
+        if (info.state == ByteRTCForwardStreamStateSuccess) {
+            if (self.onConnectStatusBlock) {
+                self.onConnectStatusBlock(RTCForMPVideoConnectJoinSuccess, kLocalizationMsg(@"开始接收远端用户视频流"));
+            }
         }
-    }
-    if (state == AgoraChannelMediaRelayStateFailure) {
-        if (self.onConnectStatusBlock) {
-            self.onConnectStatusBlock(RTCForMPVideoConnectJoinFail,[NSString stringWithFormat:kLocalizationMsg(@"跨频道连麦异常(%zi)"),error]);
+        if (info.state == ByteRTCForwardStreamStateFailure) {
+            if (self.onConnectStatusBlock) {
+                self.onConnectStatusBlock(RTCForMPVideoConnectJoinFail,[NSString stringWithFormat:kLocalizationMsg(@"跨频道连麦异常%zi"),info.error]);
+            }
+            self.disconnectBlock?self.disconnectBlock():nil;
         }
-        self.disconnectBlock?self.disconnectBlock():nil;
     }
 }
 

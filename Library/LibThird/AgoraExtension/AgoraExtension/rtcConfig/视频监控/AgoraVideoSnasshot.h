@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <AgoraRtcKit/AgoraRtcEngineKit.h>
+#import <VolcEngineRTC/VolcEngineRTC.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithSnasshotForSecond:(int)second;
 
 ///开始监控
-- (void)startMonitoring:(AgoraRtcEngineKit *)engineKit;
+- (void)startMonitoring:(ByteRTCEngineKit *)engineKit;
 
 
 - (void)stopMonitoring;

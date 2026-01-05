@@ -7,15 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AgoraRtcKit/AgoraRtcEngineKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AgoraVideoSourceObj : NSObject<AgoraVideoSourceProtocol>
+@interface AgoraVideoSourceObj : NSObject
 
-
+- (void)startCapture;
+- (void)stopCapture;
 - (void)switchCamera:(void(^)(BOOL isFront))positionBlock;
-
 
 @end
 

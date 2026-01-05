@@ -24,10 +24,10 @@
         self.hostingView = hostingView;
         self.hostingView.translatesAutoresizingMaskIntoConstraints = NO;
         
-        self.canvas = [[AgoraRtcVideoCanvas alloc] init];
-        self.canvas.uid = uid;
+        self.canvas = [[ByteRTCVideoCanvas alloc] init];
+        self.canvas.uid = [NSString stringWithFormat:@"%lu", (unsigned long)uid];
         self.canvas.view = self.hostingView;
-        self.canvas.renderMode = AgoraVideoRenderModeHidden;
+        self.canvas.renderMode = ByteRTCRenderModeHidden;
     }
     return self;
 }

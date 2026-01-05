@@ -9,7 +9,7 @@
 #import "AgoraMPAudio.h"
 #import <LibTools/LibTools.h>
 
-@interface AgoraMPAudio ()<AgoraRtcEngineDelegate>
+@interface AgoraMPAudio ()<ByteRTCEngineDelegate>
 
 @property (nonatomic, copy)void (^voiceBlock)(NSUInteger num, int64_t uid) ;         //用户说话音量回调
 
@@ -44,15 +44,15 @@
 
 /// 初始化语音三体云
 - (void)initMPAudioRole:(int)role{
-    self.clientRole = (role == 3)?AgoraClientRoleAudience:AgoraClientRoleBroadcaster;
+    self.clientRole = (role == 3)?ByteRTCUserRoleTypeSilentAudience:ByteRTCUserRoleTypeBroadcaster;
     ///语音不需要推流
     if (role == 1) {
     } else if (role == 2) {
     } else{
     }
-    [AgoraManager setVoiceAgoraBase:AgoraChannelProfileLiveBroadcasting];
-    [AgoraManager.rtcEngine setClientRole:role];
-    [AgoraManager.rtcEngine disableVideo];
+    [AgoraManager setVoiceAgoraBase:ByteRTCRoomProfileLiveBroadcasting];
+    [AgoraManager.rtcEngine setUserRole:self.clientRole];
+    [AgoraManager.rtcEngine stopVideoCapture];
     AgoraManager.rtcEngine.delegate = self;
     _userId = AgoraManager.userID;
 }
@@ -69,8 +69,8 @@
 
 /// 改变用户身份
 - (void)changeRole:(int)role{
-    self.clientRole = (role == 3)?AgoraClientRoleAudience:AgoraClientRoleBroadcaster;
-    [AgoraManager.rtcEngine setClientRole:self.clientRole];
+    self.clientRole = (role == 3)?ByteRTCUserRoleTypeSilentAudience:ByteRTCUserRoleTypeBroadcaster;
+    [AgoraManager.rtcEngine setUserRole:self.clientRole];
 }
 
 
@@ -96,20 +96,12 @@
 }
 
 - (void)connectVideo:(int64_t)roomId srcToken:(NSString *)srcToken destToken:(NSString *)destToken{
-    
-    AgoraChannelMediaRelayConfiguration *mediaRelayConfig = [[AgoraChannelMediaRelayConfiguration alloc] init];
-    AgoraChannelMediaRelayInfo *srcRelayInfo = [[AgoraChannelMediaRelayInfo alloc] initWithToken:srcToken];
-    srcRelayInfo.channelName = [NSString stringWithFormat:@"%lld",AgoraManager.roomID];
-    srcRelayInfo.uid = 0;
-    mediaRelayConfig.sourceInfo = srcRelayInfo;
-    
-    AgoraChannelMediaRelayInfo *destRelayInfo =  [[AgoraChannelMediaRelayInfo alloc] initWithToken:destToken];
-    destRelayInfo.uid = AgoraManager.userID;///目标频道里没有的UId——用自己的uid
-    destRelayInfo.channelName = [NSString stringWithFormat:@"%lld",roomId];
-    [mediaRelayConfig setDestinationInfo:destRelayInfo forChannelName:destRelayInfo.channelName];
-    
-    int code = [AgoraManager.rtcEngine startChannelMediaRelay:mediaRelayConfig];
-    
+    (void)srcToken;
+    ForwardStreamConfiguration *destRelayInfo = [[ForwardStreamConfiguration alloc] init];
+    destRelayInfo.roomId = [NSString stringWithFormat:@"%lld", roomId];
+    destRelayInfo.token = destToken;
+    int code = [AgoraManager.rtcEngine startForwardStreamToRooms:@[destRelayInfo]];
+
     if (code == 0) {
         _otherRoomId = roomId;
     } else {
@@ -121,13 +113,20 @@
 - (void)closeConnect{
     
     if(_otherRoomId > 0){
-        [AgoraManager.rtcEngine stopChannelMediaRelay];
+        [AgoraManager.rtcEngine stopForwardStreamToRooms];
     }
     _otherRoomId = 0;
-    AgoraLiveTranscodingUser *anchor = [[AgoraLiveTranscodingUser alloc] init];
-    anchor.uid = (NSInteger)AgoraManager.userID;
-    anchor.rect = CGRectMake(0, 0, 720, 1280);
-    anchor.audioChannel = 0;
+    ByteRTCVideoCompositingRegion *anchor = [[ByteRTCVideoCompositingRegion alloc] init];
+    anchor.uid = [NSString stringWithFormat:@"%lld", AgoraManager.userID];
+    anchor.roomId = [NSString stringWithFormat:@"%lld", AgoraManager.roomID];
+    anchor.renderMode = ByteRTCRenderModeHidden;
+    anchor.alpha = 1.0;
+    anchor.zOrder = 0;
+    anchor.localUser = YES;
+    anchor.x = 0.0;
+    anchor.y = 0.0;
+    anchor.width = 1.0;
+    anchor.height = 1.0;
     [self baseAgoraLiveTranscoding:@[anchor]];
 }
 
@@ -153,47 +152,43 @@
 #pragma mark - 私有方法 -
 
 
-- (void)videoSessionOfUid:(NSUInteger)uid AndHostingView:(UIView *)hostingView{
-    AgoraRtcVideoCanvas *canvas = [[AgoraRtcVideoCanvas alloc] init];
+- (void)videoSessionOfUid:(NSString *)uid AndHostingView:(UIView *)hostingView{
+    ByteRTCVideoCanvas *canvas = [[ByteRTCVideoCanvas alloc] init];
     canvas.uid = uid;
-    canvas.renderMode = AgoraVideoRenderModeHidden;
-    [AgoraManager.rtcEngine setupRemoteVideo:canvas];
+    canvas.view = hostingView;
+    canvas.renderMode = ByteRTCRenderModeHidden;
+    [AgoraManager.rtcEngine setRemoteVideoCanvas:uid withIndex:ByteRTCStreamIndexMain withCanvas:canvas];
 }
 
 
 
 //基础数据
-- (void)baseAgoraLiveTranscoding:(NSArray <AgoraLiveTranscodingUser *> *)userArr{
-    AgoraLiveTranscoding *transcoding = [[AgoraLiveTranscoding alloc] init];
-    transcoding.transcodingUsers = userArr;
+- (void)baseAgoraLiveTranscoding:(NSArray <ByteRTCVideoCompositingRegion *> *)regions{
+    ByteRTCLiveTranscoding *transcoding = [[ByteRTCLiveTranscoding alloc] init];
+    ByteRTCVideoCompositingLayout *layout = [[ByteRTCVideoCompositingLayout alloc] init];
+    layout.backgroundColor = @"#000000";
+    layout.regions = regions ?: @[];
+    transcoding.layout = layout;
+    if (AgoraManager.pushUrl.length > 0) {
+        transcoding.url = [NSString stringWithFormat:@"%@/%lld", AgoraManager.pushUrl, AgoraManager.userID];
+    }
     [AgoraManager setTranscodingAgoraBase:transcoding];
-    [AgoraManager.rtcEngine setLiveTranscoding:transcoding];
 }
 
-#pragma mark - AgoraRtcEngineDelegate -
+#pragma mark - ByteRTCEngineDelegate -
 
-///远端用户已加入频道
-- (void)rtcEngine:(AgoraRtcEngineKit *)engine didJoinedOfUid:(NSUInteger)uid elapsed:(NSInteger)elapsed {
+- (void)rtcEngine:(ByteRTCEngineKit *)engine onUserJoined:(ByteRTCUserInfo *)userInfo elapsed:(NSInteger)elapsed {
 }
 
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine reportAudioVolumeIndicationOfSpeakers:(NSArray<AgoraRtcAudioVolumeInfo *> * _Nonnull)speakers totalVolume:(NSInteger)totalVolume{
+- (void)rtcEngine:(ByteRTCEngineKit * _Nonnull)engine onAudioVolumeIndication:(NSArray<ByteRTCAudioVolumeInfo *> * _Nonnull)speakers totalRemoteVolume:(NSInteger)totalRemoteVolume{
     
-    for (AgoraRtcAudioVolumeInfo *volumeInfo in speakers) {
-        ///音量回调
-        ///volumeInfo.volume:0-255
-        if (volumeInfo.uid > 0) {///远端用户
-            _voiceBlock((NSUInteger)(volumeInfo.volume/28.33),(int64_t)volumeInfo.uid);
-            
-            if (self.anchorVolumeBlock && _anchorId == (int64_t)volumeInfo.uid) {  ///主播
-                self.anchorVolumeBlock((NSUInteger)(volumeInfo.volume/28.33));
-            }
-            
-        }else{  ///自己
-            _voiceBlock((NSUInteger)(volumeInfo.volume/28.33),_userId);
-            
-            if (self.anchorVolumeBlock && _anchorId == _userId) { ///主播
-                self.anchorVolumeBlock((NSUInteger)(volumeInfo.volume/28.33));
-            }
+    for (ByteRTCAudioVolumeInfo *volumeInfo in speakers) {
+        NSUInteger volume = (NSUInteger)(volumeInfo.linearVolume / 28.33);
+        int64_t uidValue = volumeInfo.uid.length > 0 ? (int64_t)[volumeInfo.uid longLongValue] : _userId;
+        _voiceBlock ? _voiceBlock(volume, uidValue) : nil;
+        
+        if (self.anchorVolumeBlock && _anchorId == uidValue) {  ///主播
+            self.anchorVolumeBlock(volume);
         }
     }
 }

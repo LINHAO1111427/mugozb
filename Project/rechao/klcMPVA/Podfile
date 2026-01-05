@@ -1,4 +1,4 @@
-#source 'https://github.com/CocoaPods/Specs.git'
+﻿#source 'https://github.com/CocoaPods/Specs.git'
 source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
 workspace 'klcMPVA.xcworkspace'
@@ -24,7 +24,7 @@ def commpod                     #宏定义几个target都要用的的pod
   pod 'mob_sharesdk/ShareSDKPlatforms/WeChatFull'   #（微信sdk带支付的命令，和上面不带支付的不能共存，只能选择一个）
   
   #支付宝
-  pod 'AlipaySDK-iOS'
+  #  pod 'AlipaySDK-iOS'
   pod 'OpenSSL-for-iOS', '~> 1.0.2.d.1'
 
   pod 'CYLTabBarController' # TabBar
@@ -44,10 +44,9 @@ def commpod                     #宏定义几个target都要用的的pod
   pod 'SSZipArchive', '2.2.3'  #这个版本的SVGAPlayer用着不报错
 
   pod 'Tencent-MapSDK'    # 腾讯地图SDK
-  pod 'AgoraRtcEngine_iOS', '3.7.0'
+  pod 'VolcEngineRTC', :podspec => '../../../third_party/VolcEngineRTC_3.41.301/VolcEngineRTC.podspec'
   pod 'libOpenInstallSDK'
 
-  pod 'TXIMSDK_Plus_iOS' # 腾讯IM
 end
 
 def ali_video #阿里短视频相关
@@ -99,6 +98,7 @@ end
 target 'TXImKit' do
   project '../../../Library/LibThird/TXImKit/TXImKit'
   commpod
+  pod 'NIMSDK'
 end
 
 target 'KLCProjConfig' do

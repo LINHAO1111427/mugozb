@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AgoraRtcKit/AgoraRtcEngineKit.h>
+#import <VolcEngineRTC/VolcEngineRTC.h>
 #import "LiveBeautyProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AgoraRtcManager : NSObject
 
 
-@property (strong, nonatomic) AgoraRtcEngineKit *rtcEngine;
+@property (strong, nonatomic) ByteRTCEngineKit *rtcEngine;
 
 @property (nonatomic, assign) int64_t roomID;
 @property (nonatomic, assign) int64_t userID;
@@ -36,8 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy)NSString *pullUrl;
 
-///视频画面预览状态
 @property (nonatomic, assign)BOOL previewStatus;
+@property (nonatomic, assign) ByteRTCCameraID currentCameraId;
 
 
 + (void)setAgoraLiveKey:(NSString *)key userId:(int64_t)userId;
@@ -58,16 +58,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 ///设置视频基础数据
-- (void)setVideoAgoraBase:(AgoraChannelProfile)channelProfile;
+- (void)setVideoAgoraBase:(ByteRTCRoomProfile)roomProfile;
 
 ///设置语音基础数据
-- (void)setVoiceAgoraBase:(AgoraChannelProfile)channelProfile;
+- (void)setVoiceAgoraBase:(ByteRTCRoomProfile)roomProfile;
 
 ///设置基础layout
-- (void)setTranscodingAgoraBase:(AgoraLiveTranscoding *)transcoding;
+- (void)setTranscodingAgoraBase:(ByteRTCLiveTranscoding *)transcoding;
+
+- (void)stopLiveTranscoding;
+
+- (void)toggleCamera;
 
 
 
 @end
 
 NS_ASSUME_NONNULL_END
+

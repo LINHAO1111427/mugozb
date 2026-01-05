@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AgoraRtcKit/AgoraRtcEngineKit.h>
+#import <VolcEngineRTC/VolcEngineRTC.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (assign, nonatomic) NSUInteger uid;
 @property (weak, nonatomic) UIView *hostingView;
-@property (strong, nonatomic) AgoraRtcVideoCanvas *canvas;
+@property (strong, nonatomic) ByteRTCVideoCanvas *canvas;
 
 - (instancetype)initWithUid:(NSUInteger)uid AndHostingView:(UIView *)hostingView;
 

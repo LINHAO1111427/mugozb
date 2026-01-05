@@ -13,33 +13,18 @@
 @interface AgoraVideoSourceObj ()<MyVideoCaptureDelegate>
 
 @property (strong, nonatomic) MyVidoCapture *myVidoCapture;
+@property (nonatomic, assign) BOOL isCapturing;
 
 @end
 
-
 @implementation AgoraVideoSourceObj
 
-@synthesize consumer;
-
-- (void)dealloc
-{
-    self.myVidoCapture = nil;
+- (void)dealloc {
+    [self stopCapture];
     [AgoraManager.beautyCls deatoryBeautyObj];
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-    }
-    return self;
-}
-
-- (BOOL)shouldInitialize {
-    return YES;
-}
-
-- (MyVidoCapture *)myVidoCapture{
+- (MyVidoCapture *)myVidoCapture {
     if (!_myVidoCapture) {
         _myVidoCapture = [[MyVidoCapture alloc] initWithVideoView:nil];
         _myVidoCapture.delegate = self;
@@ -47,50 +32,61 @@
     return _myVidoCapture;
 }
 
-- (void)shouldStart {
-   // NSLog(@"过滤文字开始拍摄"));
-    [self.myVidoCapture startCapture:AVCaptureDevicePositionFront];
+- (void)startCapture {
+    if (self.isCapturing) {
+        return;
+    }
+    self.isCapturing = YES;
+    [AgoraManager.rtcEngine setVideoSourceType:ByteRTCVideoSourceTypeExternal WithStreamIndex:ByteRTCStreamIndexMain];
+    [AgoraManager.rtcEngine stopVideoCapture];
+
+    AVCaptureDevicePosition position = (AgoraManager.currentCameraId == ByteRTCCameraIDBack)
+        ? AVCaptureDevicePositionBack
+        : AVCaptureDevicePositionFront;
+    [self.myVidoCapture startCapture:position];
 }
 
-- (void)shouldStop {
-   // NSLog(@"过滤文字结束拍摄"));
+- (void)stopCapture {
+    if (!self.isCapturing) {
+        return;
+    }
+    self.isCapturing = NO;
     [self.myVidoCapture stopCapture];
     self.myVidoCapture.delegate = nil;
     self.myVidoCapture = nil;
+    [AgoraManager.rtcEngine setVideoSourceType:ByteRTCVideoSourceTypeInternal WithStreamIndex:ByteRTCStreamIndexMain];
 }
 
-
-
-- (void)shouldDispose {
+- (ByteRTCVideoRotation)rotationForValue:(int)rotation {
+    switch (rotation) {
+        case 90:
+            return ByteRTCVideoRotation90;
+        case 180:
+            return ByteRTCVideoRotation180;
+        case 270:
+            return ByteRTCVideoRotation270;
+        default:
+            return ByteRTCVideoRotation0;
+    }
 }
 
-- (AgoraVideoBufferType)bufferType {
-    return AgoraVideoBufferTypePixelBuffer;
-}
-
-- (AgoraVideoCaptureType)captureType {
-    return AgoraVideoCaptureTypeCamera;
-}
-
-
-- (AgoraVideoContentHint)contentHint {
-    return AgoraVideoContentHintMotion;
-}
-
-
-#pragma mark - MyVideoCaptureDelegate -
-- (void)myVideoCaptureDidOutputSampleBuffer:(CVPixelBufferRef)pixelBuffer Rotation:(int)rotation timeStamp:(CMTime)time isFront:(BOOL)Front{
-    
+#pragma mark - MyVideoCaptureDelegate
+- (void)myVideoCaptureDidOutputSampleBuffer:(CVPixelBufferRef)pixelBuffer Rotation:(int)rotation timeStamp:(CMTime)time isFront:(BOOL)Front {
     CVPixelBufferRef outputPixelBuffer = [AgoraManager.beautyCls renderOutputSampleBuffer:pixelBuffer Rotation:rotation isFront:Front];
-
-    outputPixelBuffer?[self.consumer consumePixelBuffer:outputPixelBuffer withTimestamp:time rotation:AgoraVideoRotation90]:nil;
-    
+    CVPixelBufferRef finalBuffer = outputPixelBuffer ? outputPixelBuffer : pixelBuffer;
+    ByteRTCVideoRotation rtcRotation = [self rotationForValue:rotation];
+    [AgoraManager.rtcEngine pushExternalVideoFrame:finalBuffer time:time rotation:rtcRotation];
 }
 
-
-- (void)switchCamera:(void (^)(BOOL))positionBlock{
-    [_myVidoCapture switchCamera:positionBlock];
+- (void)switchCamera:(void (^)(BOOL))positionBlock {
+    [self.myVidoCapture switchCamera:^(BOOL isFront) {
+        AgoraManager.currentCameraId = isFront ? ByteRTCCameraIDFront : ByteRTCCameraIDBack;
+        ByteRTCMirrorType mirrorType = isFront ? ByteRTCMirrorTypeRender : ByteRTCMirrorTypeNone;
+        [AgoraManager.rtcEngine setLocalVideoMirrorType:mirrorType];
+        if (positionBlock) {
+            positionBlock(isFront);
+        }
+    }];
 }
-
 
 @end

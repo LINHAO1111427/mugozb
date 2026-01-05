@@ -13,7 +13,7 @@
 #import "AgoraVideoSnasshot.h"
 #import <LibTools/LibTools.h>
 
-@interface AgoraO2OVideo ()<AgoraRtcEngineDelegate>
+@interface AgoraO2OVideo ()<ByteRTCEngineDelegate>
 
 @property (nonatomic, weak) UIImageView *anchorV;           //主播视图
 
@@ -25,7 +25,7 @@
 
 @property (nonatomic, copy) AgoraVideoSnasshot *videoSnasshot;   ///视频监控
 
-@property (nonatomic, strong) AgoraRtcVideoCanvas *ownCanvas;  ///自己的画面
+@property (nonatomic, strong) ByteRTCVideoCanvas *ownCanvas;  ///自己的画面
 
 ///用户进入直播中回调
 @property (nonatomic, copy)void (^userInOrOutRoom)(BOOL, int64_t, UIImageView *);
@@ -63,8 +63,8 @@
 /// @param role 用户角色                       主播=1 // 副播=2 // 观众(默认) =3
 - (void)initO2OVideoRole:(int)role{
     AgoraManager.rtcEngine.delegate = self;
-    self.clientRole = (role == 3)?AgoraClientRoleAudience:AgoraClientRoleBroadcaster;
-    self.channelProfile = AgoraChannelProfileLiveBroadcasting;
+    self.clientRole = (role == 3)?ByteRTCUserRoleTypeSilentAudience:ByteRTCUserRoleTypeBroadcaster;
+    self.channelProfile = ByteRTCRoomProfileLiveBroadcasting;
     _isAgoraBeauty = (AgoraManager.beautyCls?NO:YES);
 }
 
@@ -84,14 +84,13 @@
 - (void)preview:(UIImageView *)preview{
     _anchorV = preview;
     [AgoraManager setVideoAgoraBase:self.channelProfile];
-    [AgoraManager.rtcEngine setClientRole:self.clientRole];
+    [AgoraManager.rtcEngine setUserRole:self.clientRole];
     
-    AgoraRtcVideoCanvas *ownCanvas = [[AgoraRtcVideoCanvas alloc] init];
-    ownCanvas.uid = (NSUInteger)AgoraManager.userID;
+    ByteRTCVideoCanvas *ownCanvas = [[ByteRTCVideoCanvas alloc] init];
+    ownCanvas.uid = [NSString stringWithFormat:@"%lld", AgoraManager.userID];
     ownCanvas.view = _anchorV;
-    ownCanvas.renderMode = AgoraVideoRenderModeHidden;
-    ownCanvas.mirrorMode = AgoraVideoMirrorModeAuto;
-    [AgoraManager.rtcEngine setupLocalVideo:ownCanvas];
+    ownCanvas.renderMode = ByteRTCRenderModeHidden;
+    [AgoraManager.rtcEngine setLocalVideoCanvas:ByteRTCStreamIndexMain withCanvas:ownCanvas];
     
     [preview layoutIfNeeded];
     
@@ -101,7 +100,7 @@
         [self setBeautyRednessLevel:0.5 smoothnessLevel:0.5 lighteningContrastLevel:0.5];
     }else{
         _beautyObj = [[AgoraVideoSourceObj alloc] init];
-        [AgoraManager.rtcEngine setVideoSource:_beautyObj];
+        [_beautyObj startCapture];
     }
     AgoraManager.previewStatus = YES;
 }
@@ -165,11 +164,11 @@
 ///反转摄像头
 - (void)switchCamera{
     if (_isAgoraBeauty) {
-        int code = [AgoraManager.rtcEngine switchCamera];
-       // NSLog(@"过滤文字code:%d"),code);
+        [AgoraManager toggleCamera];
     }else{
         [self.beautyObj switchCamera:^(BOOL isFront) {
-            [AgoraManager.rtcEngine setLocalRenderMode:AgoraVideoRenderModeHidden mirrorMode:isFront?AgoraVideoMirrorModeEnabled:AgoraVideoMirrorModeDisabled];
+            ByteRTCMirrorType mirrorType = isFront ? ByteRTCMirrorTypeRender : ByteRTCMirrorTypeNone;
+            [AgoraManager.rtcEngine setLocalVideoMirrorType:mirrorType];
         }];
     }
 }
@@ -198,44 +197,40 @@
 
 ///设置美颜
 - (void)setBeautyRednessLevel:(CGFloat)redness smoothnessLevel:(CGFloat)smoothness lighteningContrastLevel:(CGFloat)lightening{
-    AgoraBeautyOptions *options = [[AgoraBeautyOptions alloc] init];
-    options.rednessLevel = redness;
-    options.smoothnessLevel = smoothness;
-    options.lighteningLevel = lightening;
-    options.lighteningContrastLevel = AgoraLighteningContrastNormal;
-    [AgoraManager.rtcEngine setBeautyEffectOptions:_isAgoraBeauty?YES:NO options:options];
+    (void)redness;
+    (void)smoothness;
+    (void)lightening;
 }
 
 
 ///设置远程视图
-- (void)videoSessionOfUid:(NSUInteger)uid AndHostingView:(UIView *)hostingView{
-    AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
+- (void)videoSessionOfUid:(NSString *)uid AndHostingView:(UIView *)hostingView{
+    ByteRTCVideoCanvas *videoCanvas = [[ByteRTCVideoCanvas alloc] init];
     videoCanvas.uid = uid;
     videoCanvas.view = hostingView;
-    videoCanvas.renderMode = AgoraVideoRenderModeHidden;
-    [AgoraManager.rtcEngine setupRemoteVideo:videoCanvas];
+    videoCanvas.renderMode = ByteRTCRenderModeHidden;
+    [AgoraManager.rtcEngine setRemoteVideoCanvas:uid withIndex:ByteRTCStreamIndexMain withCanvas:videoCanvas];
 }
 
 
-#pragma mark - AgoraRtcEngineDelegate
-///远端用户已加入频道
-- (void)rtcEngine:(AgoraRtcEngineKit *)engine didJoinedOfUid:(NSUInteger)uid elapsed:(NSInteger)elapsed {
-    
-   // NSLog(@"过滤文字didJoinedOfUid==%lu"),(unsigned long)uid);
-    
-    if (self.clientRole == AgoraClientRoleBroadcaster) {
-        if (AgoraManager.userID == uid) {
+#pragma mark - ByteRTCEngineDelegate
+- (void)rtcEngine:(ByteRTCEngineKit *)engine onUserJoined:(ByteRTCUserInfo *)userInfo elapsed:(NSInteger)elapsed {
+    NSString *uid = userInfo.userId ?: @"";
+    int64_t uidValue = [uid longLongValue];
+
+    if (self.clientRole == ByteRTCUserRoleTypeBroadcaster) {
+        if (AgoraManager.userID == uidValue) {
             ///自己不管
         }else{  ///他人
-            UIImageView *userV = _otherUserDic[[NSString stringWithFormat:@"%zi",uid]];
+            UIImageView *userV = _otherUserDic[uid];
             if (!userV) {
                 
                 userV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
                 userV.contentMode = UIViewContentModeScaleAspectFill;
-                [self addConnectMicV:userV otherUid:uid];
+                [self addConnectMicV:userV otherUid:uidValue];
                 
                 if (self.userInOrOutRoom) {
-                    self.userInOrOutRoom(NO, uid, userV);
+                    self.userInOrOutRoom(NO, uidValue, userV);
                 }
                 
             }
@@ -247,15 +242,14 @@
 }
 
 ///远端用户已离开频道
-- (void)rtcEngine:(AgoraRtcEngineKit *)engine didOfflineOfUid:(NSUInteger)uid reason:(AgoraUserOfflineReason)reason {
-   // NSLog(@"过滤文字uid==%lu"),(unsigned long)uid);
-   // NSLog(@"过滤文字reason==%lu"),(unsigned long)reason);
+- (void)rtcEngine:(ByteRTCEngineKit *)engine onUserLeave:(NSString *)uid reason:(ByteRTCUserOfflineReason)reason {
+    int64_t uidValue = [uid longLongValue];
     
     if (self.userInOrOutRoom) {
-        self.userInOrOutRoom(YES, uid, nil);
+        self.userInOrOutRoom(YES, uidValue, nil);
     }
     
-    [self closeUser:uid];
+    [self closeUser:uidValue];
 }
 
 

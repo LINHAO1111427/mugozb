@@ -36,7 +36,7 @@ typedef NS_OPTIONS(NSInteger, ObserverPacketType) {
     ObserverPacketTypeReceiveVideo                   = 1 << 3
 };
 
-@class AgoraRtcEngineKit;
+@class ByteRTCEngineKit;
 @class AgoraMediaDataPlugin;
 @protocol AgoraVideoDataPluginDelegate <NSObject>
 @optional
@@ -67,7 +67,7 @@ typedef NS_OPTIONS(NSInteger, ObserverPacketType) {
 @property (nonatomic, weak) id<AgoraAudioDataPluginDelegate> _Nullable audioDelegate;
 @property (nonatomic, weak) id<AgoraPacketDataPluginDelegate> _Nullable packetDelegate;
 
-+ (instancetype _Nonnull)mediaDataPluginWithAgoraKit:(AgoraRtcEngineKit * _Nonnull)agoraKit;
++ (instancetype _Nonnull)mediaDataPluginWithAgoraKit:(ByteRTCEngineKit * _Nonnull)agoraKit;
 
 - (void)registerVideoRawDataObserver:(ObserverVideoType)observerType;
 - (void)deregisterVideoRawDataObserver:(ObserverVideoType)observerType;
@@ -85,4 +85,3 @@ typedef NS_OPTIONS(NSInteger, ObserverPacketType) {
 - (void)localSnapshot:(void (^ _Nullable)(AGImage * _Nonnull image))completion;
 - (void)remoteSnapshotWithUid:(NSUInteger)uid image:(void (^ _Nullable)(AGImage * _Nonnull image))completion;
 @end
-

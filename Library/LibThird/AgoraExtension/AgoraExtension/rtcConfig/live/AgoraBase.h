@@ -16,15 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AgoraBase : NSObject<LivePubProtocol,LiveMusicProtocol>
 
 /// 1 主播 2观众
-@property (nonatomic, assign) AgoraClientRole clientRole;     //当前用户角色
-@property (nonatomic, assign) AgoraChannelProfile channelProfile;    ///频道
+@property (nonatomic, assign) ByteRTCUserRoleType clientRole;     //current user role
+@property (nonatomic, assign) ByteRTCRoomProfile channelProfile;    //room profile
 
 
 ///加入房间
-- (void)joinRoom:(int64_t)roomId didJoinSuccess:(void(^_Nullable)(AgoraRtcEngineKit *engine))joinBlock;
+- (void)joinRoom:(int64_t)roomId didJoinSuccess:(void(^_Nullable)(ByteRTCEngineKit *engine))joinBlock;
 
 ///离开房间
-- (void)leaveRoom:(int64_t)roomId didLeaveSuccess:(void(^_Nullable)(AgoraRtcEngineKit *engine))leaveBlock;
+- (void)leaveRoom:(int64_t)roomId didLeaveSuccess:(void(^_Nullable)(ByteRTCEngineKit *engine))leaveBlock;
 
 
 ///跨频道连麦的token
