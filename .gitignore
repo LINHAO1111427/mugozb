@@ -1,0 +1,43 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+config.local.yaml
+config.local.yml
+config.yaml
+
+# Runtime data, logs, backups and test artifacts
+data/
+**/data/
+.rollback/
+.playwright-mcp/
+.workbuddy/
+account-import-*/
+proxy-bypass-*/
+proxy-port-fix-*/
+remote-*/
+tunnel-watchdog-fix-*/
+client test space/
+**/*.log
+**/*.sqlite
+**/*.sqlite-*
+**/*.dump
+**/*.tgz
+**/*.bak_*
+**/__pycache__/
+
+# Local binaries and generated frontend bundles
+*.exe
+*.dll
+*.pdb
+*.js
+!deploy/**/*.js
+
+# IDE/OS files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

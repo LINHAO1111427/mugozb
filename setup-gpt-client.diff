@@ -1,0 +1,32 @@
+diff --git "a/.rollback\\setup-gpt-client.before-no-proxy.cmd" b/setup-gpt-client.cmd
+index 8f6c693..0c195af 100644
+--- "a/.rollback\\setup-gpt-client.before-no-proxy.cmd"
++++ b/setup-gpt-client.cmd
+@@ -155,7 +155,7 @@ try {
+     $healthUrl = $root + '/health'
+ 
+     Write-Host ('[+] Testing ' + $healthUrl)
+-    $health = Invoke-WebRequest -UseBasicParsing -Uri $healthUrl -TimeoutSec 10
++    $health = Invoke-WebRequest -UseBasicParsing -Uri $healthUrl -TimeoutSec 10 -Proxy $null
+     if ([int]$health.StatusCode -ne 200) {
+         throw ('Health check returned HTTP ' + $health.StatusCode)
+     }
+@@ -183,7 +183,7 @@ try {
+ 
+     $headers = @{ Authorization = 'Bearer ' + $key }
+     Write-Host '[+] Validating API key and loading models.'
+-    $models = Invoke-RestMethod -Method Get -Uri ($base + '/models') -Headers $headers -TimeoutSec 20
++    $models = Invoke-RestMethod -Method Get -Uri ($base + '/models') -Headers $headers -TimeoutSec 20 -Proxy $null
+     $modelNames = @()
+     foreach ($item in @($models.data)) {
+         if ($item.id) {
+@@ -217,7 +217,8 @@ try {
+         -Headers $headers `
+         -ContentType 'application/json' `
+         -Body $body `
+-        -TimeoutSec 120
++        -TimeoutSec 120 `
++        -Proxy $null
+ 
+     $text = [string]$response.output_text
+     if ([string]::IsNullOrWhiteSpace($text)) {

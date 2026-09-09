@@ -1,0 +1,105 @@
+SUB2API CLIENT AUTO-DETECTION VERIFICATION
+Date: 2026-09-05 Asia/Shanghai
+
+CHANGED BRANCH / FIELD
+setup-lan-gpt.ps1 Mode:
+  before: ValidateSet(Enable, Disable, Status, SelfTest), default=Enable
+  after:  ValidateSet(Auto, Enable, Client, Disable, Status, SelfTest), default=Auto
+Auto branch:
+  server PC owns 192.168.18.17 -> Enable-LanRelay
+  another PC does not own 192.168.18.17 -> Test-ClientConnection
+Client branch:
+  requests http://192.168.18.17:8088/health
+  writes no portproxy, firewall, environment, or Codex configuration
+
+FOUR ARTIFACTS
+MODIFIED_FILE=C:\Tools\sub2api_0.1.177_windows_amd64\setup-lan-gpt.ps1
+DIFF_FILE=C:\Tools\sub2api_0.1.177_windows_amd64\setup-lan-gpt.diff
+VERIFICATION_FILE=C:\Tools\sub2api_0.1.177_windows_amd64\VERIFICATION.txt
+ROLLBACK_FILE=C:\Tools\sub2api_0.1.177_windows_amd64\ROLLBACK.sh
+
+ADDITIONAL SINGLE-FILE CLIENT ENTRY
+C:\Tools\sub2api_0.1.177_windows_amd64\test-lan-relay.cmd
+
+HASHES
+ORIGINAL_FILE=C:\Tools\sub2api_0.1.177_windows_amd64\.rollback\setup-lan-gpt.before-client-auto.ps1
+ORIGINAL_SHA256=d04a6e327bb9a03f40a13226df4c332fa31f7f6f5fa8d900711df1a173b43ffc
+MODIFIED_SHA256=d2814120c2434532e2debecf759173af890f5e447a963d34690489678ebcb150
+DIFF_SHA256=0fd27392e43c69f49e05098e664f7b99c47ecd856971452c0dc5116a55e19b5f
+ROLLBACK_SHA256=96242b8f1a4d3ee9ba774633aeca4ed95e633c67d34b21d1f00e9fc344208939
+CLIENT_CMD_SHA256=925616fcda39d23802496cdca4d1ef236c40682189a93c2965c92d4a0b7bd3e7
+
+BASELINE
+Command:
+  powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File .\.rollback\setup-lan-gpt.before-client-auto.ps1 -Mode Enable -ListenAddress 192.168.18.99
+Input:
+  a relay address that is not owned by the executing PC
+Literal output/result:
+  [ERROR] This PC does not own IPv4 address 192.168.18.99. Available addresses: 169.254.83.95, 169.254.5.252, 10.47.55.177, 172.17.144.1, 10.57.49.162, 169.254.133.61, 169.254.54.62, 169.254.99.41, 192.168.18.17, 127.0.0.1
+Exit status:
+  1
+
+MODIFIED
+Command:
+  powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File .\setup-lan-gpt.ps1 -Mode Client
+Input:
+  ListenAddress=192.168.18.17 Port=8088
+Literal output/result:
+  [+] Testing the relay at http://192.168.18.17:8088/health.
+  [OK] This PC can reach the Sub2API relay.
+  base_url=http://192.168.18.17:8088/v1
+  api_key=use an existing key from the Sub2API admin page
+Exit status:
+  0
+
+SINGLE-FILE CLIENT TEST
+Command:
+  cmd.exe /d /c "echo.|test-lan-relay.cmd"
+Input:
+  default relay URL
+Literal output/result:
+  Testing http://192.168.18.17:8088/health ...
+  HTTP 200
+  Connection succeeded.
+  Base URL: http://192.168.18.17:8088/v1
+  API Key: use an existing key from the Sub2API admin page
+Exit status:
+  0
+
+ROLLBACK TEST ON ANOTHER COPY
+Command:
+  Copy-Item -LiteralPath .\setup-lan-gpt.ps1 -Destination .\.rollback\rollback-test.ps1 -Force
+  C:\Program Files\Git\bin\bash.exe .\ROLLBACK.sh .\.rollback\rollback-test.ps1 .\.rollback\setup-lan-gpt.before-client-auto.ps1
+Input:
+  MODIFIED_FILE bytes copied to .\.rollback\rollback-test.ps1
+Literal output/result:
+  ROLLBACK PASS
+  target=.\.rollback\rollback-test.ps1
+  sha256=d04a6e327bb9a03f40a13226df4c332fa31f7f6f5fa8d900711df1a173b43ffc
+  rollback_exit=0
+  hash_match=True
+Exit status:
+  0
+
+RESTORED BEHAVIOR / STATUS
+Command:
+  powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File .\.rollback\rollback-test.ps1 -Mode Enable -ListenAddress 192.168.18.99
+Input:
+  restored rollback-test.ps1 and a non-owned address
+Literal output/result:
+  [ERROR] This PC does not own IPv4 address 192.168.18.99. Available addresses: 169.254.83.95, 169.254.5.252, 10.47.55.177, 172.17.144.1, 10.57.49.162, 169.254.133.61, 169.254.54.62, 169.254.99.41, 192.168.18.17, 127.0.0.1
+Exit status:
+  1
+Result:
+  Restored SHA256 equals ORIGINAL_SHA256 and the previous failure behavior is restored.
+
+CURRENT SERVER STATUS
+Command:
+  setup-lan-gpt.cmd -Mode Status
+Literal output/result:
+  backend=http://127.0.0.1:8088/health http_status=200
+  lan=http://192.168.18.17:8088/health http_status=200
+  base_url=http://192.168.18.17:8088/v1
+  192.168.18.17 8088 -> 127.0.0.1 8088
+Exit status:
+  0

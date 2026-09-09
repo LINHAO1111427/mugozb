@@ -1,0 +1,73 @@
+diff --git "a/.\\.rollback\\setup-lan-gpt.before-client-auto.ps1" "b/.\\setup-lan-gpt.ps1"
+index a9c8e9d..72cab7e 100644
+--- "a/.\\.rollback\\setup-lan-gpt.before-client-auto.ps1"
++++ "b/.\\setup-lan-gpt.ps1"
+@@ -2,8 +2,8 @@
+ 
+ [CmdletBinding()]
+ param(
+-    [ValidateSet('Enable', 'Disable', 'Status', 'SelfTest')]
+-    [string]$Mode = 'Enable',
++    [ValidateSet('Auto', 'Enable', 'Client', 'Disable', 'Status', 'SelfTest')]
++    [string]$Mode = 'Auto',
+     [string]$ListenAddress = '192.168.18.17',
+     [ValidateRange(1, 65535)]
+     [int]$Port = 8088,
+@@ -46,7 +46,12 @@ function Start-Elevated([string]$Action) {
+ 
+ function Test-ListenAddressIsLocal {
+     $addresses = @(Get-NetIPAddress -AddressFamily IPv4 -ErrorAction Stop | ForEach-Object { $_.IPAddress })
+-    if ($addresses -notcontains $ListenAddress) {
++    return ($addresses -contains $ListenAddress)
++}
++
++function Assert-ListenAddressIsLocal {
++    if (-not (Test-ListenAddressIsLocal)) {
++        $addresses = @(Get-NetIPAddress -AddressFamily IPv4 -ErrorAction Stop | ForEach-Object { $_.IPAddress })
+         throw "This PC does not own IPv4 address $ListenAddress. Available addresses: $($addresses -join ', ')"
+     }
+ }
+@@ -77,7 +82,7 @@ function Remove-PortProxy {
+ }
+ 
+ function Enable-LanRelay {
+-    Test-ListenAddressIsLocal
++    Assert-ListenAddressIsLocal
+     $backendStatus = Get-HealthStatus -Address $BackendAddress
+     if ($backendStatus -ne 200) {
+         throw "The existing relay is not healthy at http://$BackendAddress`:$Port/health (HTTP $backendStatus)."
+@@ -114,6 +119,17 @@ function Enable-LanRelay {
+     Write-Host 'The other PC only needs this Base URL and an existing Sub2API key.'
+ }
+ 
++function Test-ClientConnection {
++    Write-Step "Testing the relay at http://$ListenAddress`:$Port/health."
++    $status = Get-HealthStatus -Address $ListenAddress
++    if ($status -ne 200) {
++        throw "Cannot reach the relay at http://$ListenAddress`:$Port/health (HTTP $status)."
++    }
++    Write-Ok 'This PC can reach the Sub2API relay.'
++    Write-Output "base_url=$script:BaseUrl"
++    Write-Output 'api_key=use an existing key from the Sub2API admin page'
++}
++
+ function Disable-LanRelay {
+     if (-not (Test-IsAdministrator)) {
+         Start-Elevated -Action 'Disable'
+@@ -152,7 +168,16 @@ function Invoke-SelfTest {
+ 
+ try {
+     switch ($Mode) {
++        'Auto' {
++            if (Test-ListenAddressIsLocal) {
++                Enable-LanRelay
++            }
++            else {
++                Test-ClientConnection
++            }
++        }
+         'Enable' { Enable-LanRelay }
++        'Client' { Test-ClientConnection }
+         'Disable' { Disable-LanRelay }
+         'Status' { Show-Status }
+         'SelfTest' { Invoke-SelfTest }

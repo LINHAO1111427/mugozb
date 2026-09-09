@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sub2API 实战使用手册</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --panel:#ffffff; --ink:#1c2024; --sub:#5b6571;
+    --line:#e6e9ee; --brand:#2f6df6; --brand-soft:#eaf1ff;
+    --warn:#b54708; --warn-bg:#fff5ed; --ok:#107c41; --ok-bg:#eafaf0;
+    --code-bg:#0f1620; --code-ink:#e6edf3; --chip:#eef1f5;
+    --radius:14px; --shadow:0 1px 3px rgba(16,24,40,.06),0 8px 24px rgba(16,24,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+       background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px}
+  a{color:var(--brand);text-decoration:none}
+  .wrap{display:flex;max-width:1240px;margin:0 auto;align-items:flex-start}
+  /* 侧边导航 */
+  nav{position:sticky;top:0;height:100vh;width:264px;flex:0 0 264px;padding:26px 18px;overflow-y:auto;
+      border-right:1px solid var(--line);background:var(--panel)}
+  nav .logo{font-weight:800;font-size:18px;letter-spacing:.3px;margin-bottom:4px}
+  nav .logo span{color:var(--brand)}
+  nav .ver{font-size:12px;color:var(--sub);margin-bottom:20px}
+  nav ol{list-style:none;margin:0;padding:0;counter-reset:nav -1}
+  nav li{counter-increment:nav;margin:2px 0}
+  nav a{display:block;padding:8px 12px;border-radius:9px;color:var(--sub);font-size:13.5px;
+        border-left:3px solid transparent;transition:.15s}
+  nav a:before{content:counter(nav,decimal-leading-zero);color:#aab2bd;font-variant-numeric:tabular-nums;
+        margin-right:9px;font-size:12px}
+  nav a:hover{background:var(--brand-soft);color:var(--ink)}
+  nav a.active{background:var(--brand-soft);color:var(--brand);border-left-color:var(--brand);font-weight:600}
+  main{flex:1;min-width:0;padding:34px 40px 90px}
+  /* Hero */
+  .hero{background:linear-gradient(135deg,#1e3a8a,#2f6df6);color:#fff;border-radius:18px;padding:34px 36px;
+        box-shadow:var(--shadow);margin-bottom:30px}
+  .hero h1{margin:0 0 8px;font-size:28px;letter-spacing:.5px}
+  .hero p{margin:0;opacity:.92;font-size:14.5px;max-width:680px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:24px}
+  .stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 16px}
+  .stat .k{font-size:11.5px;opacity:.8;letter-spacing:.5px}
+  .stat .v{font-size:16px;font-weight:700;margin-top:3px;word-break:break-all}
+  /* 章节 */
+  section{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+          padding:26px 30px;margin-bottom:22px;box-shadow:var(--shadow);scroll-margin-top:18px}
+  section h2{margin:0 0 6px;font-size:21px;display:flex;align-items:center;gap:10px}
+  section h2 .no{font-size:13px;font-weight:700;color:#fff;background:var(--brand);border-radius:7px;
+        padding:3px 9px;flex:0 0 auto}
+  section h3{font-size:16px;margin:22px 0 8px}
+  section p{margin:10px 0;color:#2b3138}
+  .lead{color:var(--sub);font-size:14px;margin-top:2px}
+  ul,ol{margin:10px 0;padding-left:22px}
+  li{margin:5px 0}
+  code{background:var(--chip);padding:2px 6px;border-radius:6px;font-size:13px;
+       font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;color:#c0392b}
+  pre{background:var(--code-bg);color:var(--code-ink);border-radius:12px;padding:16px 18px;overflow:auto;
+      font-size:13px;line-height:1.6;position:relative;margin:14px 0}
+  pre code{background:none;color:inherit;padding:0}
+  .copy{position:absolute;top:10px;right:10px;background:#1f2a38;color:#cdd7e3;border:1px solid #2c3a4d;
+        border-radius:7px;padding:4px 10px;font-size:11.5px;cursor:pointer;opacity:.75;transition:.15s}
+  .copy:hover{opacity:1}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+  th{background:#f2f5f9;font-weight:700}
+  tr:nth-child(even) td{background:#fafbfc}
+  /* 提示块 */
+  .note{border-radius:12px;padding:14px 18px;margin:16px 0;font-size:14px;border:1px solid}
+  .note b{display:block;margin-bottom:4px}
+  .warn{background:var(--warn-bg);border-color:#fdd3b0;color:#7a3502}
+  .warn b{color:var(--warn)}
+  .ok{background:var(--ok-bg);border-color:#b7e7c8;color:#0a5a2e}
+  .ok b{color:var(--ok)}
+  .info{background:var(--brand-soft);border-color:#cfe0ff;color:#1f4bb0}
+  .info b{color:var(--brand)}
+  .flow{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin:16px 0}
+  .flow .box{flex:1 1 150px;background:#f8fafc;border:1px solid var(--line);border-radius:11px;
+        padding:12px 14px;text-align:center}
+  .flow .box .t{font-weight:700;font-size:14px}
+  .flow .box .d{font-size:12px;color:var(--sub);margin-top:3px}
+  .flow .arrow{display:flex;align-items:center;color:var(--brand);font-weight:700;font-size:18px;flex:0 0 22px;justify-content:center}
+  .kbd{display:inline-block;background:#fff;border:1px solid var(--line);border-bottom-width:2px;
+       border-radius:6px;padding:1px 7px;font-size:12.5px;font-family:monospace}
+  footer{color:var(--sub);font-size:12.5px;text-align:center;padding:10px 0 0}
+  @media(max-width:920px){
+    .wrap{flex-direction:column}
+    nav{position:static;width:100%;height:auto;border-right:none;border-bottom:1px solid var(--line)}
+    nav ol{display:flex;flex-wrap:wrap;gap:4px}
+    nav li{margin:0}
+    nav a{border-left:none}
+    main{padding:22px 18px 70px}
+    .hero{padding:24px 22px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <div class="logo">Sub<span>2</span>API</div>
+  <div class="ver">实战使用手册 · 最后更新 2026-08-18</div>
+  <ol>
+    <li><a href="#s0">它到底干嘛的</a></li>
+    <li><a href="#s1">部署（用 Docker）</a></li>
+    <li><a href="#s2">初始化与登录</a></li>
+    <li><a href="#s3">核心数据模型</a></li>
+      <li><a href="#s4">接入上游账号</a></li>
+      <li><a href="#s4b">授权后如何保证调得通</a></li>
+      <li><a href="#s5">通道与定价规则</a></li>
+    <li><a href="#s6">分组路由（大坑）</a></li>
+    <li><a href="#s7">API Key 管理</a></li>
+    <li><a href="#s8">本地调用与验证</a></li>
+    <li><a href="#s9">Claude Code 接入</a></li>
+    <li><a href="#s10">Codex 接入（大坑）</a></li>
+    <li><a href="#s11">排障速查表</a></li>
+      <li><a href="#s12">部署后自检清单</a></li>
+      <li><a href="#s14">完整功能地图</a></li>
+      <li><a href="#s15">账号监测方案</a></li>
+      <li><a href="#app">附录：完整配置</a></li>
+  </ol>
+</nav>
+
+<main>
+  <div class="hero">
+    <h1>Sub2API 实战使用手册</h1>
+    <p>把一堆 AI 上游账号（OpenAI / Anthropic / 自定义）收口成一个 OpenAI 兼容网关，Claude Code、Codex 全从这儿走。本手册只写真实跑通的路径和能坑死人的点，不抄官网。</p>
+    <div class="stats">
+      <div class="stat"><div class="k">版本</div><div class="v">0.1.177</div></div>
+      <div class="stat"><div class="k">部署方式</div><div class="v">Docker</div></div>
+      <div class="stat"><div class="k">本地网关地址</div><div class="v">http://127.0.0.1:8088/v1</div></div>
+      <div class="stat"><div class="k">管理后台</div><div class="v">http://127.0.0.1:8088</div></div>
+      <div class="stat"><div class="k">数据库端口</div><div class="v">127.0.0.1:55433</div></div>
+      <div class="stat"><div class="k">推荐默认组类型</div><div class="v">composite</div></div>
+    </div>
+  </div>
+
+  <!-- 0 -->
+  <section id="s0">
+    <h2><span class="no">00</span>它到底干嘛的</h2>
+    <p class="lead">一句话：多账号聚合网关 + OpenAI 兼容协议出口。</p>
+    <p>你在后台往里塞各种上游账号（OpenAI 的 OAuth 登录态、Anthropic Key、自建兼容端点等），Sub2API 把它们池化，对外只暴露一个标准 <code>/v1</code> 接口。任何支持 OpenAI 协议或 Responses 协议的客户端（Claude Code、Codex、你自己的脚本）都只跟这一个地址说话，账号配额、模型路由、负载都在网关层处理。</p>
+    <div class="note info"><b>为什么不直接用各家官方 SDK</b>因为官方客户端（尤其 Codex / Claude Code）只认一个 base_url。把它们统一指到 Sub2API，你就能在网关里随便换账号、做负载、按模型分流，客户端零改动。</div>
+  </section>
+
+  <!-- 1 -->
+  <section id="s1">
+    <h2><span class="no">01</span>部署（老老实实用 Docker）</h2>
+    <p class="lead">Windows 二进制能跑起来，但有一堆暗病，别碰。</p>
+    <div class="note warn"><b>别用 Windows 版 sub2api.exe</b>实测 0.1.177 的 windows binary 有三个坑：① 根本没有 <code>/api/v1</code> 路由（登录直接 404）；② <code>config.yaml</code> 里的 <code>server.port</code> 不生效；③ 时区/TZ 处理有问题。官方 Docker 镜像一个都没有。直接上 Docker。</div>
+    <h3>docker-compose（已验证可用）</h3>
+    <p>两个容器：<b>sub2api</b>（网关本体，镜像 <code>weishaw/sub2api:0.1.177</code>）+ <b>sub2api-postgres</b>（PostgreSQL 17，专给 Sub2API 用，别去动你本机已有的 PG）。Redis 用你机器上已有的 6379 即可。</p>
+<pre><code><span class="copy">复制</span>services:
+  sub2api:
+    image: weishaw/sub2api:0.1.177
+    container_name: sub2api
+    ports:
+      - "127.0.0.1:8088:8080"      # 宿主8088 → 容器8080，避开你别的项目的8080
+    environment:
+      AUTO_SETUP: "true"           # 首次启动自动建管理员+默认分组
+      SERVER_PORT: "8080"
+      SERVER_MODE: "release"
+      TZ: "Asia/Shanghai"
+      DATABASE_HOST: host.docker.internal
+      DATABASE_PORT: "55433"
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: "你的PG密码"
+      DATABASE_DBNAME: sub2api
+      DATABASE_SSLMODE: disable
+      REDIS_HOST: host.docker.internal
+      REDIS_PORT: "6379"
+      REDIS_PASSWORD: ""
+      ADMIN_EMAIL: admin@sub2api.local
+      ADMIN_PASSWORD: "你的管理员密码"
+      JWT_SECRET: "随机长字符串"
+      TOTP_ENCRYPTION_KEY: "随机长字符串"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - sub2api-postgres
+
+  sub2api-postgres:
+    image: postgres:17-alpine
+    container_name: sub2api-postgres
+    ports:
+      - "127.0.0.1:55433:5432"
+    environment:
+      POSTGRES_DB: sub2api
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "你的PG密码"
+    volumes:
+      - sub2api-pg-data:/var/lib/postgresql/data
+
+volumes:
+  sub2api-pg-data:</code></pre>
+    <div class="note info"><b>两个易错点</b>① 网关容器里 <code>DATABASE_HOST</code> 写 <code>host.docker.internal</code>，必须配合 <code>extra_hosts: host.docker.internal:host-gateway</code>，否则容器找不到宿主 Redis/PG。② 端口映射写成 <code>127.0.0.1:8088:8080</code> 只绑本机，安全；别写成 <code>8088:8080</code> 把端口暴露到全网。</div>
+    <h3>启动</h3>
+<pre><code><span class="copy">复制</span>docker compose -f docker-compose.sub2api.yml up -d
+docker logs sub2api --tail 30   # 看启动日志，确认没报错</code></pre>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <h2><span class="no">02</span>初始化与首次登录</h2>
+    <p class="lead"><code>AUTO_SETUP=true</code> 会在第一次启动时自动创建管理员账号和默认分组，不用手动跑向导。</p>
+    <ul>
+      <li>管理后台地址：<code>http://127.0.0.1:8088</code></li>
+      <li>管理员邮箱 / 密码：即 compose 里的 <code>ADMIN_EMAIL</code> / <code>ADMIN_PASSWORD</code></li>
+      <li>登录走 Web 控制台（不是 /api/v1/auth/login 那个接口，那是给程序调用的，浏览器直接开上面的地址就行）</li>
+    </ul>
+    <div class="note ok"><b>怎么确认部署成功</b>打开 <code>http://127.0.0.1:8088</code> 能登进后台、左侧能看到「账号 / 通道 / 分组 / 密钥」菜单，就说明镜像、数据库、Redis 链路全通了。如果浏览器都打不开，先 <code>docker logs sub2api</code> 看是不是 PG/Redis 连不上。</div>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <h2><span class="no">03</span>核心数据模型（先搞懂这个，后面不迷路）</h2>
+    <p class="lead">Sub2API 的权限/路由是四层结构，一层没接上就报各种"没账号""路由错"。</p>
+    <div class="flow">
+      <div class="box"><div class="t">① 账号 Account</div><div class="d">上游凭证池<br>OpenAI/Anthropic…</div></div>
+      <div class="arrow">→</div>
+      <div class="box"><div class="t">② 通道 Channel</div><div class="d">按上游类型<br>+ 定价规则</div></div>
+      <div class="arrow">→</div>
+      <div class="box"><div class="t">③ 分组 Group</div><div class="d">按模型名<br>做路由分流</div></div>
+      <div class="arrow">→</div>
+      <div class="box"><div class="t">④ 密钥 API Key</div><div class="d">客户端持有的<br>调用凭证</div></div>
+    </div>
+    <p><b>一次请求的完整链路：</b>客户端带 Key 请求 <code>/v1</code> → 网关找到这个 Key 属于哪个分组 → 分组按"模型名前缀"决定把请求丢给哪个通道 → 通道从它绑定的账号池里挑一个账号 → 账号拿自己的上游凭证去真正调 OpenAI/Anthropic。</p>
+    <div class="note warn"><b>绝大多数 401/无账号/路由错误的根因</b>都出在这四层的连接断点上：账号没加进通道的定价规则、账号的 <code>group_ids</code> 是空的、分组类型选错了。第 06、07 节专门讲这两个最阴的点。</div>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <h2><span class="no">04</span>接入上游账号</h2>
+    <p class="lead">账号是"上游凭证池"的单元。不同上游接入方式不一样。</p>
+    <h3>OpenAI（OAuth 登录态）</h3>
+    <p>在后台「账号」里选 OpenAI 类型，走 OAuth 授权登录。注意：进网关的是<b>登录态凭证</b>，不是你自己的 <code>sk-</code>。它用的是你那个 OpenAI 账号的配额。</p>
+    <div class="note info"><b>支持哪些模型取决于上游账号的 model_mapping</b>实测你这个 OpenAI 账号支持 <code>gpt-5.6-sol</code> / <code>gpt-5.6</code> / <code>gpt-5.5</code> / <code>gpt-5.4</code> 等新一代模型；<b>老的 <code>gpt-4o</code> 不在映射里，调它会报不支持</b>。客户端要的模型名写 <code>gpt-5.6-sol</code> 这类就对了。</div>
+    <h3>Anthropic / 自定义</h3>
+    <p>同理在「账号」里加，类型选对应上游，填 Key 或接入点。多账号时可以加多个，网关会做负载均衡。</p>
+  </section>
+
+  <!-- 4b -->
+  <section id="s4b">
+    <h2><span class="no">05</span>授权了账号，为什么还是调不到</h2>
+    <p class="lead">"授权成功"只是把上游钥匙放进保险柜，后面还有三道审批关，全过请求才真正用上你那个账号的额度。</p>
+    <p>你在后台点几下 OpenAI 授权登录，账号列表里也出现了那个 ChatGPT 账号，信心满满拿 Key 去调 —— 结果要么 <code>no available accounts</code>，要么 <code>gpt-*</code> 请求全跑去 anthropic 报错。<b>这不是授权没成功</b>，是"授权"只是整条链路的第①步，后面三道关没过，请求压根没落到那个账号上。</p>
+    <div class="note info"><b>先分清：账号"在列表里" ≠ "能被调用"</b>授权只是把上游凭证存进网关。真正干活的是通道，而通道、分组、Key 是一道道审批流程。任意一环断了，你那个账号的额度就用不上。</div>
+    <h3>授权之后还差哪三道关</h3>
+    <ul>
+      <li><b>关① 通道没纳管账号（<code>account_stats_pricing_rules</code>）</b>：账号在列表 ≠ 能被调度。通道才是真正发请求的，得用 <code>account_stats_pricing_rules</code> 把账号挂进通道，并声明它支持哪些模型（<code>pricing</code> 的 <code>models</code> 必须非空）。没这步，网关不知道"这个账号能服务哪些模型"，直接报 <code>no available accounts</code>。（详见第 06 节）</li>
+      <li><b>关② 账号没进组（<code>group_ids</code>）</b>：账号初始 <code>group_ids</code> 是 <code>null</code>，等于哪个组都不归。请求通过 Key 找到分组后，分组去自己名下找账号，发现账号不在这个组里 → 一样找不到。把账号的 <code>group_ids</code> 设成 <code>[1]</code>（默认分组 id）。</li>
+      <li><b>关③ 分组类型写死 provider（<code>composite</code> 大坑）</b>：默认分组（id=1）platform 常是 <code>anthropic</code>，于是所有请求（含 <code>gpt-*</code>）被硬塞给 anthropic 通道 → 找不到 OpenAI 账号。改成 <code>platform: "composite"</code> 才按模型名前缀分流（gpt-*→OpenAI，claude-*→Anthropic）。（详见第 07 节）</li>
+    </ul>
+    <h3>怎么确认每一关都过了</h3>
+    <ol>
+      <li>后台「账号」能看到你授权的账号，<code>status: active</code>；</li>
+      <li>「通道」里对应通道的 <code>account_stats_pricing_rules</code> 含此账号 id，且 <code>pricing</code> 非空；</li>
+      <li>该账号的 <code>group_ids</code> 含目标分组（如 <code>[1]</code>）；</li>
+      <li>该分组 <code>platform = composite</code>；</li>
+      <li><code>curl /v1/responses</code> 返回 200 + 模型回复；</li>
+      <li>终极验证：<code>docker logs sub2api</code> 里 <code>security_audit.gateway_check_start</code> 的 <code>provider</code> 字段，调 <code>gpt-*</code> 时应该显示 <code>openai</code>（不是 <code>anthropic</code>）——显示 anthropic 就是关③没过。</li>
+    </ol>
+    <div class="note ok"><b>一句话记住</b>授权 = 把钥匙放进保险柜；通道 / 分组 / Key = 取钥匙的审批流程。三道关全过，请求才真正用上你那个账号的额度。</div>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <h2><span class="no">06</span>通道与定价规则（最容易被卡的一步）</h2>
+    <p class="lead">光有账号还不够，账号得"挂"到通道上，而且通道得声明自己支持哪些模型。</p>
+    <ul>
+      <li>「通道」里 <b>新建通道</b>，选上游类型（<code>openai</code> 或 <code>anthropic</code> 等）。</li>
+      <li>通道必须配置 <code>account_stats_pricing_rules</code>：
+        <ul>
+          <li><code>account_ids</code>：指向你刚加的账号 id（比如 <code>[2]</code>）</li>
+          <li><code>pricing</code>：列出该通道支持的模型（<b>必须非空</b>，比如写 <code>gpt-5.6-sol</code>），空了通道等于没活干</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="note warn"><b>不配这条会怎样</b>请求打进来时报 <code>no available accounts</code> / 找不到可用账号。这是新手第一道坎——账号加好了、Key 也生成了，但通道没把账号纳管，链路断在②→①。</div>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <h2><span class="no">07</span>分组路由（最容易踩的坑，划重点）</h2>
+    <p class="lead">分组决定"某个模型名该走哪个上游通道"。这里有个默认配置的隐形坑。</p>
+    <h3>分组有 platform 类型</h3>
+    <ul>
+      <li><code>anthropic</code>：所有请求都丢给 Anthropic 通道</li>
+      <li><code>openai</code>：所有请求都丢给 OpenAI 通道</li>
+      <li><code>composite</code>（推荐）：<b>按模型名前缀自动分流</b>——<code>gpt-*</code> 走 OpenAI 通道，<code>claude-*</code> 走 Anthropic 通道</li>
+    </ul>
+    <div class="note warn"><b>默认分组是大坑</b>自动建出来的默认分组（id=1）platform 往往是 <code>anthropic</code>。结果你拿 <code>gpt-5.6-sol</code> 来调，它硬塞给 Anthropic 通道 → 直接失败。把默认分组的 platform 改成 <code>composite</code> 就通了。</div>
+    <h3>账号必须"属于"分组</h3>
+    <p>账号记录上有个 <code>group_ids</code> 字段，默认可能是空的。空了等于这个账号哪个分组都不归，请求照样找不到账号。把你要用的账号的 <code>group_ids</code> 设成 <code>[1]</code>（默认分组 id）即可。</p>
+    <div class="note ok"><b>怎么验证路由对不对</b>看 <code>docker logs sub2api</code> 里 <code>security_audit.gateway_check_start</code> 那条日志的 <code>provider</code> 字段：本该是 <code>openai</code> 却显示 <code>anthropic</code> → 就是分组类型错了（上面的坑）。</div>
+  </section>
+
+  <!-- 7 -->
+  <section id="s7">
+    <h2><span class="no">08</span>API Key 管理</h2>
+    <p class="lead">密钥是客户端真正持有的东西，绑定到某个分组。</p>
+    <ul>
+      <li>后台「密钥」里 <b>新建</b>，选它绑定的分组（一般就是默认分组）。</li>
+      <li>生成出来的 <code>sk-...</code> 就是客户端 <code>api_key</code> / <code>Authorization: Bearer</code> 里填的值。</li>
+      <li>一个 Key 对应一个分组；想换路由就换 Key 或换分组配置。</li>
+    </ul>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <h2><span class="no">09</span>本地调用与验证</h2>
+    <p class="lead">网关地址就一个：<code>http://127.0.0.1:8088/v1</code>。两个协议都支持。</p>
+    <table>
+      <tr><th>协议 / 路径</th><th>用途</th><th>客户端</th></tr>
+      <tr><td><code>/v1/chat/completions</code></td><td>标准 OpenAI 兼容</td><td>脚本、兼容 SDK</td></tr>
+      <tr><td><code>/v1/responses</code></td><td>Responses 协议</td><td>Codex、新一代客户端</td></tr>
+      <tr><td><code>/v1/models</code></td><td>模型列表</td><td>连通性自检</td></tr>
+    </table>
+    <h3>用 curl 验证（两种鉴权头都认）</h3>
+<pre><code><span class="copy">复制</span># Bearer 方式
+curl http://127.0.0.1:8088/v1/responses \
+  -H "Authorization: Bearer 你的SK" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"gpt-5.6-sol","input":"ping"}'
+
+# x-api-key 方式（等价）
+curl http://127.0.0.1:8088/v1/responses \
+  -H "x-api-key: 你的SK" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"gpt-5.6-sol","input":"ping"}'</code></pre>
+    <div class="note ok"><b>判活标准</b>以上任一返回 200 且带模型回复，说明账号→通道→分组→Key 全链路通了。返回 <code>API_KEY_REQUIRED</code> 是没带 Key；<code>no available accounts</code> 是通道/分组没接好（回看第 06、07 节）。</div>
+  </section>
+
+  <!-- 9 -->
+  <section id="s9">
+    <h2><span class="no">10</span>Claude Code 接入（CC-Switch）</h2>
+    <p class="lead">Claude Code 本身只认一个 API 基地址，用 CC-Switch 把 provider 指过来最省事。</p>
+    <ol>
+      <li>装 <b>CC-Switch</b>（Windows 装 msi 即可，会注册 <code>ccswitch://</code> 协议）。</li>
+      <li>在 CC-Switch 里加一个 provider：
+        <ul>
+          <li>Base URL：<code>http://127.0.0.1:8088/v1</code></li>
+          <li>API Key：你第 7 节生成的 <code>sk-...</code></li>
+        </ul>
+      </li>
+      <li>Claude Code 通过 <code>ccswitch://</code> 选这个 provider，之后请求就走 Sub2API 了。</li>
+    </ol>
+    <div class="note info"><b>Claude Code 走的是 chat/completions 路径</b>它对 Bearer 的处理是正常的，没有 Codex 那个 env_key 的幺蛾子，配好 base_url + key 就行。</div>
+  </section>
+
+  <!-- 10 -->
+  <section id="s10">
+    <h2><span class="no">11</span>Codex 接入（另一个大坑，必看）</h2>
+    <p class="lead">Codex 0.147.0 的自定义 provider 有个反直觉的设定：<b>它不读 <code>api_key</code> 内联字段</b>。</p>
+    <div class="note warn"><b>为什么你一直 401</b>在 <code>config.toml</code> 的 <code>[model_providers.custom]</code> 里写 <code>api_key = "sk-..."</code>，Codex 会<b>整个忽略</b>这行。请求打到 <code>/v1/responses</code> 时一个鉴权头都没有，网关自然回 <code>API_KEY_REQUIRED</code>。实测过所有姿势：<code>api_key</code> 内联 / <code>-c</code> 覆盖 / <code>requires_openai_auth=true</code>+<code>OPENAI_API_KEY</code> 环境变量 / 内建 <code>openai</code> provider，全都不带头。唯一能带出 <code>Authorization: Bearer</code> 的是 <code>env_key</code>。</div>
+    <h3>正确姿势：用 env_key + 环境变量</h3>
+    <p><code>config.toml</code> 里不要写明文 key，改成指向一个环境变量名：</p>
+<pre><code><span class="copy">复制</span>[model_providers.custom]
+base_url = "http://127.0.0.1:8088/v1"
+env_key = "SUB2API_API_KEY"     # ← 关键：从环境变量取 key，不是 api_key 字段
+requires_openai_auth = false
+wire_api = "responses"          # 0.147 只支持 responses，chat 模式已移除
+
+model_provider = "custom"
+model = "gpt-5.6-sol"</code></pre>
+    <p>然后把真正的 key 放进 Codex 会自动加载的 <code>~/.codex/.env</code>：</p>
+<pre><code><span class="copy">复制</span># C:\Users\Lin\.codex\.env
+SUB2API_API_KEY=sk-你的密钥</code></pre>
+    <div class="note warn"><b>改完必须重启 Codex 会话</b><code>config.toml</code> 和 <code>.env</code> 都是启动时读取的，正在跑的交互会话不会热加载。重启后再跑就不 401 了。实测 <code>codex exec "Reply with pong"</code> 能正常出结果、消耗 token。</div>
+  </section>
+
+  <!-- 11 -->
+  <section id="s11">
+    <h2><span class="no">12</span>排障速查表</h2>
+    <table>
+      <tr><th>现象</th><th>根因</th><th>解决</th></tr>
+      <tr>
+        <td>启动报端口冲突 / 8080 被占</td>
+        <td>你别的 Docker 项目占了 8080</td>
+        <td>compose 映射用 <code>127.0.0.1:8088:8080</code>，换端口避开</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/auth/login</code> 404</td>
+        <td>用了 Windows 二进制（无 /api/v1 路由）</td>
+        <td>改用官方 Docker 镜像</td>
+      </tr>
+      <tr>
+        <td><code>no available accounts</code></td>
+        <td>通道没配 <code>account_stats_pricing_rules</code>，或账号没纳管</td>
+        <td>通道里加 <code>account_ids</code> + 非空 <code>pricing</code></td>
+      </tr>
+      <tr>
+        <td><code>gpt-*</code> 请求却走 anthropic 通道</td>
+        <td>默认分组 platform=anthropic</td>
+        <td>把默认分组 platform 改成 <code>composite</code></td>
+      </tr>
+      <tr>
+        <td>账号加了但请求找不到</td>
+        <td>账号 <code>group_ids</code> 为空</td>
+        <td>账号 <code>group_ids</code> 设为 <code>[1]</code></td>
+      </tr>
+      <tr>
+        <td>Codex 报 401 <code>API_KEY_REQUIRED</code></td>
+        <td>自定义 provider 不读 <code>api_key</code> 字段</td>
+        <td>改用 <code>env_key</code> + <code>~/.codex/.env</code>，重启会话</td>
+      </tr>
+      <tr>
+        <td>调 <code>gpt-4o</code> 报不支持</td>
+        <td>上游 OpenAI 账号 model_mapping 没有老模型</td>
+        <td>换 <code>gpt-5.6-sol</code> 等新一代模型名</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 12 -->
+  <section id="s12">
+    <h2><span class="no">13</span>部署后自检清单</h2>
+    <p class="lead">照着打一遍，全绿就可以交给客户端用了。</p>
+    <ul>
+      <li>☐ <code>docker ps</code> 里 <code>sub2api</code> 和 <code>sub2api-postgres</code> 都是 Up</li>
+      <li>☐ 浏览器开 <code>http://127.0.0.1:8088</code> 能登进后台</li>
+      <li>☐ 「账号」里能看到你加的 OpenAI 账号，状态正常</li>
+      <li>☐ 「通道」里该账号已进 <code>account_stats_pricing_rules</code>，pricing 非空</li>
+      <li>☐ 默认分组 platform = <code>composite</code>，账号 <code>group_ids</code> 含该分组</li>
+      <li>☐ 生成了 API Key 并绑定分组</li>
+      <li>☐ <code>curl /v1/responses</code> 返回 200 和模型回复</li>
+      <li>☐ Claude Code（CC-Switch）能调通</li>
+      <li>☐ Codex 用 <code>env_key</code> 配置、重启会话后能调通</li>
+    </ul>
+  </section>
+
+  <!-- 14 -->
+  <section id="s14">
+    <h2><span class="no">14</span>完整功能地图（每个模块怎么用）</h2>
+    <p class="lead">后台左侧菜单对应下面这些模块，按"数据从哪来、干什么用、怎么配"逐个说清。</p>
+
+    <h3>① 账号 Accounts —— 上游凭证池</h3>
+    <ul>
+      <li><b>添加方式</b>：OpenAI 走 OAuth 授权登录（拿的是登录态凭证，不是 sk-）；Anthropic / 自定义兼容端点走填 Key 或 base_url。</li>
+      <li><b>关键字段</b>：<code>status</code>（要 <code>active</code> 才调度）、<code>schedulable</code>（是否可被分配）、<code>group_ids</code>（归属哪些分组，默认可能空 → 必须设）、<code>model_mapping</code>（该账号实际支持的模型名，决定客户端能用哪些 model）、<code>credentials</code>（OAuth token / Key，改账号时务必全量写回保留它）。</li>
+      <li><b>多账号</b>：同类型加多个账号，网关按调度策略在池子里挑，天然做负载均衡 / 故障转移。</li>
+    </ul>
+
+    <h3>② 通道 Channels —— 真正发请求的出口</h3>
+    <ul>
+      <li><b>上游类型</b>：openai / anthropic / 自定义等，决定请求打给哪家。</li>
+      <li><b>纳管账号</b>：通过 <code>account_stats_pricing_rules</code> 把账号挂进来（回顾第 05、06 节），<code>pricing</code> 的 <code>models</code> 必须非空。</li>
+      <li><b>计费模式</b>：pricing 里 <code>billing_mode</code> 可设 <code>token</code>（按 token 计费，配 input/output price）或 <code>per_request</code>（按次）。价格留空 = 不计费只转发。</li>
+      <li><b>通道级 model_mapping / restrict_models</b>：可在通道层再做模型名映射或限制只放行某些模型。</li>
+    </ul>
+
+    <h3>③ 分组 Groups —— 按模型路由</h3>
+    <ul>
+      <li><b>platform 类型</b>：<code>composite</code>（按模型名前缀分流，推荐）、<code>openai</code>、<code>anthropic</code>（具体类型会把组内所有请求写死给该 provider——新手坑，回顾第 05、第 07 节）。</li>
+      <li>分组是 Key 与账号之间的桥梁：Key → 分组 → 通道 → 账号。</li>
+    </ul>
+
+    <h3>④ 密钥 API Keys —— 客户端凭证</h3>
+    <ul>
+      <li>生成时绑定到某个分组；一个 Key 对应一条路由策略。</li>
+      <li>支持轮换（旧 Key 禁用、发新 Key），不改客户端配置的话就保持绑定同一分组。</li>
+    </ul>
+
+    <h3>⑤ 计费与额度 Billing</h3>
+    <ul>
+      <li>用户（Key 持有方）有余额概念：<code>POST /api/v1/admin/users/{id}/balance {balance, operation:"set"}</code> 可设定/增减。</li>
+      <li>实际上游消耗走账号自己的配额（你授权的 OpenAI 账号额度），网关层余额是给你自己做的"内部记账 / 限速"用的，两者独立。</li>
+    </ul>
+
+    <h3>⑥ 审计与日志 Audit</h3>
+    <ul>
+      <li>每次网关请求都会留 <code>security_audit.gateway_check_start</code> 审计记录，其中 <code>provider</code> 字段暴露"这次请求实际被判给哪家"——路由对不对一眼看出（回顾第 05 节判活法）。</li>
+      <li>日志位置：<code>docker logs sub2api</code>。</li>
+    </ul>
+
+    <h3>⑦ 安全 Security</h3>
+    <ul>
+      <li><code>JWT_SECRET</code>：登录态签名，固定值避免重启掉登录。</li>
+      <li><code>TOTP_ENCRYPTION_KEY</code>：管理员 2FA（TOTP）密钥加密，固定值避免重启丢失 2FA 绑定。</li>
+      <li>密钥 / 管理员密码别明文散落；生产环境把端口只绑 <code>127.0.0.1</code> 或放内网。</li>
+    </ul>
+
+    <div class="note info"><b>一张图记住模块职责</b>账号=上游钥匙；通道=拿钥匙发请求的窗口；分组=按模型名决定开哪个窗口；密钥=客户端手里的门禁卡。四者齐了，系统才完整可用。</div>
+  </section>
+
+  <!-- 15 -->
+  <section id="s15">
+    <h2><span class="no">15</span>账号监测方案（设定好，能跑起来看）</h2>
+    <p class="lead">"能用"和"一直在用、出问题能第一时间知道"是两回事。下面把监测拆成四块，并给一套可直接跑的巡检。</p>
+
+    <h3>监测维度</h3>
+    <table>
+      <tr><th>监测什么</th><th>看哪里</th><th>异常信号</th></tr>
+      <tr><td>账号是否在线可调度</td><td>账号 <code>status=active</code> 且 <code>schedulable=true</code></td><td>状态变 inactive / unschedulable → 上游掉线或 OAuth 失效</td></tr>
+      <tr><td>通道是否覆盖在用模型</td><td>通道 <code>account_stats_pricing_rules.pricing.models</code></td><td>目标模型不在列表 → <code>no available accounts</code></td></tr>
+      <tr><td>路由是否正确</td><td><code>docker logs</code> 里 <code>gateway_check_start.provider</code></td><td>调 gpt-* 却显示 anthropic → 分组没设 composite</td></tr>
+      <tr><td>近期报错</td><td><code>docker logs</code> grep 关键字</td><td><code>no available accounts</code> / <code>401</code> / <code>provider mismatch</code></td></tr>
+      <tr><td>额度 / 用量</td><td>上游账号自身配额；网关用户余额</td><td>上游配额耗尽；网关余额触底</td></tr>
+    </table>
+
+    <h3>一套可直接跑的巡检脚本</h3>
+    <p>把下面内容存成 <code>sub2api-check.sh</code>，配进系统定时任务（或 WorkBuddy 的定时自动化）每 10 分钟跑一次，异常就告警。</p>
+<pre><code><span class="copy">复制</span>#!/usr/bin/env bash
+# Sub2API 账号/路由巡检
+BASE=http://127.0.0.1:8088
+read -r TOKEN &lt; &lt;(curl -s $BASE/api/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"admin@sub2api.local","password":"你的管理员密码"}' \
+  | grep -o '"token":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+echo "== 账号 =="; curl -s $BASE/api/v1/admin/accounts -H "Authorization: Bearer $TOKEN" | python -m json.tool
+echo "== 通道 =="; curl -s $BASE/api/v1/admin/channels -H "Authorization: Bearer $TOKEN" | python -m json.tool
+echo "== 分组 =="; curl -s $BASE/api/v1/admin/groups   -H "Authorization: Bearer $TOKEN" | python -m json.tool
+echo "== 近 30 分钟路由/错误 =="
+docker logs sub2api --since 30m 2&gt;&1 | grep -iE "gateway_check_start|no available accounts|provider|401" | tail -20</code></pre>
+
+    <h3>监测设定清单</h3>
+    <ul>
+      <li>☐ 账号 <code>status=active</code> 且 <code>schedulable=true</code></li>
+      <li>☐ 通道 <code>pricing.models</code> 含你实际在用的模型（如 <code>gpt-5.6-sol</code>）</li>
+      <li>☐ 默认分组 <code>platform=composite</code></li>
+      <li>☐ 设定时任务每 10 分钟跑上面的巡检，对 <code>no available accounts</code> / provider 错配 / 401 做关键字告警</li>
+      <li>☐ 上游账号额度快满时（OpenAI 侧）提前换号或加号进池子</li>
+    </ul>
+
+    <div class="note ok"><b>想要"对话就能查"</b>上面这些巡检我已经封装成 WorkBuddy 运维技能 <code>sub2api-ops</code>。以后你直接在对话里说"帮我看看账号状态""验一下 gpt-5.6-sol 的路由对不对""最近有没有报错"，我来调后台接口跑给你看，不用你自己登后台。</div>
+  </section>
+
+  <!-- 附录 -->
+  <section id="app">
+    <h2><span class="no">附</span>附录：完整配置参考</h2>
+    <h3>A. 完整的 Codex config.toml</h3>
+<pre><code><span class="copy">复制</span># C:\Users\Lin\.codex\config.toml
+[model_providers.custom]
+base_url = "http://127.0.0.1:8088/v1"
+env_key = "SUB2API_API_KEY"
+requires_openai_auth = false
+wire_api = "responses"
+
+model_provider = "custom"
+model = "gpt-5.6-sol"</code></pre>
+    <h3>B. Codex 环境变量文件</h3>
+<pre><code><span class="copy">复制</span># C:\Users\Lin\.codex\.env
+SUB2API_API_KEY=sk-你的密钥</code></pre>
+    <h3>C. 常用 curl 全集</h3>
+<pre><code><span class="copy">复制</span># 1) Responses 协议（Codex 用）
+curl http://127.0.0.1:8088/v1/responses \
+  -H "Authorization: Bearer 你的SK" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"gpt-5.6-sol","input":"ping"}'
+
+# 2) Chat Completions（Claude Code / 脚本用）
+curl http://127.0.0.1:8088/v1/chat/completions \
+  -H "Authorization: Bearer 你的SK" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"gpt-5.6-sol","messages":[{"role":"user","content":"ping"}]}'
+
+# 3) 模型列表自检
+curl http://127.0.0.1:8088/v1/models -H "Authorization: Bearer 你的SK"</code></pre>
+    <h3>D. 容器运维</h3>
+<pre><code><span class="copy">复制</span>docker compose -f docker-compose.sub2api.yml up -d   # 启动
+docker compose -f docker-compose.sub2api.yml down      # 停止
+docker logs sub2api --tail 50                          # 看日志（排障第一抓手）
+docker logs sub2api --since 30m | grep -i 401          # 定向捞错误</code></pre>
+    <div class="note info"><b>本手册来自真实排障记录</b>以上每一条坑都是实打实踩过、验证通了的，不是文档搬运。你的实际密钥/密码在 <code>docker-compose.sub2api.yml</code> 和 <code>~/.codex/.env</code> 里，别外泄。</div>
+  </section>
+
+  <footer>Sub2API 实战使用手册 · 基于 0.1.177 + Docker 部署 + Windows 客户端实测 · 2026-08-18</footer>
+</main>
+</div>
+
+<script>
+// 复制按钮
+document.querySelectorAll('pre .copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var code=btn.parentElement.querySelector('code');
+    var text=code?code.innerText.replace(/^复制\s*/,''):'';
+    navigator.clipboard.writeText(text).then(function(){
+      var o=btn.textContent;btn.textContent='已复制';
+      setTimeout(function(){btn.textContent=o;},1200);
+    });
+  });
+});
+// 导航高亮
+var links=[].slice.call(document.querySelectorAll('nav a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+function onScroll(){
+  var pos=window.scrollY+120, idx=0;
+  secs.forEach(function(s,i){ if(s && s.offsetTop<=pos) idx=i; });
+  links.forEach(function(a,i){ a.classList.toggle('active',i===idx); });
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+onScroll();
+</script>
+</body>
+</html>

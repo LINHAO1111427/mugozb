@@ -1,0 +1,107 @@
+SUB2API REMOTE CLIENT NO-PROXY VERIFICATION
+Date: 2026-09-05 Asia/Shanghai
+
+CHANGED BRANCH / FIELD
+File: C:\Tools\sub2api_0.1.177_windows_amd64\setup-gpt-client.cmd
+Branch: PowerShell HTTP connection and API validation path
+Fields changed:
+  Invoke-WebRequest GET /health now includes -Proxy $null
+  Invoke-RestMethod GET /v1/models now includes -Proxy $null
+  Invoke-RestMethod POST /v1/responses now includes -Proxy $null
+Result:
+  The client bypasses the Windows system proxy/PAC for all three Sub2API requests.
+  This prevents a proxy configured on another computer from intercepting the direct server connection.
+
+FOUR ARTIFACTS
+MODIFIED_FILE=C:\Tools\sub2api_0.1.177_windows_amd64\setup-gpt-client.cmd
+DIFF_FILE=C:\Tools\sub2api_0.1.177_windows_amd64\setup-gpt-client.diff
+VERIFICATION_FILE=C:\Tools\sub2api_0.1.177_windows_amd64\CLIENT-VERIFICATION.txt
+ROLLBACK_FILE=C:\Tools\sub2api_0.1.177_windows_amd64\CLIENT-ROLLBACK.sh
+
+HASHES
+ORIGINAL_FILE=C:\Tools\sub2api_0.1.177_windows_amd64\.rollback\setup-gpt-client.before-no-proxy.cmd
+ORIGINAL_SHA256=225c2c0200e169e9794ca0c4f67e8beae91c8d52a56fbc70a20aaff381585220
+MODIFIED_SHA256=e95f7629f161111ef8ebf56051e22aa9f8db5514d417cf188f10eb2ecb32db3f
+DIFF_SHA256=55e5d0359d906d740048cfe8ff29db51077a62eac1fac20e6ea61b7fbd3e65ae
+ROLLBACK_SHA256=bcd7c2755063a27e06255e8ad0152661ac6fb12cc26f8b73e3bb6d8d187fc9d7
+
+BASELINE
+Command:
+  $env:CODEX_HOME=<isolated baseline directory>
+  $env:SUB2API_SETUP_SKIP_USER_ENV='1'
+  cmd.exe /d /c .rollback\setup-gpt-client.before-no-proxy.cmd http://163.7.10.75/v1 gpt-5.6-sol
+Input:
+  Existing SUB2API_API_KEY environment variable; isolated CODEX_HOME; public server Base URL.
+Literal output/result:
+  [+] Testing http://163.7.10.75/health
+  [OK] Relay connection succeeded.
+  Base URL: http://163.7.10.75/v1
+  [+] Validating API key and loading models.
+  [OK] API key accepted; models returned: 13
+  [+] Calling GPT model gpt-5.6-sol
+  [OK] GPT response: CLIENT_OK
+  [+] Configuring Codex.
+  [OK] Codex config: C:\Tools\sub2api_0.1.177_windows_amd64\.rollback\baseline-no-proxy-test-20260905145145328\config.toml
+  [OK] Codex key file: C:\Tools\sub2api_0.1.177_windows_amd64\.rollback\baseline-no-proxy-test-20260905145145328\.env
+  [OK] Client configuration completed.
+  Fully close Codex and all terminal windows, then start Codex again.
+Exit status:
+  0
+Result:
+  The public server was healthy from this computer. The baseline script contains zero -Proxy $null overrides.
+
+MODIFIED
+Command:
+  $env:CODEX_HOME=<isolated modified directory>
+  $env:SUB2API_SETUP_SKIP_USER_ENV='1'
+  cmd.exe /d /c setup-gpt-client.cmd http://163.7.10.75/v1 gpt-5.6-sol
+Input:
+  Existing SUB2API_API_KEY environment variable; isolated CODEX_HOME; public server Base URL.
+Literal output/result:
+  [+] Testing http://163.7.10.75/health
+  [OK] Relay connection succeeded.
+  Base URL: http://163.7.10.75/v1
+  [+] Validating API key and loading models.
+  [OK] API key accepted; models returned: 13
+  [+] Calling GPT model gpt-5.6-sol
+  [OK] GPT response: CLIENT_OK
+  [+] Configuring Codex.
+  [OK] Codex config: C:\Tools\sub2api_0.1.177_windows_amd64\.rollback\modified-no-proxy-test-20260905145145328\config.toml
+  [OK] Codex key file: C:\Tools\sub2api_0.1.177_windows_amd64\.rollback\modified-no-proxy-test-20260905145145328\.env
+  [OK] Client configuration completed.
+  Fully close Codex and all terminal windows, then start Codex again.
+Exit status:
+  0
+Result:
+  Health, API-key validation, model discovery, GPT response, and isolated Codex configuration all passed.
+
+ROLLBACK TEST ON ANOTHER COPY
+Command:
+  Copy-Item setup-gpt-client.cmd .rollback\setup-gpt-client.rollback-test-20260905145239671.cmd -Force
+  C:\Program Files\Git\bin\bash.exe .\CLIENT-ROLLBACK.sh .rollback\setup-gpt-client.rollback-test-20260905145239671.cmd .rollback\setup-gpt-client.before-no-proxy.cmd
+Input:
+  MODIFIED_FILE bytes copied to a separate rollback-test file; preserved ORIGINAL_FILE supplied as source.
+Literal output/result:
+  ROLLBACK PASS
+  target=C:\Tools\sub2api_0.1.177_windows_amd64\.rollback\setup-gpt-client.rollback-test-20260905145239671.cmd
+  sha256=225c2c0200e169e9794ca0c4f67e8beae91c8d52a56fbc70a20aaff381585220
+  rollback_exit=0
+  hash_match=True
+  restored_proxy_override_count=0
+Exit status:
+  0
+
+RESTORED BEHAVIOR / STATUS
+Command:
+  Get-FileHash -Algorithm SHA256 .rollback\setup-gpt-client.rollback-test-20260905145239671.cmd
+  Select-String -SimpleMatch '-Proxy $null' .rollback\setup-gpt-client.rollback-test-20260905145239671.cmd
+Input:
+  The separate copy after CLIENT-ROLLBACK.sh completed.
+Literal output/result:
+  sha256=225c2c0200e169e9794ca0c4f67e8beae91c8d52a56fbc70a20aaff381585220
+  hash_match=True
+  restored_proxy_override_count=0
+Exit status:
+  0
+Result:
+  The rollback copy exactly matches ORIGINAL_SHA256. It restores the prior behavior in which PowerShell may use the Windows system proxy/PAC.
