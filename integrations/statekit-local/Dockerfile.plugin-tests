@@ -1,0 +1,13 @@
+FROM golang:1.27.0-alpine
+RUN apk add --no-cache build-base
+ENV GOPROXY=https://goproxy.cn,direct GOSUMDB=sum.golang.google.cn GOMEMLIMIT=2GiB GOMAXPROCS=2
+WORKDIR /src/plugin
+COPY vendor_statekit/plugin/ ./
+RUN --mount=type=cache,id=sub2api-gomod,target=/go/pkg/mod \
+    --mount=type=cache,id=sub2api-gobuild-race,target=/root/.cache/go-build \
+    --mount=type=tmpfs,target=/tmp \
+    go test -race -p 2 ./...
+RUN --mount=type=cache,id=sub2api-gomod,target=/go/pkg/mod \
+    --mount=type=cache,id=sub2api-gobuild,target=/root/.cache/go-build \
+    --mount=type=tmpfs,target=/tmp \
+    CGO_ENABLED=0 go build -p 2 -trimpath -o /out/state-kit ./cmd/state-kit

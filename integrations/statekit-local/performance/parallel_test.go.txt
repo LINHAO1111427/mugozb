@@ -1,0 +1,66 @@
+//go:build statekit_host_contract
+
+package service
+
+import (
+ "bytes"
+ "context"
+ "fmt"
+ "io"
+ "net/http"
+ "net/http/httptest"
+ "sync"
+ "sync/atomic"
+ "testing"
+ "time"
+
+ "github.com/stretchr/testify/require"
+)
+
+// The barrier proves all streams have reached the actual signed plugin/upstream
+// concurrently; it cannot pass with a hidden five-request serialization limit.
+func TestStateKitOfficialHostParallelStreams(t *testing.T) {
+ raw,key:=stateKitContractPackage(t)
+ installation,err:=stateKitContractInstaller(t,key).Install(context.Background(),bytes.NewReader(raw),nil)
+ require.NoError(t,err)
+ runtime:=stateKitContractStart(t,installation,newPluginHostServiceServer(stateKitContractPluginID,newFakePluginKVStore(),&stateKitContractDirectory{}))
+ require.NoError(t,runtime.validateAndApplyConfig(context.Background(),[]byte(`{"enabled":false,"auto_harvest":false,"accounts":[]}`)))
+ for _,n:=range []int{32,128,512} {
+  t.Run(fmt.Sprintf("streams_%d",n),func(t *testing.T){
+   ctx,cancel:=context.WithTimeout(context.Background(),30*time.Second);defer cancel()
+   release:=make(chan struct{});var once sync.Once
+   unblock:=func(){once.Do(func(){close(release)})};defer unblock()
+   var active,peak atomic.Int64
+   upstream:=httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter,r *http.Request){
+    current:=active.Add(1);defer active.Add(-1)
+    for old:=peak.Load();current>old;old=peak.Load(){if peak.CompareAndSwap(old,current){break}}
+    w.Header().Set("Content-Type","text/event-stream")
+    _,_=io.WriteString(w,"data: first\n\n");w.(http.Flusher).Flush()
+    select{case <-release:case <-r.Context().Done():return}
+    _,_=io.WriteString(w,"data: "+r.URL.RawQuery+"\n\n")
+   }))
+   defer upstream.Close();defer cancel();defer unblock()
+   ready:=make(chan error,n);done:=make(chan error,n)
+   for i:=0;i<n;i++ {go func(i int){
+    req,err:=http.NewRequestWithContext(ctx,http.MethodGet,upstream.URL+"/stream?"+fmt.Sprint(i),nil)
+    if err!=nil{ready<-err;done<-err;return}
+    if !runtime.beginRequest(){err=fmt.Errorf("runtime draining");ready<-err;done<-err;return}
+    resp,err:=runtime.roundTrip(ctx,req,"",&Account{ID:42,Platform:PlatformOpenAI,Type:AccountTypeOAuth,Concurrency:n})
+    if err!=nil{runtime.finishRequest();ready<-err;done<-err;return}
+    defer resp.Body.Close()
+    first:=make([]byte,len("data: first\n\n"));_,err=io.ReadFull(resp.Body,first)
+    if err==nil&&string(first)!="data: first\n\n"{err=fmt.Errorf("first event mismatch")}
+    ready<-err
+    rest,readErr:=io.ReadAll(resp.Body)
+    if readErr==nil&&string(rest)!="data: "+fmt.Sprint(i)+"\n\n"{readErr=fmt.Errorf("cross-stream body mismatch")}
+    done<-readErr
+   }(i)}
+   for i:=0;i<n;i++ {select{case err:=<-ready:require.NoError(t,err);case <-ctx.Done():t.Fatal("parallel stream barrier timed out")}}
+   require.Equal(t,int64(n),peak.Load());require.Equal(t,int64(n),runtime.inFlight.Load())
+   unblock()
+   for i:=0;i<n;i++ {select{case err:=<-done:require.NoError(t,err);case <-ctx.Done():t.Fatal("stream completion timed out")}}
+   require.Eventually(t,func()bool{return active.Load()==0&&runtime.inFlight.Load()==0},3*time.Second,10*time.Millisecond)
+   t.Logf("PLUGIN_PARALLEL_OK streams=%d peak=%d in_flight=0",n,peak.Load())
+  })
+ }
+}

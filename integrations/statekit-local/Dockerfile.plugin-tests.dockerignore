@@ -1,0 +1,7 @@
+**
+!vendor_statekit/
+!vendor_statekit/plugin/
+!vendor_statekit/plugin/**
+vendor_statekit/plugin/build
+vendor_statekit/plugin/dist
+vendor_statekit/plugin/node_modules

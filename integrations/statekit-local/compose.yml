@@ -1,0 +1,72 @@
+name: sub2api-statekit-local
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: statekit_local
+      POSTGRES_USER: statekit
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?Run prepare-local.py first}
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U statekit -d statekit_local"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  redis:
+    image: redis:8-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  app:
+    image: sub2api:statekit-local
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile.checks
+      target: runtime
+    ports:
+      - "127.0.0.1:18089:8080"
+    environment:
+      AUTO_SETUP: "true"
+      SERVER_HOST: 0.0.0.0
+      SERVER_PORT: "8080"
+      SERVER_MODE: release
+      TZ: Asia/Shanghai
+      DATABASE_HOST: postgres
+      DATABASE_PORT: "5432"
+      DATABASE_USER: statekit
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:?Run prepare-local.py first}
+      DATABASE_DBNAME: statekit_local
+      DATABASE_SSLMODE: disable
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+      REDIS_PASSWORD: ""
+      ADMIN_EMAIL: admin@statekit.local
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Run prepare-local.py first}
+      JWT_SECRET: ${JWT_SECRET:?Run prepare-local.py first}
+      TOTP_ENCRYPTION_KEY: ${TOTP_ENCRYPTION_KEY:?Run prepare-local.py first}
+    volumes:
+      - ./config.yaml:/etc/statekit-trust.yaml:ro
+      - data:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+volumes:
+  postgres:
+  redis:
+  data:

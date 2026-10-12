@@ -1,0 +1,119 @@
+Excel Codex Bridge + current Sub2API deployment verification
+Date: 2026-09-28 CST
+
+Changed branch/field
+- Branch: local Docker publication of the optional Excel Codex Responses sidecar.
+- Field: existing account 41/group 9 (`GHCP ChatGPT Excel (local)`) now points to
+  `http://excel-codex-bridge:8000/v1`, has twelve Excel aliases, status active,
+  and schedulable=true after the operator authorized the session.
+- Sidecar image: `excel-codex-bridge:local`; network: `deploy_sub2api-network`.
+- Integration metadata `enabled=true`; account activation completed after session readiness.
+- No new account/group was created. Ticket harvesting, frontend serving, audit,
+  proxy topology and existing Sub2API container settings were not changed.
+
+Delivery artifacts
+- MODIFIED_FILE: integrations/excel-codex-bridge/MODIFIED_FILE.json
+- DIFF_FILE: integrations/excel-codex-bridge/DIFF_FILE.diff
+- VERIFICATION: integrations/excel-codex-bridge/VERIFICATION.txt
+- ROLLBACK: integrations/excel-codex-bridge/ROLLBACK.sh
+
+BASELINE command/input/result
+Command:
+  $src='D:\Workspace\sub2api\.codex\excel-codex-bridge-upstream-20260928\Kaixxrua-excel-codex-bridge-9254d3f'; $env:PYTHONPATH="$src\src"; .\.venv\Scripts\python.exe -m pytest -q "$src\tests\test_sub2api.py"
+Input: pinned upstream source 9254d3f25b0323bbf71db4f25a242fe32027a544.
+Literal output:
+  ...........................................                              [100%]
+  43 passed in 0.63s
+Exit status: 0.
+
+MODIFIED command/input/result
+Command:
+  $src='D:\Workspace\sub2api\.codex\excel-codex-bridge-upstream-20260928\Kaixxrua-excel-codex-bridge-9254d3f'; $env:PYTHONPATH="$PWD\src"; .\.venv\Scripts\python.exe -m pytest -q "$src\tests\test_sub2api.py"
+Input: the same suite with PYTHONPATH redirected to integrations/excel-codex-bridge/src.
+Literal output:
+  ...........................................                              [100%]
+  43 passed in 0.63s
+Exit status: 0.
+
+Additional tests
+- `test_server.py` baseline and modified: `27 passed, 23 subtests passed`; exit 0 for both.
+- `python -m py_compile manage.py <22 source modules>`: exit 0.
+- `python manage.py prepare`: `PREPARED revision=9254d3f25b0323bbf71db4f25a242fe32027a544`; exit 0.
+- `docker compose -f deploy/docker-compose.yml -f deploy/docker-compose.excel-codex.yml --profile excel-codex config --quiet`: `DEPLOY_COMPOSE_CONFIG_OK`; exit 0.
+
+Docker publish command/input/result
+Command:
+  docker compose -f deploy/docker-compose.yml -f deploy/docker-compose.excel-codex.yml --profile excel-codex build excel-codex-bridge
+Input: local `sub2api-local:pr7315` Alpine image; Docker Hub Python base was unavailable.
+Literal output:
+  `Image excel-codex-bridge:local Built`
+  `Successfully installed ... excel-codex-bridge-0.5.8 ...`
+Exit status: 0.
+
+Start command/input/result
+Command:
+  docker compose -f deploy/docker-compose.yml -f deploy/docker-compose.excel-codex.yml --profile excel-codex up -d excel-codex-bridge
+Literal output:
+  `Container excel-codex-bridge Creating`
+  `Container excel-codex-bridge Started`
+Exit status: 0.
+
+Runtime checks
+- `docker ps`: `excel-codex-bridge excel-codex-bridge:local Up ... (healthy)`; existing `sub2api` remained healthy.
+- Network inspect: sidecar IP `172.19.0.5`, network `deploy_sub2api-network`; no host port published.
+- `docker exec excel-codex-bridge excel-sub2api session-status --port 8000`:
+  `{"configured":false,"expired":false,"expires_at":null,"expires_in_seconds":null}`; exit 0.
+- Authenticated sidecar `/v1/models`: 12 aliases returned; exit 0.
+- Request from the running `sub2api` container to `http://excel-codex-bridge:8000/v1/models`:
+  `SUB2API_TO_SIDECAR_OK model_count=12`; exit 0.
+
+Account configuration command/input/result
+Command:
+  `python integrations/excel-codex-bridge/manage.py configure-existing`
+Input: existing account 41/group 9 and the generated sidecar API key.
+Literal output:
+  `{"account_id": 41, "base_url": "http://excel-codex-bridge:8000/v1", "group_id": 9, "schedulable": false, "status": "inactive"}`
+Exit status: 0.
+Read-only account check: name preserved, base URL updated, model_count=12,
+status=inactive, schedulable=false. No inference request was sent.
+
+ROLLBACK command/input/result
+Command:
+  & 'C:\Program Files\Git\bin\bash.exe' integrations/excel-codex-bridge/ROLLBACK.sh D:\Workspace\sub2api\.codex\excel-codex-bridge-rollback-copy-20260928f
+Input: separate copy containing BASELINE_FILE.json, MODIFIED_FILE.json and
+integration.json initialized from MODIFIED_FILE.json.
+Literal output:
+  `ROLLBACK_OK restored=a1a57e6647fb39933497e090d32c4bd5aaecbb013bf3d23232c5339b64dfbd37 modified_artifact=D:\Workspace\sub2api\.codex\excel-codex-bridge-rollback-copy-20260928f/MODIFIED_FILE.json`
+  `RESTORED_HASH=A1A57E6647FB39933497E090D32C4BD5AAECBB013BF3D23232C5339B64DFBD37`
+  `BASELINE_HASH=A1A57E6647FB39933497E090D32C4BD5AAECBB013BF3D23232C5339B64DFBD37`
+  `MODIFIED_ARTIFACT_HASH=42ECD9F0B26B60FB0E51C743080DEEBDE905686696D20C79329D53B4C30A0110`
+Exit status: 0. The copy restored baseline behavior while the working
+MODIFIED_FILE remained changed.
+
+Restored behavior/status (copy rollback)
+- The separate rollback copy restored the baseline artifact hash and left the
+  working MODIFIED_FILE changed; the live deployment was not rolled back.
+
+Post-authorization activation
+- Authorization input: the operator completed the Codex device login, then
+  `python manage.py sync-session --login codex` imported the session.
+- Sync literal output: `{"session": {"configured": true, "expired": false,
+  "expires_at": 1791460264, "expires_in_seconds": 863950}}`; exit status 0.
+- Activation command: `python manage.py activate`.
+- Activation literal output: `{"account_id": 41, "base_url":
+  "http://excel-codex-bridge:8000/v1", "group_id": 9, "schedulable": true,
+  "session": {"configured": true, "expired": false, "expires_at":
+  1791460264, "expires_in_seconds": 863798}, "status": "active"}`;
+  exit status 0.
+- Live status: account 41 is active and schedulable; the sidecar session is
+  configured and unexpired. The sidecar container is healthy on
+  `deploy_sub2api-network` and the existing `sub2api` container is healthy.
+- End-to-end probe command/input: `docker exec excel-codex-bridge python -c
+  "POST /v1/responses model=gpt-6-sol-excel input='Return exactly
+  EXCEL_BRIDGE_OK.' stream=false"`.
+- Probe literal result: `HTTP_STATUS=200; CONTENT_TYPE=application/json;
+  RESPONSE_STATUS=completed; RESPONSE_MODEL=gpt-6-sol-excel; RESPONSE_ID=True;
+  OUTPUT_ITEMS=1`; exit status 0.
+- The current live branch/field is therefore the activated Excel sidecar
+  account 41 status/schedulable field (`active`/`true`); the four delivery
+  artifacts above remain the review and rollback record.

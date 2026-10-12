@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "backend": "copilot+excel",
+  "listen_host": "127.0.0.1",
+  "listen_port": 8000,
+  "upstream_revision": "1a73157d579dcdaa08d8ecbcd166e80ca48c9e66",
+  "upstream_dir": "../../.codex/ghcp-proxy-20260925/upstream",
+  "sub2api_url": "http://127.0.0.1:8088",
+  "sub2api_upstream_url": "http://host.docker.internal:8000/v1",
+  "account_name": "GHCP Copilot (local)",
+  "group_name": "GHCP Copilot",
+  "excel_sub2api_upstream_url": "http://host.docker.internal:8000/excel/v1",
+  "excel_account_name": "GHCP ChatGPT Excel (local)",
+  "excel_group_name": "GHCP ChatGPT Excel"
+}

@@ -1,0 +1,8 @@
+host/.git
+host/frontend/node_modules
+host/frontend/dist
+host/backend/internal/web/dist
+evidence
+.env
+private
+*.log

@@ -1,0 +1,996 @@
+"""Command line: launch Codex through the bridge, or run the bridge alone."""
+
+from __future__ import annotations
+
+import argparse
+import datetime as _dt
+import json
+import logging
+import os
+import shutil
+import signal
+import socket
+import sqlite3
+import subprocess
+import sys
+import threading
+import time
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+from . import __version__, codex_config, desktop_config, excel_signin, excel_upstream, exit_timezone, images, updates
+from . import image_generation
+from . import session
+from .session import SessionReader
+
+
+def _print(message: str = "") -> None:
+    print(message, flush=True)
+
+
+_SIGN_IN_ADVICE = {
+    "auto": "Sign in to Codex with ChatGPT (`codex login`), or run `excel-codex login` / "
+    "open Excel's ChatGPT add-in pane and sign in.",
+    "codex": "Sign in to Codex with ChatGPT: `codex login`.",
+    "excel": "Run `excel-codex login`, or open Excel's ChatGPT add-in pane and sign in.",
+}
+
+
+def _describe_session(status: dict) -> tuple[bool, str]:
+    advice = _SIGN_IN_ADVICE.get(status.get("login") or "auto", _SIGN_IN_ADVICE["auto"])
+    if not status.get("configured"):
+        error = status.get("error") or "no session found"
+        return False, f"No usable ChatGPT sign-in ({error}).\n  -> {advice}"
+    source = status.get("source")
+    name = session.NAMES.get(source or "", "the ChatGPT session")
+    if status.get("expired"):
+        return False, f"{name[0].upper()}{name[1:]} has expired.\n  -> {advice}"
+    where = f" ({status.get('codex_auth')})" if source == "codex" else ""
+    message = f"Using {name}{where}"
+    expires_at = status.get("expires_at")
+    if isinstance(expires_at, (int, float)):
+        local = _dt.datetime.fromtimestamp(expires_at).strftime("%Y-%m-%d %H:%M")
+        hours = (expires_at - time.time()) / 3600
+        message += f"; expires {local} (in {hours:.1f} h)"
+    message += "."
+    notes = status.get("notes")
+    if source == "excel" and status.get("login") == "auto" and isinstance(notes, str) and notes:
+        message += f"\n  Not using Codex's sign-in: {notes.removeprefix('codex: ')}"
+    return True, message
+
+
+def _reader(args, *, login: str | None = None) -> SessionReader:
+    webview_dir = getattr(args, "webview_dir", None)
+    return SessionReader(
+        webview_root=Path(webview_dir).expanduser() if webview_dir else None,
+        login=login or getattr(args, "login", None),
+    )
+
+
+def _apply_proxy(args) -> None:
+    if getattr(args, "proxy", None):
+        os.environ["EXCEL_BRIDGE_PROXY"] = args.proxy
+    # The bridge child started by `codex` inherits these.
+    if getattr(args, "timezone", None):
+        os.environ[exit_timezone.MODE_ENV] = args.timezone
+    if getattr(args, "image_model", None):
+        os.environ[image_generation.MODEL_ENV] = args.image_model
+
+
+def _write_catalog(directory: Path | None = None) -> Path:
+    return codex_config.write_catalog(directory)
+
+
+def _image_model(value: str) -> str:
+    value = value.strip()
+    if not image_generation.valid_model(value):
+        raise argparse.ArgumentTypeError(f"{value!r} is not an image model name")
+    return value
+
+
+def _pictures_line() -> str:
+    try:
+        drawing = f"draws with {image_generation.model()} (--image-model picks another)."
+    except image_generation.Refused as exc:
+        drawing = str(exc)
+    return f"{images.DESCRIPTION}\nImage tool: {drawing}"
+
+
+# ─── update check ─────────────────────────────────────────────────────────────
+
+_update_shown = threading.Event()
+
+
+def _update_check() -> updates.UpdateCheck | None:
+    if not updates.enabled():
+        return None
+    return updates.UpdateCheck(codex_config.state_dir() / updates.CACHE_NAME)
+
+
+def _announce_update(release: updates.Release | None, stream=None) -> None:
+    if release is None:
+        return
+    stream = stream or sys.stdout
+    text = updates.notice(release)
+    try:
+        print(text, file=stream, flush=True)
+    except UnicodeEncodeError:  # output redirected to a file in a narrow code page
+        print(text.encode("ascii", "replace").decode("ascii"), file=stream, flush=True)
+    _update_shown.set()
+
+
+def _watch_for_updates() -> None:
+    """For the windows that stay open: say so whenever a newer release comes out."""
+    check = _update_check()
+    if check is not None:
+        updates.watch(check, _announce_update)
+
+
+# ─── automatic sign-in through Excel ──────────────────────────────────────────
+
+def _signin(reader: SessionReader, args) -> excel_signin.ExcelSignIn:
+    return excel_signin.ExcelSignIn(reader, enabled=False if getattr(args, "no_auto_signin", False) else None)
+
+
+def _sign_in_now(signin: excel_signin.ExcelSignIn, status: dict) -> bool:
+    _print(
+        "Opening Excel with the ChatGPT add-in pane: sign in there (the first time, trust the add-in).\n"
+        "  If no pane appears, click Home > Add-ins > ChatGPT. Waiting up to 10 minutes; Ctrl+C cancels."
+    )
+    try:
+        fresh = signin.run(
+            interactive=True,
+            timeout=excel_signin.SIGN_IN_TIMEOUT_SECONDS,
+            previous_expiry=excel_signin.expiry(status),
+        )
+    except OSError as exc:
+        _print(f"Could not open Excel ({exc}).\n  -> Open Excel's ChatGPT pane and sign in yourself.")
+        return False
+    except KeyboardInterrupt:
+        _print("Cancelled.")
+        return False
+    if fresh is None:
+        _print("No new session showed up in time; run `excel-codex status` once you have signed in.")
+        return False
+    _print(_describe_session(fresh)[1])
+    return True
+
+
+def _ensure_session(reader: SessionReader, args) -> bool:
+    """A usable session, signing in through Excel when there is none.
+
+    A session that merely expires soon is left to the bridge's background
+    keeper, so Codex starts at once.
+    """
+    status = reader.refresh(force=True)
+    ok, message = _describe_session(status)
+    _print(message)
+    if ok:
+        return True
+    signin = _signin(reader, args)
+    return signin.enabled and _sign_in_now(signin, status)
+
+
+# ─── serve ────────────────────────────────────────────────────────────────────
+
+def _exit_when_stdin_closes() -> None:
+    """Launcher watchdog: the parent holds our stdin open for its lifetime."""
+
+    def wait() -> None:
+        try:
+            while sys.stdin.buffer.read(4096):
+                pass
+        except (OSError, ValueError):
+            pass
+        os._exit(0)
+
+    threading.Thread(target=wait, name="parent-watchdog", daemon=True).start()
+
+
+def cmd_serve(args) -> int:
+    if args.host not in {"127.0.0.1", "::1", "localhost"}:
+        _print("Refusing to listen on a non-loopback address: this bridge is single-user and local-only.")
+        return 2
+    _apply_proxy(args)
+    if args.log_file:
+        logging.basicConfig(
+            filename=args.log_file,
+            level=logging.INFO,
+            format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+        )
+    else:
+        logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+    if args.exit_with_stdin:
+        _exit_when_stdin_closes()
+    reader = _reader(args)
+    if not args.log_file:
+        _, message = _describe_session(reader.refresh(force=True))
+        _print(message)
+        _print(_pictures_line())
+        _print(f"Listening on {codex_config.base_url(args.port)}  (Ctrl+C to stop)")
+        _watch_for_updates()
+    _run_bridge(reader, args, host=args.host, port=args.port, quiet=bool(args.log_file))
+    return 0
+
+
+SHUTDOWN_GRACE_SECONDS = 3
+
+
+def _keep_native_calls() -> None:
+    home = codex_config.state_dir()
+    try:
+        home.mkdir(parents=True, exist_ok=True)
+    except OSError:
+        return
+    excel_upstream.keep_native_calls_in(home / "tool-calls.sqlite3")
+
+
+def _quiet_upgrades(record: logging.LogRecord) -> bool:
+    """uvicorn warns about every WebSocket try, which the app turns away on purpose."""
+    message = record.getMessage()
+    return not (message == "Unsupported upgrade request." or message.startswith("No supported WebSocket library"))
+
+
+def _run_bridge(reader: SessionReader, args, *, host: str, port: int, quiet: bool) -> None:
+    import uvicorn
+
+    from .server import create_app
+
+    _keep_native_calls()
+    keeper = excel_signin.SessionKeeper(_signin(reader, args))
+    keeper.start()
+    try:
+        config = uvicorn.Config(
+            create_app(reader),
+            host=host,
+            port=port,
+            log_level="warning",
+            log_config=None,
+            access_log=not quiet,
+            # On Windows, a client that resets its connection can make asyncio lose
+            # track of it (the proactor's shutdown() raises before the server is told),
+            # and uvicorn would then wait for it forever on Ctrl+C, so `desktop` never
+            # got to put config.toml back. Cap the wait.
+            timeout_graceful_shutdown=SHUTDOWN_GRACE_SECONDS,
+            # Codex tries a WebSocket first; the app answers the upgrade with 426 (HTTP only).
+            ws="none",
+        )
+        logging.getLogger("uvicorn.error").addFilter(_quiet_upgrades)
+        if not quiet:
+            # log_level hides uvicorn's startup chatter but also the request lines, which
+            # show whether Codex reaches the bridge at all (method, path and status only).
+            logging.getLogger("uvicorn.access").setLevel(logging.INFO)
+        # The rest is what uvicorn.run does: Ctrl+C is re-raised after shutdown.
+        server = uvicorn.Server(config)
+        try:
+            server.run()
+        except KeyboardInterrupt:
+            pass
+        if not server.started:
+            sys.exit(3)  # could not start, e.g. port taken
+    finally:
+        keeper.stop()
+
+
+# ─── status / print-config ────────────────────────────────────────────────────
+
+def cmd_status(args) -> int:
+    ok, message = _describe_session(_reader(args).refresh(force=True))
+    _print(message)
+    return 0 if ok else 1
+
+
+def cmd_login(args) -> int:
+    reader = _reader(args, login="excel")
+    status = reader.refresh(force=True)
+    ok, message = _describe_session(status)
+    _print(message)
+    signin = _signin(reader, args)
+    if not signin.enabled:
+        _print("Signing in through Excel automatically needs Excel on Windows (and EXCEL_BRIDGE_AUTO_SIGNIN not 0).")
+        return 0 if ok else 1
+    if ok and not args.force and not excel_signin.needs_refresh(status):
+        _print("Nothing to do; `excel-codex login --force` opens the ChatGPT pane anyway.")
+        return 0
+    return 0 if _sign_in_now(signin, status) else 1
+
+
+def cmd_print_config(args) -> int:
+    catalog = _write_catalog()
+    _print(
+        "# Put the three top-level keys ABOVE the first [table] of ~/.codex/config.toml,\n"
+        "# and the [model_providers.excel-bridge] table anywhere below.\n"
+    )
+    _print(codex_config.config_snippet(args.port, catalog, args.model))
+    return 0
+
+
+# ─── codex launcher ───────────────────────────────────────────────────────────
+
+def _free_port() -> int:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        sock.bind(("127.0.0.1", 0))
+        return sock.getsockname()[1]
+
+
+def _healthy(port: int) -> bool:
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    try:
+        with opener.open(f"http://127.0.0.1:{port}/healthz", timeout=2) as response:
+            return response.status == 200 and json.load(response).get("ok") is True
+    except (urllib.error.URLError, OSError, ValueError):
+        return False
+
+
+def _find_codex(explicit: str | None) -> str | None:
+    if explicit:
+        return explicit if Path(explicit).exists() else shutil.which(explicit)
+    return shutil.which("codex")
+
+
+def _no_proxy_env(env: dict[str, str]) -> dict[str, str]:
+    """Keep Codex's own HTTP proxy settings off the loopback hop."""
+    for key in ("NO_PROXY", "no_proxy"):
+        entries = [item.strip() for item in env.get(key, "").split(",") if item.strip()]
+        for host in ("127.0.0.1", "localhost"):
+            if host not in entries:
+                entries.append(host)
+        env[key] = ",".join(entries)
+    return env
+
+
+_PACKAGE_ROOT = str(Path(__file__).resolve().parent.parent)
+
+
+def _frozen() -> bool:
+    """Running from a PyInstaller release build."""
+    return bool(getattr(sys, "frozen", False))
+
+
+def _same_path(a: str, b: str) -> bool:
+    return os.path.normcase(os.path.abspath(a)) == os.path.normcase(os.path.abspath(b))
+
+
+def _bridge_env(env: dict[str, str]) -> dict[str, str]:
+    """The bridge child must import this package however the launcher was started."""
+    if _frozen():
+        return env
+    entries = [item for item in env.get("PYTHONPATH", "").split(os.pathsep) if item]
+    if not any(_same_path(item, _PACKAGE_ROOT) for item in entries):
+        entries.insert(0, _PACKAGE_ROOT)
+    env["PYTHONPATH"] = os.pathsep.join(entries)
+    return env
+
+
+def _codex_env(env: dict[str, str]) -> dict[str, str]:
+    """Codex runs the user's commands; keep the start scripts' PYTHONPATH out of them."""
+    entries = [
+        item for item in env.get("PYTHONPATH", "").split(os.pathsep)
+        if item and not _same_path(item, _PACKAGE_ROOT)
+    ]
+    if entries:
+        env["PYTHONPATH"] = os.pathsep.join(entries)
+    else:
+        env.pop("PYTHONPATH", None)
+    return _no_proxy_env(env)
+
+
+def cmd_codex(args, codex_args: list[str]) -> int:
+    _apply_proxy(args)
+    codex = _find_codex(args.codex)
+    if codex is None:
+        _print(
+            "Codex CLI was not found on PATH.\n"
+            "  -> Install it (npm install -g @openai/codex) or pass --codex <path>."
+        )
+        return 127
+
+    reader = _reader(args)
+    if not _ensure_session(reader, args) and not args.skip_session_check:
+        return 1
+
+    home = codex_config.state_dir()
+    home.mkdir(parents=True, exist_ok=True)
+    check = _update_check()
+    update = updates.in_background(check) if check is not None else None
+    catalog = _write_catalog(home)
+    log_file = home / "bridge.log"
+    port = args.port or _free_port()
+
+    serve_cmd = [
+        *([sys.executable] if _frozen() else [sys.executable, "-m", "excel_codex_bridge"]),
+        "serve", "--port", str(port), "--log-file", str(log_file), "--exit-with-stdin",
+    ]
+    if args.webview_dir:
+        serve_cmd += ["--webview-dir", args.webview_dir]
+    if args.login:
+        serve_cmd += ["--login", args.login]
+    if args.no_auto_signin:
+        serve_cmd.append("--no-auto-signin")
+    popen_kwargs: dict = {"stdin": subprocess.PIPE, "stdout": subprocess.DEVNULL, "stderr": subprocess.DEVNULL}
+    if sys.platform == "win32":
+        # Keep console Ctrl+C aimed at Codex from also killing the bridge.
+        popen_kwargs["creationflags"] = subprocess.CREATE_NEW_PROCESS_GROUP
+    else:
+        popen_kwargs["start_new_session"] = True
+    bridge = subprocess.Popen(serve_cmd, env=_bridge_env(os.environ.copy()), **popen_kwargs)
+    try:
+        deadline = time.monotonic() + 20
+        while not _healthy(port):
+            if bridge.poll() is not None or time.monotonic() > deadline:
+                _print(f"The bridge did not start; see {log_file}")
+                return 1
+            time.sleep(0.2)
+        shared = codex_config.codex_signed_in()
+        if shared:
+            _move_bridge_threads(desktop_config.codex_home())
+        _print(_pictures_line())
+        _print(f"Bridge ready on {codex_config.base_url(port)} (log: {log_file}). Starting Codex...")
+
+        command = codex_config.codex_command(
+            codex, codex_config.codex_overrides(port, catalog, args.model, shared=shared), codex_args
+        )
+        previous = signal.signal(signal.SIGINT, signal.SIG_IGN)
+        try:
+            return subprocess.call(command, env=_codex_env(os.environ.copy()))
+        finally:
+            signal.signal(signal.SIGINT, previous)
+            # Only once Codex is done: its screen would hide the notice, and
+            # stderr keeps it out of `codex exec` output that scripts read.
+            if update is not None:
+                _announce_update(update(0), stream=sys.stderr)
+    finally:
+        if bridge.stdin:
+            try:
+                bridge.stdin.close()
+            except OSError:
+                pass
+        try:
+            bridge.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            bridge.kill()
+            bridge.wait()
+
+
+# ─── desktop app / IDE extension ──────────────────────────────────────────────
+
+def _port_free(port: int) -> bool:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        try:
+            sock.bind(("127.0.0.1", port))
+        except OSError:
+            return False
+    return True
+
+
+def _once(action):
+    lock = threading.Lock()
+    done: list[bool] = []
+
+    def run() -> None:
+        with lock:
+            if done:
+                return
+            done.append(True)
+            try:
+                action()
+            except (OSError, UnicodeError) as exc:
+                _print(f"Could not restore the Codex config: {exc}\n  -> Run `excel-codex desktop --off`.")
+
+    return run
+
+
+def _raise_interrupt(signum, frame) -> None:
+    raise KeyboardInterrupt
+
+
+def _undo_on_exit(undo):
+    """Run ``undo`` however this window goes away; keep the result referenced."""
+    for name in ("SIGTERM", "SIGBREAK", "SIGHUP"):
+        if hasattr(signal, name):
+            # uvicorn stops gracefully on these, then re-raises them into us.
+            signal.signal(getattr(signal, name), _raise_interrupt)
+    if sys.platform != "win32":
+        return None
+    import ctypes
+    from ctypes import wintypes
+
+    # Closing the console window, logging off or shutting down.
+    closing = {2, 5, 6}
+
+    @ctypes.WINFUNCTYPE(wintypes.BOOL, wintypes.DWORD)
+    def handler(event):
+        if event in closing:
+            undo()
+        return False
+
+    ctypes.windll.kernel32.SetConsoleCtrlHandler(handler, True)
+    return handler
+
+
+# The desktop app reads its model list only at startup, so it keeps offering
+# the Excel models after the config is restored; requests then go to OpenAI.
+_REOPEN_AFTER_RESTORE = (
+    "  Quit and reopen the Codex desktop app too: until then it still lists the bridge's models,\n"
+    "  and the 1M ones fail there with \"not supported when using Codex with a ChatGPT account\"."
+)
+_SHARED = (
+    "  Conversations are shared with Codex's official sign-in: earlier ones carry on through the\n"
+    "  bridge, and ones started now carry on without it once it is off (1M models: pick another)."
+)
+_SEPARATE = (
+    "  Codex is not signed in, so the bridge is a provider of its own: conversations started now\n"
+    "  are listed only while it is on. `codex login` once to share them with the official sign-in."
+)
+
+
+def _move_bridge_threads(home: Path) -> None:
+    """Move the bridge's own conversations into the shared list, if Codex is not running.
+
+    With the bridge off, Codex cannot open them otherwise ("Model provider
+    `excel-bridge` not found").  EXCEL_BRIDGE_AUTO_MIGRATE=0 leaves that to
+    `excel-codex threads migrate`.
+    """
+    from . import codex_threads
+
+    record_dir = codex_config.state_dir()
+    try:
+        count = len(codex_threads.bridge_threads(home, record_dir))
+        if not count:
+            return
+        if os.environ.get("EXCEL_BRIDGE_AUTO_MIGRATE", "").strip() == "0":
+            _print(f"  {count} conversation(s) under the bridge's own provider open only while it is on:\n"
+                   "  `excel-codex threads migrate` moves them into the shared list.")
+            return
+        if codex_threads.codex_running():
+            _print(f"  {count} conversation(s) under the bridge's own provider open only while it is on. They move\n"
+                   "  into the shared list when this starts while Codex (desktop app, IDE, `codex` in a\n"
+                   "  terminal) is fully quit, or with `excel-codex threads migrate` then.")
+            return
+        result = codex_threads.migrate(home, record_dir)
+    except (codex_threads.Refused, OSError, sqlite3.Error) as exc:
+        _print(f"  Could not move the bridge's own conversations into the shared list: {exc}")
+        return
+    if result.threads:
+        _print(f"  Moved {len(result.threads)} conversation(s) from the bridge's own provider into the shared list,\n"
+               "  so they open with the bridge off too (`excel-codex threads undo` puts them back).")
+    if result.left:
+        _print(f"  {len(result.left)} conversation(s) could not be moved; `excel-codex threads` lists them.")
+
+
+def cmd_desktop(args) -> int:
+    config = desktop_config.config_path()
+    if args.off:
+        try:
+            changed = desktop_config.disable_file(config)
+        except (OSError, UnicodeError) as exc:
+            _print(f"Could not update {config}: {exc}")
+            return 1
+        _print(f"Restored {config}." if changed else f"Nothing to undo in {config}.")
+        if changed:
+            _print(_REOPEN_AFTER_RESTORE)
+        return 0
+
+    _apply_proxy(args)
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+    reader = _reader(args)
+    if not _ensure_session(reader, args) and not args.skip_session_check:
+        return 1
+    if not _port_free(args.port):
+        _print(
+            f"Port {args.port} is already in use (another `excel-codex desktop` or `serve`?).\n"
+            "  -> Close it, or pass --port."
+        )
+        return 1
+    catalog = _write_catalog()
+    shared = codex_config.codex_signed_in(desktop_config.codex_home())
+    try:
+        backup = desktop_config.enable_file(
+            config, port=args.port, catalog=catalog, model=args.model, shared=shared
+        )
+    except (desktop_config.ConfigError, OSError, UnicodeError) as exc:
+        _print(f"Could not update {config}: {exc}")
+        return 1
+    restore_config = _once(lambda: desktop_config.disable_file(config))
+    # The Windows timezone keeper, once started.
+    timezone: list = []
+
+    def undo() -> None:
+        # However this window goes away: the config, then the Windows timezone.
+        if not args.keep_config:
+            restore_config()
+        for keeper in timezone:
+            _put_back_windows_timezone(keeper)
+
+    keep = _undo_on_exit(undo)
+
+    _print(f"Codex desktop app and IDE extension now use the Excel bridge ({codex_config.codex_model(args.model)}).")
+    _print(f"  Updated {config}" + (f"; the original is saved as {backup.name}" if backup else ""))
+    profile = desktop_config.profile_override(config.read_text(encoding="utf-8-sig"))
+    if profile:
+        _print(f"  Note: your active profile '{profile}' sets its own model and may override this.")
+    _print("  Fully quit and reopen the Codex desktop app (or reload the IDE window) to pick it up.")
+    _print(_SHARED if shared else _SEPARATE)
+    if shared:
+        _move_bridge_threads(desktop_config.codex_home())
+    if args.keep_config:
+        _print("  Keep this window open. `excel-codex desktop --off` puts your config back.")
+    else:
+        _print("  Keep this window open; closing it or pressing Ctrl+C puts your config back.")
+    _print(_pictures_line())
+    _print(f"Listening on {codex_config.base_url(args.port)}")
+    _watch_for_updates()
+    timezone.extend(filter(None, [_keep_windows_timezone()]))
+    try:
+        _run_bridge(reader, args, host="127.0.0.1", port=args.port, quiet=False)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        undo()
+        if not args.keep_config:
+            _print(f"Restored {config}.")
+            _print(_REOPEN_AFTER_RESTORE)
+    del keep
+    return 0
+
+
+# ─── timezone ─────────────────────────────────────────────────────────────────
+
+def _redacted(url: str | None) -> str:
+    if not url:
+        return "no proxy"
+    scheme, _, rest = url.partition("://")
+    return f"{scheme}://{rest.rpartition('@')[2]}" if rest else url
+
+
+def _describe_sync(result: dict) -> str:
+    status = result.get("status")
+    if status == "error":
+        return f"Error: {result.get('error')}"
+    if status == "skipped":
+        return f"Skipped: {result.get('reason')}"
+    windows = result.get("windows_timezone")
+    before = result.get("previous_timezone")
+    country = result.get("exit_country")
+    text = (f"{result.get('route')} -> {result.get('exit_host')} via {_redacted(result.get('proxy'))}: "
+            f"exit {result.get('exit_ip')}" + (f" (Cloudflare: {country})" if country else "")
+            + f" is in {result.get('iana_timezone')}" + (f" ({windows})" if windows else ""))
+    if status == "updated":
+        return f"{text}\n  Windows timezone changed from {before} to {windows}."
+    if status == "unchanged":
+        return f"{text}\n  Windows timezone is already {before}."
+    here = before or _dt.datetime.now().astimezone().strftime("UTC%z")
+    return f"{text}\n  This computer: {here}."
+
+
+def _when(value: object) -> str:
+    try:
+        return _dt.datetime.fromisoformat(str(value)).astimezone().strftime("%Y-%m-%d %H:%M")
+    except ValueError:
+        return "?"
+
+
+def cmd_timezone(args) -> int:
+    from . import system_timezone
+
+    if args.action == "restore":
+        try:
+            original = system_timezone.restore()
+        except system_timezone.Refused as exc:
+            _print(f"Could not restore it: {exc}")
+            return 1
+        _print(f"Windows timezone is {original} again." if original
+               else "Nothing to restore: the Windows timezone was not changed by excel-codex.")
+        return 0
+    if args.action == "sync":
+        try:
+            result = system_timezone.sync(probe=args.probe)
+        except Exception as exc:  # noqa: BLE001 - network, proxy, tzutil
+            _print(f"Error: {exc}")
+            return 1
+        _print(_describe_sync(result))
+        return 0
+
+    mode = "auto" if exit_timezone.enabled() else "off"
+    _print(f"Timezone matching: {mode}")
+    if mode == "auto":
+        _print("  Requests through the bridge carry the proxy exit's timezone and date, looked up from the\n"
+               "  exit IP by ipwho.is, ipapi.co, get.geojs.io or api.ip.sb, whichever first agrees with\n"
+               "  Cloudflare on the exit's country. --timezone off (or EXCEL_BRIDGE_TIMEZONE=off) turns it off.")
+        if sys.platform == "win32":
+            _print("  `excel-codex desktop` (excel-codex-desktop.cmd) also keeps the Windows timezone on Codex's\n"
+                   "  exit while its window is open, for Codex's official ChatGPT sign-in too, and puts it back\n"
+                   "  when the window closes.")
+    original = system_timezone.original_zone() if sys.platform == "win32" else None
+    if original:
+        _print(f"  Before the first change: {original} (`excel-codex timezone restore` puts it back).")
+    last = system_timezone.last_result()
+    if last:
+        _print(f"Last Windows sync {_when(last.get('checked_at'))}: {_describe_sync(last)}")
+    try:
+        result = system_timezone.sync(probe=True)
+    except Exception as exc:  # noqa: BLE001 - network, proxy
+        _print(f"Now: {exc}")
+        return 1
+    _print(f"Now: {_describe_sync(result)}")
+    return 0
+
+
+def _keep_windows_timezone():
+    """``desktop`` on Windows: the system timezone follows Codex's exit while the window is open."""
+    if sys.platform != "win32" or not exit_timezone.enabled():
+        return None
+    from . import system_timezone
+
+    _print("Windows timezone: kept on Codex's proxy exit while this window is open and put back when it\n"
+           "  closes (--timezone off leaves it alone).")
+    return system_timezone.Keeper(lambda result: _print(f"Windows timezone: {_describe_sync(result)}")).start()
+
+
+def _put_back_windows_timezone(keeper) -> None:
+    try:
+        original = keeper.put_back()
+    except Exception as exc:  # noqa: BLE001 - tzutil
+        _print(f"Windows timezone: could not put it back ({exc}).\n  -> Run `excel-codex timezone restore`.")
+        return
+    if original:
+        _print(f"Windows timezone: put back {original}.")
+
+
+# ─── threads ──────────────────────────────────────────────────────────────────
+
+_REOPEN_FOR_LIST = "  Open Codex again (or reload the IDE window) to see the new list."
+_QUIT_CODEX = (
+    "Nothing was changed: Codex is running. Fully quit the Codex desktop app, IDE windows that use\n"
+    "Codex, and `codex` in any terminal first: Codex puts back what changes while it runs."
+)
+
+
+def _thread_line(thread) -> str:
+    title = " ".join((thread.title or "").split()) or thread.id
+    title = title if len(title) <= 60 else title[:59] + "…"
+    return f"    {title}" + (f"  ({thread.model})" if thread.model else "")
+
+
+def cmd_threads(args) -> int:
+    from . import codex_threads
+
+    home = desktop_config.codex_home()
+    record_dir = codex_config.state_dir()
+    try:
+        threads = [] if args.action == "undo" else codex_threads.bridge_threads(home, record_dir)
+        if args.action == "migrate" and threads:
+            # Not signed in: `migrate` refuses first, saying why.
+            if codex_config.codex_signed_in(home) and codex_threads.codex_running():
+                _print(_QUIT_CODEX)
+                return 1
+            result = codex_threads.migrate(home, record_dir)
+        elif args.action == "undo":
+            if (record_dir / codex_threads.RECORD_NAME).exists() and codex_threads.codex_running():
+                _print(_QUIT_CODEX)
+                return 1
+            undone = codex_threads.undo(home, record_dir)
+    except (codex_threads.Refused, OSError, sqlite3.Error) as exc:
+        _print(f"Nothing was changed: {exc}")
+        return 1
+
+    if args.action == "migrate":
+        if not threads:
+            _print("No conversations are filed under the bridge's own provider; nothing to move.")
+            return 0
+        if result.threads:
+            _print(f"Moved {len(result.threads)} conversation(s) into the list shared with Codex's official sign-in;")
+            _print("  they open with the bridge off too.")
+            _print(f"  Codex's conversation index was copied to {result.backup} first.")
+        if result.left:
+            _print(f"Could not move {len(result.left)} conversation(s): their file is missing or not laid out as expected.")
+            for thread in result.left[:10]:
+                _print(_thread_line(thread))
+        if not result.threads:
+            return 1
+        _print(_REOPEN_FOR_LIST)
+        _print("  `excel-codex threads undo` puts them back.")
+        return 0
+    if args.action == "undo":
+        if not undone.restored and not undone.kept:
+            _print("Nothing to undo: `excel-codex threads migrate` has not moved any conversations.")
+            return 0
+        _print(f"Put back {undone.restored} conversation(s) under the bridge's own provider.")
+        if undone.kept:
+            _print(f"  {undone.kept} changed since (continued with another model, or deleted) and were left as they are.")
+        _print(_REOPEN_FOR_LIST)
+        return 0
+
+    shared = codex_config.codex_signed_in(home)
+    if not threads:
+        _print("No conversations are filed under the bridge's own provider.")
+        if shared:
+            _print("  Conversations with and without the bridge are all in one list.")
+        return 0
+    _print(f"{len(threads)} conversation(s) are filed under the bridge's own provider "
+           "(from excel-codex 0.5.3 and earlier, or while Codex was not signed in):")
+    for thread in threads[:10]:
+        _print(_thread_line(thread))
+    if len(threads) > 10:
+        _print(f"    … and {len(threads) - 10} more")
+    if shared:
+        _print("With the bridge off, Codex cannot open them (\"Model provider `excel-bridge` not found\").\n"
+               "`excel-codex desktop` and `excel-codex` move them into the shared list by themselves when\n"
+               "started while Codex is fully quit; `excel-codex threads migrate` does it now (Codex quit too).")
+    else:
+        _print("Codex is not signed in, so the bridge is still their provider and lists them while it is on.\n"
+               "After `codex login`, they move into the list shared with it.")
+    return 0
+
+
+# ─── entry ────────────────────────────────────────────────────────────────────
+
+def _parser() -> argparse.ArgumentParser:
+    common = argparse.ArgumentParser(add_help=False)
+    common.add_argument(
+        "--proxy",
+        help="upstream proxy for bps.openai.com, e.g. http://127.0.0.1:7890 "
+        "(default: HTTPS_PROXY / system proxy)",
+    )
+    common.add_argument(
+        "--webview-dir",
+        help="Excel WebView2 root (the ...\\Microsoft\\Office folder); for WSL or custom installs",
+    )
+    common.add_argument(
+        "--login",
+        choices=session.LOGINS,
+        help="which ChatGPT sign-in to use: auto (Codex's, else the Excel add-in's; the default), "
+        f"codex or excel (default: ${session.LOGIN_ENV} or auto)",
+    )
+    common.add_argument(
+        "--timezone",
+        choices=exit_timezone.MODES,
+        help="the timezone and date Codex's requests through the bridge carry: auto (the proxy exit's, "
+        f"looked up from its IP; the default) or off (this computer's) (default: ${exit_timezone.MODE_ENV} or auto)",
+    )
+
+    auto = argparse.ArgumentParser(add_help=False)
+    auto.add_argument(
+        "--no-auto-signin",
+        action="store_true",
+        help="never open Excel to sign in or refresh the session (Windows)",
+    )
+
+    drawing = argparse.ArgumentParser(add_help=False)
+    drawing.add_argument(
+        "--image-model",
+        type=_image_model,
+        help=f"the image model Codex's image tool asks the backend for (default: ${image_generation.MODEL_ENV} "
+        f"or {image_generation.MODEL}, the add-in's)",
+    )
+
+    parser = argparse.ArgumentParser(
+        prog="excel-codex",
+        description="Run Codex through the ChatGPT Excel add-in's backend on your own ChatGPT sign-in, locally.",
+    )
+    parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
+    sub = parser.add_subparsers(dest="command")
+
+    codex = sub.add_parser(
+        "codex",
+        parents=[common, auto, drawing],
+        help="start the bridge and Codex together (default); extra args go to Codex",
+    )
+    codex.add_argument("--model", default=codex_config.DEFAULT_MODEL, help="Excel model alias")
+    codex.add_argument("--port", type=int, default=0, help="bridge port (default: a free port)")
+    codex.add_argument("--codex", help="path to the Codex executable")
+    codex.add_argument(
+        "--skip-session-check", action="store_true", help="start even if no session is found yet"
+    )
+
+    desktop = sub.add_parser(
+        "desktop",
+        parents=[common, auto, drawing],
+        help="route the Codex desktop app / IDE extension through the bridge while this runs",
+    )
+    desktop.add_argument("--model", default=codex_config.DEFAULT_MODEL, help="Excel model alias")
+    desktop.add_argument("--port", type=int, default=codex_config.DEFAULT_PORT)
+    desktop.add_argument("--off", action="store_true", help="only put the Codex config back, then exit")
+    desktop.add_argument(
+        "--keep-config", action="store_true", help="leave the config in place when this window closes"
+    )
+    desktop.add_argument(
+        "--skip-session-check", action="store_true", help="start even if no session is found yet"
+    )
+
+    serve = sub.add_parser(
+        "serve", parents=[common, auto, drawing], help="run only the bridge (for IDE / desktop Codex)"
+    )
+    serve.add_argument("--host", default="127.0.0.1")
+    serve.add_argument("--port", type=int, default=codex_config.DEFAULT_PORT)
+    serve.add_argument("--log-file", help=argparse.SUPPRESS)
+    serve.add_argument("--exit-with-stdin", action="store_true", help=argparse.SUPPRESS)
+
+    sub.add_parser("status", parents=[common], help="show which ChatGPT sign-in the bridge would use")
+
+    login = sub.add_parser(
+        "login", parents=[common, auto], help="open Excel's ChatGPT pane to sign in or refresh (Windows)"
+    )
+    login.add_argument("--force", action="store_true", help="open the pane even if the session is fine")
+
+    config = sub.add_parser("print-config", help="print a config.toml snippet for `serve` mode")
+    config.add_argument("--port", type=int, default=codex_config.DEFAULT_PORT)
+    config.add_argument("--model", default=codex_config.DEFAULT_MODEL)
+    timezone = sub.add_parser("timezone", help="show the proxy exit's timezone and how Codex is kept on it")
+    actions = timezone.add_subparsers(dest="action")
+    sync = actions.add_parser("sync", help="Windows: set the system timezone to Codex's exit once now")
+    sync.add_argument("--probe", action="store_true", help="only show what it would set")
+    actions.add_parser("restore", help="Windows: put back the timezone from before excel-codex first changed it")
+    threads = sub.add_parser(
+        "threads", help="show conversations filed under the bridge's own provider, which need the bridge on"
+    )
+    moves = threads.add_subparsers(dest="action")
+    moves.add_parser(
+        "migrate",
+        help="move them into the list shared with Codex's official sign-in now; with Codex quit "
+        "(`desktop` does it by itself)",
+    )
+    moves.add_parser("undo", help="put back what `threads migrate` moved")
+    sub.add_parser("sub2api", add_help=False, help="opt-in SUB2API sidecar and SSH session sync")
+    return parser
+
+
+def _started_by_double_click() -> bool:
+    """True when Windows opened this console just for us, i.e. from Explorer."""
+    if sys.platform != "win32":
+        return False
+    try:
+        import ctypes
+
+        processes = (ctypes.c_uint32 * 4)()
+        return ctypes.windll.kernel32.GetConsoleProcessList(processes, 4) == 1
+    except (AttributeError, OSError):
+        return False
+
+
+def main(argv: list[str] | None = None) -> int:
+    if argv is None and _started_by_double_click():
+        # Explorer starts us in the install folder; keep Codex out of it, and
+        # keep the window open long enough to read an error or an update notice.
+        if Path.cwd().resolve() == Path(sys.executable).resolve().parent:
+            os.chdir(Path.home())
+        code = _main(sys.argv[1:])
+        if code or _update_shown.is_set():
+            try:
+                input("\nPress Enter to close this window...")
+            except (EOFError, KeyboardInterrupt):
+                pass
+        return code
+    return _main(list(sys.argv[1:] if argv is None else argv))
+
+
+def _main(argv: list[str]) -> int:
+    argv = list(argv)
+    if argv and argv[0] == "sub2api":
+        from .sub2api_cli import main as sub2api_main
+        return sub2api_main(argv[1:])
+    known = {"codex", "desktop", "serve", "status", "login", "print-config", "timezone", "threads",
+             "-h", "--help", "--version"}
+    if not argv or argv[0] not in known:
+        argv = ["codex", *argv]
+    codex_args: list[str] = []
+    if argv[0] == "codex" and "--" in argv:
+        split = argv.index("--")
+        argv, codex_args = argv[:split], argv[split + 1 :]
+    args = _parser().parse_args(argv)
+    if args.command == "serve":
+        return cmd_serve(args)
+    if args.command == "status":
+        return cmd_status(args)
+    if args.command == "login":
+        return cmd_login(args)
+    if args.command == "desktop":
+        return cmd_desktop(args)
+    if args.command == "print-config":
+        return cmd_print_config(args)
+    if args.command == "timezone":
+        return cmd_timezone(args)
+    if args.command == "threads":
+        return cmd_threads(args)
+    return cmd_codex(args, codex_args)

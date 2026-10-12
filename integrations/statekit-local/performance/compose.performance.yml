@@ -1,0 +1,25 @@
+# Overlay: docker compose -f compose.yml -f performance/compose.performance.yml up -d
+services:
+  app:
+    cpus: 2
+    mem_limit: 640m
+    memswap_limit: 640m
+    environment:
+      GOMEMLIMIT: 384MiB
+      DATABASE_MAX_OPEN_CONNS: "32"
+      DATABASE_MAX_IDLE_CONNS: "16"
+      REDIS_POOL_SIZE: "128"
+      REDIS_MIN_IDLE_CONNS: "16"
+      GATEWAY_MAX_IDLE_CONNS: "512"
+      GATEWAY_MAX_IDLE_CONNS_PER_HOST: "256"
+      GATEWAY_MAX_CONNS_PER_HOST: "1024"
+      GATEWAY_USAGE_RECORD_WORKER_COUNT: "16"
+      GATEWAY_USAGE_RECORD_AUTO_SCALE_MIN_WORKERS: "16"
+      GATEWAY_USAGE_RECORD_AUTO_SCALE_MAX_WORKERS: "32"
+      GATEWAY_USAGE_RECORD_AUTO_SCALE_UP_STEP: "4"
+      GATEWAY_USAGE_RECORD_AUTO_SCALE_DOWN_STEP: "4"
+      GATEWAY_USAGE_RECORD_OVERFLOW_POLICY: sync
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536

@@ -1,0 +1,277 @@
+diff --git a/.rollback/pelican-bike-animation.before.html b/pelican-bike-animation.html
+index 505b96f..5141f97 100644
+--- a/.rollback/pelican-bike-animation.before.html
++++ b/pelican-bike-animation.html
+@@ -2,7 +2,270 @@
+ <html lang="zh-CN">
+ <head>
+   <meta charset="utf-8">
+-  <title>Pelican Bicycle Animation (baseline)</title>
++  <meta name="viewport" content="width=device-width, initial-scale=1">
++  <title>Pelican Bicycle SVG Animation</title>
++  <style>
++    :root {
++      color-scheme: light;
++      --ink: #17243b;
++      --sky: #d9f2f0;
++      --sun: #ffd166;
++      --water: #63c5c4;
++      --coral: #f06c5e;
++      --cream: #fff8e8;
++    }
++
++    * { box-sizing: border-box; }
++
++    html, body { height: 100%; }
++
++    body {
++      margin: 0;
++      overflow: hidden;
++      background: var(--sky);
++      color: var(--ink);
++      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
++    }
++
++    .stage {
++      position: relative;
++      width: 100vw;
++      height: 100vh;
++      min-height: 420px;
++      isolation: isolate;
++    }
++
++    svg {
++      display: block;
++      width: 100%;
++      height: 100%;
++    }
++
++    .sky-glow { fill: #effbe9; opacity: .64; }
++    .cloud { fill: #fffdf3; opacity: .78; }
++    .cloud-shadow { fill: #b7ded9; opacity: .58; }
++    .hill-back { fill: #8bc8ad; }
++    .hill-front { fill: #3ca29f; }
++    .shore { fill: #f7d9a0; }
++    .water-line { fill: none; stroke: #d7fff0; stroke-width: 5; stroke-linecap: round; opacity: .64; }
++
++    .sun { fill: var(--sun); }
++    .sun-ray { stroke: #f5ad4d; stroke-width: 7; stroke-linecap: round; opacity: .72; }
++
++    .ground-dash {
++      fill: none;
++      stroke: #f7ead0;
++      stroke-width: 8;
++      stroke-linecap: round;
++      stroke-dasharray: 2 34;
++      animation: ground-slide 1.4s linear infinite;
++    }
++
++    .bike-wheel {
++      fill: #fffbef;
++      stroke: var(--ink);
++      stroke-width: 9;
++    }
++
++    .wheel-spokes {
++      transform-box: fill-box;
++      transform-origin: center;
++      animation: wheel-spin .88s linear infinite;
++    }
++
++    .wheel-spoke { stroke: #37516a; stroke-width: 4; opacity: .72; }
++    .hub { fill: var(--coral); stroke: var(--ink); stroke-width: 5; }
++
++    .bike-frame {
++      fill: none;
++      stroke: var(--coral);
++      stroke-width: 12;
++      stroke-linecap: round;
++      stroke-linejoin: round;
++    }
++
++    .bike-frame-dark {
++      fill: none;
++      stroke: var(--ink);
++      stroke-width: 7;
++      stroke-linecap: round;
++      stroke-linejoin: round;
++    }
++
++    .handlebar { fill: none; stroke: var(--ink); stroke-width: 9; stroke-linecap: round; }
++    .seat { fill: var(--ink); }
++    .pedal-spin {
++      transform-box: fill-box;
++      transform-origin: center;
++      animation: wheel-spin .88s linear infinite;
++    }
++
++    .pelican-bob {
++      animation: rider-bob .88s ease-in-out infinite;
++      transform-box: fill-box;
++      transform-origin: center;
++    }
++
++    .pelican-body { fill: var(--cream); stroke: var(--ink); stroke-width: 8; stroke-linejoin: round; }
++    .pelican-shadow { fill: #dbe8dd; }
++    .pelican-wing {
++      fill: #fffdf4;
++      stroke: var(--ink);
++      stroke-width: 8;
++      stroke-linejoin: round;
++      transform-box: fill-box;
++      transform-origin: 78% 88%;
++      animation: wing-flap 1.22s ease-in-out infinite;
++    }
++
++    .pelican-neck { fill: #fffdf4; stroke: var(--ink); stroke-width: 8; }
++    .pelican-head { fill: #fffdf4; stroke: var(--ink); stroke-width: 8; }
++    .pelican-cap { fill: #425774; }
++    .pelican-beak { fill: #f29b4b; stroke: var(--ink); stroke-width: 7; stroke-linejoin: round; }
++    .pelican-pouch { fill: #ef7f63; stroke: var(--ink); stroke-width: 7; }
++    .pelican-eye { fill: var(--ink); }
++    .leg { fill: none; stroke: #df704f; stroke-width: 9; stroke-linecap: round; }
++    .foot { fill: #f29b4b; stroke: var(--ink); stroke-width: 5; stroke-linecap: round; }
++
++    .leg-front {
++      transform-box: fill-box;
++      transform-origin: 0 0;
++      animation: leg-front .88s ease-in-out infinite;
++    }
++
++    .leg-back {
++      transform-box: fill-box;
++      transform-origin: 0 0;
++      animation: leg-back .88s ease-in-out infinite;
++    }
++
++    .bird-feather { fill: none; stroke: #91a99f; stroke-width: 4; stroke-linecap: round; opacity: .82; }
++    .motion { fill: none; stroke: #fff8e8; stroke-width: 7; stroke-linecap: round; opacity: .84; stroke-dasharray: 22 18; animation: motion-drift 1.5s linear infinite; }
++
++    .control {
++      position: absolute;
++      right: clamp(16px, 4vw, 52px);
++      top: clamp(16px, 4vw, 42px);
++      width: 48px;
++      height: 48px;
++      border: 2px solid rgba(23, 36, 59, .25);
++      border-radius: 50%;
++      background: rgba(255, 248, 232, .76);
++      color: var(--ink);
++      cursor: pointer;
++      font: inherit;
++      font-size: 20px;
++      line-height: 1;
++      box-shadow: 0 8px 20px rgba(23, 36, 59, .13);
++      backdrop-filter: blur(7px);
++    }
++
++    .control:hover { background: #fff8e8; }
++    .control:focus-visible { outline: 3px solid #f06c5e; outline-offset: 3px; }
++
++    .paused *, .paused *::before, .paused *::after { animation-play-state: paused !important; }
++
++    @keyframes wheel-spin { to { transform: rotate(360deg); } }
++    @keyframes ground-slide { to { stroke-dashoffset: -36px; } }
++    @keyframes motion-drift { to { stroke-dashoffset: -80px; transform: translateX(-22px); } }
++    @keyframes rider-bob { 0%, 100% { transform: translateY(1px) rotate(-1deg); } 50% { transform: translateY(-7px) rotate(1deg); } }
++    @keyframes wing-flap { 0%, 100% { transform: rotate(5deg); } 50% { transform: rotate(-17deg); } }
++    @keyframes leg-front { 0%, 100% { transform: rotate(26deg); } 50% { transform: rotate(-34deg); } }
++    @keyframes leg-back { 0%, 100% { transform: rotate(-34deg); } 50% { transform: rotate(26deg); } }
++
++    @media (prefers-reduced-motion: reduce) {
++      .stage:not(.motion-override) *,
++      .stage:not(.motion-override) *::before,
++      .stage:not(.motion-override) *::after { animation-play-state: paused !important; }
++    }
++  </style>
+ </head>
+-<body></body>
++<body>
++  <main class="stage" id="stage">
++    <svg viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
++      <title id="title">??????</title>
++      <desc id="desc">?????????????????????????????????</desc>
++
++      <rect width="1200" height="720" fill="#d9f2f0" />
++      <circle class="sky-glow" cx="920" cy="132" r="150" />
++      <g aria-hidden="true">
++        <circle class="sun" cx="918" cy="132" r="58" />
++        <path class="sun-ray" d="M918 43v-24 M918 221v24 M829 132h-24 M1007 132h24 M855 69l-18-18 M981 195l18 18 M981 69l18-18 M855 195l-18 18" />
++      </g>
++
++      <g aria-hidden="true">
++        <path class="cloud-shadow" d="M103 166c13-37 58-47 86-18 14-38 70-42 89 5 41-10 72 14 72 47H95c-9-12-7-25 8-34Z" />
++        <path class="cloud" d="M87 153c13-37 58-47 86-18 14-38 70-42 89 5 41-10 72 14 72 47H79c-9-12-7-25 8-34Z" />
++        <path class="cloud-shadow" d="M650 90c9-26 42-33 61-13 13-29 54-28 67 5 29-7 52 10 52 34H644c-6-10-4-20 6-26Z" />
++        <path class="cloud" d="M641 80c9-26 42-33 61-13 13-29 54-28 67 5 29-7 52 10 52 34H635c-6-10-4-20 6-26Z" />
++      </g>
++
++      <path class="hill-back" d="M0 438c126-61 210-71 312-11 113-91 244-111 353-13 104-83 242-86 347 10 79-40 130-35 188-10v152H0Z" />
++      <path class="hill-front" d="M0 487c98-47 212-34 303 8 96-50 184-41 262 4 123-71 278-61 390 9 96-50 177-45 245-15v110H0Z" />
++      <path class="shore" d="M0 542c150-31 280-12 395 5 144 21 242-6 369-3 174 4 288 28 436 1v175H0Z" />
++      <path class="water-line" d="M37 599c66-23 117-23 184 0m53 3c73-26 128-24 205 0m99 1c69-21 126-20 201 1m93 0c72-25 131-23 204 2m87-1c44-14 79-15 119-2" />
++      <path class="water-line" d="M96 660c73-21 127-21 204 0m105 2c67-19 118-18 184 1m97-1c69-20 122-19 190 2m92-1c54-15 94-15 150 0" opacity=".42" />
++
++      <path class="ground-dash" d="M35 566H1165" />
++      <path class="motion" d="M172 420h76 M133 453h44 M1010 427h78 M1051 461h37" />
++
++      <!-- Bicycle -->
++      <g aria-label="???">
++        <circle class="bike-wheel" cx="393" cy="524" r="108" />
++        <circle class="bike-wheel" cx="827" cy="524" r="108" />
++        <g class="wheel-spokes">
++          <path class="wheel-spoke" d="M393 416v216 M285 524h216 M317 448l152 152 M469 448L317 600" />
++          <circle class="hub" cx="393" cy="524" r="11" />
++        </g>
++        <g class="wheel-spokes">
++          <path class="wheel-spoke" d="M827 416v216 M719 524h216 M751 448l152 152 M903 448L751 600" />
++          <circle class="hub" cx="827" cy="524" r="11" />
++        </g>
++        <path class="bike-frame" d="M393 524 522 388 657 524 393 524 598 524 522 388 475 524" />
++        <path class="bike-frame-dark" d="M657 524 704 384 827 524 M704 384l35-33m-35 33-18-39" />
++        <path class="handlebar" d="M683 345c24-13 56-11 72 6m-72-6-18 18m90-12 17-18" />
++        <path class="seat" d="M493 365h65c13 0 18 16 4 20h-65c-14-1-15-17-4-20Z" />
++        <path class="bike-frame-dark" d="M525 385v-20" />
++        <g class="pedal-spin">
++          <circle class="hub" cx="598" cy="524" r="17" />
++          <path class="bike-frame-dark" d="M598 524 637 495m-39 29-43 28" />
++          <circle fill="#f29b4b" cx="640" cy="493" r="8" />
++          <circle fill="#f29b4b" cx="551" cy="552" r="8" />
++        </g>
++      </g>
++
++      <!-- Pelican rider -->
++      <g class="pelican-bob" aria-label="??">
++        <ellipse class="pelican-shadow" cx="581" cy="425" rx="116" ry="73" transform="rotate(-8 581 425)" />
++        <path class="pelican-body" d="M483 425c-7-67 48-110 113-102 50 6 87 42 92 87 4 39-21 74-62 87-55 18-137-4-143-72Z" />
++        <path class="pelican-wing" d="M555 367c42-27 105-14 119 27 13 37-22 84-74 91-25 3-48-7-52-28-4-19 9-31 26-47-18-13-30-28-19-43Z" />
++        <path class="bird-feather" d="M576 395c23 8 42 24 55 47m-71-34c19 8 37 22 50 40m-64-24c13 6 24 15 34 27" />
++        <path class="pelican-neck" d="M554 373c-23-35-29-82-6-112 17-22 52-23 70-2 23 27 11 74-12 108Z" />
++        <path class="pelican-head" d="M526 270c-4-47 24-82 70-83 43-1 72 27 70 66-2 40-38 62-83 59-34-2-55-15-57-42Z" />
++        <path class="pelican-cap" d="M533 257c1-37 25-65 62-68 28-2 51 12 63 34-28 3-48 15-62 36-21 3-42 2-63-2Z" />
++        <path class="pelican-beak" d="M594 276c54-12 101-4 137 18 13 9 11 22-5 26-45 10-87 5-130-8Z" />
++        <path class="pelican-pouch" d="M595 278c39 13 88 19 131 16-17 44-61 61-107 42-20-9-30-29-24-58Z" />
++        <circle class="pelican-eye" cx="624" cy="245" r="9" />
++        <circle fill="#fff8e8" cx="627" cy="242" r="3" />
++        <path class="leg leg-front" d="M566 461 604 520" />
++        <path class="foot" d="M600 520c14-7 28-6 37 2-12 8-25 10-39 7" />
++        <path class="leg leg-back" d="M612 464 581 520" />
++        <path class="foot" d="M578 520c-14-6-26-3-36 7 14 6 27 5 39-2" />
++      </g>
++    </svg>
++
++    <button class="control" id="toggle" type="button" aria-label="????" title="????">||</button>
++  </main>
++
++  <script>
++    const stage = document.getElementById('stage');
++    const toggle = document.getElementById('toggle');
++    toggle.addEventListener('click', () => {
++      const paused = stage.classList.toggle('paused');
++      toggle.textContent = paused ? '?' : '||';
++      toggle.setAttribute('aria-label', paused ? '????' : '????');
++      toggle.setAttribute('title', paused ? '????' : '????');
++    });
++  </script>
++</body>
+ </html>

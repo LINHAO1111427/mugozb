@@ -1,0 +1,10 @@
+.venv/
+.runtime/
+__pycache__/
+*.pyc
+tests/
+MODIFIED_FILE.json
+DIFF_FILE.diff
+VERIFICATION.txt
+ROLLBACK.sh
+BASELINE_FILE.json

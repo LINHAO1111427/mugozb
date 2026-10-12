@@ -1,0 +1,125 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "sub2api-statekit-local_default",
+    "--mount",
+    "type=bind,source=D:\\Workspace\\sub2api\\integrations\\statekit-local\\performance,target=/bench,readonly",
+    "--mount",
+    "type=bind,source=D:\\Workspace\\sub2api\\integrations\\statekit-local\\private,target=/private,readonly",
+    "node:24-alpine",
+    "node",
+    "/bench/load.cjs",
+    "512",
+    "1536",
+    "1000"
+  ],
+  "stdout": "{\"concurrency\":512,\"count\":1536,\"duration_ms\":1000,\"success\":1536,\"errors\":0,\"statuses\":{\"200\":1536},\"elapsed_seconds\":4.777,\"requests_per_second\":321.54,\"latency_ms\":{\"p50\":1391,\"p95\":1997,\"p99\":2048},\"ttfb_ms\":{\"p50\":859,\"p95\":1416},\"upstream\":{\"active\":0,\"peak\":512,\"completed\":1536,\"cancelled\":0,\"connections\":396},\"error_examples\":[]}",
+  "stderr": "",
+  "exit": 0,
+  "container_samples": [
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "71.64%",
+      "Container": "sub2api-statekit-local-app-1",
+      "ID": "ee2e71d2b84f",
+      "MemPerc": "26.92%",
+      "MemUsage": "172.3MiB / 640MiB",
+      "Name": "sub2api-statekit-local-app-1",
+      "NetIO": "36MB / 24.4MB",
+      "PIDs": "16"
+    },
+    {
+      "BlockIO": "27.8MB / 67.8MB",
+      "CPUPerc": "93.52%",
+      "Container": "sub2api-statekit-local-postgres-1",
+      "ID": "dcb0dc846adc",
+      "MemPerc": "0.86%",
+      "MemUsage": "136.6MiB / 15.5GiB",
+      "Name": "sub2api-statekit-local-postgres-1",
+      "NetIO": "108MB / 123MB",
+      "PIDs": "38"
+    },
+    {
+      "BlockIO": "75.6MB / 12.3MB",
+      "CPUPerc": "22.13%",
+      "Container": "sub2api-statekit-local-redis-1",
+      "ID": "2310306e9b8b",
+      "MemPerc": "0.11%",
+      "MemUsage": "17.75MiB / 15.5GiB",
+      "Name": "sub2api-statekit-local-redis-1",
+      "NetIO": "25.9MB / 41.3MB",
+      "PIDs": "6"
+    },
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "165.63%",
+      "Container": "sub2api-statekit-local-app-1",
+      "ID": "ee2e71d2b84f",
+      "MemPerc": "39.46%",
+      "MemUsage": "252.5MiB / 640MiB",
+      "Name": "sub2api-statekit-local-app-1",
+      "NetIO": "60.6MB / 40.8MB",
+      "PIDs": "16"
+    },
+    {
+      "BlockIO": "27.8MB / 80.2MB",
+      "CPUPerc": "127.33%",
+      "Container": "sub2api-statekit-local-postgres-1",
+      "ID": "dcb0dc846adc",
+      "MemPerc": "0.64%",
+      "MemUsage": "101.5MiB / 15.5GiB",
+      "Name": "sub2api-statekit-local-postgres-1",
+      "NetIO": "120MB / 134MB",
+      "PIDs": "22"
+    },
+    {
+      "BlockIO": "75.6MB / 13.8MB",
+      "CPUPerc": "41.81%",
+      "Container": "sub2api-statekit-local-redis-1",
+      "ID": "2310306e9b8b",
+      "MemPerc": "0.12%",
+      "MemUsage": "18.78MiB / 15.5GiB",
+      "Name": "sub2api-statekit-local-redis-1",
+      "NetIO": "31.2MB / 56.6MB",
+      "PIDs": "6"
+    }
+  ],
+  "result": {
+    "concurrency": 512,
+    "count": 1536,
+    "duration_ms": 1000,
+    "success": 1536,
+    "errors": 0,
+    "statuses": {
+      "200": 1536
+    },
+    "elapsed_seconds": 4.777,
+    "requests_per_second": 321.54,
+    "latency_ms": {
+      "p50": 1391,
+      "p95": 1997,
+      "p99": 2048
+    },
+    "ttfb_ms": {
+      "p50": 859,
+      "p95": 1416
+    },
+    "upstream": {
+      "active": 0,
+      "peak": 512,
+      "completed": 1536,
+      "cancelled": 0,
+      "connections": 396
+    },
+    "error_examples": []
+  },
+  "usage_audit": {
+    "before": 1578,
+    "after": 3114,
+    "successful_responses": 1536,
+    "recorded_delta": 1536
+  }
+}

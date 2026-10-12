@@ -1,0 +1,46 @@
+FROM golang:1.27.0-alpine AS host-checks
+RUN apk add --no-cache build-base
+ENV GOPROXY=https://goproxy.cn,direct GOSUMDB=sum.golang.google.cn GOMEMLIMIT=2GiB GOMAXPROCS=2
+WORKDIR /src/backend
+COPY host/backend/ ./
+RUN --mount=type=cache,id=sub2api-gomod,target=/go/pkg/mod \
+    --mount=type=cache,id=sub2api-gobuild-race,target=/root/.cache/go-build \
+    --mount=type=tmpfs,target=/tmp \
+    go test -race -p 2 -parallel 1 -tags=unit -count=1 -run 'TestPlugin(Resource|Host)|TestBuildHostServices' ./internal/service
+
+FROM host-checks AS host-contract
+COPY statekit.s2plugin /artifacts/statekit.s2plugin
+COPY host_contract_test.go.txt ./internal/service/state_kit_external_plugin_test.go
+ENV STATE_KIT_TEST_PACKAGE=/artifacts/statekit.s2plugin
+ENV STATE_KIT_TEST_PUBLIC_KEY=MGeztZt8xeQAikuzJG9+fdADZmioulH5Ls2Baom1ATA=
+RUN --mount=type=cache,id=sub2api-gomod,target=/go/pkg/mod \
+    --mount=type=cache,id=sub2api-gobuild-race,target=/root/.cache/go-build \
+    --mount=type=tmpfs,target=/tmp \
+    go test -race -p 2 -parallel 1 -tags=statekit_host_contract -count=1 -timeout=5m -run '^TestStateKitOfficialHost' -v ./internal/service
+
+FROM node:24-alpine AS frontend
+WORKDIR /app/frontend
+ENV NODE_OPTIONS=--max-old-space-size=4096
+RUN corepack enable && corepack prepare pnpm@9 --activate
+COPY host/frontend/package.json host/frontend/pnpm-lock.yaml ./
+RUN --mount=type=cache,id=sub2api-pnpm-store,target=/root/.local/share/pnpm/store pnpm install --frozen-lockfile --prefer-offline
+COPY host/frontend/ ./
+COPY host/docs/legal/ /app/docs/legal/
+RUN pnpm exec vitest run src/views/admin/__tests__/pluginResources.spec.ts
+RUN pnpm run build
+
+FROM host-contract AS builder
+COPY --from=frontend /app/backend/internal/web/dist ./internal/web/dist
+RUN --mount=type=cache,id=sub2api-gomod,target=/go/pkg/mod \
+    --mount=type=cache,id=sub2api-gobuild,target=/root/.cache/go-build \
+    --mount=type=tmpfs,target=/tmp \
+    CGO_ENABLED=0 go build -p 2 -tags embed -trimpath -ldflags='-s -w -X main.Version=0.2.7 -X main.BuildType=release -X main.Commit=aea725f-statekit-local' -o /out/sub2api ./cmd/server
+
+FROM alpine:3.21 AS runtime
+RUN apk add --no-cache ca-certificates tzdata && addgroup -g 1000 sub2api && adduser -D -u 1000 -G sub2api sub2api
+WORKDIR /app
+COPY --from=builder /out/sub2api /app/sub2api
+RUN mkdir -p /app/data && chown -R sub2api:sub2api /app
+USER sub2api
+EXPOSE 8080
+ENTRYPOINT ["/app/sub2api"]

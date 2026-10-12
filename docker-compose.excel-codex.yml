@@ -1,0 +1,37 @@
+services:
+  excel-codex-bridge:
+    build:
+      context: ./integrations/excel-codex-bridge
+      dockerfile: Dockerfile
+    image: excel-codex-bridge:local
+    container_name: excel-codex-bridge
+    profiles: ["excel-codex"]
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    environment:
+      EXCEL_SUB2API_API_KEY_FILE: /run/secrets/api-key
+      EXCEL_SUB2API_ADMIN_KEY_FILE: /run/secrets/admin-key
+      EXCEL_BRIDGE_PROXY: ${EXCEL_BRIDGE_PROXY:-}
+    secrets:
+      - source: excel-codex-api-key
+        target: api-key
+      - source: excel-codex-admin-key
+        target: admin-key
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=3).close()"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+
+secrets:
+  excel-codex-api-key:
+    file: ./integrations/excel-codex-bridge/.runtime/secrets/api-key
+  excel-codex-admin-key:
+    file: ./integrations/excel-codex-bridge/.runtime/secrets/admin-key

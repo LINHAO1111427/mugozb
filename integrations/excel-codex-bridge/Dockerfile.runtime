@@ -1,0 +1,5 @@
+# Reuse a locally verified dependency image; all account-independent code is copied.
+ARG BASE_IMAGE=excel-codex-bridge:sol-20260930
+FROM ${BASE_IMAGE}
+COPY src/ /app/src/
+ENV PYTHONPATH=/app/src

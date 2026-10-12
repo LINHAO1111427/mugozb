@@ -1,0 +1,8 @@
+[
+  {
+    "path": "/api/v1/admin/users/2",
+    "id": 2,
+    "before": 5,
+    "after": 1024
+  }
+]

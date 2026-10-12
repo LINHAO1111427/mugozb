@@ -1,19 +1,20 @@
-# Sub2API 部署配置（Windows + Docker Desktop）
-# 复用宿主已有的服务：
-#   - PostgreSQL: sub2api-postgres 容器，映射到宿主 127.0.0.1:55433
-#   - Redis:      宿主原生 redis-server，127.0.0.1:6379（免密）
-# 通过 host.docker.internal 让容器访问宿主端口。
+# Sub2API 閮ㄧ讲閰嶇疆锛圵indows + Docker Desktop锛?
+# 澶嶇敤瀹夸富宸叉湁鐨勬湇鍔★細
+#   - PostgreSQL: sub2api-postgres 瀹瑰櫒锛屾槧灏勫埌瀹夸富 127.0.0.1:55433
+#   - Redis:      瀹夸富鍘熺敓 redis-server锛?27.0.0.1:6379锛堝厤瀵嗭級
+# 閫氳繃 host.docker.internal 璁╁鍣ㄨ闂涓荤鍙ｃ€?
 #
-# 启动：  docker compose -f docker-compose.sub2api.yml up -d
-# 停止：  docker compose -f docker-compose.sub2api.yml down   （保留数据用 down，不删库）
-# 访问：  http://127.0.0.1:8088
+# 鍚姩锛? docker compose -f docker-compose.sub2api.yml up -d
+# 鍋滄锛? docker compose -f docker-compose.sub2api.yml down   锛堜繚鐣欐暟鎹敤 down锛屼笉鍒犲簱锛?
+# 璁块棶锛? http://127.0.0.1:8088
 #
-# 注意：宿主机 8080 被另一个 Docker 项目(cooling-tower)占用，故对外用 8088。
-#       容器内部仍是 8080（SERVER_PORT=8080），端口映射 8088:8080。
+# 娉ㄦ剰锛氬涓绘満 8080 琚彟涓€涓?Docker 椤圭洰(cooling-tower)鍗犵敤锛屾晠瀵瑰鐢?8088銆?
+#       瀹瑰櫒鍐呴儴浠嶆槸 8080锛圫ERVER_PORT=8080锛夛紝绔彛鏄犲皠 8088:8080銆?
 
 services:
   sub2api:
-    image: weishaw/sub2api:0.1.177
+    # Sub2API v0.2.4 release digest (pin to avoid floating latest behavior).
+    image: sub2api:pr7315-local
     container_name: sub2api
     restart: unless-stopped
     extra_hosts:
@@ -43,3 +44,22 @@ services:
       ADMIN_PASSWORD: "${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in .env}"
       JWT_SECRET: "${JWT_SECRET:?Set JWT_SECRET in .env}"
       TOTP_ENCRYPTION_KEY: "${TOTP_ENCRYPTION_KEY:?Set TOTP_ENCRYPTION_KEY in .env}"
+      # Stable OpenAI Responses transport for the host relay. HTTP/2 stays
+      # enabled for upstream connection reuse and long-stream keepalive.
+      GATEWAY_FORCE_CODEX_CLI: "${GATEWAY_FORCE_CODEX_CLI:-false}"
+      GATEWAY_OPENAI_COMPACT_MODEL: "${GATEWAY_OPENAI_COMPACT_MODEL:-gpt-5.4}"
+      SUB2API_IMAGES_MAIN_MODEL: "${SUB2API_IMAGES_MAIN_MODEL:-gpt-5.6-luna}"
+      GATEWAY_OPENAI_RESPONSE_HEADER_TIMEOUT: "${GATEWAY_OPENAI_RESPONSE_HEADER_TIMEOUT:-0}"
+      GATEWAY_OPENAI_WS_FORCE_HTTP: "${GATEWAY_OPENAI_WS_FORCE_HTTP:-true}"
+      GATEWAY_OPENAI_HTTP2_ENABLED: "${GATEWAY_OPENAI_HTTP2_ENABLED:-true}"
+      GATEWAY_OPENAI_HTTP2_ALLOW_PROXY_FALLBACK_TO_HTTP1: "${GATEWAY_OPENAI_HTTP2_ALLOW_PROXY_FALLBACK_TO_HTTP1:-true}"
+      GATEWAY_OPENAI_HTTP2_FALLBACK_ERROR_THRESHOLD: "${GATEWAY_OPENAI_HTTP2_FALLBACK_ERROR_THRESHOLD:-2}"
+      GATEWAY_OPENAI_HTTP2_FALLBACK_WINDOW_SECONDS: "${GATEWAY_OPENAI_HTTP2_FALLBACK_WINDOW_SECONDS:-60}"
+      GATEWAY_OPENAI_HTTP2_FALLBACK_TTL_SECONDS: "${GATEWAY_OPENAI_HTTP2_FALLBACK_TTL_SECONDS:-600}"
+      GATEWAY_OPENAI_PROXY_STREAM_CIRCUIT_FAILURE_THRESHOLD: "${GATEWAY_OPENAI_PROXY_STREAM_CIRCUIT_FAILURE_THRESHOLD:-2}"
+      GATEWAY_OPENAI_PROXY_STREAM_CIRCUIT_WINDOW_SECONDS: "${GATEWAY_OPENAI_PROXY_STREAM_CIRCUIT_WINDOW_SECONDS:-60}"
+      GATEWAY_OPENAI_PROXY_STREAM_CIRCUIT_TTL_SECONDS: "${GATEWAY_OPENAI_PROXY_STREAM_CIRCUIT_TTL_SECONDS:-600}"
+      GEMINI_CLI_OAUTH_CLIENT_ID: "${GEMINI_CLI_OAUTH_CLIENT_ID:-}"
+      GEMINI_CLI_OAUTH_CLIENT_SECRET: "${GEMINI_CLI_OAUTH_CLIENT_SECRET:-}"
+      ANTIGRAVITY_OAUTH_CLIENT_ID: "${ANTIGRAVITY_OAUTH_CLIENT_ID:-}"
+      ANTIGRAVITY_OAUTH_CLIENT_SECRET: "${ANTIGRAVITY_OAUTH_CLIENT_SECRET:-}"

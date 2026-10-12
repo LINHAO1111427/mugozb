@@ -1,0 +1,105 @@
+Current: local STATE Kit integration / signed plugin installed and live API controls passed / finish browser controls after local Docker resumes
+Host branch: local/statekit-controls
+Host: Sub2API 0.2.7, aea725f2ea644d5592d0bbb1d63b607efa7e200a
+Plugin: STATE Kit 0.3.4, signed release SHA256 e09ac56a13af19f819d3107047f05766401287de853971d406940b68edc6cb5b
+Changed interfaces: ListResources, ResolveProxy, RunAction; POST /admin/plugins/:id/actions; plugin.action and plugin.resources UI bridge; resource-directory injection in wire_gen.go.
+Original and modified source hashes: evidence/source-hashes.json (14 paths).
+Modified archive SHA256: f6672cf99c514acf0afb73accf2e82210552eb359a263f03305cf6c75f90cdd9
+
+Four artifacts:
+D:\Workspace\sub2api\integrations\statekit-local\MODIFIED_FILE.zip
+D:\Workspace\sub2api\integrations\statekit-local\DIFF_FILE.diff
+D:\Workspace\sub2api\integrations\statekit-local\VERIFICATION.txt
+D:\Workspace\sub2api\integrations\statekit-local\ROLLBACK.sh
+
+BASELINE
+Command: docker build -f integrations/statekit-local/Dockerfile.checks --target host-checks -t sub2api:statekit-baseline integrations/statekit-local --progress plain
+Input: original pinned host before adapter application; original check recipe used the existing local Go 1.27 race-toolchain image.
+Test: go test -race -p 2 -parallel 1 -tags=unit -count=1 -run 'TestPlugin(Resource|Host)|TestBuildHostServices' ./internal/service
+Literal output: ok  	github.com/Wei-Shaw/sub2api/internal/service	1.372s
+Exit: 0; evidence/baseline.log.
+
+MODIFIED
+Command: docker build -f integrations/statekit-local/Dockerfile.checks -t sub2api:statekit-local integrations/statekit-local --progress plain
+Input: adapted pinned host, additional control test, author signed release package and final Dockerfile with public Go image and tmpfs scratch.
+Literal control result: --- PASS: TestStateKitOfficialHostControls (10.13s)
+Literal suite result: PASS
+Literal suite result: ok  	github.com/Wei-Shaw/sub2api/internal/service	43.125s
+Literal build result: naming to docker.io/library/sub2api:statekit-local done
+Exit: 0; evidence/final-build.log.
+Host image manifest: sha256:41692d1fe1357da14dc6d6115221c3ef15f9c2ec74fa5fdaca830ba5bd50f671
+Verified: resource discovery, master-switch rejection, manual harvesting, duplicate suppression, passive status, auto harvesting, disable stopping new attempts, oversized commands and stopped-runtime rejection; real signed plugin process with local proxy fixture, no provider traffic.
+Other host contracts: package signatures/tamper rejection, process handshake, account/KV broker, binary bodies, SSE streaming/cancellation, default-off, bounded proxy failures, restart.
+Frontend: three resource-directory tests, three i18n tests, TypeScript checking and production build passed (evidence/modified.log; cached unchanged frontend in final-build.log).
+
+PLUGIN
+Command: docker build -f integrations/statekit-local/Dockerfile.plugin-tests -t sub2api:statekit-plugin-tests . --progress plain
+Input: vendor_statekit/plugin, final standalone public-Go recipe, explicit narrow build context.
+Tests: go test -race -p 2 ./...
+Build: CGO_ENABLED=0 go build -p 2 -trimpath -o /out/state-kit ./cmd/state-kit
+Exit: 0; evidence/plugin-final.log. Initial independent full race run and build also passed in evidence/plugin-race.log.
+UI command: node --test vendor_statekit/plugin/ui-tests/*.test.cjs
+Literal results: tests 44; pass 44; fail 0; exit 0 (evidence/plugin-ui.log).
+
+ROLLBACK
+Command: bash integrations/statekit-local/ROLLBACK.sh integrations/statekit-local/evidence/rollback-copy
+Input: separate source copy extracted from MODIFIED_FILE.zip.
+Literal output: ROLLBACK_OK restored_original_hashes=14
+Exit: 0.
+Restored behavior: original Git blob bytes restored and added adapter/test files removed on the copy; all original hashes verified. The actual adapted host remains changed and its archive hashes were rechecked.
+Reapply check: git -C integrations/statekit-local/evidence/rollback-copy apply --check D:/Workspace/sub2api/integrations/statekit-local/DIFF_FILE.diff
+Literal output: (empty); exit 0.
+
+LOCAL RUNTIME AND PENDING USER STEP
+http://127.0.0.1:18089/health -> HTTP 200, {"status":"ok"}.
+App, dedicated PostgreSQL and Redis are healthy. The pre-existing local containers were restored and are healthy.
+Administrator: admin@statekit.local; password remains in ignored .env.
+Plugin installation through the real console remains pending: HTTP 423 ADMIN_COMPLIANCE_ACK_REQUIRED, document host/docs/legal/admin-compliance.zh.md section 6.
+start-local.py, verify-local.py and verify-browser.cjs return ADMIN_ACK_PENDING/exit 3 while acknowledgement is required; no acknowledgement was submitted by the agent.
+After the administrator confirms in the local console: python start-local.py; python verify-local.py; node verify-browser.cjs.
+New install defaults: STATE disabled, automatic harvesting disabled, empty account list. No production accounts imported.
+Live console button verification is pending this user step; fixture control tests above are complete. No genuine upstream ticket success is claimed.
+No remote server action occurred after the user redirected the task to local integration.
+
+STORAGE RECOVERY
+The first added control test reached CONTROLS_OK then failed cleanup because Docker storage became read-only after C: filled. It is superseded by the final clean PASS above.
+Local Docker was fully stopped and restarted after preserving a verified 39,955,988,480-byte VHDX backup on E:. Original and integration containers are now healthy.
+Backup SHA256: ac4e782ab74073708bd94ffa15509cbbb8faa4c9609dfeb0fcf17769edcfb3ca.
+Cache paths relocated to D: retain their original paths via junctions. Exact mappings and backup path are in evidence/storage-recovery.json; retain those destination folders.
+Go scratch now uses tmpfs; plugin Docker build context explicitly includes only plugin source. The aborted oversized context transfer is not a successful test run. Docker data filesystem trim completed (2,006,953,984 bytes).
+
+LOCAL CONFIRMATION RECHECK (2026-09-21)
+User reported completing confirmation in the local page. The local admin API still returns required=true for admin@statekit.local at http://127.0.0.1:18089.
+Read-only database check: SELECT key, value FROM settings WHERE key LIKE '%compliance%'; literal result: (0 rows); exit 0.
+Only administrator in this local database: user 1, admin@statekit.local.
+No /api/v1/admin/compliance/accept request was found in the retained last-12-hour local app logs. This observation does not establish which instance the user visited.
+The actual Chrome browser displays #admin-compliance-phrase at /admin/plugins; evidence/local-confirmation-status.png and evidence/local-confirmation-status.json.
+Command: python integrations/statekit-local/verify-local.py
+Input: local administrator session; GET /api/v1/admin/compliance.
+Literal output: ADMIN_ACK_PENDING; no administrator acknowledgement was submitted
+Exit: 3.
+Command: node integrations/statekit-local/verify-browser.cjs
+Input: isolated Chrome session at local /admin/plugins.
+Literal output: ADMIN_ACK_PENDING required=true dialog_visible=true; browser did not accept any agreement
+Exit: 3.
+Command: node --check integrations/statekit-local/verify-browser.cjs
+Literal output: (empty); exit 0.
+Exact subprocess results: evidence/confirmation-recheck-commands.json.
+Browser verification now selects the plugin by stable plugin_key. Once installed, it exercises changing attempt_interval_seconds, saving via the iframe bridge, reopening the page, and restoring the exact original config, only for an empty disabled instance. It preserves existing user configuration and detects concurrent edits. The new save/reload assertions have not yet run against the live plugin because the current gate remains active.
+Host source/build and four source artifacts are unchanged; existing passing baseline/modified/rollback results above remain valid. No ticket collection was enabled, plugin package was not uploaded, and no remote server action occurred during this recheck.
+Outstanding: identify the URL/account used for the reported confirmation, then install the plugin and execute live API/browser checks on this instance.
+
+VISIBLE LOCAL BROWSER CHECK
+A subsequent read-only UI Automation inspection found the existing Chrome Sub2API window at 127.0.0.1:18089/login. Filled only this local login form from .env and submitted it. Literal result: LOCAL_VISIBLE_BROWSER_LOGIN_SUBMITTED; exit 0. Follow-up inspection: Local browser address: 127.0.0.1:18089/dashboard; LOCAL_ADMIN_CONFIRMATION_DIALOG_VISIBLE; exit 0. The existing browser is now logged in and the administrator confirmation dialog is visible. No confirmation phrase was entered or acceptance submitted. The current plugin-list request returns HTTP 423 and the local settings database has zero confirmation rows.
+
+CONFIRMATION CLEARED AND LIVE INSTALLATION (2026-09-21)
+Administrator confirmation now returns required=false. start-local.py installed plugin 1 and enabled its runtime; STATE and auto_harvest remained false and accounts remained empty.
+Command: python integrations/statekit-local/start-local.py
+Literal result: LOCAL_READY http://127.0.0.1:18089/admin/plugins; plugin=1; runtime=healthy
+Exit: 0.
+Command: python integrations/statekit-local/verify-local.py
+Literal output: LOCAL_API_CONTROLS_OK {"healthy": true, "trusted": true, "resources_ready": true, "actions_ready": true, "master_switch_rejects": true, "empty_account_rejects": true, "config_save_reload": true, "initial_off_state_restored": true}
+Exit: 0; evidence/local-api.json.
+Verifier corrected for protobuf omitempty: rejected actions omit accepted=false; it now checks both the default false value and exact rejection messages. The actual plugin API behavior was unchanged.
+Browser verifier now supports raw config JSON and wrapped admin responses. Empty-account model testing is guarded on click, rather than by disabling the button. Browser assertions are being aligned with these actual host/plugin contracts.
+Docker Desktop received CLI POST /app/quit requests at 2026-09-20T22:38:44Z and 22:49:53Z, interrupting browser verification. These were explicit local runtime shutdowns, not plugin test failures. No source rebuild or remote deployment was performed in this continuation.

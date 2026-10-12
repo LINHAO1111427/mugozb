@@ -1,0 +1,17 @@
+# Local STATE Kit integration, 2026-09-21
+
+The user explicitly redirected this task to local integration and instructed us to stop changing the remote program. All subsequent development uses `integrations/statekit-local`; no remote command is part of this workflow.
+
+The legacy workspace lacks the plugin HostService protocol required by STATE Kit. Preserve it and prepare a separate host at the plugin's documented baseline: Sub2API v0.2.7, commit `aea725f2ea644d5592d0bbb1d63b607efa7e200a`. Apply the v0.3.4 host adapter, retaining the publisher's signed plugin package and trust verification.
+
+The adaptation adds account/proxy resources, manual action RPCs and the administrator action route, plus the frontend bridge for account-group selection and manual controls. A real signed-plugin integration test exercises resource discovery, master-switch rejection, manual collection, command deduplication, passive status, automatic collection, stopping collection, input size limits and stopped-runtime rejection using a local rejecting proxy. No real upstream credentials are involved.
+
+The integration stack uses only loopback port 18089, a separate PostgreSQL database, Redis and data volume. Startup creates a random local administrator and installs the plugin after the administrator has personally completed the existing host acknowledgement. Initial STATE and automatic harvesting settings are off and the account list is empty.
+
+Original host race tests, adapted resource race tests, signed-plugin host contracts, plugin race tests, 44 plugin UI tests, frontend resource tests, type checking, frontend build and embedded backend build passed. The later control assertions passed, but Docker's filesystem became read-only during test cleanup because the host C: drive ran out of space; that test process exited unsuccessfully. Local Docker has since been recovered and the final host control suite/build and plugin race/build both passed with exit 0. The earlier failure remains in the log; final-build.log and plugin-final.log contain the clean reruns.
+
+The source delta, original hashes, modified archive and conditional rollback are local artifacts. Rollback restored all 14 touched source paths on a separate copy; the adapted host remains changed. See `integrations/statekit-local/README.md` and the final verification record for current runtime status.
+
+Final local app and dependencies are healthy at loopback port 18089. The signed-plugin installation through the live administrator console and browser controls checks await the administrator?s personal first-login acknowledgement (HTTP 423). The agent has not submitted that acknowledgement. The source integration and fixture controls tests are complete.
+
+After the user reported completing confirmation, a fresh local check still returned required=true for admin@statekit.local. Read-only settings query returned zero acknowledgement rows, and Chrome displayed the actual confirmation dialog. No acceptance request appeared in retained recent logs. The confirmation URL/account is being clarified. Diagnostics: integrations/statekit-local/evidence/local-confirmation-status.json and .png; command exits are in confirmation-recheck-commands.json. Plugin installation and live controls checks remain pending. The browser script now includes conditional save/reload/exact restore on an empty disabled instance; only its syntax and gate diagnostics have executed.
